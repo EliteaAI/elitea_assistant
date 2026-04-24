@@ -3,6 +3,8 @@ export interface EliteaAssistantColors {
   buttonIcon?: string;
   headerBackground?: string;
   headerText?: string;
+  headerActionBackground?: string;
+  headerCloseIcon?: string;
   chatBackground?: string;
   userMessageBackground?: string;
   userMessageText?: string;
@@ -11,8 +13,13 @@ export interface EliteaAssistantColors {
   inputBackground?: string;
   inputText?: string;
   inputBorder?: string;
+  userAvatarBackground?: string;
+  userAvatarIcon?: string;
   sendButtonBackground?: string;
+  sendButtonDisabledBackground?: string;
   sendButtonIcon?: string;
+  chatWindowBorder?: string;
+  chatWindowShadow?: string;
 }
 
 export type EliteaAssistantPosition = 'bottom-right' | 'bottom-left';
@@ -22,6 +29,7 @@ export interface EliteaAssistantProps {
   token: string;
   title?: string;
   placeholder?: string;
+  welcomeMessage?: string;
   position?: EliteaAssistantPosition;
   theme?: 'light' | 'dark';
   colors?: EliteaAssistantColors;

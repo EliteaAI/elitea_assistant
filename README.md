@@ -1,6 +1,7 @@
 # @eliteaai/elitea-assistant
 
-Embeddable AI chat assistant widget for any web platform. Renders a floating chat button that opens a full chat window — designed to work like Intercom, but connected to your own backend.
+Embeddable AI chat assistant widget for any web platform. Renders a floating chat button that opens a full
+chat window — designed to work as any Chat Assistant, but connected to your own backend.
 
 ## Installation
 
@@ -33,15 +34,15 @@ const App = () => (
 
 ## Props
 
-| Prop | Type | Required | Default | Description |
-|------|------|----------|---------|-------------|
-| `apiUrl` | `string` | yes | — | Backend endpoint for chat messages |
-| `token` | `string` | yes | — | User authentication token |
-| `title` | `string` | no | `"Elitea Assistant"` | Chat window header text |
-| `placeholder` | `string` | no | `"Type a message..."` | Input field placeholder |
-| `position` | `"bottom-right" \| "bottom-left"` | no | `"bottom-right"` | Floating button position |
-| `theme` | `"light" \| "dark"` | no | `"light"` | Base color theme |
-| `colors` | `EliteaAssistantColors` | no | — | Override individual theme colors |
+| Prop          | Type                              | Required | Default               | Description                        |
+| ------------- | --------------------------------- | -------- | --------------------- | ---------------------------------- |
+| `apiUrl`      | `string`                          | yes      | —                     | Backend endpoint for chat messages |
+| `token`       | `string`                          | yes      | —                     | User authentication token          |
+| `title`       | `string`                          | no       | `"Elitea Assistant"`  | Chat window header text            |
+| `placeholder` | `string`                          | no       | `"Type a message..."` | Input field placeholder            |
+| `position`    | `"bottom-right" \| "bottom-left"` | no       | `"bottom-right"`      | Floating button position           |
+| `theme`       | `"light" \| "dark"`               | no       | `"light"`             | Base color theme                   |
+| `colors`      | `EliteaAssistantColors`           | no       | —                     | Override individual theme colors   |
 
 ### Color Overrides
 
@@ -65,32 +66,6 @@ interface EliteaAssistantColors {
   sendButtonIcon?: string;
 }
 ```
-
-## Development
-
-```bash
-# Install dependencies
-npm install
-
-# Start dev server (opens a test page with the widget)
-npm run dev
-
-# Build the library
-npm run build
-
-# Lint and format
-npm run lint
-npm run format
-```
-
-## Publishing
-
-```bash
-npm login
-npm publish
-```
-
-The package is published to npm as `@eliteaai/elitea-assistant` with public access.
 
 ## License
 

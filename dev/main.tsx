@@ -11,9 +11,17 @@ root.render(
     <EliteaAssistant
       apiUrl="https://dev.elitea.ai/api/assistant"
       token="dev-token-placeholder"
-      title="Elitea Assistant"
-      placeholder="Ask me anything..."
+      title="ELITEA Support Assistant"
+      placeholder="Type your message."
       position="bottom-left"
+      theme="light"
+    />
+    <EliteaAssistant
+      apiUrl="https://dev.elitea.ai/api/assistant"
+      token="dev-token-placeholder"
+      title="ELITEA Support Assistant"
+      placeholder="Type your message."
+      position="bottom-right"
       theme="dark"
     />
   </React.StrictMode>,

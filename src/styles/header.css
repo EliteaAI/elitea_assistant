@@ -1,0 +1,81 @@
+/* ── Header ── */
+
+.elitea-assistant-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  height: 3.25rem;
+  padding: 0 1rem;
+  background: var(--elitea-assistant-header-bg);
+  color: var(--elitea-assistant-header-text);
+  flex-shrink: 0;
+  border-bottom: 0.0625rem solid var(--elitea-assistant-window-border);
+}
+
+.elitea-assistant-header-left {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.elitea-assistant-header-right {
+  display: flex;
+  align-items: center;
+  gap: 0.25rem;
+}
+
+.elitea-assistant-header-title {
+  font-size: 0.9375rem;
+  font-weight: 600;
+  margin: 0;
+  white-space: nowrap;
+}
+
+.elitea-assistant-header-action {
+  background: none;
+  border: none;
+  color: inherit;
+  cursor: pointer;
+  padding: 0.25rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 0.25rem;
+  opacity: 0.8;
+  transition: opacity 0.15s ease;
+  border-radius: 50%;
+  padding: 0.375rem;
+  background: var(--elitea-assistant-header-action-bg);
+}
+
+.elitea-assistant-header-close-action {
+  border: none;
+  color: inherit;
+  cursor: pointer;
+  padding: 0.25rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 0.25rem;
+  opacity: 0.8;
+  transition: opacity 0.15s ease;
+  border-radius: 50%;
+  padding: 0.375rem;
+  background: transparent;
+}
+
+.elitea-assistant-header-action:hover {
+  opacity: 1;
+}
+
+.elitea-assistant-header-action svg {
+  width: 0.75rem;
+  height: 0.75rem;
+  fill: currentColor;
+}
+
+.elitea-assistant-header-close-action svg {
+  width: 1rem;
+  height: 1rem;
+  fill: var(--elitea-assistant-header-close-icon);
+}

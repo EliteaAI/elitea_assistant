@@ -1,10 +1,10 @@
 import React, { useMemo, useState } from 'react';
 
-import { ChatButton } from './components/chat/ChatButton';
-import { ChatWindow } from './components/chat/ChatWindow';
-import './styles/styles.css';
-import { colorsToCSSProperties, resolveColors } from './theme/colors';
-import type { EliteaAssistantProps, Message } from './types';
+import { ChatButton } from '@/components/chat/ChatButton';
+import { ChatWindow } from '@/components/chat/ChatWindow';
+import '@/styles/index.css';
+import { colorsToCSSProperties, resolveColors } from '@/theme/colors';
+import type { EliteaAssistantProps, Message } from '@/types';
 
 export const EliteaAssistant: React.FC<EliteaAssistantProps> = props => {
   const {
@@ -12,13 +12,26 @@ export const EliteaAssistant: React.FC<EliteaAssistantProps> = props => {
     token: _token,
     title = 'Elitea Assistant',
     placeholder = 'Type a message...',
+    welcomeMessage = "Hi! I'm your ELITEA Support Assistant.\nAsk me anything about ELITEA or report any issues you're experiencing. I have context about your current screen and settings.",
     position = 'bottom-right',
     theme = 'light',
     colors,
   } = props;
 
   const [isOpen, setIsOpen] = useState(false);
-  const [messages, setMessages] = useState<Message[]>([]);
+  const [isExpanded, setIsExpanded] = useState(false);
+  const [messages, setMessages] = useState<Message[]>(() =>
+    welcomeMessage
+      ? [
+          {
+            id: 'welcome',
+            role: 'assistant' as const,
+            content: welcomeMessage,
+            timestamp: Date.now(),
+          },
+        ]
+      : [],
+  );
 
   const cssVars = useMemo(() => colorsToCSSProperties(resolveColors(theme, colors)), [theme, colors]);
 
@@ -55,12 +68,11 @@ export const EliteaAssistant: React.FC<EliteaAssistantProps> = props => {
           messages={messages}
           onSend={handleSend}
           onClose={() => setIsOpen(false)}
+          expanded={isExpanded}
+          onExpand={() => setIsExpanded(prev => !prev)}
         />
       )}
-      <ChatButton
-        isOpen={isOpen}
-        onClick={() => setIsOpen(prev => !prev)}
-      />
+      <ChatButton onClick={() => setIsOpen(prev => !prev)} />
     </div>
   );
 };
