@@ -1,0 +1,34 @@
+/* ── Tooltip (portal) ── */
+
+.elitea-assistant-tooltip-trigger {
+  display: inline-flex;
+}
+
+.elitea-assistant-tooltip {
+  position: fixed;
+  z-index: 99999;
+  padding: 0.375rem 0.75rem;
+  border-radius: 0.375rem;
+  background: rgba(20, 20, 28, 0.92);
+  color: #fff;
+  font-size: 0.75rem;
+  line-height: 1.4;
+  white-space: nowrap;
+  max-width: 20rem;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  pointer-events: none;
+  box-shadow: 0 0.25rem 1rem rgba(0, 0, 0, 0.25);
+  animation: elitea-tooltip-in 0.15s ease-out;
+}
+
+@keyframes elitea-tooltip-in {
+  from {
+    opacity: 0;
+    transform: translateY(4px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}

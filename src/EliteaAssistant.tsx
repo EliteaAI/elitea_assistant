@@ -20,6 +20,8 @@ export const EliteaAssistant: React.FC<EliteaAssistantProps> = props => {
 
   const [isOpen, setIsOpen] = useState(false);
   const [isExpanded, setIsExpanded] = useState(false);
+  const [inputText, setInputText] = useState('');
+  const [files, setFiles] = useState<File[]>([]);
   const [messages, setMessages] = useState<Message[]>(() =>
     welcomeMessage
       ? [
@@ -66,6 +68,10 @@ export const EliteaAssistant: React.FC<EliteaAssistantProps> = props => {
           title={title}
           placeholder={placeholder}
           messages={messages}
+          text={inputText}
+          onTextChange={setInputText}
+          files={files}
+          onFilesChange={setFiles}
           onSend={handleSend}
           onClose={() => setIsOpen(false)}
           expanded={isExpanded}

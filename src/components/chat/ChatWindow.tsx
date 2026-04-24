@@ -10,7 +10,11 @@ interface ChatWindowProps {
   title: string;
   placeholder: string;
   messages: Message[];
-  onSend: (text: string) => void;
+  text: string;
+  onTextChange: (text: string) => void;
+  files: File[];
+  onFilesChange: (files: File[]) => void;
+  onSend: (text: string, files?: File[]) => void;
   onClose: () => void;
   onNewChat?: () => void;
   onHistory?: () => void;
@@ -19,7 +23,21 @@ interface ChatWindowProps {
 }
 
 export const ChatWindow: React.FC<ChatWindowProps> = props => {
-  const { title, placeholder, messages, onSend, onClose, onNewChat, onHistory, onExpand, expanded } = props;
+  const {
+    title,
+    placeholder,
+    messages,
+    text,
+    onTextChange,
+    files,
+    onFilesChange,
+    onSend,
+    onClose,
+    onNewChat,
+    onHistory,
+    onExpand,
+    expanded,
+  } = props;
 
   const window = (
     <div className={`elitea-assistant-window${expanded ? ' elitea-assistant-window--expanded' : ''}`}>
@@ -65,7 +83,12 @@ export const ChatWindow: React.FC<ChatWindowProps> = props => {
       <MessageList messages={messages} />
       <MessageInput
         placeholder={placeholder}
+        text={text}
+        onTextChange={onTextChange}
+        files={files}
+        onFilesChange={onFilesChange}
         onSend={onSend}
+        expanded={expanded}
       />
     </div>
   );

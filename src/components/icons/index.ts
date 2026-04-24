@@ -3,6 +3,7 @@ export { AttachmentIcon } from './AttachmentIcon';
 export { ChatIcon } from './ChatIcon';
 export { CloseIcon } from './CloseIcon';
 export { ExpandIcon } from './ExpandIcon';
+export { FileIcon } from './FileIcon';
 export { HistoryIcon } from './HistoryIcon';
 export { PlusIcon } from './PlusIcon';
 export { SendIcon } from './SendIcon';
