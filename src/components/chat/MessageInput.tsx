@@ -1,14 +1,15 @@
 import React, { useState } from 'react';
 
-import { SendIcon } from '../shared/icons';
+import { AttachmentIcon, SendIcon } from '@/components/icons';
 
 interface MessageInputProps {
   placeholder: string;
   onSend: (text: string) => void;
+  onAttach?: () => void;
 }
 
 export const MessageInput: React.FC<MessageInputProps> = props => {
-  const { placeholder, onSend } = props;
+  const { placeholder, onSend, onAttach } = props;
   const [text, setText] = useState('');
 
   const handleSend = () => {
@@ -27,6 +28,14 @@ export const MessageInput: React.FC<MessageInputProps> = props => {
 
   return (
     <div className="elitea-assistant-input-area">
+      <button
+        className="elitea-assistant-attach-button"
+        onClick={onAttach}
+        aria-label="Attach file"
+        type="button"
+      >
+        <AttachmentIcon />
+      </button>
       <textarea
         className="elitea-assistant-input"
         value={text}

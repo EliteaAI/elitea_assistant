@@ -1,7 +1,8 @@
 import React from 'react';
 
-import type { Message } from '../../types';
-import { CloseIcon } from '../shared/icons';
+import { CloseIcon, ExpandIcon, HistoryIcon, PlusIcon } from '@/components/icons';
+import type { Message } from '@/types';
+
 import { MessageInput } from './MessageInput';
 import { MessageList } from './MessageList';
 
@@ -11,23 +12,55 @@ interface ChatWindowProps {
   messages: Message[];
   onSend: (text: string) => void;
   onClose: () => void;
+  onNewChat?: () => void;
+  onHistory?: () => void;
+  onExpand?: () => void;
+  expanded?: boolean;
 }
 
 export const ChatWindow: React.FC<ChatWindowProps> = props => {
-  const { title, placeholder, messages, onSend, onClose } = props;
+  const { title, placeholder, messages, onSend, onClose, onNewChat, onHistory, onExpand, expanded } = props;
 
-  return (
-    <div className="elitea-assistant-window">
+  const window = (
+    <div className={`elitea-assistant-window${expanded ? ' elitea-assistant-window--expanded' : ''}`}>
       <div className="elitea-assistant-header">
-        <h2 className="elitea-assistant-header-title">{title}</h2>
-        <button
-          className="elitea-assistant-header-close"
-          onClick={onClose}
-          aria-label="Close chat"
-          type="button"
-        >
-          <CloseIcon />
-        </button>
+        <div className="elitea-assistant-header-left">
+          <button
+            className="elitea-assistant-header-close-action"
+            onClick={onClose}
+            aria-label="Close chat"
+            type="button"
+          >
+            <CloseIcon />
+          </button>
+          <h2 className="elitea-assistant-header-title">{title}</h2>
+        </div>
+        <div className="elitea-assistant-header-right">
+          <button
+            className="elitea-assistant-header-action"
+            onClick={onNewChat}
+            aria-label="New chat"
+            type="button"
+          >
+            <PlusIcon />
+          </button>
+          <button
+            className="elitea-assistant-header-action"
+            onClick={onHistory}
+            aria-label="Chat history"
+            type="button"
+          >
+            <HistoryIcon />
+          </button>
+          <button
+            className="elitea-assistant-header-action"
+            onClick={onExpand}
+            aria-label="Expand chat"
+            type="button"
+          >
+            <ExpandIcon />
+          </button>
+        </div>
       </div>
       <MessageList messages={messages} />
       <MessageInput
@@ -36,4 +69,17 @@ export const ChatWindow: React.FC<ChatWindowProps> = props => {
       />
     </div>
   );
+
+  if (expanded) {
+    return (
+      <div
+        className="elitea-assistant-overlay"
+        onClick={onExpand}
+      >
+        <div onClick={e => e.stopPropagation()}>{window}</div>
+      </div>
+    );
+  }
+
+  return window;
 };

@@ -1,0 +1,9 @@
+export { AssistantIcon } from './AssistantIcon';
+export { AttachmentIcon } from './AttachmentIcon';
+export { ChatIcon } from './ChatIcon';
+export { CloseIcon } from './CloseIcon';
+export { ExpandIcon } from './ExpandIcon';
+export { HistoryIcon } from './HistoryIcon';
+export { PlusIcon } from './PlusIcon';
+export { SendIcon } from './SendIcon';
+export { UserIcon } from './UserIcon';

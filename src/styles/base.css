@@ -1,0 +1,26 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700&display=swap');
+
+.elitea-assistant-container {
+  position: fixed;
+  z-index: 2147483647;
+  font-family: 'Montserrat', sans-serif;
+  font-size: 0.875rem;
+  line-height: 1.5;
+  box-sizing: border-box;
+}
+
+.elitea-assistant-container *,
+.elitea-assistant-container *::before,
+.elitea-assistant-container *::after {
+  box-sizing: border-box;
+}
+
+.elitea-assistant-container--bottom-right {
+  bottom: 0.75rem;
+  right: 1.09375rem;
+}
+
+.elitea-assistant-container--bottom-left {
+  bottom: 0.75rem;
+  left: 1.09375rem;
+}

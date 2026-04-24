@@ -1,0 +1,82 @@
+/* ── Input Area ── */
+
+.elitea-assistant-input-area {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  padding: 0.75rem;
+  background: var(--elitea-assistant-input-bg);
+  flex-shrink: 0;
+  border-top: 0.0625rem solid var(--elitea-assistant-window-border);
+}
+
+.elitea-assistant-input {
+  flex: 1;
+  padding: 0.5rem 0.25rem;
+  border: none;
+  border-radius: 0;
+  background: transparent;
+  color: var(--elitea-assistant-input-text);
+  font-size: 0.875rem;
+  font-family: inherit;
+  outline: none;
+  resize: none;
+}
+
+.elitea-assistant-input::placeholder {
+  opacity: 0.5;
+}
+
+.elitea-assistant-attach-button {
+  width: 1.75rem;
+  height: 1.75rem;
+  border-radius: 50%;
+  border: none;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: var(--elitea-assistant-header-action-bg);
+  color: var(--elitea-assistant-header-text);
+  flex-shrink: 0;
+  transition: opacity 0.15s ease;
+  padding: 0;
+  opacity: 0.8;
+}
+
+.elitea-assistant-attach-button:hover {
+  opacity: 1;
+}
+
+.elitea-assistant-attach-button svg {
+  width: 0.875rem;
+  height: 0.875rem;
+  fill: currentColor;
+}
+
+.elitea-assistant-send-button {
+  width: 1.75rem;
+  height: 1.75rem;
+  border-radius: 50%;
+  border: none;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: var(--elitea-assistant-send-btn-bg);
+  color: var(--elitea-assistant-send-btn-icon);
+  flex-shrink: 0;
+  transition: background 0.15s ease;
+  padding: 0;
+}
+
+.elitea-assistant-send-button:disabled {
+  background: var(--elitea-assistant-send-btn-disabled-bg);
+  cursor: default;
+}
+
+.elitea-assistant-send-button svg {
+  width: 0.875rem;
+  height: 0.875rem;
+  fill: currentColor;
+}
