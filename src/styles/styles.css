@@ -1,0 +1,242 @@
+.elitea-assistant-container {
+  position: fixed;
+  z-index: 2147483647;
+  font-family:
+    -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Helvetica Neue', Arial,
+    sans-serif;
+  font-size: 14px;
+  line-height: 1.5;
+  box-sizing: border-box;
+}
+
+.elitea-assistant-container *,
+.elitea-assistant-container *::before,
+.elitea-assistant-container *::after {
+  box-sizing: border-box;
+}
+
+.elitea-assistant-container--bottom-right {
+  bottom: 20px;
+  right: 20px;
+}
+
+.elitea-assistant-container--bottom-left {
+  bottom: 20px;
+  left: 20px;
+}
+
+/* ── Floating Button ── */
+
+.elitea-assistant-button {
+  width: 56px;
+  height: 56px;
+  border-radius: 50%;
+  border: none;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: var(--elitea-assistant-button-bg);
+  color: var(--elitea-assistant-button-icon);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+  transition:
+    transform 0.2s ease,
+    box-shadow 0.2s ease;
+  padding: 0;
+}
+
+.elitea-assistant-button:hover {
+  transform: scale(1.08);
+  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.2);
+}
+
+.elitea-assistant-button svg {
+  width: 24px;
+  height: 24px;
+  fill: currentColor;
+}
+
+/* ── Chat Window ── */
+
+.elitea-assistant-window {
+  position: absolute;
+  bottom: 72px;
+  width: 380px;
+  height: 520px;
+  border-radius: 12px;
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  box-shadow: 0 8px 30px rgba(0, 0, 0, 0.12);
+  background: var(--elitea-assistant-chat-bg);
+  animation: elitea-assistant-slide-up 0.25s ease-out;
+}
+
+.elitea-assistant-container--bottom-right .elitea-assistant-window {
+  right: 0;
+}
+
+.elitea-assistant-container--bottom-left .elitea-assistant-window {
+  left: 0;
+}
+
+@keyframes elitea-assistant-slide-up {
+  from {
+    opacity: 0;
+    transform: translateY(12px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* ── Header ── */
+
+.elitea-assistant-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 14px 16px;
+  background: var(--elitea-assistant-header-bg);
+  color: var(--elitea-assistant-header-text);
+  flex-shrink: 0;
+}
+
+.elitea-assistant-header-title {
+  font-size: 15px;
+  font-weight: 600;
+  margin: 0;
+}
+
+.elitea-assistant-header-close {
+  background: none;
+  border: none;
+  color: inherit;
+  cursor: pointer;
+  padding: 4px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 4px;
+  opacity: 0.8;
+  transition: opacity 0.15s ease;
+}
+
+.elitea-assistant-header-close:hover {
+  opacity: 1;
+}
+
+.elitea-assistant-header-close svg {
+  width: 18px;
+  height: 18px;
+  fill: currentColor;
+}
+
+/* ── Message List ── */
+
+.elitea-assistant-messages {
+  flex: 1;
+  overflow-y: auto;
+  padding: 16px;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.elitea-assistant-message {
+  max-width: 80%;
+  padding: 10px 14px;
+  border-radius: 12px;
+  word-wrap: break-word;
+  white-space: pre-wrap;
+}
+
+.elitea-assistant-message--user {
+  align-self: flex-end;
+  background: var(--elitea-assistant-user-msg-bg);
+  color: var(--elitea-assistant-user-msg-text);
+  border-bottom-right-radius: 4px;
+}
+
+.elitea-assistant-message--assistant {
+  align-self: flex-start;
+  background: var(--elitea-assistant-bot-msg-bg);
+  color: var(--elitea-assistant-bot-msg-text);
+  border-bottom-left-radius: 4px;
+}
+
+/* ── Input Area ── */
+
+.elitea-assistant-input-area {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  padding: 12px 16px;
+  border-top: 1px solid var(--elitea-assistant-input-border);
+  background: var(--elitea-assistant-input-bg);
+  flex-shrink: 0;
+}
+
+.elitea-assistant-input {
+  flex: 1;
+  padding: 10px 12px;
+  border: 1px solid var(--elitea-assistant-input-border);
+  border-radius: 8px;
+  background: var(--elitea-assistant-input-bg);
+  color: var(--elitea-assistant-input-text);
+  font-size: 14px;
+  font-family: inherit;
+  outline: none;
+  resize: none;
+  transition: border-color 0.15s ease;
+}
+
+.elitea-assistant-input:focus {
+  border-color: var(--elitea-assistant-send-btn-bg);
+}
+
+.elitea-assistant-input::placeholder {
+  opacity: 0.5;
+}
+
+.elitea-assistant-send-button {
+  width: 36px;
+  height: 36px;
+  border-radius: 8px;
+  border: none;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: var(--elitea-assistant-send-btn-bg);
+  color: var(--elitea-assistant-send-btn-icon);
+  flex-shrink: 0;
+  transition: opacity 0.15s ease;
+  padding: 0;
+}
+
+.elitea-assistant-send-button:disabled {
+  opacity: 0.4;
+  cursor: default;
+}
+
+.elitea-assistant-send-button svg {
+  width: 18px;
+  height: 18px;
+  fill: currentColor;
+}
+
+/* ── Empty State ── */
+
+.elitea-assistant-empty {
+  flex: 1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--elitea-assistant-bot-msg-text);
+  opacity: 0.5;
+  font-size: 13px;
+  text-align: center;
+  padding: 20px;
+}
