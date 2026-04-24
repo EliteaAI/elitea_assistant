@@ -1,7 +1,7 @@
 import type { EliteaAssistantColors } from '@/types';
 
 const lightColors: Required<EliteaAssistantColors> = {
-  buttonBackground: 'linear-gradient(50.4deg, #435CFF 0%, rgba(135, 151, 255, 0.6) 100%)',
+  buttonBackground: 'linear-gradient(50.4deg, #435CFF 0%, #B3BEFF 100%)',
   buttonIcon: '#FFFFFF',
   headerBackground: 'rgba(40, 69, 255, 0.25)',
   headerText: 'rgba(14, 19, 29, 1)',
@@ -25,7 +25,7 @@ const lightColors: Required<EliteaAssistantColors> = {
 };
 
 const darkColors: Required<EliteaAssistantColors> = {
-  buttonBackground: 'linear-gradient(50.4deg, #C428DD 0%, rgba(196, 40, 221, 0.3) 100%)',
+  buttonBackground: 'linear-gradient(50.4deg, #C428DD 0%, #8A1B9E 100%)',
   buttonIcon: '#FFFFFF',
   headerBackground: 'rgba(245, 81, 249, 0.3)',
   headerText: 'rgba(255, 255, 255, 1)',
