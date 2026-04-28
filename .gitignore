@@ -1,6 +1,5 @@
 node_modules/
 .vite
-dist/
 .vite/
 *.tsbuildinfo
 .env
