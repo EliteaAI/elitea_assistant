@@ -1,11 +1,25 @@
-import React, { forwardRef, useImperativeHandle, useMemo, useState } from 'react';
+import React, {
+  forwardRef,
+  useCallback,
+  useEffect,
+  useImperativeHandle,
+  useMemo,
+  useRef,
+  useState,
+} from 'react';
 
-import { ChatButton, ChatWindow } from '@/components/chat';
+import { ChatButton, ChatWindow, PopupMessage } from '@/components/chat';
+import { playPopupSound } from '@/lib/utils';
 import '@/styles/index.css';
 import { colorsToCSSProperties, resolveColors } from '@/theme/colors';
 import type { TEliteaAssistantProps, TEliteaAssistantRef, TMessage } from '@/types';
 
+const POPUP_TEXT = 'Hi! Need help? Ask me!';
+const POPUP_DURATION = 12000;
+
 const EliteaAssistant = forwardRef<TEliteaAssistantRef, TEliteaAssistantProps>((props, ref) => {
+  const popupTimerRef = useRef<ReturnType<typeof setTimeout> | null>(null);
+
   const {
     apiUrl: _apiUrl,
     token: _token,
@@ -17,8 +31,16 @@ const EliteaAssistant = forwardRef<TEliteaAssistantRef, TEliteaAssistantProps>((
     colors,
   } = props;
 
+  const cssVars = useMemo(() => colorsToCSSProperties(resolveColors(theme, colors)), [theme, colors]);
+
+  // UI state
   const [isOpen, setIsOpen] = useState(false);
   const [isExpanded, setIsExpanded] = useState(false);
+
+  // Popup state
+  const [showPopup, setShowPopup] = useState(false);
+
+  // Chat state
   const [inputText, setInputText] = useState('');
   const [files, setFiles] = useState<File[]>([]);
   const [messages, setMessages] = useState<TMessage[]>(() =>
@@ -34,7 +56,41 @@ const EliteaAssistant = forwardRef<TEliteaAssistantRef, TEliteaAssistantProps>((
       : [],
   );
 
-  const cssVars = useMemo(() => colorsToCSSProperties(resolveColors(theme, colors)), [theme, colors]);
+  const hidePopup = useCallback(() => {
+    setShowPopup(false);
+
+    if (popupTimerRef.current) {
+      clearTimeout(popupTimerRef.current);
+      popupTimerRef.current = null;
+    }
+  }, []);
+
+  const displayPopup = useCallback(() => {
+    if (isOpen) return;
+
+    setShowPopup(true);
+    playPopupSound();
+
+    popupTimerRef.current = setTimeout(hidePopup, POPUP_DURATION);
+  }, [isOpen, hidePopup]);
+
+  useEffect(() => {
+    // Mock implementation - in future will be based on actual user activity and context
+    const timeout = setTimeout(() => {
+      displayPopup();
+    }, 3000);
+
+    // Cleanup on unmount
+    return () => {
+      if (popupTimerRef.current) clearTimeout(popupTimerRef.current);
+      clearTimeout(timeout);
+    };
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, []);
+
+  useEffect(() => {
+    if (isOpen) hidePopup();
+  }, [isOpen, hidePopup]);
 
   useImperativeHandle(
     ref,
@@ -45,13 +101,15 @@ const EliteaAssistant = forwardRef<TEliteaAssistantRef, TEliteaAssistantProps>((
       expandFullscreen: () => setIsExpanded(true),
       collapseFullscreen: () => setIsExpanded(false),
       toggleFullscreen: () => setIsExpanded(prev => !prev),
+      showPopup: displayPopup,
+      hidePopup,
       isOpen: () => isOpen,
       isExpanded: () => isExpanded,
     }),
-    [isOpen, isExpanded],
+    [isOpen, isExpanded, displayPopup, hidePopup],
   );
 
-  const handleSend = (text: string) => {
+  const handleSend = useCallback((text: string) => {
     const userMessage: TMessage = {
       id: crypto.randomUUID(),
       role: 'user',
@@ -70,7 +128,7 @@ const EliteaAssistant = forwardRef<TEliteaAssistantRef, TEliteaAssistantProps>((
       };
       setMessages(prev => [...prev, assistantMessage]);
     }, 500);
-  };
+  }, []);
 
   return (
     <div
@@ -90,6 +148,12 @@ const EliteaAssistant = forwardRef<TEliteaAssistantRef, TEliteaAssistantProps>((
           onClose={() => setIsOpen(false)}
           expanded={isExpanded}
           onExpand={() => setIsExpanded(prev => !prev)}
+        />
+      )}
+      {showPopup && !isOpen && (
+        <PopupMessage
+          message={POPUP_TEXT}
+          onClose={hidePopup}
         />
       )}
       <ChatButton onClick={() => setIsOpen(prev => !prev)} />
