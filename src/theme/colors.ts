@@ -22,6 +22,11 @@ const lightColors: Required<TEliteaAssistantColors> = {
   sendButtonIcon: 'rgba(255, 255, 255, 1)',
   chatWindowBorder: 'rgba(141, 156, 255, 1)',
   chatWindowShadow: '0 0.5rem 1.875rem rgba(0, 0, 0, 0.12)',
+  popupBackground: 'linear-gradient(222.3deg, rgba(196, 203, 255, 1) 3.16%, rgba(245, 246, 255, 1) 100%)',
+  popupBorder: 'linear-gradient(50.63deg, rgba(107, 127, 255, 1) 0%, rgba(135, 151, 255, 0.4) 100%)',
+  popupText: '#1A1A2E',
+  popupCloseBackground: 'rgba(61, 68, 86, 0.15)',
+  popupCloseHoverBackground: 'rgba(61, 68, 86, 0.25)',
 };
 
 const darkColors: Required<TEliteaAssistantColors> = {
@@ -46,6 +51,11 @@ const darkColors: Required<TEliteaAssistantColors> = {
   sendButtonIcon: 'rgba(14, 19, 29, 1)',
   chatWindowBorder: 'rgba(245, 81, 249, 0.6)',
   chatWindowShadow: '0 0 1.875rem rgba(15, 34, 71, 0.3)',
+  popupBackground: 'linear-gradient(222.3deg, #101721 3.16%, #79237b 100%)',
+  popupBorder: 'linear-gradient(50.63deg, #c428dd 0%, rgba(196, 40, 221, 0.2) 100%)',
+  popupText: '#FFFFFF',
+  popupCloseBackground: 'rgba(255, 255, 255, 0.2)',
+  popupCloseHoverBackground: 'rgba(255, 255, 255, 0.35)',
 };
 
 const themeMap = {
@@ -83,4 +93,9 @@ export const colorsToCSSProperties = (colors: Required<TEliteaAssistantColors>):
   '--elitea-assistant-send-btn-icon': colors.sendButtonIcon,
   '--elitea-assistant-window-border': colors.chatWindowBorder,
   '--elitea-assistant-window-shadow': colors.chatWindowShadow,
+  '--elitea-assistant-popup-bg': colors.popupBackground,
+  '--elitea-assistant-popup-border': colors.popupBorder,
+  '--elitea-assistant-popup-text': colors.popupText,
+  '--elitea-assistant-popup-close-bg': colors.popupCloseBackground,
+  '--elitea-assistant-popup-close-hover-bg': colors.popupCloseHoverBackground,
 });

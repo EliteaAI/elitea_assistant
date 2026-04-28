@@ -20,6 +20,11 @@ export type TEliteaAssistantColors = {
   sendButtonIcon?: string;
   chatWindowBorder?: string;
   chatWindowShadow?: string;
+  popupBackground?: string;
+  popupBorder?: string;
+  popupText?: string;
+  popupCloseBackground?: string;
+  popupCloseHoverBackground?: string;
 };
 
 export type TEliteaAssistantPosition = 'bottom-right' | 'bottom-left';
@@ -49,6 +54,8 @@ export type TEliteaAssistantRef = {
   expandFullscreen: () => void;
   collapseFullscreen: () => void;
   toggleFullscreen: () => void;
+  showPopup: () => void;
+  hidePopup: () => void;
   isOpen: () => boolean;
   isExpanded: () => boolean;
 };
