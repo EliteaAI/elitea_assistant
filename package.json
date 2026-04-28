@@ -24,7 +24,7 @@
     "lint:fix": "eslint src/ --fix",
     "format": "prettier --write \"src/**/*.{ts,tsx,css}\"",
     "format:check": "prettier --check \"src/**/*.{ts,tsx,css}\"",
-    "prepare": "husky && npm run build"
+    "prepare": "husky"
   },
   "peerDependencies": {
     "react": ">=17.0.0",
