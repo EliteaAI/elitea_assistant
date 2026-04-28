@@ -1,6 +1,6 @@
-import type { EliteaAssistantColors } from '@/types';
+import type { TEliteaAssistantColors } from '@/types';
 
-const lightColors: Required<EliteaAssistantColors> = {
+const lightColors: Required<TEliteaAssistantColors> = {
   buttonBackground: 'linear-gradient(50.4deg, #435CFF 0%, #B3BEFF 100%)',
   buttonIcon: '#FFFFFF',
   headerBackground: 'rgba(40, 69, 255, 0.25)',
@@ -24,7 +24,7 @@ const lightColors: Required<EliteaAssistantColors> = {
   chatWindowShadow: '0 0.5rem 1.875rem rgba(0, 0, 0, 0.12)',
 };
 
-const darkColors: Required<EliteaAssistantColors> = {
+const darkColors: Required<TEliteaAssistantColors> = {
   buttonBackground: 'linear-gradient(50.4deg, #C428DD 0%, #8A1B9E 100%)',
   buttonIcon: '#FFFFFF',
   headerBackground: 'rgba(245, 81, 249, 0.3)',
@@ -55,13 +55,13 @@ const themeMap = {
 
 export const resolveColors = (
   theme: 'light' | 'dark',
-  overrides?: EliteaAssistantColors,
-): Required<EliteaAssistantColors> => ({
+  overrides?: TEliteaAssistantColors,
+): Required<TEliteaAssistantColors> => ({
   ...themeMap[theme],
   ...overrides,
 });
 
-export const colorsToCSSProperties = (colors: Required<EliteaAssistantColors>): Record<string, string> => ({
+export const colorsToCSSProperties = (colors: Required<TEliteaAssistantColors>): Record<string, string> => ({
   '--elitea-assistant-button-bg': colors.buttonBackground,
   '--elitea-assistant-button-icon': colors.buttonIcon,
   '--elitea-assistant-header-bg': colors.headerBackground,

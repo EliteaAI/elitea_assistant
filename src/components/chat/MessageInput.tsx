@@ -1,9 +1,9 @@
-import React, { useRef, useState } from 'react';
+import React, { memo, useRef, useState } from 'react';
 
-import { Tooltip } from '@/components/Tooltip';
 import { AttachmentIcon, CloseIcon, FileIcon, SendIcon } from '@/components/icons';
+import { Tooltip } from '@/components/shared';
 
-interface MessageInputProps {
+type TMessageInputProps = {
   placeholder: string;
   text: string;
   onTextChange: (text: string) => void;
@@ -11,9 +11,9 @@ interface MessageInputProps {
   onFilesChange: (files: File[]) => void;
   onSend: (text: string, files?: File[]) => void;
   expanded?: boolean;
-}
+};
 
-export const MessageInput: React.FC<MessageInputProps> = props => {
+const MessageInput: React.FC<TMessageInputProps> = memo(props => {
   const { placeholder, text, onTextChange, files, onFilesChange, onSend, expanded } = props;
 
   const fileInputRef = useRef<HTMLInputElement>(null);
@@ -127,4 +127,8 @@ export const MessageInput: React.FC<MessageInputProps> = props => {
       </div>
     </div>
   );
-};
+});
+
+MessageInput.displayName = 'MessageInput';
+
+export default MessageInput;

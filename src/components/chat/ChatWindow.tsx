@@ -1,15 +1,14 @@
-import React from 'react';
+import React, { memo } from 'react';
 
 import { CloseIcon, ExpandIcon, HistoryIcon, PlusIcon } from '@/components/icons';
-import type { Message } from '@/types';
+import type { TMessage } from '@/types';
 
-import { MessageInput } from './MessageInput';
-import { MessageList } from './MessageList';
+import { MessageInput, MessageList } from './';
 
-interface ChatWindowProps {
+type TChatWindowProps = {
   title: string;
   placeholder: string;
-  messages: Message[];
+  messages: TMessage[];
   text: string;
   onTextChange: (text: string) => void;
   files: File[];
@@ -20,9 +19,9 @@ interface ChatWindowProps {
   onHistory?: () => void;
   onExpand?: () => void;
   expanded?: boolean;
-}
+};
 
-export const ChatWindow: React.FC<ChatWindowProps> = props => {
+const ChatWindow: React.FC<TChatWindowProps> = memo(props => {
   const {
     title,
     placeholder,
@@ -105,4 +104,8 @@ export const ChatWindow: React.FC<ChatWindowProps> = props => {
   }
 
   return window;
-};
+});
+
+ChatWindow.displayName = 'ChatWindow';
+
+export default ChatWindow;

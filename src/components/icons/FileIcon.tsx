@@ -1,6 +1,6 @@
-import React from 'react';
+import React, { memo } from 'react';
 
-export const FileIcon: React.FC = () => (
+const FileIcon: React.FC = memo(() => (
   <svg
     viewBox="0 0 12 14"
     xmlns="http://www.w3.org/2000/svg"
@@ -12,4 +12,8 @@ export const FileIcon: React.FC = () => (
       fill="currentColor"
     />
   </svg>
-);
+));
+
+FileIcon.displayName = 'FileIcon';
+
+export default FileIcon;
