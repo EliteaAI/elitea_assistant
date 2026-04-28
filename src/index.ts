@@ -1,2 +1,8 @@
 export { EliteaAssistant } from '@/EliteaAssistant';
-export type { EliteaAssistantProps, EliteaAssistantColors, EliteaAssistantPosition, Message } from '@/types';
+export type {
+  TEliteaAssistantColors,
+  TEliteaAssistantProps,
+  TEliteaAssistantPosition,
+  TEliteaAssistantRef,
+  TMessage,
+} from '@/types';

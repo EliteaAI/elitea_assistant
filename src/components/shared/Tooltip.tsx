@@ -1,14 +1,15 @@
-import React, { useCallback, useLayoutEffect, useRef, useState } from 'react';
+import React, { memo, useCallback, useLayoutEffect, useRef, useState } from 'react';
 
 import { createPortal } from 'react-dom';
 
-interface TooltipProps {
+type TTooltipProps = {
   content: string;
   children: React.ReactNode;
   placement?: 'top' | 'bottom';
-}
+};
 
-export const Tooltip: React.FC<TooltipProps> = ({ content, children, placement = 'top' }) => {
+const Tooltip: React.FC<TTooltipProps> = memo(props => {
+  const { content, children, placement = 'top' } = props;
   const triggerRef = useRef<HTMLDivElement>(null);
   const tooltipRef = useRef<HTMLDivElement>(null);
 
@@ -47,12 +48,8 @@ export const Tooltip: React.FC<TooltipProps> = ({ content, children, placement =
   }, [placement]);
 
   useLayoutEffect(() => {
-    if (visible && tooltipRef.current) {
-      updatePosition();
-    }
-    if (!visible) {
-      setPositioned(false);
-    }
+    if (visible && tooltipRef.current) updatePosition();
+    if (!visible) setPositioned(false);
   }, [visible, updatePosition]);
 
   return (
@@ -97,4 +94,8 @@ export const Tooltip: React.FC<TooltipProps> = ({ content, children, placement =
         )}
     </>
   );
-};
+});
+
+Tooltip.displayName = 'Tooltip';
+
+export default Tooltip;

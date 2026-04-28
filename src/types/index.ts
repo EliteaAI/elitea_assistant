@@ -1,4 +1,4 @@
-export interface EliteaAssistantColors {
+export type TEliteaAssistantColors = {
   buttonBackground?: string;
   buttonIcon?: string;
   headerBackground?: string;
@@ -20,24 +20,35 @@ export interface EliteaAssistantColors {
   sendButtonIcon?: string;
   chatWindowBorder?: string;
   chatWindowShadow?: string;
-}
+};
 
-export type EliteaAssistantPosition = 'bottom-right' | 'bottom-left';
+export type TEliteaAssistantPosition = 'bottom-right' | 'bottom-left';
 
-export interface EliteaAssistantProps {
+export type TEliteaAssistantProps = {
   apiUrl: string;
   token: string;
   title?: string;
   placeholder?: string;
   welcomeMessage?: string;
-  position?: EliteaAssistantPosition;
+  position?: TEliteaAssistantPosition;
   theme?: 'light' | 'dark';
-  colors?: EliteaAssistantColors;
-}
+  colors?: TEliteaAssistantColors;
+};
 
-export interface Message {
+export type TMessage = {
   id: string;
   role: 'user' | 'assistant';
   content: string;
   timestamp: number;
-}
+};
+
+export type TEliteaAssistantRef = {
+  open: () => void;
+  close: () => void;
+  toggle: () => void;
+  expandFullscreen: () => void;
+  collapseFullscreen: () => void;
+  toggleFullscreen: () => void;
+  isOpen: () => boolean;
+  isExpanded: () => boolean;
+};

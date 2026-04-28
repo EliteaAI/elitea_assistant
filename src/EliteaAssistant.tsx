@@ -1,12 +1,11 @@
-import React, { useMemo, useState } from 'react';
+import React, { forwardRef, useImperativeHandle, useMemo, useState } from 'react';
 
-import { ChatButton } from '@/components/chat/ChatButton';
-import { ChatWindow } from '@/components/chat/ChatWindow';
+import { ChatButton, ChatWindow } from '@/components/chat';
 import '@/styles/index.css';
 import { colorsToCSSProperties, resolveColors } from '@/theme/colors';
-import type { EliteaAssistantProps, Message } from '@/types';
+import type { TEliteaAssistantProps, TEliteaAssistantRef, TMessage } from '@/types';
 
-export const EliteaAssistant: React.FC<EliteaAssistantProps> = props => {
+const EliteaAssistant = forwardRef<TEliteaAssistantRef, TEliteaAssistantProps>((props, ref) => {
   const {
     apiUrl: _apiUrl,
     token: _token,
@@ -22,7 +21,7 @@ export const EliteaAssistant: React.FC<EliteaAssistantProps> = props => {
   const [isExpanded, setIsExpanded] = useState(false);
   const [inputText, setInputText] = useState('');
   const [files, setFiles] = useState<File[]>([]);
-  const [messages, setMessages] = useState<Message[]>(() =>
+  const [messages, setMessages] = useState<TMessage[]>(() =>
     welcomeMessage
       ? [
           {
@@ -37,8 +36,23 @@ export const EliteaAssistant: React.FC<EliteaAssistantProps> = props => {
 
   const cssVars = useMemo(() => colorsToCSSProperties(resolveColors(theme, colors)), [theme, colors]);
 
+  useImperativeHandle(
+    ref,
+    () => ({
+      open: () => setIsOpen(true),
+      close: () => setIsOpen(false),
+      toggle: () => setIsOpen(prev => !prev),
+      expandFullscreen: () => setIsExpanded(true),
+      collapseFullscreen: () => setIsExpanded(false),
+      toggleFullscreen: () => setIsExpanded(prev => !prev),
+      isOpen: () => isOpen,
+      isExpanded: () => isExpanded,
+    }),
+    [isOpen, isExpanded],
+  );
+
   const handleSend = (text: string) => {
-    const userMessage: Message = {
+    const userMessage: TMessage = {
       id: crypto.randomUUID(),
       role: 'user',
       content: text,
@@ -48,7 +62,7 @@ export const EliteaAssistant: React.FC<EliteaAssistantProps> = props => {
 
     // Placeholder echo response — will be replaced with API call in future iteration
     setTimeout(() => {
-      const assistantMessage: Message = {
+      const assistantMessage: TMessage = {
         id: crypto.randomUUID(),
         role: 'assistant',
         content: `Echo: ${text}`,
@@ -81,4 +95,8 @@ export const EliteaAssistant: React.FC<EliteaAssistantProps> = props => {
       <ChatButton onClick={() => setIsOpen(prev => !prev)} />
     </div>
   );
-};
+});
+
+EliteaAssistant.displayName = 'EliteaAssistant';
+
+export { EliteaAssistant };

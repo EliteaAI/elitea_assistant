@@ -1,12 +1,12 @@
-import React from 'react';
+import React, { memo } from 'react';
 
 import { AssistantIcon } from '@/components/icons';
 
-interface ChatButtonProps {
+type TChatButtonProps = {
   onClick: () => void;
-}
+};
 
-export const ChatButton: React.FC<ChatButtonProps> = props => {
+const ChatButton: React.FC<TChatButtonProps> = memo(props => {
   const { onClick } = props;
 
   return (
@@ -19,4 +19,8 @@ export const ChatButton: React.FC<ChatButtonProps> = props => {
       <AssistantIcon />
     </button>
   );
-};
+});
+
+ChatButton.displayName = 'ChatButton';
+
+export default ChatButton;

@@ -1,14 +1,14 @@
-import React, { useEffect, useRef } from 'react';
+import React, { memo, useEffect, useRef } from 'react';
 
 import { AssistantIcon, UserIcon } from '@/components/icons';
 import { formatTime } from '@/lib/utils';
-import type { Message } from '@/types';
+import type { TMessage } from '@/types';
 
-interface MessageListProps {
-  messages: Message[];
-}
+type TMessageListProps = {
+  messages: TMessage[];
+};
 
-export const MessageList: React.FC<MessageListProps> = props => {
+const MessageList: React.FC<TMessageListProps> = memo(props => {
   const { messages } = props;
   const bottomRef = useRef<HTMLDivElement>(null);
 
@@ -48,4 +48,8 @@ export const MessageList: React.FC<MessageListProps> = props => {
       <div ref={bottomRef} />
     </div>
   );
-};
+});
+
+MessageList.displayName = 'MessageList';
+
+export default MessageList;
