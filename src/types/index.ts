@@ -25,6 +25,9 @@ export type TEliteaAssistantColors = {
   popupText?: string;
   popupCloseBackground?: string;
   popupCloseHoverBackground?: string;
+  historyDropdownBorder?: string;
+  historyDropdownShadow?: string;
+  historyDropdownHoverBackground?: string;
 };
 
 export type TEliteaAssistantPosition = 'bottom-right' | 'bottom-left';
@@ -45,6 +48,14 @@ export type TMessage = {
   role: 'user' | 'assistant';
   content: string;
   timestamp: number;
+};
+
+// TODO: Mock type — will be replaced with BE conversation model when API is ready
+export type TConversation = {
+  id: string;
+  title: string;
+  messages: TMessage[];
+  createdAt: number;
 };
 
 export type TEliteaAssistantRef = {
