@@ -27,6 +27,9 @@ const lightColors: Required<TEliteaAssistantColors> = {
   popupText: '#1A1A2E',
   popupCloseBackground: 'rgba(61, 68, 86, 0.15)',
   popupCloseHoverBackground: 'rgba(61, 68, 86, 0.25)',
+  historyDropdownBorder: 'rgba(203, 206, 213, 1)',
+  historyDropdownShadow: '0 0.25rem 0.75rem rgba(0, 0, 0, 0.08)',
+  historyDropdownHoverBackground: 'rgba(61, 68, 86, 0.06)',
 };
 
 const darkColors: Required<TEliteaAssistantColors> = {
@@ -56,6 +59,9 @@ const darkColors: Required<TEliteaAssistantColors> = {
   popupText: '#FFFFFF',
   popupCloseBackground: 'rgba(255, 255, 255, 0.2)',
   popupCloseHoverBackground: 'rgba(255, 255, 255, 0.35)',
+  historyDropdownBorder: 'rgba(59, 62, 70, 1)',
+  historyDropdownShadow: '0 0.5rem 0.75rem rgba(0, 0, 0, 0.3)',
+  historyDropdownHoverBackground: 'rgba(255, 255, 255, 0.06)',
 };
 
 const themeMap = {
@@ -98,4 +104,7 @@ export const colorsToCSSProperties = (colors: Required<TEliteaAssistantColors>):
   '--elitea-assistant-popup-text': colors.popupText,
   '--elitea-assistant-popup-close-bg': colors.popupCloseBackground,
   '--elitea-assistant-popup-close-hover-bg': colors.popupCloseHoverBackground,
+  '--elitea-assistant-history-dropdown-border': colors.historyDropdownBorder,
+  '--elitea-assistant-history-dropdown-shadow': colors.historyDropdownShadow,
+  '--elitea-assistant-history-dropdown-hover-bg': colors.historyDropdownHoverBackground,
 });

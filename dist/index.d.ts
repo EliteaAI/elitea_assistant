@@ -29,6 +29,9 @@ export declare type TEliteaAssistantColors = {
     popupText?: string;
     popupCloseBackground?: string;
     popupCloseHoverBackground?: string;
+    historyDropdownBorder?: string;
+    historyDropdownShadow?: string;
+    historyDropdownHoverBackground?: string;
 };
 
 export declare type TEliteaAssistantPosition = 'bottom-right' | 'bottom-left';

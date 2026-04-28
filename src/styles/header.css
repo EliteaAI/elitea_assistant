@@ -79,3 +79,55 @@
   height: 1rem;
   fill: var(--elitea-assistant-header-close-icon);
 }
+
+.elitea-assistant-history-wrapper {
+  position: relative;
+}
+
+.elitea-assistant-header-action:disabled {
+  opacity: 0.35;
+  cursor: not-allowed;
+}
+
+.elitea-assistant-history-dropdown {
+  position: absolute;
+  top: calc(100% + 0.55rem);
+  right: -2.65rem;
+  width: 19.125rem;
+  max-height: 21.875rem;
+  overflow-y: auto;
+  background: var(--elitea-assistant-chat-bg);
+  border: 0.0625rem solid var(--elitea-assistant-history-dropdown-border);
+  border-radius: 0.5rem;
+  box-shadow: var(--elitea-assistant-history-dropdown-shadow);
+  z-index: 100;
+  padding: 0.5rem 0;
+}
+
+.elitea-assistant-history-item {
+  display: block;
+  width: 100%;
+  padding: 0.5rem 0.75rem;
+  border: none;
+  background: none;
+  cursor: pointer;
+  text-align: left;
+  color: var(--elitea-assistant-header-text);
+  font-size: 0.875rem;
+  font-weight: 400;
+  line-height: 1.5rem;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  transition: background 0.15s ease;
+}
+
+.elitea-assistant-history-item:hover {
+  background: var(--elitea-assistant-history-dropdown-hover-bg);
+}
+
+.elitea-assistant-history-item:disabled {
+  opacity: 0.45;
+  cursor: default;
+  background: none;
+}
