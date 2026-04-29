@@ -4,6 +4,19 @@ export type TEliteaAssistantColors = {
   headerBackground?: string;
   headerText?: string;
   headerActionBackground?: string;
+  headerActionHoverBackground?: string;
+  headerActionActiveBackground?: string;
+  headerActionActiveColor?: string;
+  headerActionActiveBorder?: string;
+  headerActionDisabledBackground?: string;
+  headerActionDisabledColor?: string;
+  headerCloseBackground?: string;
+  headerCloseHoverBackground?: string;
+  headerCloseHoverColor?: string;
+  headerCloseActiveBackground?: string;
+  headerCloseActiveColor?: string;
+  headerCloseDisabledBackground?: string;
+  headerCloseDisabledColor?: string;
   headerCloseIcon?: string;
   chatBackground?: string;
   userMessageBackground?: string;
@@ -12,6 +25,7 @@ export type TEliteaAssistantColors = {
   assistantMessageText?: string;
   inputBackground?: string;
   inputText?: string;
+  inputPlaceholder?: string;
   inputBorder?: string;
   userAvatarBackground?: string;
   userAvatarIcon?: string;

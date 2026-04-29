@@ -30,7 +30,8 @@
 }
 
 .elitea-assistant-input::placeholder {
-  opacity: 0.5;
+  color: var(--elitea-assistant-input-placeholder);
+  opacity: 1;
 }
 
 .elitea-assistant-attach-button {

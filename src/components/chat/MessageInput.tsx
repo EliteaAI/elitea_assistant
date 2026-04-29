@@ -108,12 +108,14 @@ const MessageInput: React.FC<TMessageInputProps> = memo(props => {
           <AttachmentIcon />
         </button>
         <textarea
+          id="elitea-assistant-message-input"
           className="elitea-assistant-input"
           value={text}
           onChange={e => onTextChange(e.target.value)}
           onKeyDown={handleKeyDown}
           placeholder={placeholder}
           rows={1}
+          autoFocus
         />
         <button
           className="elitea-assistant-send-button"

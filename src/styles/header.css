@@ -21,7 +21,7 @@
 .elitea-assistant-header-right {
   display: flex;
   align-items: center;
-  gap: 0.25rem;
+  gap: 0.5rem;
 }
 
 .elitea-assistant-header-title {
@@ -32,52 +32,79 @@
 }
 
 .elitea-assistant-header-action {
-  background: none;
-  border: none;
-  color: inherit;
+  border: 0.0625rem solid transparent;
+  color: var(--elitea-assistant-header-text);
   cursor: pointer;
-  padding: 0.25rem;
+  padding: 0;
   display: flex;
   align-items: center;
   justify-content: center;
-  border-radius: 0.25rem;
-  opacity: 0.8;
-  transition: opacity 0.15s ease;
   border-radius: 50%;
-  padding: 0.375rem;
+  width: 1.75rem;
+  height: 1.75rem;
+  min-width: auto;
+  box-shadow: none;
   background: var(--elitea-assistant-header-action-bg);
+  transition:
+    background 0.15s ease,
+    color 0.15s ease,
+    border-color 0.15s ease;
 }
 
 .elitea-assistant-header-close-action {
   border: none;
-  color: inherit;
+  color: var(--elitea-assistant-header-close-icon);
   cursor: pointer;
-  padding: 0.25rem;
+  padding: 0;
   display: flex;
   align-items: center;
   justify-content: center;
-  border-radius: 0.25rem;
-  opacity: 0.8;
-  transition: opacity 0.15s ease;
   border-radius: 50%;
-  padding: 0.375rem;
-  background: transparent;
+  width: 1.75rem;
+  height: 1.75rem;
+  min-width: auto;
+  background: var(--elitea-assistant-header-close-bg);
+  transition:
+    background 0.15s ease,
+    color 0.15s ease;
+}
+
+.elitea-assistant-header-close-action:hover {
+  background: var(--elitea-assistant-header-close-hover-bg);
+  color: var(--elitea-assistant-header-close-hover-color);
+}
+
+.elitea-assistant-header-close-action:active {
+  background: var(--elitea-assistant-header-close-active-bg);
+  color: var(--elitea-assistant-header-close-active-color);
+}
+
+.elitea-assistant-header-close-action:disabled {
+  background: var(--elitea-assistant-header-close-disabled-bg);
+  color: var(--elitea-assistant-header-close-disabled-color);
+  cursor: not-allowed;
 }
 
 .elitea-assistant-header-action:hover {
-  opacity: 1;
+  background: var(--elitea-assistant-header-action-hover-bg);
+}
+
+.elitea-assistant-header-action:active {
+  background: var(--elitea-assistant-header-action-active-bg);
+  color: var(--elitea-assistant-header-action-active-color);
+  border-color: var(--elitea-assistant-header-action-active-border);
 }
 
 .elitea-assistant-header-action svg {
-  width: 0.75rem;
-  height: 0.75rem;
+  width: 1rem;
+  height: 1rem;
   fill: currentColor;
 }
 
 .elitea-assistant-header-close-action svg {
-  width: 1rem;
-  height: 1rem;
-  fill: var(--elitea-assistant-header-close-icon);
+  width: 1.3rem;
+  height: 1.3rem;
+  fill: currentColor;
 }
 
 .elitea-assistant-history-wrapper {
@@ -85,8 +112,13 @@
 }
 
 .elitea-assistant-header-action:disabled {
-  opacity: 0.35;
+  background: var(--elitea-assistant-header-action-disabled-bg);
+  color: var(--elitea-assistant-header-action-disabled-color);
   cursor: not-allowed;
+}
+
+.elitea-assistant-header-action:disabled:hover {
+  background: var(--elitea-assistant-header-action-disabled-bg);
 }
 
 .elitea-assistant-history-dropdown {
