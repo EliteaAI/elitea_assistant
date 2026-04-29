@@ -159,7 +159,7 @@ const EliteaAssistant = forwardRef<TEliteaAssistantRef, TEliteaAssistantProps>((
     // Mock implementation - in future will be based on actual user activity and context
     const timeout = setTimeout(() => {
       displayPopup();
-    }, 3000);
+    }, 12000);
 
     // Cleanup on unmount
     return () => {
