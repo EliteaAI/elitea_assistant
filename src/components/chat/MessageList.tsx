@@ -1,8 +1,8 @@
 import React, { memo, useEffect, useRef } from 'react';
 
 import { AssistantIcon, UserIcon } from '@/components/icons';
+import type { TMessage } from '@/lib/types';
 import { formatTime } from '@/lib/utils';
-import type { TMessage } from '@/types';
 
 type TMessageListProps = {
   messages: TMessage[];
