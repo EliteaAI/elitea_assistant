@@ -1,4 +1,4 @@
-import type { TEliteaAssistantColors } from '@/types';
+import type { TEliteaAssistantColors } from '@/lib/types';
 
 const lightColors: Required<TEliteaAssistantColors> = {
   buttonBackground: 'linear-gradient(50.4deg, #435CFF 0%, #B3BEFF 100%)',

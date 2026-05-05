@@ -1,8 +1,35 @@
 (function(){"use strict";try{if(typeof document<"u"){var e=document.createElement("style");e.appendChild(document.createTextNode('@import"https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700&display=swap";.elitea-assistant-container{position:fixed;z-index:2147483647;font-family:Montserrat,sans-serif;font-size:.875rem;line-height:1.5;box-sizing:border-box}.elitea-assistant-container *,.elitea-assistant-container *:before,.elitea-assistant-container *:after{box-sizing:border-box}.elitea-assistant-container--bottom-right{bottom:.75rem;right:1.09375rem}.elitea-assistant-container--bottom-left{bottom:.75rem;left:1.09375rem}.elitea-assistant-button{width:1.75rem;height:1.75rem;border-radius:50%;border:none;cursor:pointer;display:flex;align-items:center;justify-content:center;background:var(--elitea-assistant-button-bg);color:var(--elitea-assistant-button-icon);box-shadow:0 .25rem .75rem #00000026;transition:transform .2s ease,box-shadow .2s ease;padding:0}.elitea-assistant-button:hover{transform:scale(1.08);box-shadow:0 .375rem 1.25rem #0003}.elitea-assistant-button svg{width:1.75rem;height:1.75rem;fill:currentColor}.elitea-assistant-window{position:absolute;bottom:0rem;width:28.75rem;height:30rem;border-radius:1rem;overflow:hidden;display:flex;flex-direction:column;box-shadow:var(--elitea-assistant-window-shadow);background:var(--elitea-assistant-chat-bg);border:.0625rem solid var(--elitea-assistant-window-border);animation:elitea-assistant-slide-up .25s ease-out}.elitea-assistant-container--bottom-right .elitea-assistant-window{right:2.875rem}.elitea-assistant-container--bottom-left .elitea-assistant-window{left:2.875rem}@keyframes elitea-assistant-slide-up{0%{opacity:0;transform:translateY(.75rem)}to{opacity:1;transform:translateY(0)}}.elitea-assistant-overlay{position:fixed;top:0;right:0;bottom:0;left:0;z-index:2147483646;background:#00000080;display:flex;align-items:center;justify-content:center;animation:elitea-assistant-fade-in .2s ease-out}@keyframes elitea-assistant-fade-in{0%{opacity:0}to{opacity:1}}.elitea-assistant-window--expanded{position:static;width:45rem;height:42.375rem;animation:elitea-assistant-scale-in .2s ease-out}@keyframes elitea-assistant-scale-in{0%{opacity:0;transform:scale(.95)}to{opacity:1;transform:scale(1)}}.elitea-assistant-header{display:flex;align-items:center;justify-content:space-between;height:3.25rem;padding:0 1rem;background:var(--elitea-assistant-header-bg);color:var(--elitea-assistant-header-text);flex-shrink:0;border-bottom:.0625rem solid var(--elitea-assistant-window-border)}.elitea-assistant-header-left,.elitea-assistant-header-right{display:flex;align-items:center;gap:.5rem}.elitea-assistant-header-title{font-size:.9375rem;font-weight:600;margin:0;white-space:nowrap}.elitea-assistant-header-action{border:.0625rem solid transparent;color:var(--elitea-assistant-header-text);cursor:pointer;padding:0;display:flex;align-items:center;justify-content:center;border-radius:50%;width:1.75rem;height:1.75rem;min-width:auto;box-shadow:none;background:var(--elitea-assistant-header-action-bg);transition:background .15s ease,color .15s ease,border-color .15s ease}.elitea-assistant-header-close-action{border:none;color:var(--elitea-assistant-header-close-icon);cursor:pointer;padding:0;display:flex;align-items:center;justify-content:center;border-radius:50%;width:1.75rem;height:1.75rem;min-width:auto;background:var(--elitea-assistant-header-close-bg);transition:background .15s ease,color .15s ease}.elitea-assistant-header-close-action:hover{background:var(--elitea-assistant-header-close-hover-bg);color:var(--elitea-assistant-header-close-hover-color)}.elitea-assistant-header-close-action:active{background:var(--elitea-assistant-header-close-active-bg);color:var(--elitea-assistant-header-close-active-color)}.elitea-assistant-header-close-action:disabled{background:var(--elitea-assistant-header-close-disabled-bg);color:var(--elitea-assistant-header-close-disabled-color);cursor:not-allowed}.elitea-assistant-header-action:hover{background:var(--elitea-assistant-header-action-hover-bg)}.elitea-assistant-header-action:active{background:var(--elitea-assistant-header-action-active-bg);color:var(--elitea-assistant-header-action-active-color);border-color:var(--elitea-assistant-header-action-active-border)}.elitea-assistant-header-action svg{width:1rem;height:1rem;fill:currentColor}.elitea-assistant-header-close-action svg{width:1.3rem;height:1.3rem;fill:currentColor}.elitea-assistant-history-wrapper{position:relative}.elitea-assistant-header-action:disabled{background:var(--elitea-assistant-header-action-disabled-bg);color:var(--elitea-assistant-header-action-disabled-color);cursor:not-allowed}.elitea-assistant-header-action:disabled:hover{background:var(--elitea-assistant-header-action-disabled-bg)}.elitea-assistant-history-dropdown{position:absolute;top:calc(100% + .55rem);right:-2.65rem;width:19.125rem;max-height:21.875rem;overflow-y:auto;background:var(--elitea-assistant-chat-bg);border:.0625rem solid var(--elitea-assistant-history-dropdown-border);border-radius:.5rem;box-shadow:var(--elitea-assistant-history-dropdown-shadow);z-index:100;padding:.5rem 0}.elitea-assistant-history-item{display:block;width:100%;padding:.5rem .75rem;border:none;background:none;cursor:pointer;text-align:left;color:var(--elitea-assistant-header-text);font-size:.875rem;font-weight:400;line-height:1.5rem;overflow:hidden;text-overflow:ellipsis;white-space:nowrap;transition:background .15s ease}.elitea-assistant-history-item:hover{background:var(--elitea-assistant-history-dropdown-hover-bg)}.elitea-assistant-history-item:disabled{opacity:.45;cursor:default;background:none}.elitea-assistant-messages{flex:1;overflow-y:auto;padding:1rem;display:flex;flex-direction:column;gap:.625rem}.elitea-assistant-message-wrapper{display:flex;flex-direction:column;max-width:80%}.elitea-assistant-message-wrapper--user{align-self:flex-end}.elitea-assistant-message-wrapper--assistant{align-self:flex-start}.elitea-assistant-message-meta{display:flex;align-items:center;gap:.375rem;margin-bottom:.375rem}.elitea-assistant-message-meta--assistant{justify-content:flex-start}.elitea-assistant-message-meta--user{justify-content:flex-end}.elitea-assistant-message-avatar{width:1.5rem;height:1.5rem;border-radius:50%;display:flex;align-items:center;justify-content:center;flex-shrink:0}.elitea-assistant-message-avatar--assistant{background:var(--elitea-assistant-button-bg);color:var(--elitea-assistant-button-icon)}.elitea-assistant-message-avatar--user{background:var(--elitea-assistant-user-avatar-bg);color:var(--elitea-assistant-user-avatar-icon)}.elitea-assistant-message-avatar svg{width:1.25rem;height:1.25rem;fill:currentColor}.elitea-assistant-message-time{font-size:.75rem;opacity:.6;color:var(--elitea-assistant-bot-msg-text)}.elitea-assistant-message{padding:.625rem .875rem;border-radius:.75rem;word-wrap:break-word;white-space:pre-wrap;font-weight:400;font-style:Regular;font-size:.875rem;line-height:1.5rem;letter-spacing:0%}.elitea-assistant-message--user{background:var(--elitea-assistant-user-msg-bg);color:var(--elitea-assistant-user-msg-text);border-radius:1rem 0rem 1rem 1rem}.elitea-assistant-message--assistant{background:var(--elitea-assistant-bot-msg-bg);color:var(--elitea-assistant-bot-msg-text);border-radius:0 1rem 1rem}.elitea-assistant-empty{flex:1;display:flex;align-items:center;justify-content:center;color:var(--elitea-assistant-bot-msg-text);opacity:.5;font-size:.8125rem;text-align:center;padding:1.25rem}.elitea-assistant-input-area{display:flex;flex-direction:column;padding:.75rem;background:var(--elitea-assistant-input-bg);flex-shrink:0;border-top:.0625rem solid var(--elitea-assistant-window-border)}.elitea-assistant-input-row{display:flex;align-items:center;gap:.5rem;width:100%}.elitea-assistant-input{flex:1;padding:.5rem .25rem;border:none;border-radius:0;background:transparent;color:var(--elitea-assistant-input-text);font-size:.875rem;font-family:inherit;outline:none;resize:none}.elitea-assistant-input::placeholder{color:var(--elitea-assistant-input-placeholder);opacity:1}.elitea-assistant-attach-button{width:1.75rem;height:1.75rem;border-radius:50%;border:none;cursor:pointer;display:flex;align-items:center;justify-content:center;background:var(--elitea-assistant-header-action-bg);color:var(--elitea-assistant-header-text);flex-shrink:0;transition:opacity .15s ease;padding:0;opacity:.8}.elitea-assistant-attach-button:hover{opacity:1}.elitea-assistant-attach-button svg{width:.875rem;height:.875rem;fill:currentColor}.elitea-assistant-send-button{width:1.75rem;height:1.75rem;border-radius:50%;border:none;cursor:pointer;display:flex;align-items:center;justify-content:center;background:var(--elitea-assistant-send-btn-bg);color:var(--elitea-assistant-send-btn-icon);flex-shrink:0;transition:background .15s ease;padding:0}.elitea-assistant-send-button:disabled{background:var(--elitea-assistant-send-btn-disabled-bg);cursor:default}.elitea-assistant-send-button svg{width:.875rem;height:.875rem;fill:currentColor}.elitea-assistant-file-list{display:flex;align-items:center;gap:.5rem;padding-bottom:.5rem}.elitea-assistant-file-chip{display:flex;align-items:center;gap:.75rem;max-width:11.25rem;height:2.25rem;padding:.375rem .75rem;border-radius:.5rem;background:var(--elitea-assistant-header-action-bg);flex-shrink:0}.elitea-assistant-file-chip-icon{display:flex;align-items:center;justify-content:center;flex-shrink:0;color:var(--elitea-assistant-header-close-icon)}.elitea-assistant-file-chip-icon svg{width:.75rem;height:.875rem}.elitea-assistant-file-chip-name{flex:1;min-width:0;font-size:.75rem;color:var(--elitea-assistant-input-text);white-space:nowrap;overflow:hidden;text-overflow:ellipsis}.elitea-assistant-file-chip-remove{display:flex;align-items:center;justify-content:center;width:1rem;height:1rem;padding:0;border:none;background:none;cursor:pointer;color:var(--elitea-assistant-header-close-icon);flex-shrink:0;opacity:.7;transition:opacity .15s ease}.elitea-assistant-file-chip-remove:hover{opacity:1}.elitea-assistant-file-chip-remove svg{width:2rem;height:2rem;fill:currentColor}.elitea-assistant-file-chip--count{font-size:.75rem;font-weight:400;color:var(--elitea-assistant-input-text);max-width:none;gap:0}.elitea-assistant-tooltip-trigger{display:inline-flex}.elitea-assistant-tooltip{position:fixed;z-index:99999;padding:.375rem .75rem;border-radius:.375rem;background:#14141ceb;color:#fff;font-size:.75rem;line-height:1.4;white-space:nowrap;max-width:20rem;overflow:hidden;text-overflow:ellipsis;pointer-events:none;box-shadow:0 .25rem 1rem #00000040;animation:elitea-tooltip-in .15s ease-out}@keyframes elitea-tooltip-in{0%{opacity:0;transform:translateY(4px)}to{opacity:1;transform:translateY(0)}}.elitea-assistant-popup{position:absolute;bottom:.25rem;display:flex;align-items:center;gap:1rem;padding:.75rem .75rem .75rem 1.25rem;border-radius:1.5rem 1.5rem 1.5rem 0;background:var(--elitea-assistant-popup-bg);color:var(--elitea-assistant-popup-text);font-size:.875rem;font-weight:500;line-height:1.5rem;white-space:nowrap;box-shadow:0 .25rem 1rem #0003;animation:elitea-assistant-popup-in .3s ease-out}.elitea-assistant-popup:before{content:"";position:absolute;top:-.0625rem;right:-.0625rem;bottom:-.0625rem;left:-.0625rem;border-radius:inherit;padding:.0625rem;background:var(--elitea-assistant-popup-border);-webkit-mask:linear-gradient(#fff 0 0) content-box,linear-gradient(#fff 0 0);-webkit-mask-composite:xor;mask:linear-gradient(#fff 0 0) content-box,linear-gradient(#fff 0 0);mask-composite:exclude;pointer-events:none}.elitea-assistant-container--bottom-right .elitea-assistant-popup{right:2.5rem;flex-direction:row-reverse;padding:.75rem 1.25rem .75rem .75rem;border-radius:1.5rem 1.5rem 0}.elitea-assistant-container--bottom-left .elitea-assistant-popup{left:2.5rem}.elitea-assistant-popup-text{-webkit-user-select:none;user-select:none}.elitea-assistant-popup-close{display:flex;align-items:center;justify-content:center;width:1.75rem;height:1.75rem;flex-shrink:0;border:none;border-radius:50%;background:var(--elitea-assistant-popup-close-bg);color:var(--elitea-assistant-popup-text);cursor:pointer;padding:0;transition:background .15s ease}.elitea-assistant-popup-close:hover{background:var(--elitea-assistant-popup-close-hover-bg)}.elitea-assistant-popup-close svg{width:1rem;height:1rem;fill:currentColor}@keyframes elitea-assistant-popup-in{0%{opacity:0;transform:translateY(.5rem)}to{opacity:1;transform:translateY(0)}}')),document.head.appendChild(e)}}catch(t){console.error("vite-plugin-css-injected-by-js",t)}})();
-import { jsx as t, jsxs as p, Fragment as C1 } from "react/jsx-runtime";
-import { memo as h, useRef as F, useEffect as Z, useState as w, useCallback as B, useLayoutEffect as u1, forwardRef as g1, useMemo as p1, useImperativeHandle as h1 } from "react";
-import { createPortal as m1 } from "react-dom";
-const K = h(() => /* @__PURE__ */ t(
+import { jsx as t, jsxs as y, Fragment as X } from "react/jsx-runtime";
+import { memo as f, useRef as L, useState as H, useCallback as b, useLayoutEffect as Y, useEffect as E, createContext as Q, forwardRef as e1, useMemo as V, useImperativeHandle as t1 } from "react";
+import { createPortal as a1 } from "react-dom";
+const M = (e, a = !1) => ({
+  Authorization: `Bearer ${e}`,
+  ...a && { "Content-Type": "application/json" }
+}), s1 = (e, a) => ({
+  getConfig: () => fetch(`${e}/config`, {
+    headers: M(a)
+  }).then((n) => n.json()),
+  getConversations: () => fetch(`${e}/conversations`, {
+    headers: M(a)
+  }).then((n) => n.json()),
+  createConversation: () => fetch(`${e}/conversations`, {
+    method: "POST",
+    headers: M(a, !0)
+  }).then((n) => n.json()),
+  getMessages: (n) => fetch(`${e}/conversations/${n}/messages`, {
+    headers: M(a)
+  }).then((s) => s.json()),
+  sendMessage: (n, s) => fetch(`${e}/conversations/${n}/messages`, {
+    method: "POST",
+    headers: M(a, !0),
+    body: JSON.stringify({ content: s })
+  }).then((o) => o.json()),
+  deleteConversation: (n) => fetch(`${e}/conversations/${n}`, {
+    method: "DELETE",
+    headers: M(a)
+  }).then(() => {
+  })
+}), D = f(() => /* @__PURE__ */ t(
   "svg",
   {
     viewBox: "0 0 28 28",
@@ -10,8 +37,8 @@ const K = h(() => /* @__PURE__ */ t(
     children: /* @__PURE__ */ t("path", { d: "M14.2499 4.375C14.8319 4.375 15.3037 4.84137 15.3037 5.41666C15.3037 5.87017 15.0104 6.25575 14.6012 6.39877V8.26399H14.9524C15.5109 8.26399 15.9675 8.69328 16.0037 9.23621H18.2544C20.5477 9.23621 22.4397 10.9331 22.7159 13.1259C23.2816 13.1443 23.7344 13.6031 23.7344 14.1667V15.6945C23.7343 16.2697 23.2625 16.7362 22.6805 16.7362C22.6637 16.7362 22.6469 16.7356 22.6302 16.7348C22.2147 18.5198 20.7287 19.6036 18.2544 20.0695C15.3037 20.625 9.26175 21.875 9.26175 21.875L10.1048 20.0695C8.0024 20.0695 6.23719 18.643 5.74513 16.7159C5.67822 16.7291 5.60903 16.7362 5.53821 16.7362C4.95623 16.7362 4.48444 16.2697 4.48438 15.6945V14.1667C4.48438 13.5914 4.95619 13.1251 5.53821 13.1251C5.57345 13.1251 5.60828 13.1267 5.64263 13.1301C5.91693 10.9353 7.81012 9.23621 10.1048 9.23621H12.3556C12.3917 8.69328 12.8484 8.26399 13.4068 8.26399H13.7581V6.33788C13.4239 6.1632 13.1961 5.81633 13.1961 5.41666C13.1961 4.84137 13.6679 4.375 14.2499 4.375ZM11.2289 11.3195C9.44405 11.3195 7.99715 12.7497 7.99715 14.5139V14.6528C7.99721 16.417 9.44409 17.8473 11.2289 17.8473H17.1304C18.9152 17.8473 20.362 16.417 20.3621 14.6528V14.5139C20.3621 12.7497 18.9152 11.3195 17.1304 11.3195H11.2289ZM11.4397 13.5416C12.0217 13.5416 12.4935 14.008 12.4935 14.5833C12.4935 15.1585 12.0217 15.6249 11.4397 15.6249C10.8577 15.6249 10.3858 15.1585 10.3858 14.5833C10.3858 14.008 10.8577 13.5416 11.4397 13.5416ZM16.9196 13.5416C17.5016 13.5416 17.9734 14.008 17.9734 14.5833C17.9734 15.1585 17.5016 15.6249 16.9196 15.6249C16.3376 15.6249 15.8658 15.1585 15.8658 14.5833C15.8658 14.008 16.3376 13.5416 16.9196 13.5416Z" })
   }
 ));
-K.displayName = "AssistantIcon";
-const G = h(() => /* @__PURE__ */ t(
+D.displayName = "AssistantIcon";
+const P = f(() => /* @__PURE__ */ t(
   "svg",
   {
     viewBox: "0 0 12 14",
@@ -19,8 +46,8 @@ const G = h(() => /* @__PURE__ */ t(
     children: /* @__PURE__ */ t("path", { d: "M11.5876 6.6172C11.6361 6.66719 11.6746 6.72656 11.7008 6.7919C11.7271 6.85725 11.7406 6.9273 11.7406 6.99804C11.7406 7.06878 11.7271 7.13883 11.7008 7.20417C11.6746 7.26952 11.6361 7.32889 11.5876 7.37888L6.23589 12.8964C5.55078 13.6031 4.6216 14.0001 3.65277 14C2.68393 13.9999 1.7548 13.6028 1.06978 12.8961C0.384749 12.1893 -6.11425e-05 11.2307 7.28683e-09 10.2313C6.11571e-05 9.2318 0.384988 8.2733 1.0701 7.56661L7.5443 0.789483C8.03342 0.284364 8.69701 0.000378941 9.3891 3.78958e-07C10.0812 -0.000378183 10.7451 0.282881 11.2347 0.787465C11.7243 1.29205 11.9996 1.97662 12 2.69059C12.0004 3.40456 11.7258 4.08943 11.2367 4.59455L4.76116 11.3717C4.46709 11.6751 4.06823 11.8455 3.65235 11.8455C3.23646 11.8455 2.8376 11.6751 2.54353 11.3717C2.24945 11.0683 2.08424 10.6568 2.08424 10.2278C2.08424 9.79877 2.24945 9.38731 2.54353 9.08393L7.97674 3.39012C8.02433 3.33774 8.0816 3.29571 8.14518 3.26651C8.20875 3.23731 8.27735 3.22152 8.34693 3.22008C8.4165 3.21863 8.48566 3.23156 8.55032 3.2581C8.61498 3.28464 8.67385 3.32425 8.72345 3.37461C8.77305 3.42497 8.81238 3.48506 8.83913 3.55133C8.86588 3.61761 8.87951 3.68874 8.87922 3.76053C8.87893 3.83232 8.86472 3.90333 8.83742 3.96937C8.81013 4.03541 8.77031 4.09515 8.7203 4.14508L3.28643 9.84494C3.23778 9.89474 3.19911 9.95393 3.17264 10.0191C3.14616 10.0843 3.13239 10.1543 3.13212 10.225C3.13185 10.2957 3.14507 10.3658 3.17105 10.4312C3.19702 10.4966 3.23523 10.5561 3.2835 10.6063C3.33177 10.6565 3.38914 10.6964 3.45235 10.7237C3.51556 10.751 3.58337 10.7652 3.6519 10.7655C3.72043 10.7658 3.78835 10.7521 3.85176 10.7253C3.91518 10.6985 3.97287 10.6591 4.02152 10.6093L10.4964 3.83556C10.7904 3.53281 10.9559 3.12194 10.9563 2.69335C10.9568 2.26475 10.7921 1.85354 10.4987 1.55016C10.2052 1.24679 9.80691 1.0761 9.39145 1.07566C8.97599 1.07522 8.57737 1.24506 8.2833 1.54781L1.8104 8.32224C1.56791 8.572 1.37549 8.86858 1.24411 9.19506C1.11273 9.52153 1.04496 9.8715 1.04469 10.225C1.04442 10.5785 1.11164 10.9286 1.24252 11.2553C1.37339 11.5819 1.56536 11.8788 1.80747 12.129C2.04957 12.3792 2.33706 12.5777 2.65353 12.7132C2.97 12.8487 3.30924 12.9186 3.6519 12.9189C3.99456 12.9192 4.33391 12.8498 4.65059 12.7148C4.96727 12.5798 5.25506 12.3818 5.49755 12.132L10.8499 6.6145C10.9481 6.51399 11.0809 6.45781 11.2193 6.45831C11.3576 6.45881 11.4901 6.51596 11.5876 6.6172Z" })
   }
 ));
-G.displayName = "AttachmentIcon";
-const b1 = h(() => /* @__PURE__ */ t(
+P.displayName = "AttachmentIcon";
+const n1 = f(() => /* @__PURE__ */ t(
   "svg",
   {
     viewBox: "0 0 24 24",
@@ -28,8 +55,8 @@ const b1 = h(() => /* @__PURE__ */ t(
     children: /* @__PURE__ */ t("path", { d: "M20 2H4C2.9 2 2 2.9 2 4V22L6 18H20C21.1 18 22 17.1 22 16V4C22 2.9 21.1 2 20 2ZM20 16H5.2L4 17.2V4H20V16Z" })
   }
 ));
-b1.displayName = "ChatIcon";
-const U = h(() => /* @__PURE__ */ t(
+n1.displayName = "ChatIcon";
+const F = f(() => /* @__PURE__ */ t(
   "svg",
   {
     viewBox: "0 0 24 24",
@@ -37,8 +64,8 @@ const U = h(() => /* @__PURE__ */ t(
     children: /* @__PURE__ */ t("path", { d: "M19 6.41L17.59 5L12 10.59L6.41 5L5 6.41L10.59 12L5 17.59L6.41 19L12 13.41L17.59 19L19 17.59L13.41 12L19 6.41Z" })
   }
 ));
-U.displayName = "CloseIcon";
-const X = h(() => /* @__PURE__ */ t(
+F.displayName = "CloseIcon";
+const Z = f(() => /* @__PURE__ */ t(
   "svg",
   {
     viewBox: "0 0 12 12",
@@ -46,8 +73,8 @@ const X = h(() => /* @__PURE__ */ t(
     children: /* @__PURE__ */ t("path", { d: "M12 0.545455V3.81818C12 3.96285 11.9425 4.10158 11.8402 4.20388C11.7379 4.30617 11.5992 4.36364 11.4545 4.36364C11.3099 4.36364 11.1711 4.30617 11.0689 4.20388C10.9666 4.10158 10.9091 3.96285 10.9091 3.81818V1.86205L7.47682 5.295C7.37447 5.39735 7.23565 5.45485 7.09091 5.45485C6.94617 5.45485 6.80735 5.39735 6.705 5.295C6.60265 5.19265 6.54515 5.05383 6.54515 4.90909C6.54515 4.76435 6.60265 4.62553 6.705 4.52318L10.138 1.09091H8.18182C8.03715 1.09091 7.89842 1.03344 7.79612 0.931149C7.69383 0.828856 7.63636 0.690118 7.63636 0.545455C7.63636 0.400791 7.69383 0.262053 7.79612 0.15976C7.89842 0.0574675 8.03715 0 8.18182 0H11.4545C11.5992 0 11.7379 0.0574675 11.8402 0.15976C11.9425 0.262053 12 0.400791 12 0.545455ZM4.52318 6.705L1.09091 10.138V8.18182C1.09091 8.03715 1.03344 7.89842 0.931149 7.79612C0.828856 7.69383 0.690118 7.63636 0.545455 7.63636C0.400791 7.63636 0.262053 7.69383 0.15976 7.79612C0.0574675 7.89842 0 8.03715 0 8.18182V11.4545C0 11.5992 0.0574675 11.7379 0.15976 11.8402C0.262053 11.9425 0.400791 12 0.545455 12H3.81818C3.96285 12 4.10158 11.9425 4.20388 11.8402C4.30617 11.7379 4.36364 11.5992 4.36364 11.4545C4.36364 11.3099 4.30617 11.1711 4.20388 11.0689C4.10158 10.9666 3.96285 10.9091 3.81818 10.9091H1.86205L5.295 7.47682C5.39735 7.37447 5.45485 7.23565 5.45485 7.09091C5.45485 6.94617 5.39735 6.80735 5.295 6.705C5.19265 6.60265 5.05383 6.54515 4.90909 6.54515C4.76435 6.54515 4.62553 6.60265 4.52318 6.705Z" })
   }
 ));
-X.displayName = "ExpandIcon";
-const J = h(() => /* @__PURE__ */ t(
+Z.displayName = "ExpandIcon";
+const $ = f(() => /* @__PURE__ */ t(
   "svg",
   {
     viewBox: "0 0 12 14",
@@ -63,8 +90,8 @@ const J = h(() => /* @__PURE__ */ t(
     )
   }
 ));
-J.displayName = "FileIcon";
-const Q = h(() => /* @__PURE__ */ t(
+$.displayName = "FileIcon";
+const R = f(() => /* @__PURE__ */ t(
   "svg",
   {
     viewBox: "0 0 14 14",
@@ -72,8 +99,8 @@ const Q = h(() => /* @__PURE__ */ t(
     children: /* @__PURE__ */ t("path", { d: "M7.84245 3.50002V6.6697L10.3716 8.2498C10.499 8.32948 10.5908 8.45859 10.6268 8.60874C10.6628 8.75888 10.64 8.91776 10.5635 9.05042C10.487 9.18309 10.363 9.27867 10.2188 9.31614C10.0746 9.3536 9.92206 9.32989 9.79466 9.25022L6.99378 7.50022C6.91089 7.44836 6.8423 7.37503 6.79469 7.28737C6.74708 7.19972 6.72207 7.10072 6.7221 7.00001V3.50002C6.7221 3.34531 6.78112 3.19693 6.88617 3.08754C6.99122 2.97814 7.13371 2.91668 7.28227 2.91668C7.43084 2.91668 7.57333 2.97814 7.67838 3.08754C7.78343 3.19693 7.84245 3.34531 7.84245 3.50002ZM7.28227 2.15915e-05C6.39859 -0.00227058 5.52325 0.177963 4.70691 0.530291C3.89056 0.882618 3.14943 1.40004 2.52639 2.05262C2.01733 2.58929 1.56499 3.10554 1.12035 3.64585V2.33335C1.12035 2.17864 1.06133 2.03027 0.956278 1.92087C0.851225 1.81148 0.708743 1.75002 0.560175 1.75002C0.411607 1.75002 0.269125 1.81148 0.164071 1.92087C0.0590182 2.03027 0 2.17864 0 2.33335V5.25001C0 5.40472 0.0590182 5.5531 0.164071 5.66249C0.269125 5.77189 0.411607 5.83335 0.560175 5.83335H3.36105C3.50962 5.83335 3.6521 5.77189 3.75715 5.66249C3.86221 5.5531 3.92122 5.40472 3.92122 5.25001C3.92122 5.0953 3.86221 4.94693 3.75715 4.83754C3.6521 4.72814 3.50962 4.66668 3.36105 4.66668H1.75055C2.2512 4.05272 2.74976 3.4745 3.31834 2.87512C4.09688 2.0644 5.08758 1.51057 6.16666 1.28283C7.24574 1.05509 8.36535 1.16353 9.38558 1.59462C10.4058 2.02571 11.2814 2.76032 11.903 3.70667C12.5246 4.65301 12.8646 5.76912 12.8805 6.91554C12.8965 8.06195 12.5876 9.18784 11.9926 10.1525C11.3975 11.1172 10.5427 11.8779 9.53484 12.3395C8.52702 12.8011 7.41089 12.9433 6.32594 12.7481C5.24098 12.553 4.23531 12.0292 3.43457 11.2423C3.38106 11.1896 3.3181 11.1485 3.2493 11.1211C3.18051 11.0938 3.10721 11.0808 3.03361 11.083C2.96 11.0852 2.88753 11.1024 2.82033 11.1338C2.75312 11.1651 2.6925 11.2099 2.64193 11.2656C2.59135 11.3214 2.55181 11.3869 2.52557 11.4586C2.49932 11.5302 2.48689 11.6065 2.48897 11.6832C2.49105 11.7598 2.5076 11.8353 2.53769 11.9053C2.56778 11.9753 2.61081 12.0384 2.66433 12.091C3.4622 12.8751 4.43221 13.4439 5.48972 13.7478C6.54722 14.0517 7.66008 14.0814 8.73117 13.8345C9.80226 13.5875 10.799 13.0713 11.6345 12.3309C12.4699 11.5905 13.1187 10.6485 13.5241 9.58695C13.9295 8.52544 14.0793 7.37674 13.9604 6.24108C13.8414 5.10543 13.4574 4.01735 12.8418 3.0718C12.2261 2.12625 11.3976 1.35197 10.4286 0.816529C9.4595 0.281089 8.37931 0.000765142 7.28227 2.15915e-05Z" })
   }
 ));
-Q.displayName = "HistoryIcon";
-const Y = h(() => /* @__PURE__ */ t(
+R.displayName = "HistoryIcon";
+const U = f(() => /* @__PURE__ */ t(
   "svg",
   {
     viewBox: "0 0 14 14",
@@ -81,8 +108,8 @@ const Y = h(() => /* @__PURE__ */ t(
     children: /* @__PURE__ */ t("path", { d: "M14 7C14 7.15471 13.9385 7.30308 13.8291 7.41248C13.7197 7.52188 13.5714 7.58333 13.4167 7.58333H7.58333V13.4167C7.58333 13.5714 7.52188 13.7197 7.41248 13.8291C7.30308 13.9385 7.15471 14 7 14C6.84529 14 6.69692 13.9385 6.58752 13.8291C6.47812 13.7197 6.41667 13.5714 6.41667 13.4167V7.58333H0.583333C0.428624 7.58333 0.280251 7.52188 0.170854 7.41248C0.0614583 7.30308 0 7.15471 0 7C0 6.84529 0.0614583 6.69692 0.170854 6.58752C0.280251 6.47812 0.428624 6.41667 0.583333 6.41667H6.41667V0.583333C6.41667 0.428624 6.47812 0.280251 6.58752 0.170854C6.69692 0.0614583 6.84529 0 7 0C7.15471 0 7.30308 0.0614583 7.41248 0.170854C7.52188 0.280251 7.58333 0.428624 7.58333 0.583333V6.41667H13.4167C13.5714 6.41667 13.7197 6.47812 13.8291 6.58752C13.9385 6.69692 14 6.84529 14 7Z" })
   }
 ));
-Y.displayName = "PlusIcon";
-const e1 = h(() => /* @__PURE__ */ t(
+U.displayName = "PlusIcon";
+const W = f(() => /* @__PURE__ */ t(
   "svg",
   {
     viewBox: "0 0 13 14",
@@ -90,8 +117,8 @@ const e1 = h(() => /* @__PURE__ */ t(
     children: /* @__PURE__ */ t("path", { d: "M13 6.99208C13.0005 7.17027 12.9514 7.34536 12.8579 7.49921C12.7644 7.65307 12.6299 7.78012 12.4682 7.86721L1.55229 13.8687C1.39545 13.9542 1.21835 13.9995 1.03805 14C0.871785 13.9997 0.708022 13.961 0.56049 13.8873C0.412958 13.8136 0.285957 13.7069 0.190131 13.5763C0.0943049 13.4456 0.0324474 13.2948 0.00974343 13.1364C-0.0129605 12.9781 0.00415071 12.8168 0.0596426 12.6661L1.83768 7.66843C1.8552 7.61898 1.88839 7.57606 1.93258 7.54567C1.97677 7.51529 2.02975 7.49898 2.08407 7.49903H6.75898C6.83028 7.49918 6.90085 7.48523 6.9663 7.45806C7.03176 7.43088 7.0907 7.39105 7.13948 7.34105C7.18825 7.29104 7.22581 7.23193 7.24982 7.16738C7.27384 7.10283 7.28379 7.03423 7.27907 6.96582C7.26727 6.83723 7.20539 6.71767 7.10582 6.63108C7.00624 6.5445 6.87632 6.49728 6.74208 6.49888H2.08862C2.03438 6.49897 1.98146 6.48275 1.93728 6.45249C1.89309 6.42222 1.85986 6.37943 1.84223 6.3301L0.0583424 1.32936C-0.0111263 1.13773 -0.018329 0.930327 0.0376911 0.734676C0.0937111 0.539025 0.210303 0.364388 0.371984 0.233956C0.533666 0.103523 0.732787 0.0234668 0.942905 0.00441721C1.15302 -0.0146324 1.3642 0.0282263 1.54838 0.127302L12.4702 6.12132C12.6308 6.20829 12.7645 6.33476 12.8576 6.48776C12.9507 6.64076 12.9999 6.81481 13 6.99208Z" })
   }
 ));
-e1.displayName = "SendIcon";
-const t1 = h(() => /* @__PURE__ */ t(
+W.displayName = "SendIcon";
+const O = f(() => /* @__PURE__ */ t(
   "svg",
   {
     viewBox: "0 0 24 24",
@@ -99,84 +126,46 @@ const t1 = h(() => /* @__PURE__ */ t(
     children: /* @__PURE__ */ t("path", { d: "M12 12C14.21 12 16 10.21 16 8C16 5.79 14.21 4 12 4C9.79 4 8 5.79 8 8C8 10.21 9.79 12 12 12ZM12 14C9.33 14 4 15.34 4 18V20H20V18C20 15.34 14.67 14 12 14Z" })
   }
 ));
-t1.displayName = "UserIcon";
-const a1 = h((e) => {
-  const { onClick: s } = e;
+O.displayName = "UserIcon";
+const j = f((e) => {
+  const { onClick: a } = e;
   return /* @__PURE__ */ t(
     "button",
     {
       className: "elitea-assistant-button",
-      onClick: s,
+      onClick: a,
       "aria-label": "Support Assistant",
       type: "button",
-      children: /* @__PURE__ */ t(K, {})
+      children: /* @__PURE__ */ t(D, {})
     }
   );
 });
-a1.displayName = "ChatButton";
-const v1 = (e) => new Date(e).toLocaleTimeString([], { hour: "2-digit", minute: "2-digit" }), w1 = async () => {
-  try {
-    const e = new AudioContext();
-    if (e.state === "suspended" && await e.resume(), e.state !== "running") {
-      e.close();
-      return;
-    }
-    const s = e.currentTime, i = e.createOscillator(), o = e.createGain();
-    i.connect(o), o.connect(e.destination), i.type = "sine", i.frequency.value = 784, o.gain.setValueAtTime(0, s), o.gain.linearRampToValueAtTime(0.12, s + 0.02), o.gain.exponentialRampToValueAtTime(0.01, s + 0.2), i.start(s), i.stop(s + 0.2);
-    const r = e.createOscillator(), d = e.createGain();
-    r.connect(d), d.connect(e.destination), r.type = "sine", r.frequency.value = 1047, d.gain.setValueAtTime(0, s + 0.12), d.gain.linearRampToValueAtTime(0.12, s + 0.14), d.gain.exponentialRampToValueAtTime(0.01, s + 0.37), r.start(s + 0.12), r.stop(s + 0.37), r.onended = () => e.close();
-  } catch {
-  }
-}, s1 = h((e) => {
-  const { messages: s } = e, i = F(null);
-  return Z(() => {
-    var o;
-    (o = i.current) == null || o.scrollIntoView({ behavior: "smooth" });
-  }, [s]), s.length === 0 ? /* @__PURE__ */ t("div", { className: "elitea-assistant-empty", children: "Send a message to start a conversation" }) : /* @__PURE__ */ p("div", { className: "elitea-assistant-messages", children: [
-    s.map((o) => /* @__PURE__ */ p(
-      "div",
-      {
-        className: `elitea-assistant-message-wrapper elitea-assistant-message-wrapper--${o.role}`,
-        children: [
-          /* @__PURE__ */ p("div", { className: `elitea-assistant-message-meta elitea-assistant-message-meta--${o.role}`, children: [
-            o.role === "assistant" && /* @__PURE__ */ t("span", { className: "elitea-assistant-message-avatar elitea-assistant-message-avatar--assistant", children: /* @__PURE__ */ t(K, {}) }),
-            /* @__PURE__ */ t("span", { className: "elitea-assistant-message-time", children: v1(o.timestamp) }),
-            o.role === "user" && /* @__PURE__ */ t("span", { className: "elitea-assistant-message-avatar elitea-assistant-message-avatar--user", children: /* @__PURE__ */ t(t1, {}) })
-          ] }),
-          /* @__PURE__ */ t("div", { className: `elitea-assistant-message elitea-assistant-message--${o.role}`, children: o.content })
-        ]
-      },
-      o.id
-    )),
-    /* @__PURE__ */ t("div", { ref: i })
-  ] });
-});
-s1.displayName = "MessageList";
-const E = h((e) => {
-  const { content: s, children: i, placement: o = "top" } = e, r = F(null), d = F(null), [f, y] = w(!1), [T, L] = w(!1), [H, M] = w({ top: 0, left: 0 }), l = B(() => {
-    const u = r.current, k = d.current;
-    if (!u || !k) return;
-    const c = u.getBoundingClientRect(), v = k.getBoundingClientRect();
-    let m;
-    o === "top" ? m = c.top - v.height - 8 : m = c.bottom + 8;
-    let b = c.left + c.width / 2 - v.width / 2;
-    const a = 8;
-    b < a && (b = a), b + v.width > window.innerWidth - a && (b = window.innerWidth - a - v.width), m < a && (m = c.bottom + 8), M({ top: m, left: b }), L(!0);
-  }, [o]);
-  return u1(() => {
-    f && d.current && l(), f || L(!1);
-  }, [f, l]), /* @__PURE__ */ p(C1, { children: [
+j.displayName = "ChatButton";
+const T = f((e) => {
+  const { content: a, children: n, placement: s = "top" } = e, o = L(null), d = L(null), [l, C] = H(!1), [v, g] = H(!1), [p, x] = H({ top: 0, left: 0 }), N = b(() => {
+    const w = o.current, c = d.current;
+    if (!w || !c) return;
+    const h = w.getBoundingClientRect(), m = c.getBoundingClientRect();
+    let B;
+    s === "top" ? B = h.top - m.height - 8 : B = h.bottom + 8;
+    let k = h.left + h.width / 2 - m.width / 2;
+    const r = 8;
+    k < r && (k = r), k + m.width > window.innerWidth - r && (k = window.innerWidth - r - m.width), B < r && (B = h.bottom + 8), x({ top: B, left: k }), g(!0);
+  }, [s]);
+  return Y(() => {
+    l && d.current && N(), l || g(!1);
+  }, [l, N]), /* @__PURE__ */ y(X, { children: [
     /* @__PURE__ */ t(
       "div",
       {
-        ref: r,
-        onMouseEnter: () => y(!0),
-        onMouseLeave: () => y(!1),
+        ref: o,
+        onMouseEnter: () => C(!0),
+        onMouseLeave: () => C(!1),
         className: "elitea-assistant-tooltip-trigger",
-        children: i
+        children: n
       }
     ),
-    f && m1(
+    l && a1(
       /* @__PURE__ */ t(
         "div",
         {
@@ -184,8 +173,8 @@ const E = h((e) => {
           style: {
             position: "fixed",
             zIndex: 2147483647,
-            top: H.top,
-            left: H.left,
+            top: p.top,
+            left: p.left,
             padding: ".25rem .5rem",
             borderRadius: ".25rem",
             background: "rgb(233, 235, 240)",
@@ -199,81 +188,218 @@ const E = h((e) => {
             overflow: "hidden",
             textOverflow: "ellipsis",
             pointerEvents: "none",
-            opacity: T ? 1 : 0,
+            opacity: v ? 1 : 0,
             transition: "opacity 0.15s ease"
           },
           role: "tooltip",
-          children: s
+          children: a
         }
       ),
       document.body
     )
   ] });
 });
-E.displayName = "Tooltip";
-const n1 = h((e) => {
-  const { placeholder: s, text: i, onTextChange: o, files: r, onFilesChange: d, onSend: f, expanded: y } = e, T = F(null), [L, H] = w(0), M = () => {
-    const a = i.trim();
-    !a && r.length === 0 || (f(a, r.length > 0 ? r : void 0), o(""), d([]));
-  }, l = (a) => {
-    a.key === "Enter" && !a.shiftKey && (a.preventDefault(), M());
-  }, u = () => {
-    var a;
-    (a = T.current) == null || a.click();
-  }, k = (a) => {
-    const x = a.target.files;
-    x && d([...r, ...Array.from(x)]), H((A) => A + 1);
-  }, c = (a) => {
-    d(r.filter((x, A) => A !== a));
-  }, v = y ? 3 : 2, m = r.slice(0, v), b = r.length - v;
-  return /* @__PURE__ */ p("div", { className: "elitea-assistant-input-area", children: [
-    r.length > 0 && /* @__PURE__ */ p("div", { className: "elitea-assistant-file-list", children: [
-      m.map((a, x) => /* @__PURE__ */ t(
-        E,
+T.displayName = "Tooltip";
+const K = f((e) => {
+  const {
+    title: a,
+    expanded: n,
+    history: s,
+    currentConversationId: o,
+    onClose: d,
+    onExpand: l,
+    onNewChat: C,
+    onSelectConversation: v
+  } = e, g = L(null), [p, x] = H(!1);
+  E(() => {
+    if (!p) return;
+    const c = (h) => {
+      g.current && !g.current.contains(h.target) && x(!1);
+    };
+    return document.addEventListener("mousedown", c), () => document.removeEventListener("mousedown", c);
+  }, [p]);
+  const N = b(() => {
+    s.length > 0 && x((c) => !c);
+  }, [s.length]), w = b(
+    (c) => {
+      v(c), x(!1);
+    },
+    [v]
+  );
+  return /* @__PURE__ */ y("div", { className: "elitea-assistant-header", children: [
+    /* @__PURE__ */ y("div", { className: "elitea-assistant-header-left", children: [
+      /* @__PURE__ */ t(
+        "button",
         {
-          content: a.name,
-          children: /* @__PURE__ */ p("div", { className: "elitea-assistant-file-chip", children: [
-            /* @__PURE__ */ t("span", { className: "elitea-assistant-file-chip-icon", children: /* @__PURE__ */ t(J, {}) }),
-            /* @__PURE__ */ t("span", { className: "elitea-assistant-file-chip-name", children: a.name }),
+          className: "elitea-assistant-header-close-action",
+          onClick: d,
+          "aria-label": "Close chat",
+          type: "button",
+          children: /* @__PURE__ */ t(F, {})
+        }
+      ),
+      /* @__PURE__ */ t("h2", { className: "elitea-assistant-header-title", children: a })
+    ] }),
+    /* @__PURE__ */ y("div", { className: "elitea-assistant-header-right", children: [
+      /* @__PURE__ */ t(T, { content: "New conversation", children: /* @__PURE__ */ t(
+        "button",
+        {
+          className: "elitea-assistant-header-action",
+          onClick: C,
+          "aria-label": "New chat",
+          type: "button",
+          children: /* @__PURE__ */ t(U, {})
+        }
+      ) }),
+      /* @__PURE__ */ t(T, { content: "Conversations history", children: /* @__PURE__ */ y(
+        "div",
+        {
+          ref: g,
+          className: "elitea-assistant-history-wrapper",
+          children: [
+            /* @__PURE__ */ t(
+              "button",
+              {
+                className: "elitea-assistant-header-action",
+                onClick: N,
+                "aria-label": "Chat history",
+                type: "button",
+                disabled: s.length === 0,
+                children: /* @__PURE__ */ t(R, {})
+              }
+            ),
+            p && s.length > 0 && /* @__PURE__ */ t("div", { className: "elitea-assistant-history-dropdown", children: s.map((c) => /* @__PURE__ */ t(
+              "button",
+              {
+                className: "elitea-assistant-history-item",
+                onClick: () => w(c.id),
+                type: "button",
+                disabled: c.id === o,
+                children: c.title
+              },
+              c.id
+            )) })
+          ]
+        }
+      ) }),
+      /* @__PURE__ */ t(T, { content: n ? "Collapse" : "Expand", children: /* @__PURE__ */ t(
+        "button",
+        {
+          className: "elitea-assistant-header-action",
+          onClick: l,
+          "aria-label": "Expand chat",
+          type: "button",
+          children: /* @__PURE__ */ t(Z, {})
+        }
+      ) })
+    ] })
+  ] });
+});
+K.displayName = "ChatHeader";
+const o1 = (e) => new Date(e).toLocaleTimeString([], { hour: "2-digit", minute: "2-digit" }), S = (e, a) => {
+  const { frequency: n, start: s, peak: o, end: d } = a, l = e.createOscillator(), C = e.createGain();
+  return l.connect(C), C.connect(e.destination), l.type = "sine", l.frequency.value = n, C.gain.setValueAtTime(0, s), C.gain.linearRampToValueAtTime(0.12, o), C.gain.exponentialRampToValueAtTime(0.01, d), l.start(s), l.stop(d), l;
+}, r1 = async () => {
+  try {
+    const e = new AudioContext();
+    if (e.state === "suspended" && await e.resume(), e.state !== "running") {
+      e.close();
+      return;
+    }
+    const a = e.currentTime;
+    S(e, { frequency: 784, start: a, peak: a + 0.02, end: a + 0.2 });
+    const n = S(e, { frequency: 1047, start: a + 0.12, peak: a + 0.14, end: a + 0.37 });
+    n.onended = () => e.close();
+  } catch {
+  }
+}, q = f((e) => {
+  const { messages: a } = e, n = L(null);
+  return E(() => {
+    var s;
+    (s = n.current) == null || s.scrollIntoView({ behavior: "smooth" });
+  }, [a]), a.length === 0 ? /* @__PURE__ */ t("div", { className: "elitea-assistant-empty", children: "Send a message to start a conversation" }) : /* @__PURE__ */ y("div", { className: "elitea-assistant-messages", children: [
+    a.map((s) => /* @__PURE__ */ y(
+      "div",
+      {
+        className: `elitea-assistant-message-wrapper elitea-assistant-message-wrapper--${s.role}`,
+        children: [
+          /* @__PURE__ */ y("div", { className: `elitea-assistant-message-meta elitea-assistant-message-meta--${s.role}`, children: [
+            s.role === "assistant" && /* @__PURE__ */ t("span", { className: "elitea-assistant-message-avatar elitea-assistant-message-avatar--assistant", children: /* @__PURE__ */ t(D, {}) }),
+            /* @__PURE__ */ t("span", { className: "elitea-assistant-message-time", children: o1(s.timestamp) }),
+            s.role === "user" && /* @__PURE__ */ t("span", { className: "elitea-assistant-message-avatar elitea-assistant-message-avatar--user", children: /* @__PURE__ */ t(O, {}) })
+          ] }),
+          /* @__PURE__ */ t("div", { className: `elitea-assistant-message elitea-assistant-message--${s.role}`, children: s.content })
+        ]
+      },
+      s.id
+    )),
+    /* @__PURE__ */ t("div", { ref: n })
+  ] });
+});
+q.displayName = "MessageList";
+const _ = f((e) => {
+  const { placeholder: a, text: n, onTextChange: s, files: o, onFilesChange: d, onSend: l, expanded: C } = e, v = L(null), [g, p] = H(0), x = () => {
+    const r = n.trim();
+    !r && o.length === 0 || (l(r, o.length > 0 ? o : void 0), s(""), d([]));
+  }, N = (r) => {
+    r.key === "Enter" && !r.shiftKey && (r.preventDefault(), x());
+  }, w = () => {
+    var r;
+    (r = v.current) == null || r.click();
+  }, c = (r) => {
+    const i = r.target.files;
+    i && d([...o, ...Array.from(i)]), p((u) => u + 1);
+  }, h = (r) => {
+    d(o.filter((i, u) => u !== r));
+  }, m = C ? 3 : 2, B = o.slice(0, m), k = o.length - m;
+  return /* @__PURE__ */ y("div", { className: "elitea-assistant-input-area", children: [
+    o.length > 0 && /* @__PURE__ */ y("div", { className: "elitea-assistant-file-list", children: [
+      B.map((r, i) => /* @__PURE__ */ t(
+        T,
+        {
+          content: r.name,
+          children: /* @__PURE__ */ y("div", { className: "elitea-assistant-file-chip", children: [
+            /* @__PURE__ */ t("span", { className: "elitea-assistant-file-chip-icon", children: /* @__PURE__ */ t($, {}) }),
+            /* @__PURE__ */ t("span", { className: "elitea-assistant-file-chip-name", children: r.name }),
             /* @__PURE__ */ t(
               "button",
               {
                 className: "elitea-assistant-file-chip-remove",
-                onClick: () => c(x),
-                "aria-label": `Remove ${a.name}`,
+                onClick: () => h(i),
+                "aria-label": `Remove ${r.name}`,
                 type: "button",
-                children: /* @__PURE__ */ t(U, {})
+                children: /* @__PURE__ */ t(F, {})
               }
             )
           ] })
         },
-        x
+        i
       )),
-      b > 0 && /* @__PURE__ */ p("div", { className: "elitea-assistant-file-chip elitea-assistant-file-chip--count", children: [
+      k > 0 && /* @__PURE__ */ y("div", { className: "elitea-assistant-file-chip elitea-assistant-file-chip--count", children: [
         "+",
-        b
+        k
       ] })
     ] }),
-    /* @__PURE__ */ p("div", { className: "elitea-assistant-input-row", children: [
+    /* @__PURE__ */ y("div", { className: "elitea-assistant-input-row", children: [
       /* @__PURE__ */ t(
         "input",
         {
-          ref: T,
+          ref: v,
           type: "file",
           multiple: !0,
-          onChange: k,
+          onChange: c,
           style: { display: "none" }
         },
-        L
+        g
       ),
       /* @__PURE__ */ t(
         "button",
         {
           className: "elitea-assistant-attach-button",
-          onClick: u,
+          onClick: w,
           "aria-label": "Attach file",
           type: "button",
-          children: /* @__PURE__ */ t(G, {})
+          children: /* @__PURE__ */ t(P, {})
         }
       ),
       /* @__PURE__ */ t(
@@ -281,10 +407,10 @@ const n1 = h((e) => {
         {
           id: "elitea-assistant-message-input",
           className: "elitea-assistant-input",
-          value: i,
-          onChange: (a) => o(a.target.value),
-          onKeyDown: l,
-          placeholder: s,
+          value: n,
+          onChange: (r) => s(r.target.value),
+          onKeyDown: N,
+          placeholder: a,
           rows: 1,
           autoFocus: !0
         }
@@ -293,128 +419,149 @@ const n1 = h((e) => {
         "button",
         {
           className: "elitea-assistant-send-button",
-          onClick: M,
-          disabled: !i.trim() && r.length === 0,
+          onClick: x,
+          disabled: !n.trim() && o.length === 0,
           "aria-label": "Send message",
           type: "button",
-          children: /* @__PURE__ */ t(e1, {})
+          children: /* @__PURE__ */ t(W, {})
         }
       )
     ] })
   ] });
 });
-n1.displayName = "MessageInput";
-const o1 = h((e) => {
-  const {
-    title: s,
-    placeholder: i,
-    messages: o,
-    text: r,
-    onTextChange: d,
-    files: f,
-    onFilesChange: y,
-    onSend: T,
-    onClose: L,
-    onNewChat: H,
-    onExpand: M,
-    expanded: l,
-    history: u = [],
-    currentConversationId: k,
-    onSelectConversation: c
-  } = e, v = F(null), [m, b] = w(!1);
-  Z(() => {
-    if (!m) return;
-    const C = (V) => {
-      v.current && !v.current.contains(V.target) && b(!1);
-    };
-    return document.addEventListener("mousedown", C), () => document.removeEventListener("mousedown", C);
-  }, [m]);
-  const a = B(() => {
-    u.length > 0 && b((C) => !C);
-  }, [u.length]), x = B(
-    (C) => {
-      c == null || c(C), b(!1);
-    },
-    [c]
-  ), A = /* @__PURE__ */ p("div", { className: `elitea-assistant-window${l ? " elitea-assistant-window--expanded" : ""}`, children: [
-    /* @__PURE__ */ p("div", { className: "elitea-assistant-header", children: [
-      /* @__PURE__ */ p("div", { className: "elitea-assistant-header-left", children: [
-        /* @__PURE__ */ t(
-          "button",
-          {
-            className: "elitea-assistant-header-close-action",
-            onClick: L,
-            "aria-label": "Close chat",
-            type: "button",
-            children: /* @__PURE__ */ t(U, {})
-          }
-        ),
-        /* @__PURE__ */ t("h2", { className: "elitea-assistant-header-title", children: s })
-      ] }),
-      /* @__PURE__ */ p("div", { className: "elitea-assistant-header-right", children: [
-        /* @__PURE__ */ t(E, { content: "New conversation", children: /* @__PURE__ */ t(
-          "button",
-          {
-            className: "elitea-assistant-header-action",
-            onClick: H,
-            "aria-label": "New chat",
-            type: "button",
-            children: /* @__PURE__ */ t(Y, {})
-          }
-        ) }),
-        /* @__PURE__ */ t(E, { content: "Conversations history", children: /* @__PURE__ */ p(
-          "div",
-          {
-            ref: v,
-            className: "elitea-assistant-history-wrapper",
-            children: [
-              /* @__PURE__ */ t(
-                "button",
-                {
-                  className: "elitea-assistant-header-action",
-                  onClick: a,
-                  "aria-label": "Chat history",
-                  type: "button",
-                  disabled: u.length === 0,
-                  children: /* @__PURE__ */ t(Q, {})
-                }
-              ),
-              m && u.length > 0 && /* @__PURE__ */ t("div", { className: "elitea-assistant-history-dropdown", children: u.map((C) => /* @__PURE__ */ t(
-                "button",
-                {
-                  className: "elitea-assistant-history-item",
-                  onClick: () => x(C.id),
-                  type: "button",
-                  disabled: C.id === k,
-                  children: C.title
-                },
-                C.id
-              )) })
-            ]
-          }
-        ) }),
-        /* @__PURE__ */ t(E, { content: l ? "Collapse" : "Expand", children: /* @__PURE__ */ t(
-          "button",
-          {
-            className: "elitea-assistant-header-action",
-            onClick: M,
-            "aria-label": "Expand chat",
-            type: "button",
-            children: /* @__PURE__ */ t(X, {})
-          }
-        ) })
-      ] })
-    ] }),
-    /* @__PURE__ */ t(s1, { messages: o }),
-    /* @__PURE__ */ t(
-      n1,
+_.displayName = "MessageInput";
+const i1 = Q(null), l1 = () => {
+  const [e, a] = H(!1), [n, s] = H(!1), o = b(() => a(!0), []), d = b(() => a(!1), []), l = b(() => a((p) => !p), []), C = b(() => s(!0), []), v = b(() => s(!1), []), g = b(() => s((p) => !p), []);
+  return {
+    isOpen: e,
+    isExpanded: n,
+    open: o,
+    close: d,
+    toggle: l,
+    expandFullscreen: C,
+    collapseFullscreen: v,
+    toggleFullscreen: g
+  };
+}, d1 = (e) => {
+  const a = b(
+    () => e ? [
       {
-        placeholder: i,
-        text: r,
-        onTextChange: d,
-        files: f,
-        onFilesChange: y,
-        onSend: T,
+        id: "welcome",
+        role: "assistant",
+        content: e,
+        timestamp: Date.now()
+      }
+    ] : [],
+    [e]
+  ), [n, s] = H(a), [o, d] = H(""), [l, C] = H([]), [v, g] = H(() => crypto.randomUUID()), [p, x] = H([]), N = L(n);
+  N.current = n;
+  const w = L(v);
+  w.current = v;
+  const c = b((i) => {
+    const u = i.find((I) => I.role === "user");
+    return u ? u.content.length > 40 ? u.content.slice(0, 40) + "…" : u.content : "New conversation";
+  }, []), h = b(() => {
+    const i = N.current, u = w.current;
+    return i.some((A) => A.role === "user") ? {
+      id: u,
+      title: c(i),
+      messages: i,
+      createdAt: Date.now()
+    } : null;
+  }, [c]), m = b((i) => {
+    x((u) => u.some((A) => A.id === i.id) ? u.map((A) => A.id === i.id ? i : A) : [i, ...u]);
+  }, []), B = b(() => {
+    const i = h();
+    i && m(i), s(a()), d(""), C([]), g(crypto.randomUUID());
+  }, [h, m, a]), k = b(
+    (i) => {
+      const u = p.find((A) => A.id === i);
+      if (!u) return;
+      const I = h();
+      I && m(I), s(u.messages), d(""), C([]), g(u.id);
+    },
+    [p, h, m]
+  ), r = b((i) => {
+    const u = {
+      id: crypto.randomUUID(),
+      role: "user",
+      content: i,
+      timestamp: Date.now()
+    };
+    s((I) => [...I, u]), setTimeout(() => {
+      const I = {
+        id: crypto.randomUUID(),
+        role: "assistant",
+        content: `Echo: ${i}`,
+        timestamp: Date.now()
+      };
+      s((A) => [...A, I]);
+    }, 500);
+  }, []);
+  return {
+    messages: n,
+    inputText: o,
+    setInputText: d,
+    files: l,
+    setFiles: C,
+    history: p,
+    currentConversationId: v,
+    handleNewChat: B,
+    handleSelectConversation: k,
+    handleSend: r
+  };
+}, c1 = "Hi! Need help? Ask me!", C1 = 12e3, u1 = 12e3, p1 = (e) => {
+  const a = L(null), [n, s] = H(!1), o = b(() => {
+    s(!1), a.current && (clearTimeout(a.current), a.current = null);
+  }, []), d = b(() => {
+    e || (s(!0), r1(), a.current = setTimeout(o, C1));
+  }, [e, o]);
+  return E(() => {
+    const l = setTimeout(() => {
+      d();
+    }, u1);
+    return () => {
+      a.current && clearTimeout(a.current), clearTimeout(l);
+    };
+  }, []), E(() => {
+    e && o();
+  }, [e, o]), { showPopup: n, displayPopup: d, hidePopup: o, popupText: c1 };
+}, z = f((e) => {
+  const { title: a, placeholder: n, welcomeMessage: s, onClose: o, onExpand: d, expanded: l } = e, {
+    messages: C,
+    inputText: v,
+    setInputText: g,
+    files: p,
+    setFiles: x,
+    history: N,
+    currentConversationId: w,
+    handleNewChat: c,
+    handleSelectConversation: h,
+    handleSend: m
+  } = d1(s), B = /* @__PURE__ */ y("div", { className: `elitea-assistant-window${l ? " elitea-assistant-window--expanded" : ""}`, children: [
+    /* @__PURE__ */ t(
+      K,
+      {
+        title: a,
+        expanded: l,
+        history: N,
+        currentConversationId: w,
+        onClose: o,
+        onExpand: d,
+        onNewChat: c,
+        onSelectConversation: h
+      }
+    ),
+    /* @__PURE__ */ t(q, { messages: C }),
+    /* @__PURE__ */ t(
+      _,
+      {
+        placeholder: n,
+        text: v,
+        onTextChange: g,
+        files: p,
+        onFilesChange: x,
+        onSend: m,
         expanded: l
       }
     )
@@ -423,30 +570,30 @@ const o1 = h((e) => {
     "div",
     {
       className: "elitea-assistant-overlay",
-      onClick: M,
-      children: /* @__PURE__ */ t("div", { onClick: (C) => C.stopPropagation(), children: A })
+      onClick: d,
+      children: /* @__PURE__ */ t("div", { onClick: (k) => k.stopPropagation(), children: B })
     }
-  ) : A;
+  ) : B;
 });
-o1.displayName = "ChatWindow";
-const i1 = h((e) => {
-  const { message: s, onClose: i } = e;
-  return /* @__PURE__ */ p("div", { className: "elitea-assistant-popup", children: [
-    /* @__PURE__ */ t("span", { className: "elitea-assistant-popup-text", children: s }),
+z.displayName = "ChatWindow";
+const G = f((e) => {
+  const { message: a, onClose: n } = e;
+  return /* @__PURE__ */ y("div", { className: "elitea-assistant-popup", children: [
+    /* @__PURE__ */ t("span", { className: "elitea-assistant-popup-text", children: a }),
     /* @__PURE__ */ t(
       "button",
       {
         className: "elitea-assistant-popup-close",
-        onClick: i,
+        onClick: n,
         "aria-label": "Close popup",
         type: "button",
-        children: /* @__PURE__ */ t(U, {})
+        children: /* @__PURE__ */ t(F, {})
       }
     )
   ] });
 });
-i1.displayName = "PopupMessage";
-const B1 = {
+G.displayName = "PopupMessage";
+const h1 = {
   buttonBackground: "linear-gradient(50.4deg, #435CFF 0%, #B3BEFF 100%)",
   buttonIcon: "#FFFFFF",
   headerBackground: "rgba(40, 69, 255, 0.25)",
@@ -490,7 +637,7 @@ const B1 = {
   historyDropdownBorder: "rgba(203, 206, 213, 1)",
   historyDropdownShadow: "0 0.25rem 0.75rem rgba(0, 0, 0, 0.08)",
   historyDropdownHoverBackground: "rgba(61, 68, 86, 0.06)"
-}, f1 = {
+}, g1 = {
   buttonBackground: "linear-gradient(50.4deg, #C428DD 0%, #8A1B9E 100%)",
   buttonIcon: "#FFFFFF",
   headerBackground: "rgba(245, 81, 249, 0.3)",
@@ -534,13 +681,13 @@ const B1 = {
   historyDropdownBorder: "rgba(59, 62, 70, 1)",
   historyDropdownShadow: "0 0.5rem 0.75rem rgba(0, 0, 0, 0.3)",
   historyDropdownHoverBackground: "rgba(255, 255, 255, 0.06)"
-}, y1 = {
-  light: B1,
-  dark: f1
-}, k1 = (e, s) => ({
-  ...y1[e],
-  ...s
-}), x1 = (e) => ({
+}, m1 = {
+  light: h1,
+  dark: g1
+}, b1 = (e, a) => ({
+  ...m1[e],
+  ...a
+}), v1 = (e) => ({
   "--elitea-assistant-button-bg": e.buttonBackground,
   "--elitea-assistant-button-icon": e.buttonIcon,
   "--elitea-assistant-header-bg": e.headerBackground,
@@ -584,142 +731,81 @@ const B1 = {
   "--elitea-assistant-history-dropdown-border": e.historyDropdownBorder,
   "--elitea-assistant-history-dropdown-shadow": e.historyDropdownShadow,
   "--elitea-assistant-history-dropdown-hover-bg": e.historyDropdownHoverBackground
-}), A1 = "Hi! Need help? Ask me!", N1 = 12e3, I1 = g1((e, s) => {
-  const i = F(null), {
-    apiUrl: o,
-    token: r,
+}), w1 = e1((e, a) => {
+  const {
+    apiUrl: n,
+    token: s,
+    apiAdapter: o,
     title: d = "Elitea Assistant",
-    placeholder: f = "Type a message...",
-    welcomeMessage: y = `Hi! I'm your ELITEA Support Assistant.
+    placeholder: l = "Type a message...",
+    welcomeMessage: C = `Hi! I'm your ELITEA Support Assistant.
 Ask me anything about ELITEA or report any issues you're experiencing. I have context about your current screen and settings.`,
-    position: T = "bottom-right",
-    theme: L = "light",
-    colors: H
-  } = e, M = p1(() => x1(k1(L, H)), [L, H]), [l, u] = w(!1), [k, c] = w(!1), [v, m] = w(!1), [b, a] = w(""), [x, A] = w([]), C = B(
-    () => y ? [
-      {
-        id: "welcome",
-        role: "assistant",
-        content: y,
-        timestamp: Date.now()
-      }
-    ] : [],
-    [y]
-  ), [V, S] = w(C), [W, _] = w(() => crypto.randomUUID()), [O, r1] = w([]), j = F(V);
-  j.current = V;
-  const q = F(W);
-  q.current = W;
-  const z = B((n) => {
-    const g = n.find((N) => N.role === "user");
-    return g ? g.content.length > 40 ? g.content.slice(0, 40) + "…" : g.content : "New conversation";
-  }, []), P = B(() => {
-    const n = j.current, g = q.current;
-    return n.some((I) => I.role === "user") ? {
-      id: g,
-      title: z(n),
-      messages: n,
-      createdAt: Date.now()
-    } : null;
-  }, [z]), R = B((n) => {
-    r1((g) => g.some((I) => I.id === n.id) ? g.map((I) => I.id === n.id ? n : I) : [n, ...g]);
-  }, []), l1 = B(() => {
-    const n = P();
-    n && R(n), S(C()), a(""), A([]), _(crypto.randomUUID());
-  }, [P, R, C]), d1 = B(
-    (n) => {
-      const g = O.find((I) => I.id === n);
-      if (!g) return;
-      const N = P();
-      N && R(N), S(g.messages), a(""), A([]), _(g.id);
-    },
-    [O, P, R]
-  ), D = B(() => {
-    m(!1), i.current && (clearTimeout(i.current), i.current = null);
-  }, []), $ = B(() => {
-    l || (m(!0), w1(), i.current = setTimeout(D, N1));
-  }, [l, D]);
-  Z(() => {
-    const n = setTimeout(() => {
-      $();
-    }, 12e3);
-    return () => {
-      i.current && clearTimeout(i.current), clearTimeout(n);
-    };
-  }, []), Z(() => {
-    l && D();
-  }, [l, D]), h1(
-    s,
+    position: v = "bottom-right",
+    theme: g = "light",
+    colors: p
+  } = e, x = V(() => v1(b1(g, p)), [g, p]), N = V(() => {
+    if (o) return o;
+    if (n && s) return s1(n, s);
+    throw new Error("EliteaAssistant: provide either apiAdapter or both apiUrl and token");
+  }, [o, n, s]), { isOpen: w, isExpanded: c, open: h, close: m, toggle: B, expandFullscreen: k, collapseFullscreen: r, toggleFullscreen: i } = l1(), { showPopup: u, displayPopup: I, hidePopup: A, popupText: J } = p1(w);
+  return t1(
+    a,
     () => ({
-      open: () => u(!0),
-      close: () => u(!1),
-      toggle: () => u((n) => !n),
-      expandFullscreen: () => c(!0),
-      collapseFullscreen: () => c(!1),
-      toggleFullscreen: () => c((n) => !n),
-      showPopup: $,
-      hidePopup: D,
-      isOpen: () => l,
-      isExpanded: () => k
+      open: h,
+      close: m,
+      toggle: B,
+      expandFullscreen: k,
+      collapseFullscreen: r,
+      toggleFullscreen: i,
+      showPopup: I,
+      hidePopup: A,
+      isOpen: () => w,
+      isExpanded: () => c
     }),
-    [l, k, $, D]
-  );
-  const c1 = B((n) => {
-    const g = {
-      id: crypto.randomUUID(),
-      role: "user",
-      content: n,
-      timestamp: Date.now()
-    };
-    S((N) => [...N, g]), setTimeout(() => {
-      const N = {
-        id: crypto.randomUUID(),
-        role: "assistant",
-        content: `Echo: ${n}`,
-        timestamp: Date.now()
-      };
-      S((I) => [...I, N]);
-    }, 500);
-  }, []);
-  return /* @__PURE__ */ p(
+    [
+      w,
+      c,
+      h,
+      m,
+      B,
+      k,
+      r,
+      i,
+      I,
+      A
+    ]
+  ), /* @__PURE__ */ t(i1.Provider, { value: N, children: /* @__PURE__ */ y(
     "div",
     {
-      className: `elitea-assistant-container elitea-assistant-container--${T}`,
-      style: M,
+      className: `elitea-assistant-container elitea-assistant-container--${v}`,
+      style: x,
       children: [
-        l && /* @__PURE__ */ t(
-          o1,
+        w && /* @__PURE__ */ t(
+          z,
           {
             title: d,
-            placeholder: f,
-            messages: V,
-            text: b,
-            onTextChange: a,
-            files: x,
-            onFilesChange: A,
-            onSend: c1,
-            onClose: () => u(!1),
-            expanded: k,
-            onExpand: () => c((n) => !n),
-            onNewChat: l1,
-            history: O,
-            currentConversationId: W,
-            onSelectConversation: d1
+            placeholder: l,
+            welcomeMessage: C,
+            onClose: m,
+            expanded: c,
+            onExpand: i
           }
         ),
-        v && !l && /* @__PURE__ */ t(
-          i1,
+        u && !w && /* @__PURE__ */ t(
+          G,
           {
-            message: A1,
-            onClose: D
+            message: J,
+            onClose: A
           }
         ),
-        /* @__PURE__ */ t(a1, { onClick: () => u((n) => !n) })
+        /* @__PURE__ */ t(j, { onClick: B })
       ]
     }
-  );
+  ) });
 });
-I1.displayName = "EliteaAssistant";
+w1.displayName = "EliteaAssistant";
 export {
-  I1 as EliteaAssistant
+  w1 as EliteaAssistant,
+  s1 as createDefaultAdapter
 };
 //# sourceMappingURL=elitea-assistant.js.map

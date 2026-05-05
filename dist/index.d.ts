@@ -1,6 +1,31 @@
 import { default as default_2 } from 'react';
 
+export declare const createDefaultAdapter: (baseURL: string, token: string) => TChatAPI;
+
 export declare const EliteaAssistant: default_2.ForwardRefExoticComponent<TEliteaAssistantProps & default_2.RefAttributes<TEliteaAssistantRef>>;
+
+export declare type TAssistantConfig = {
+    enabled: boolean;
+    name: string;
+    avatar?: string;
+};
+
+export declare type TChatAPI = {
+    getConfig: () => Promise<TAssistantConfig>;
+    getConversations: () => Promise<TConversationListItem[]>;
+    createConversation: () => Promise<{
+        id: string;
+    }>;
+    getMessages: (conversationId: string) => Promise<TMessage[]>;
+    sendMessage: (conversationId: string, message: string) => Promise<TMessage>;
+    deleteConversation: (conversationId: string) => Promise<void>;
+};
+
+export declare type TConversationListItem = {
+    id: string;
+    title: string;
+    createdAt: number;
+};
 
 export declare type TEliteaAssistantColors = {
     buttonBackground?: string;
@@ -51,8 +76,9 @@ export declare type TEliteaAssistantColors = {
 export declare type TEliteaAssistantPosition = 'bottom-right' | 'bottom-left';
 
 export declare type TEliteaAssistantProps = {
-    apiUrl: string;
-    token: string;
+    apiUrl?: string;
+    token?: string;
+    apiAdapter?: TChatAPI;
     title?: string;
     placeholder?: string;
     welcomeMessage?: string;
