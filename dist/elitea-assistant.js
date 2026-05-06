@@ -1,85 +1,85 @@
-(function(){"use strict";try{if(typeof document<"u"){var e=document.createElement("style");e.appendChild(document.createTextNode('@import"https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700&display=swap";.elitea-assistant-container{position:fixed;z-index:2147483647;font-family:Montserrat,sans-serif;font-size:.875rem;line-height:1.5;box-sizing:border-box}.elitea-assistant-container *,.elitea-assistant-container *:before,.elitea-assistant-container *:after{box-sizing:border-box}.elitea-assistant-container--bottom-right{bottom:.75rem;right:1.09375rem}.elitea-assistant-container--bottom-left{bottom:.75rem;left:1.09375rem}.elitea-assistant-button{width:1.75rem;height:1.75rem;border-radius:50%;border:none;cursor:pointer;display:flex;align-items:center;justify-content:center;background:var(--elitea-assistant-button-bg);color:var(--elitea-assistant-button-icon);box-shadow:0 .25rem .75rem #00000026;transition:transform .2s ease,box-shadow .2s ease;padding:0}.elitea-assistant-button:hover{transform:scale(1.08);box-shadow:0 .375rem 1.25rem #0003}.elitea-assistant-button svg{width:1.75rem;height:1.75rem;fill:currentColor}.elitea-assistant-window{position:absolute;bottom:0rem;width:28.75rem;height:30rem;border-radius:1rem;overflow:hidden;display:flex;flex-direction:column;box-shadow:var(--elitea-assistant-window-shadow);background:var(--elitea-assistant-chat-bg);border:.0625rem solid var(--elitea-assistant-window-border);animation:elitea-assistant-slide-up .25s ease-out}.elitea-assistant-container--bottom-right .elitea-assistant-window{right:2.875rem}.elitea-assistant-container--bottom-left .elitea-assistant-window{left:2.875rem}@keyframes elitea-assistant-slide-up{0%{opacity:0;transform:translateY(.75rem)}to{opacity:1;transform:translateY(0)}}.elitea-assistant-overlay{position:fixed;top:0;right:0;bottom:0;left:0;z-index:2147483646;background:#00000080;display:flex;align-items:center;justify-content:center;animation:elitea-assistant-fade-in .2s ease-out}@keyframes elitea-assistant-fade-in{0%{opacity:0}to{opacity:1}}.elitea-assistant-window--expanded{position:static;width:45rem;height:42.375rem;animation:elitea-assistant-scale-in .2s ease-out}@keyframes elitea-assistant-scale-in{0%{opacity:0;transform:scale(.95)}to{opacity:1;transform:scale(1)}}.elitea-assistant-header{display:flex;align-items:center;justify-content:space-between;height:3.25rem;padding:0 1rem;background:var(--elitea-assistant-header-bg);color:var(--elitea-assistant-header-text);flex-shrink:0;border-bottom:.0625rem solid var(--elitea-assistant-window-border)}.elitea-assistant-header-left,.elitea-assistant-header-right{display:flex;align-items:center;gap:.5rem}.elitea-assistant-header-title{font-size:.9375rem;font-weight:600;margin:0;white-space:nowrap}.elitea-assistant-header-action{border:.0625rem solid transparent;color:var(--elitea-assistant-header-text);cursor:pointer;padding:0;display:flex;align-items:center;justify-content:center;border-radius:50%;width:1.75rem;height:1.75rem;min-width:auto;box-shadow:none;background:var(--elitea-assistant-header-action-bg);transition:background .15s ease,color .15s ease,border-color .15s ease}.elitea-assistant-header-close-action{border:none;color:var(--elitea-assistant-header-close-icon);cursor:pointer;padding:0;display:flex;align-items:center;justify-content:center;border-radius:50%;width:1.75rem;height:1.75rem;min-width:auto;background:var(--elitea-assistant-header-close-bg);transition:background .15s ease,color .15s ease}.elitea-assistant-header-close-action:hover{background:var(--elitea-assistant-header-close-hover-bg);color:var(--elitea-assistant-header-close-hover-color)}.elitea-assistant-header-close-action:active{background:var(--elitea-assistant-header-close-active-bg);color:var(--elitea-assistant-header-close-active-color)}.elitea-assistant-header-close-action:disabled{background:var(--elitea-assistant-header-close-disabled-bg);color:var(--elitea-assistant-header-close-disabled-color);cursor:not-allowed}.elitea-assistant-header-action:hover{background:var(--elitea-assistant-header-action-hover-bg)}.elitea-assistant-header-action:active{background:var(--elitea-assistant-header-action-active-bg);color:var(--elitea-assistant-header-action-active-color);border-color:var(--elitea-assistant-header-action-active-border)}.elitea-assistant-header-action svg{width:1rem;height:1rem;fill:currentColor}.elitea-assistant-header-close-action svg{width:1.3rem;height:1.3rem;fill:currentColor}.elitea-assistant-history-wrapper{position:relative}.elitea-assistant-header-action:disabled{background:var(--elitea-assistant-header-action-disabled-bg);color:var(--elitea-assistant-header-action-disabled-color);cursor:not-allowed}.elitea-assistant-header-action:disabled:hover{background:var(--elitea-assistant-header-action-disabled-bg)}.elitea-assistant-history-dropdown{position:absolute;top:calc(100% + .55rem);right:-2.65rem;width:19.125rem;max-height:21.875rem;overflow-y:auto;background:var(--elitea-assistant-chat-bg);border:.0625rem solid var(--elitea-assistant-history-dropdown-border);border-radius:.5rem;box-shadow:var(--elitea-assistant-history-dropdown-shadow);z-index:100;padding:.5rem 0}.elitea-assistant-history-item{display:block;width:100%;padding:.5rem .75rem;border:none;background:none;cursor:pointer;text-align:left;color:var(--elitea-assistant-header-text);font-size:.875rem;font-weight:400;line-height:1.5rem;overflow:hidden;text-overflow:ellipsis;white-space:nowrap;transition:background .15s ease}.elitea-assistant-history-item:hover{background:var(--elitea-assistant-history-dropdown-hover-bg)}.elitea-assistant-history-item:disabled{opacity:.45;cursor:default;background:none}.elitea-assistant-messages{flex:1;overflow-y:auto;padding:1rem;display:flex;flex-direction:column;gap:.625rem}.elitea-assistant-message-wrapper{display:flex;flex-direction:column;max-width:80%}.elitea-assistant-message-wrapper--user{align-self:flex-end}.elitea-assistant-message-wrapper--assistant{align-self:flex-start}.elitea-assistant-message-meta{display:flex;align-items:center;gap:.375rem;margin-bottom:.375rem}.elitea-assistant-message-meta--assistant{justify-content:flex-start}.elitea-assistant-message-meta--user{justify-content:flex-end}.elitea-assistant-message-avatar{width:1.5rem;height:1.5rem;border-radius:50%;display:flex;align-items:center;justify-content:center;flex-shrink:0}.elitea-assistant-message-avatar--assistant{background:var(--elitea-assistant-button-bg);color:var(--elitea-assistant-button-icon)}.elitea-assistant-message-avatar--user{background:var(--elitea-assistant-user-avatar-bg);color:var(--elitea-assistant-user-avatar-icon)}.elitea-assistant-message-avatar svg{width:1.25rem;height:1.25rem;fill:currentColor}.elitea-assistant-message-time{font-size:.75rem;opacity:.6;color:var(--elitea-assistant-bot-msg-text)}.elitea-assistant-message{padding:.625rem .875rem;border-radius:.75rem;word-wrap:break-word;white-space:pre-wrap;font-weight:400;font-style:Regular;font-size:.875rem;line-height:1.5rem;letter-spacing:0%}.elitea-assistant-message--user{background:var(--elitea-assistant-user-msg-bg);color:var(--elitea-assistant-user-msg-text);border-radius:1rem 0rem 1rem 1rem}.elitea-assistant-message--assistant{background:var(--elitea-assistant-bot-msg-bg);color:var(--elitea-assistant-bot-msg-text);border-radius:0 1rem 1rem}.elitea-assistant-message--error{border:1px solid #e53e3e;opacity:.9}.elitea-assistant-empty{flex:1;display:flex;align-items:center;justify-content:center;color:var(--elitea-assistant-bot-msg-text);opacity:.5;font-size:.8125rem;text-align:center;padding:1.25rem}.elitea-assistant-input-area{display:flex;flex-direction:column;padding:.75rem;background:var(--elitea-assistant-input-bg);flex-shrink:0;border-top:.0625rem solid var(--elitea-assistant-window-border)}.elitea-assistant-input-row{display:flex;align-items:center;gap:.5rem;width:100%}.elitea-assistant-input{flex:1;padding:.5rem .25rem;border:none;border-radius:0;background:transparent;color:var(--elitea-assistant-input-text);font-size:.875rem;font-family:inherit;outline:none;resize:none}.elitea-assistant-input::placeholder{color:var(--elitea-assistant-input-placeholder);opacity:1}.elitea-assistant-attach-button{width:1.75rem;height:1.75rem;border-radius:50%;border:none;cursor:pointer;display:flex;align-items:center;justify-content:center;background:var(--elitea-assistant-header-action-bg);color:var(--elitea-assistant-header-text);flex-shrink:0;transition:opacity .15s ease;padding:0;opacity:.8}.elitea-assistant-attach-button:hover{opacity:1}.elitea-assistant-attach-button svg{width:.875rem;height:.875rem;fill:currentColor}.elitea-assistant-send-button{width:1.75rem;height:1.75rem;border-radius:50%;border:none;cursor:pointer;display:flex;align-items:center;justify-content:center;background:var(--elitea-assistant-send-btn-bg);color:var(--elitea-assistant-send-btn-icon);flex-shrink:0;transition:background .15s ease;padding:0}.elitea-assistant-send-button:disabled{background:var(--elitea-assistant-send-btn-disabled-bg);cursor:default}.elitea-assistant-send-button svg{width:.875rem;height:.875rem;fill:currentColor}.elitea-assistant-file-list{display:flex;align-items:center;gap:.5rem;padding-bottom:.5rem}.elitea-assistant-file-chip{display:flex;align-items:center;gap:.75rem;max-width:11.25rem;height:2.25rem;padding:.375rem .75rem;border-radius:.5rem;background:var(--elitea-assistant-header-action-bg);flex-shrink:0}.elitea-assistant-file-chip-icon{display:flex;align-items:center;justify-content:center;flex-shrink:0;color:var(--elitea-assistant-header-close-icon)}.elitea-assistant-file-chip-icon svg{width:.75rem;height:.875rem}.elitea-assistant-file-chip-name{flex:1;min-width:0;font-size:.75rem;color:var(--elitea-assistant-input-text);white-space:nowrap;overflow:hidden;text-overflow:ellipsis}.elitea-assistant-file-chip-remove{display:flex;align-items:center;justify-content:center;width:1rem;height:1rem;padding:0;border:none;background:none;cursor:pointer;color:var(--elitea-assistant-header-close-icon);flex-shrink:0;opacity:.7;transition:opacity .15s ease}.elitea-assistant-file-chip-remove:hover{opacity:1}.elitea-assistant-file-chip-remove svg{width:2rem;height:2rem;fill:currentColor}.elitea-assistant-file-chip--count{font-size:.75rem;font-weight:400;color:var(--elitea-assistant-input-text);max-width:none;gap:0}.elitea-assistant-tooltip-trigger{display:inline-flex}.elitea-assistant-tooltip{position:fixed;z-index:99999;padding:.375rem .75rem;border-radius:.375rem;background:#14141ceb;color:#fff;font-size:.75rem;line-height:1.4;white-space:nowrap;max-width:20rem;overflow:hidden;text-overflow:ellipsis;pointer-events:none;box-shadow:0 .25rem 1rem #00000040;animation:elitea-tooltip-in .15s ease-out}@keyframes elitea-tooltip-in{0%{opacity:0;transform:translateY(4px)}to{opacity:1;transform:translateY(0)}}.elitea-assistant-popup{position:absolute;bottom:.25rem;display:flex;align-items:center;gap:1rem;padding:.75rem .75rem .75rem 1.25rem;border-radius:1.5rem 1.5rem 1.5rem 0;background:var(--elitea-assistant-popup-bg);color:var(--elitea-assistant-popup-text);font-size:.875rem;font-weight:500;line-height:1.5rem;white-space:nowrap;box-shadow:0 .25rem 1rem #0003;animation:elitea-assistant-popup-in .3s ease-out}.elitea-assistant-popup:before{content:"";position:absolute;top:-.0625rem;right:-.0625rem;bottom:-.0625rem;left:-.0625rem;border-radius:inherit;padding:.0625rem;background:var(--elitea-assistant-popup-border);-webkit-mask:linear-gradient(#fff 0 0) content-box,linear-gradient(#fff 0 0);-webkit-mask-composite:xor;mask:linear-gradient(#fff 0 0) content-box,linear-gradient(#fff 0 0);mask-composite:exclude;pointer-events:none}.elitea-assistant-container--bottom-right .elitea-assistant-popup{right:2.5rem;flex-direction:row-reverse;padding:.75rem 1.25rem .75rem .75rem;border-radius:1.5rem 1.5rem 0}.elitea-assistant-container--bottom-left .elitea-assistant-popup{left:2.5rem}.elitea-assistant-popup-text{-webkit-user-select:none;user-select:none}.elitea-assistant-popup-close{display:flex;align-items:center;justify-content:center;width:1.75rem;height:1.75rem;flex-shrink:0;border:none;border-radius:50%;background:var(--elitea-assistant-popup-close-bg);color:var(--elitea-assistant-popup-text);cursor:pointer;padding:0;transition:background .15s ease}.elitea-assistant-popup-close:hover{background:var(--elitea-assistant-popup-close-hover-bg)}.elitea-assistant-popup-close svg{width:1rem;height:1rem;fill:currentColor}@keyframes elitea-assistant-popup-in{0%{opacity:0;transform:translateY(.5rem)}to{opacity:1;transform:translateY(0)}}')),document.head.appendChild(e)}}catch(t){console.error("vite-plugin-css-injected-by-js",t)}})();
-import { jsx as a, jsxs as k, Fragment as Ce } from "react/jsx-runtime";
-import { memo as f, useRef as F, useState as A, useCallback as g, useLayoutEffect as pe, useEffect as R, createContext as z, useContext as X, forwardRef as he, useMemo as K, useImperativeHandle as ge } from "react";
-import { createPortal as me } from "react-dom";
-import { io as be } from "socket.io-client";
-const O = (e, s = !1) => ({
+(function(){"use strict";try{if(typeof document<"u"){var e=document.createElement("style");e.appendChild(document.createTextNode('@import"https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700&display=swap";.elitea-assistant-container{position:fixed;z-index:2147483647;font-family:Montserrat,sans-serif;font-size:.875rem;line-height:1.5;box-sizing:border-box}.elitea-assistant-container *,.elitea-assistant-container *:before,.elitea-assistant-container *:after{box-sizing:border-box}.elitea-assistant-container--bottom-right{bottom:.75rem;right:1.09375rem}.elitea-assistant-container--bottom-left{bottom:.75rem;left:1.09375rem}.elitea-assistant-button{width:1.75rem;height:1.75rem;border-radius:50%;border:none;cursor:pointer;display:flex;align-items:center;justify-content:center;background:var(--elitea-assistant-button-bg);color:var(--elitea-assistant-button-icon);box-shadow:0 .25rem .75rem #00000026;transition:transform .2s ease,box-shadow .2s ease;padding:0}.elitea-assistant-button:hover{transform:scale(1.08);box-shadow:0 .375rem 1.25rem #0003}.elitea-assistant-button svg{width:1.75rem;height:1.75rem;fill:currentColor}.elitea-assistant-window{position:absolute;bottom:0rem;width:28.75rem;height:30rem;border-radius:1rem;overflow:hidden;display:flex;flex-direction:column;box-shadow:var(--elitea-assistant-window-shadow);background:var(--elitea-assistant-chat-bg);border:.0625rem solid var(--elitea-assistant-window-border);animation:elitea-assistant-slide-up .25s ease-out}.elitea-assistant-container--bottom-right .elitea-assistant-window{right:2.875rem}.elitea-assistant-container--bottom-left .elitea-assistant-window{left:2.875rem}@keyframes elitea-assistant-slide-up{0%{opacity:0;transform:translateY(.75rem)}to{opacity:1;transform:translateY(0)}}.elitea-assistant-overlay{position:fixed;top:0;right:0;bottom:0;left:0;z-index:2147483646;background:#00000080;display:flex;align-items:center;justify-content:center;animation:elitea-assistant-fade-in .2s ease-out}@keyframes elitea-assistant-fade-in{0%{opacity:0}to{opacity:1}}.elitea-assistant-window--expanded{position:static;width:45rem;height:42.375rem;animation:elitea-assistant-scale-in .2s ease-out}@keyframes elitea-assistant-scale-in{0%{opacity:0;transform:scale(.95)}to{opacity:1;transform:scale(1)}}.elitea-assistant-header{display:flex;align-items:center;justify-content:space-between;height:3.25rem;padding:0 1rem;background:var(--elitea-assistant-header-bg);color:var(--elitea-assistant-header-text);flex-shrink:0;border-bottom:.0625rem solid var(--elitea-assistant-window-border)}.elitea-assistant-header-left,.elitea-assistant-header-right{display:flex;align-items:center;gap:.5rem}.elitea-assistant-header-title{font-size:.9375rem;font-weight:600;margin:0;white-space:nowrap}.elitea-assistant-header-action{border:.0625rem solid transparent;color:var(--elitea-assistant-header-text);cursor:pointer;padding:0;display:flex;align-items:center;justify-content:center;border-radius:50%;width:1.75rem;height:1.75rem;min-width:auto;box-shadow:none;background:var(--elitea-assistant-header-action-bg);transition:background .15s ease,color .15s ease,border-color .15s ease}.elitea-assistant-header-close-action{border:none;color:var(--elitea-assistant-header-close-icon);cursor:pointer;padding:0;display:flex;align-items:center;justify-content:center;border-radius:50%;width:1.75rem;height:1.75rem;min-width:auto;background:var(--elitea-assistant-header-close-bg);transition:background .15s ease,color .15s ease}.elitea-assistant-header-close-action:hover{background:var(--elitea-assistant-header-close-hover-bg);color:var(--elitea-assistant-header-close-hover-color)}.elitea-assistant-header-close-action:active{background:var(--elitea-assistant-header-close-active-bg);color:var(--elitea-assistant-header-close-active-color)}.elitea-assistant-header-close-action:disabled{background:var(--elitea-assistant-header-close-disabled-bg);color:var(--elitea-assistant-header-close-disabled-color);cursor:not-allowed}.elitea-assistant-header-action:hover{background:var(--elitea-assistant-header-action-hover-bg)}.elitea-assistant-header-action:active{background:var(--elitea-assistant-header-action-active-bg);color:var(--elitea-assistant-header-action-active-color);border-color:var(--elitea-assistant-header-action-active-border)}.elitea-assistant-header-action svg{width:1rem;height:1rem;fill:currentColor}.elitea-assistant-header-close-action svg{width:1.3rem;height:1.3rem;fill:currentColor}.elitea-assistant-history-wrapper{position:relative}.elitea-assistant-header-action:disabled{background:var(--elitea-assistant-header-action-disabled-bg);color:var(--elitea-assistant-header-action-disabled-color);cursor:not-allowed}.elitea-assistant-header-action:disabled:hover{background:var(--elitea-assistant-header-action-disabled-bg)}.elitea-assistant-history-dropdown{position:absolute;top:calc(100% + .55rem);right:-2.65rem;width:19.125rem;max-height:21.875rem;overflow-y:auto;background:var(--elitea-assistant-chat-bg);border:.0625rem solid var(--elitea-assistant-history-dropdown-border);border-radius:.5rem;box-shadow:var(--elitea-assistant-history-dropdown-shadow);z-index:100;padding:.5rem 0}.elitea-assistant-history-item{display:block;width:100%;padding:.5rem .75rem;border:none;background:none;cursor:pointer;text-align:left;color:var(--elitea-assistant-header-text);font-size:.875rem;font-weight:400;line-height:1.5rem;overflow:hidden;text-overflow:ellipsis;white-space:nowrap;transition:background .15s ease}.elitea-assistant-history-item:hover{background:var(--elitea-assistant-history-dropdown-hover-bg)}.elitea-assistant-history-item:disabled{opacity:.45;cursor:default;background:none}.elitea-assistant-messages{flex:1;overflow-y:auto;padding:1rem;display:flex;flex-direction:column;gap:.625rem}.elitea-assistant-message-wrapper{display:flex;flex-direction:column;max-width:80%}.elitea-assistant-message-wrapper--user{align-self:flex-end}.elitea-assistant-message-wrapper--assistant{align-self:flex-start}.elitea-assistant-message-meta{display:flex;align-items:center;gap:.375rem;margin-bottom:.375rem}.elitea-assistant-message-meta--assistant{justify-content:flex-start}.elitea-assistant-message-meta--user{justify-content:flex-end}.elitea-assistant-message-avatar{width:1.5rem;height:1.5rem;border-radius:50%;display:flex;align-items:center;justify-content:center;flex-shrink:0}.elitea-assistant-message-avatar--assistant{background:var(--elitea-assistant-button-bg);color:var(--elitea-assistant-button-icon)}.elitea-assistant-message-avatar--user{background:var(--elitea-assistant-user-avatar-bg);color:var(--elitea-assistant-user-avatar-icon)}.elitea-assistant-message-avatar svg{width:1.25rem;height:1.25rem;fill:currentColor}.elitea-assistant-message-time{font-size:.75rem;opacity:.6;color:var(--elitea-assistant-bot-msg-text)}.elitea-assistant-message{padding:.625rem .875rem;border-radius:.75rem;word-wrap:break-word;white-space:pre-wrap;font-weight:400;font-style:Regular;font-size:.875rem;line-height:1.5rem;letter-spacing:0%}.elitea-assistant-message--user{background:var(--elitea-assistant-user-msg-bg);color:var(--elitea-assistant-user-msg-text);border-radius:1rem 0rem 1rem 1rem}.elitea-assistant-message--assistant{background:var(--elitea-assistant-bot-msg-bg);color:var(--elitea-assistant-bot-msg-text);border-radius:0 1rem 1rem}.elitea-assistant-message--error{border:1px solid #e53e3e;opacity:.9}@keyframes elitea-assistant-typing-bounce{0%,60%,to{transform:translateY(0);opacity:.25}30%{transform:translateY(-.25rem);opacity:.5}}.elitea-assistant-typing-indicator{display:inline-flex;align-items:center;gap:.1875rem;padding:.125rem 0}.elitea-assistant-typing-dot{width:.25rem;height:.25rem;border-radius:50%;background:var(--elitea-assistant-bot-msg-text);opacity:.25;animation:elitea-assistant-typing-bounce 1.2s ease-in-out infinite}.elitea-assistant-typing-dot:nth-child(2){animation-delay:.15s}.elitea-assistant-typing-dot:nth-child(3){animation-delay:.3s}@keyframes elitea-assistant-shimmer{0%{opacity:.4}50%{opacity:.7}to{opacity:.4}}.elitea-assistant-skeleton-row{display:flex;flex-direction:column;gap:.375rem;max-width:70%}.elitea-assistant-skeleton-row--left{align-self:flex-start}.elitea-assistant-skeleton-row--right{align-self:flex-end}.elitea-assistant-skeleton-meta{display:flex;align-items:center;gap:.375rem}.elitea-assistant-skeleton-row--right .elitea-assistant-skeleton-meta{justify-content:flex-end}.elitea-assistant-skeleton{background:var(--elitea-assistant-bot-msg-bg);border-radius:.5rem;animation:elitea-assistant-shimmer 1.4s ease-in-out infinite}.elitea-assistant-skeleton--avatar{width:1.5rem;height:1.5rem;border-radius:50%;flex-shrink:0}.elitea-assistant-skeleton--time{width:2.5rem;height:.75rem;border-radius:.25rem}.elitea-assistant-skeleton--bubble{width:10rem;height:2.5rem;border-radius:.75rem}.elitea-assistant-skeleton-row--right .elitea-assistant-skeleton--bubble{width:8rem}.elitea-assistant-empty{flex:1;display:flex;align-items:center;justify-content:center;color:var(--elitea-assistant-bot-msg-text);opacity:.5;font-size:.8125rem;text-align:center;padding:1.25rem}.elitea-assistant-input-area{display:flex;flex-direction:column;padding:.75rem;background:var(--elitea-assistant-input-bg);flex-shrink:0;border-top:.0625rem solid var(--elitea-assistant-window-border)}.elitea-assistant-input-row{display:flex;align-items:center;gap:.5rem;width:100%}.elitea-assistant-input{flex:1;padding:.5rem .25rem;border:none;border-radius:0;background:transparent;color:var(--elitea-assistant-input-text);font-size:.875rem;font-family:inherit;outline:none;resize:none}.elitea-assistant-input::placeholder{color:var(--elitea-assistant-input-placeholder);opacity:1}.elitea-assistant-attach-button{width:1.75rem;height:1.75rem;border-radius:50%;border:none;cursor:pointer;display:flex;align-items:center;justify-content:center;background:var(--elitea-assistant-header-action-bg);color:var(--elitea-assistant-header-text);flex-shrink:0;transition:opacity .15s ease;padding:0;opacity:.8}.elitea-assistant-attach-button:hover{opacity:1}.elitea-assistant-attach-button svg{width:.875rem;height:.875rem;fill:currentColor}.elitea-assistant-send-button{width:1.75rem;height:1.75rem;border-radius:50%;border:none;cursor:pointer;display:flex;align-items:center;justify-content:center;background:var(--elitea-assistant-send-btn-bg);color:var(--elitea-assistant-send-btn-icon);flex-shrink:0;transition:background .15s ease;padding:0}.elitea-assistant-send-button:disabled{background:var(--elitea-assistant-send-btn-disabled-bg);cursor:default}.elitea-assistant-send-button svg{width:.875rem;height:.875rem;fill:currentColor}.elitea-assistant-file-list{display:flex;align-items:center;gap:.5rem;padding-bottom:.5rem}.elitea-assistant-file-chip{display:flex;align-items:center;gap:.75rem;max-width:11.25rem;height:2.25rem;padding:.375rem .75rem;border-radius:.5rem;background:var(--elitea-assistant-header-action-bg);flex-shrink:0}.elitea-assistant-file-chip-icon{display:flex;align-items:center;justify-content:center;flex-shrink:0;color:var(--elitea-assistant-header-close-icon)}.elitea-assistant-file-chip-icon svg{width:.75rem;height:.875rem}.elitea-assistant-file-chip-name{flex:1;min-width:0;font-size:.75rem;color:var(--elitea-assistant-input-text);white-space:nowrap;overflow:hidden;text-overflow:ellipsis}.elitea-assistant-file-chip-remove{display:flex;align-items:center;justify-content:center;width:1rem;height:1rem;padding:0;border:none;background:none;cursor:pointer;color:var(--elitea-assistant-header-close-icon);flex-shrink:0;opacity:.7;transition:opacity .15s ease}.elitea-assistant-file-chip-remove:hover{opacity:1}.elitea-assistant-file-chip-remove svg{width:2rem;height:2rem;fill:currentColor}.elitea-assistant-file-chip--count{font-size:.75rem;font-weight:400;color:var(--elitea-assistant-input-text);max-width:none;gap:0}.elitea-assistant-tooltip-trigger{display:inline-flex}.elitea-assistant-tooltip{position:fixed;z-index:99999;padding:.375rem .75rem;border-radius:.375rem;background:#14141ceb;color:#fff;font-size:.75rem;line-height:1.4;white-space:nowrap;max-width:20rem;overflow:hidden;text-overflow:ellipsis;pointer-events:none;box-shadow:0 .25rem 1rem #00000040;animation:elitea-tooltip-in .15s ease-out}@keyframes elitea-tooltip-in{0%{opacity:0;transform:translateY(4px)}to{opacity:1;transform:translateY(0)}}.elitea-assistant-popup{position:absolute;bottom:.25rem;display:flex;align-items:center;gap:1rem;padding:.75rem .75rem .75rem 1.25rem;border-radius:1.5rem 1.5rem 1.5rem 0;background:var(--elitea-assistant-popup-bg);color:var(--elitea-assistant-popup-text);font-size:.875rem;font-weight:500;line-height:1.5rem;white-space:nowrap;box-shadow:0 .25rem 1rem #0003;animation:elitea-assistant-popup-in .3s ease-out}.elitea-assistant-popup:before{content:"";position:absolute;top:-.0625rem;right:-.0625rem;bottom:-.0625rem;left:-.0625rem;border-radius:inherit;padding:.0625rem;background:var(--elitea-assistant-popup-border);-webkit-mask:linear-gradient(#fff 0 0) content-box,linear-gradient(#fff 0 0);-webkit-mask-composite:xor;mask:linear-gradient(#fff 0 0) content-box,linear-gradient(#fff 0 0);mask-composite:exclude;pointer-events:none}.elitea-assistant-container--bottom-right .elitea-assistant-popup{right:2.5rem;flex-direction:row-reverse;padding:.75rem 1.25rem .75rem .75rem;border-radius:1.5rem 1.5rem 0}.elitea-assistant-container--bottom-left .elitea-assistant-popup{left:2.5rem}.elitea-assistant-popup-text{-webkit-user-select:none;user-select:none}.elitea-assistant-popup-close{display:flex;align-items:center;justify-content:center;width:1.75rem;height:1.75rem;flex-shrink:0;border:none;border-radius:50%;background:var(--elitea-assistant-popup-close-bg);color:var(--elitea-assistant-popup-text);cursor:pointer;padding:0;transition:background .15s ease}.elitea-assistant-popup-close:hover{background:var(--elitea-assistant-popup-close-hover-bg)}.elitea-assistant-popup-close svg{width:1rem;height:1rem;fill:currentColor}@keyframes elitea-assistant-popup-in{0%{opacity:0;transform:translateY(.5rem)}to{opacity:1;transform:translateY(0)}}')),document.head.appendChild(e)}}catch(t){console.error("vite-plugin-css-injected-by-js",t)}})();
+import { jsx as t, jsxs as f, Fragment as ye } from "react/jsx-runtime";
+import { memo as N, useRef as P, useState as y, useCallback as w, useLayoutEffect as ke, useEffect as F, createContext as se, useContext as ne, useMemo as J, forwardRef as Ae, useImperativeHandle as Ee } from "react";
+import { createPortal as Ne } from "react-dom";
+import { io as Be } from "socket.io-client";
+const W = (e, a = !1) => ({
   Authorization: `Bearer ${e}`,
-  ...s && { "Content-Type": "application/json" }
-}), Z = async (e) => {
+  ...a && { "Content-Type": "application/json" }
+}), G = async (e) => {
   if (!e.ok) throw new Error(`${e.status} ${e.statusText}`);
   return e;
-}, ve = (e, s) => ({
+}, xe = (e, a) => ({
   getConfig: () => fetch(`${e}/config/`, {
-    headers: O(s)
-  }).then(Z).then((n) => n.json()),
+    headers: W(a)
+  }).then(G).then((n) => n.json()),
   getConversations: () => fetch(`${e}/conversations/`, {
-    headers: O(s)
-  }).then(Z).then((n) => n.json()),
+    headers: W(a)
+  }).then(G).then((n) => n.json()),
   getConversation: (n) => fetch(`${e}/conversation/${n}`, {
-    headers: O(s)
-  }).then(Z).then((t) => t.json()),
+    headers: W(a)
+  }).then(G).then((o) => o.json()),
   createConversation: () => fetch(`${e}/conversations/`, {
     method: "POST",
-    headers: O(s, !0),
+    headers: W(a, !0),
     body: JSON.stringify({})
-  }).then(Z).then((n) => n.json()),
+  }).then(G).then((n) => n.json()),
   deleteConversation: (n) => fetch(`${e}/conversation/${n}`, {
     method: "DELETE",
-    headers: O(s)
-  }).then(Z).then(() => {
+    headers: W(a)
+  }).then(G).then(() => {
   })
-}), j = f(() => /* @__PURE__ */ a(
+}), ee = N(() => /* @__PURE__ */ t(
   "svg",
   {
     viewBox: "0 0 28 28",
     xmlns: "http://www.w3.org/2000/svg",
-    children: /* @__PURE__ */ a("path", { d: "M14.2499 4.375C14.8319 4.375 15.3037 4.84137 15.3037 5.41666C15.3037 5.87017 15.0104 6.25575 14.6012 6.39877V8.26399H14.9524C15.5109 8.26399 15.9675 8.69328 16.0037 9.23621H18.2544C20.5477 9.23621 22.4397 10.9331 22.7159 13.1259C23.2816 13.1443 23.7344 13.6031 23.7344 14.1667V15.6945C23.7343 16.2697 23.2625 16.7362 22.6805 16.7362C22.6637 16.7362 22.6469 16.7356 22.6302 16.7348C22.2147 18.5198 20.7287 19.6036 18.2544 20.0695C15.3037 20.625 9.26175 21.875 9.26175 21.875L10.1048 20.0695C8.0024 20.0695 6.23719 18.643 5.74513 16.7159C5.67822 16.7291 5.60903 16.7362 5.53821 16.7362C4.95623 16.7362 4.48444 16.2697 4.48438 15.6945V14.1667C4.48438 13.5914 4.95619 13.1251 5.53821 13.1251C5.57345 13.1251 5.60828 13.1267 5.64263 13.1301C5.91693 10.9353 7.81012 9.23621 10.1048 9.23621H12.3556C12.3917 8.69328 12.8484 8.26399 13.4068 8.26399H13.7581V6.33788C13.4239 6.1632 13.1961 5.81633 13.1961 5.41666C13.1961 4.84137 13.6679 4.375 14.2499 4.375ZM11.2289 11.3195C9.44405 11.3195 7.99715 12.7497 7.99715 14.5139V14.6528C7.99721 16.417 9.44409 17.8473 11.2289 17.8473H17.1304C18.9152 17.8473 20.362 16.417 20.3621 14.6528V14.5139C20.3621 12.7497 18.9152 11.3195 17.1304 11.3195H11.2289ZM11.4397 13.5416C12.0217 13.5416 12.4935 14.008 12.4935 14.5833C12.4935 15.1585 12.0217 15.6249 11.4397 15.6249C10.8577 15.6249 10.3858 15.1585 10.3858 14.5833C10.3858 14.008 10.8577 13.5416 11.4397 13.5416ZM16.9196 13.5416C17.5016 13.5416 17.9734 14.008 17.9734 14.5833C17.9734 15.1585 17.5016 15.6249 16.9196 15.6249C16.3376 15.6249 15.8658 15.1585 15.8658 14.5833C15.8658 14.008 16.3376 13.5416 16.9196 13.5416Z" })
+    children: /* @__PURE__ */ t("path", { d: "M14.2499 4.375C14.8319 4.375 15.3037 4.84137 15.3037 5.41666C15.3037 5.87017 15.0104 6.25575 14.6012 6.39877V8.26399H14.9524C15.5109 8.26399 15.9675 8.69328 16.0037 9.23621H18.2544C20.5477 9.23621 22.4397 10.9331 22.7159 13.1259C23.2816 13.1443 23.7344 13.6031 23.7344 14.1667V15.6945C23.7343 16.2697 23.2625 16.7362 22.6805 16.7362C22.6637 16.7362 22.6469 16.7356 22.6302 16.7348C22.2147 18.5198 20.7287 19.6036 18.2544 20.0695C15.3037 20.625 9.26175 21.875 9.26175 21.875L10.1048 20.0695C8.0024 20.0695 6.23719 18.643 5.74513 16.7159C5.67822 16.7291 5.60903 16.7362 5.53821 16.7362C4.95623 16.7362 4.48444 16.2697 4.48438 15.6945V14.1667C4.48438 13.5914 4.95619 13.1251 5.53821 13.1251C5.57345 13.1251 5.60828 13.1267 5.64263 13.1301C5.91693 10.9353 7.81012 9.23621 10.1048 9.23621H12.3556C12.3917 8.69328 12.8484 8.26399 13.4068 8.26399H13.7581V6.33788C13.4239 6.1632 13.1961 5.81633 13.1961 5.41666C13.1961 4.84137 13.6679 4.375 14.2499 4.375ZM11.2289 11.3195C9.44405 11.3195 7.99715 12.7497 7.99715 14.5139V14.6528C7.99721 16.417 9.44409 17.8473 11.2289 17.8473H17.1304C18.9152 17.8473 20.362 16.417 20.3621 14.6528V14.5139C20.3621 12.7497 18.9152 11.3195 17.1304 11.3195H11.2289ZM11.4397 13.5416C12.0217 13.5416 12.4935 14.008 12.4935 14.5833C12.4935 15.1585 12.0217 15.6249 11.4397 15.6249C10.8577 15.6249 10.3858 15.1585 10.3858 14.5833C10.3858 14.008 10.8577 13.5416 11.4397 13.5416ZM16.9196 13.5416C17.5016 13.5416 17.9734 14.008 17.9734 14.5833C17.9734 15.1585 17.5016 15.6249 16.9196 15.6249C16.3376 15.6249 15.8658 15.1585 15.8658 14.5833C15.8658 14.008 16.3376 13.5416 16.9196 13.5416Z" })
   }
 ));
-j.displayName = "AssistantIcon";
-const J = f(() => /* @__PURE__ */ a(
+ee.displayName = "AssistantIcon";
+const oe = N(() => /* @__PURE__ */ t(
   "svg",
   {
     viewBox: "0 0 12 14",
     xmlns: "http://www.w3.org/2000/svg",
-    children: /* @__PURE__ */ a("path", { d: "M11.5876 6.6172C11.6361 6.66719 11.6746 6.72656 11.7008 6.7919C11.7271 6.85725 11.7406 6.9273 11.7406 6.99804C11.7406 7.06878 11.7271 7.13883 11.7008 7.20417C11.6746 7.26952 11.6361 7.32889 11.5876 7.37888L6.23589 12.8964C5.55078 13.6031 4.6216 14.0001 3.65277 14C2.68393 13.9999 1.7548 13.6028 1.06978 12.8961C0.384749 12.1893 -6.11425e-05 11.2307 7.28683e-09 10.2313C6.11571e-05 9.2318 0.384988 8.2733 1.0701 7.56661L7.5443 0.789483C8.03342 0.284364 8.69701 0.000378941 9.3891 3.78958e-07C10.0812 -0.000378183 10.7451 0.282881 11.2347 0.787465C11.7243 1.29205 11.9996 1.97662 12 2.69059C12.0004 3.40456 11.7258 4.08943 11.2367 4.59455L4.76116 11.3717C4.46709 11.6751 4.06823 11.8455 3.65235 11.8455C3.23646 11.8455 2.8376 11.6751 2.54353 11.3717C2.24945 11.0683 2.08424 10.6568 2.08424 10.2278C2.08424 9.79877 2.24945 9.38731 2.54353 9.08393L7.97674 3.39012C8.02433 3.33774 8.0816 3.29571 8.14518 3.26651C8.20875 3.23731 8.27735 3.22152 8.34693 3.22008C8.4165 3.21863 8.48566 3.23156 8.55032 3.2581C8.61498 3.28464 8.67385 3.32425 8.72345 3.37461C8.77305 3.42497 8.81238 3.48506 8.83913 3.55133C8.86588 3.61761 8.87951 3.68874 8.87922 3.76053C8.87893 3.83232 8.86472 3.90333 8.83742 3.96937C8.81013 4.03541 8.77031 4.09515 8.7203 4.14508L3.28643 9.84494C3.23778 9.89474 3.19911 9.95393 3.17264 10.0191C3.14616 10.0843 3.13239 10.1543 3.13212 10.225C3.13185 10.2957 3.14507 10.3658 3.17105 10.4312C3.19702 10.4966 3.23523 10.5561 3.2835 10.6063C3.33177 10.6565 3.38914 10.6964 3.45235 10.7237C3.51556 10.751 3.58337 10.7652 3.6519 10.7655C3.72043 10.7658 3.78835 10.7521 3.85176 10.7253C3.91518 10.6985 3.97287 10.6591 4.02152 10.6093L10.4964 3.83556C10.7904 3.53281 10.9559 3.12194 10.9563 2.69335C10.9568 2.26475 10.7921 1.85354 10.4987 1.55016C10.2052 1.24679 9.80691 1.0761 9.39145 1.07566C8.97599 1.07522 8.57737 1.24506 8.2833 1.54781L1.8104 8.32224C1.56791 8.572 1.37549 8.86858 1.24411 9.19506C1.11273 9.52153 1.04496 9.8715 1.04469 10.225C1.04442 10.5785 1.11164 10.9286 1.24252 11.2553C1.37339 11.5819 1.56536 11.8788 1.80747 12.129C2.04957 12.3792 2.33706 12.5777 2.65353 12.7132C2.97 12.8487 3.30924 12.9186 3.6519 12.9189C3.99456 12.9192 4.33391 12.8498 4.65059 12.7148C4.96727 12.5798 5.25506 12.3818 5.49755 12.132L10.8499 6.6145C10.9481 6.51399 11.0809 6.45781 11.2193 6.45831C11.3576 6.45881 11.4901 6.51596 11.5876 6.6172Z" })
+    children: /* @__PURE__ */ t("path", { d: "M11.5876 6.6172C11.6361 6.66719 11.6746 6.72656 11.7008 6.7919C11.7271 6.85725 11.7406 6.9273 11.7406 6.99804C11.7406 7.06878 11.7271 7.13883 11.7008 7.20417C11.6746 7.26952 11.6361 7.32889 11.5876 7.37888L6.23589 12.8964C5.55078 13.6031 4.6216 14.0001 3.65277 14C2.68393 13.9999 1.7548 13.6028 1.06978 12.8961C0.384749 12.1893 -6.11425e-05 11.2307 7.28683e-09 10.2313C6.11571e-05 9.2318 0.384988 8.2733 1.0701 7.56661L7.5443 0.789483C8.03342 0.284364 8.69701 0.000378941 9.3891 3.78958e-07C10.0812 -0.000378183 10.7451 0.282881 11.2347 0.787465C11.7243 1.29205 11.9996 1.97662 12 2.69059C12.0004 3.40456 11.7258 4.08943 11.2367 4.59455L4.76116 11.3717C4.46709 11.6751 4.06823 11.8455 3.65235 11.8455C3.23646 11.8455 2.8376 11.6751 2.54353 11.3717C2.24945 11.0683 2.08424 10.6568 2.08424 10.2278C2.08424 9.79877 2.24945 9.38731 2.54353 9.08393L7.97674 3.39012C8.02433 3.33774 8.0816 3.29571 8.14518 3.26651C8.20875 3.23731 8.27735 3.22152 8.34693 3.22008C8.4165 3.21863 8.48566 3.23156 8.55032 3.2581C8.61498 3.28464 8.67385 3.32425 8.72345 3.37461C8.77305 3.42497 8.81238 3.48506 8.83913 3.55133C8.86588 3.61761 8.87951 3.68874 8.87922 3.76053C8.87893 3.83232 8.86472 3.90333 8.83742 3.96937C8.81013 4.03541 8.77031 4.09515 8.7203 4.14508L3.28643 9.84494C3.23778 9.89474 3.19911 9.95393 3.17264 10.0191C3.14616 10.0843 3.13239 10.1543 3.13212 10.225C3.13185 10.2957 3.14507 10.3658 3.17105 10.4312C3.19702 10.4966 3.23523 10.5561 3.2835 10.6063C3.33177 10.6565 3.38914 10.6964 3.45235 10.7237C3.51556 10.751 3.58337 10.7652 3.6519 10.7655C3.72043 10.7658 3.78835 10.7521 3.85176 10.7253C3.91518 10.6985 3.97287 10.6591 4.02152 10.6093L10.4964 3.83556C10.7904 3.53281 10.9559 3.12194 10.9563 2.69335C10.9568 2.26475 10.7921 1.85354 10.4987 1.55016C10.2052 1.24679 9.80691 1.0761 9.39145 1.07566C8.97599 1.07522 8.57737 1.24506 8.2833 1.54781L1.8104 8.32224C1.56791 8.572 1.37549 8.86858 1.24411 9.19506C1.11273 9.52153 1.04496 9.8715 1.04469 10.225C1.04442 10.5785 1.11164 10.9286 1.24252 11.2553C1.37339 11.5819 1.56536 11.8788 1.80747 12.129C2.04957 12.3792 2.33706 12.5777 2.65353 12.7132C2.97 12.8487 3.30924 12.9186 3.6519 12.9189C3.99456 12.9192 4.33391 12.8498 4.65059 12.7148C4.96727 12.5798 5.25506 12.3818 5.49755 12.132L10.8499 6.6145C10.9481 6.51399 11.0809 6.45781 11.2193 6.45831C11.3576 6.45881 11.4901 6.51596 11.5876 6.6172Z" })
   }
 ));
-J.displayName = "AttachmentIcon";
-const we = f(() => /* @__PURE__ */ a(
+oe.displayName = "AttachmentIcon";
+const Ie = N(() => /* @__PURE__ */ t(
   "svg",
   {
     viewBox: "0 0 24 24",
     xmlns: "http://www.w3.org/2000/svg",
-    children: /* @__PURE__ */ a("path", { d: "M20 2H4C2.9 2 2 2.9 2 4V22L6 18H20C21.1 18 22 17.1 22 16V4C22 2.9 21.1 2 20 2ZM20 16H5.2L4 17.2V4H20V16Z" })
+    children: /* @__PURE__ */ t("path", { d: "M20 2H4C2.9 2 2 2.9 2 4V22L6 18H20C21.1 18 22 17.1 22 16V4C22 2.9 21.1 2 20 2ZM20 16H5.2L4 17.2V4H20V16Z" })
   }
 ));
-we.displayName = "ChatIcon";
-const W = f(() => /* @__PURE__ */ a(
+Ie.displayName = "ChatIcon";
+const Y = N(() => /* @__PURE__ */ t(
   "svg",
   {
     viewBox: "0 0 24 24",
     xmlns: "http://www.w3.org/2000/svg",
-    children: /* @__PURE__ */ a("path", { d: "M19 6.41L17.59 5L12 10.59L6.41 5L5 6.41L10.59 12L5 17.59L6.41 19L12 13.41L17.59 19L19 17.59L13.41 12L19 6.41Z" })
+    children: /* @__PURE__ */ t("path", { d: "M19 6.41L17.59 5L12 10.59L6.41 5L5 6.41L10.59 12L5 17.59L6.41 19L12 13.41L17.59 19L19 17.59L13.41 12L19 6.41Z" })
   }
 ));
-W.displayName = "CloseIcon";
-const Y = f(() => /* @__PURE__ */ a(
+Y.displayName = "CloseIcon";
+const ie = N(() => /* @__PURE__ */ t(
   "svg",
   {
     viewBox: "0 0 12 12",
     xmlns: "http://www.w3.org/2000/svg",
-    children: /* @__PURE__ */ a("path", { d: "M12 0.545455V3.81818C12 3.96285 11.9425 4.10158 11.8402 4.20388C11.7379 4.30617 11.5992 4.36364 11.4545 4.36364C11.3099 4.36364 11.1711 4.30617 11.0689 4.20388C10.9666 4.10158 10.9091 3.96285 10.9091 3.81818V1.86205L7.47682 5.295C7.37447 5.39735 7.23565 5.45485 7.09091 5.45485C6.94617 5.45485 6.80735 5.39735 6.705 5.295C6.60265 5.19265 6.54515 5.05383 6.54515 4.90909C6.54515 4.76435 6.60265 4.62553 6.705 4.52318L10.138 1.09091H8.18182C8.03715 1.09091 7.89842 1.03344 7.79612 0.931149C7.69383 0.828856 7.63636 0.690118 7.63636 0.545455C7.63636 0.400791 7.69383 0.262053 7.79612 0.15976C7.89842 0.0574675 8.03715 0 8.18182 0H11.4545C11.5992 0 11.7379 0.0574675 11.8402 0.15976C11.9425 0.262053 12 0.400791 12 0.545455ZM4.52318 6.705L1.09091 10.138V8.18182C1.09091 8.03715 1.03344 7.89842 0.931149 7.79612C0.828856 7.69383 0.690118 7.63636 0.545455 7.63636C0.400791 7.63636 0.262053 7.69383 0.15976 7.79612C0.0574675 7.89842 0 8.03715 0 8.18182V11.4545C0 11.5992 0.0574675 11.7379 0.15976 11.8402C0.262053 11.9425 0.400791 12 0.545455 12H3.81818C3.96285 12 4.10158 11.9425 4.20388 11.8402C4.30617 11.7379 4.36364 11.5992 4.36364 11.4545C4.36364 11.3099 4.30617 11.1711 4.20388 11.0689C4.10158 10.9666 3.96285 10.9091 3.81818 10.9091H1.86205L5.295 7.47682C5.39735 7.37447 5.45485 7.23565 5.45485 7.09091C5.45485 6.94617 5.39735 6.80735 5.295 6.705C5.19265 6.60265 5.05383 6.54515 4.90909 6.54515C4.76435 6.54515 4.62553 6.60265 4.52318 6.705Z" })
+    children: /* @__PURE__ */ t("path", { d: "M12 0.545455V3.81818C12 3.96285 11.9425 4.10158 11.8402 4.20388C11.7379 4.30617 11.5992 4.36364 11.4545 4.36364C11.3099 4.36364 11.1711 4.30617 11.0689 4.20388C10.9666 4.10158 10.9091 3.96285 10.9091 3.81818V1.86205L7.47682 5.295C7.37447 5.39735 7.23565 5.45485 7.09091 5.45485C6.94617 5.45485 6.80735 5.39735 6.705 5.295C6.60265 5.19265 6.54515 5.05383 6.54515 4.90909C6.54515 4.76435 6.60265 4.62553 6.705 4.52318L10.138 1.09091H8.18182C8.03715 1.09091 7.89842 1.03344 7.79612 0.931149C7.69383 0.828856 7.63636 0.690118 7.63636 0.545455C7.63636 0.400791 7.69383 0.262053 7.79612 0.15976C7.89842 0.0574675 8.03715 0 8.18182 0H11.4545C11.5992 0 11.7379 0.0574675 11.8402 0.15976C11.9425 0.262053 12 0.400791 12 0.545455ZM4.52318 6.705L1.09091 10.138V8.18182C1.09091 8.03715 1.03344 7.89842 0.931149 7.79612C0.828856 7.69383 0.690118 7.63636 0.545455 7.63636C0.400791 7.63636 0.262053 7.69383 0.15976 7.79612C0.0574675 7.89842 0 8.03715 0 8.18182V11.4545C0 11.5992 0.0574675 11.7379 0.15976 11.8402C0.262053 11.9425 0.400791 12 0.545455 12H3.81818C3.96285 12 4.10158 11.9425 4.20388 11.8402C4.30617 11.7379 4.36364 11.5992 4.36364 11.4545C4.36364 11.3099 4.30617 11.1711 4.20388 11.0689C4.10158 10.9666 3.96285 10.9091 3.81818 10.9091H1.86205L5.295 7.47682C5.39735 7.37447 5.45485 7.23565 5.45485 7.09091C5.45485 6.94617 5.39735 6.80735 5.295 6.705C5.19265 6.60265 5.05383 6.54515 4.90909 6.54515C4.76435 6.54515 4.62553 6.60265 4.52318 6.705Z" })
   }
 ));
-Y.displayName = "ExpandIcon";
-const Q = f(() => /* @__PURE__ */ a(
+ie.displayName = "ExpandIcon";
+const re = N(() => /* @__PURE__ */ t(
   "svg",
   {
     viewBox: "0 0 12 14",
     xmlns: "http://www.w3.org/2000/svg",
-    children: /* @__PURE__ */ a(
+    children: /* @__PURE__ */ t(
       "path",
       {
         fillRule: "evenodd",
@@ -90,91 +90,91 @@ const Q = f(() => /* @__PURE__ */ a(
     )
   }
 ));
-Q.displayName = "FileIcon";
-const ee = f(() => /* @__PURE__ */ a(
+re.displayName = "FileIcon";
+const le = N(() => /* @__PURE__ */ t(
   "svg",
   {
     viewBox: "0 0 14 14",
     xmlns: "http://www.w3.org/2000/svg",
-    children: /* @__PURE__ */ a("path", { d: "M7.84245 3.50002V6.6697L10.3716 8.2498C10.499 8.32948 10.5908 8.45859 10.6268 8.60874C10.6628 8.75888 10.64 8.91776 10.5635 9.05042C10.487 9.18309 10.363 9.27867 10.2188 9.31614C10.0746 9.3536 9.92206 9.32989 9.79466 9.25022L6.99378 7.50022C6.91089 7.44836 6.8423 7.37503 6.79469 7.28737C6.74708 7.19972 6.72207 7.10072 6.7221 7.00001V3.50002C6.7221 3.34531 6.78112 3.19693 6.88617 3.08754C6.99122 2.97814 7.13371 2.91668 7.28227 2.91668C7.43084 2.91668 7.57333 2.97814 7.67838 3.08754C7.78343 3.19693 7.84245 3.34531 7.84245 3.50002ZM7.28227 2.15915e-05C6.39859 -0.00227058 5.52325 0.177963 4.70691 0.530291C3.89056 0.882618 3.14943 1.40004 2.52639 2.05262C2.01733 2.58929 1.56499 3.10554 1.12035 3.64585V2.33335C1.12035 2.17864 1.06133 2.03027 0.956278 1.92087C0.851225 1.81148 0.708743 1.75002 0.560175 1.75002C0.411607 1.75002 0.269125 1.81148 0.164071 1.92087C0.0590182 2.03027 0 2.17864 0 2.33335V5.25001C0 5.40472 0.0590182 5.5531 0.164071 5.66249C0.269125 5.77189 0.411607 5.83335 0.560175 5.83335H3.36105C3.50962 5.83335 3.6521 5.77189 3.75715 5.66249C3.86221 5.5531 3.92122 5.40472 3.92122 5.25001C3.92122 5.0953 3.86221 4.94693 3.75715 4.83754C3.6521 4.72814 3.50962 4.66668 3.36105 4.66668H1.75055C2.2512 4.05272 2.74976 3.4745 3.31834 2.87512C4.09688 2.0644 5.08758 1.51057 6.16666 1.28283C7.24574 1.05509 8.36535 1.16353 9.38558 1.59462C10.4058 2.02571 11.2814 2.76032 11.903 3.70667C12.5246 4.65301 12.8646 5.76912 12.8805 6.91554C12.8965 8.06195 12.5876 9.18784 11.9926 10.1525C11.3975 11.1172 10.5427 11.8779 9.53484 12.3395C8.52702 12.8011 7.41089 12.9433 6.32594 12.7481C5.24098 12.553 4.23531 12.0292 3.43457 11.2423C3.38106 11.1896 3.3181 11.1485 3.2493 11.1211C3.18051 11.0938 3.10721 11.0808 3.03361 11.083C2.96 11.0852 2.88753 11.1024 2.82033 11.1338C2.75312 11.1651 2.6925 11.2099 2.64193 11.2656C2.59135 11.3214 2.55181 11.3869 2.52557 11.4586C2.49932 11.5302 2.48689 11.6065 2.48897 11.6832C2.49105 11.7598 2.5076 11.8353 2.53769 11.9053C2.56778 11.9753 2.61081 12.0384 2.66433 12.091C3.4622 12.8751 4.43221 13.4439 5.48972 13.7478C6.54722 14.0517 7.66008 14.0814 8.73117 13.8345C9.80226 13.5875 10.799 13.0713 11.6345 12.3309C12.4699 11.5905 13.1187 10.6485 13.5241 9.58695C13.9295 8.52544 14.0793 7.37674 13.9604 6.24108C13.8414 5.10543 13.4574 4.01735 12.8418 3.0718C12.2261 2.12625 11.3976 1.35197 10.4286 0.816529C9.4595 0.281089 8.37931 0.000765142 7.28227 2.15915e-05Z" })
+    children: /* @__PURE__ */ t("path", { d: "M7.84245 3.50002V6.6697L10.3716 8.2498C10.499 8.32948 10.5908 8.45859 10.6268 8.60874C10.6628 8.75888 10.64 8.91776 10.5635 9.05042C10.487 9.18309 10.363 9.27867 10.2188 9.31614C10.0746 9.3536 9.92206 9.32989 9.79466 9.25022L6.99378 7.50022C6.91089 7.44836 6.8423 7.37503 6.79469 7.28737C6.74708 7.19972 6.72207 7.10072 6.7221 7.00001V3.50002C6.7221 3.34531 6.78112 3.19693 6.88617 3.08754C6.99122 2.97814 7.13371 2.91668 7.28227 2.91668C7.43084 2.91668 7.57333 2.97814 7.67838 3.08754C7.78343 3.19693 7.84245 3.34531 7.84245 3.50002ZM7.28227 2.15915e-05C6.39859 -0.00227058 5.52325 0.177963 4.70691 0.530291C3.89056 0.882618 3.14943 1.40004 2.52639 2.05262C2.01733 2.58929 1.56499 3.10554 1.12035 3.64585V2.33335C1.12035 2.17864 1.06133 2.03027 0.956278 1.92087C0.851225 1.81148 0.708743 1.75002 0.560175 1.75002C0.411607 1.75002 0.269125 1.81148 0.164071 1.92087C0.0590182 2.03027 0 2.17864 0 2.33335V5.25001C0 5.40472 0.0590182 5.5531 0.164071 5.66249C0.269125 5.77189 0.411607 5.83335 0.560175 5.83335H3.36105C3.50962 5.83335 3.6521 5.77189 3.75715 5.66249C3.86221 5.5531 3.92122 5.40472 3.92122 5.25001C3.92122 5.0953 3.86221 4.94693 3.75715 4.83754C3.6521 4.72814 3.50962 4.66668 3.36105 4.66668H1.75055C2.2512 4.05272 2.74976 3.4745 3.31834 2.87512C4.09688 2.0644 5.08758 1.51057 6.16666 1.28283C7.24574 1.05509 8.36535 1.16353 9.38558 1.59462C10.4058 2.02571 11.2814 2.76032 11.903 3.70667C12.5246 4.65301 12.8646 5.76912 12.8805 6.91554C12.8965 8.06195 12.5876 9.18784 11.9926 10.1525C11.3975 11.1172 10.5427 11.8779 9.53484 12.3395C8.52702 12.8011 7.41089 12.9433 6.32594 12.7481C5.24098 12.553 4.23531 12.0292 3.43457 11.2423C3.38106 11.1896 3.3181 11.1485 3.2493 11.1211C3.18051 11.0938 3.10721 11.0808 3.03361 11.083C2.96 11.0852 2.88753 11.1024 2.82033 11.1338C2.75312 11.1651 2.6925 11.2099 2.64193 11.2656C2.59135 11.3214 2.55181 11.3869 2.52557 11.4586C2.49932 11.5302 2.48689 11.6065 2.48897 11.6832C2.49105 11.7598 2.5076 11.8353 2.53769 11.9053C2.56778 11.9753 2.61081 12.0384 2.66433 12.091C3.4622 12.8751 4.43221 13.4439 5.48972 13.7478C6.54722 14.0517 7.66008 14.0814 8.73117 13.8345C9.80226 13.5875 10.799 13.0713 11.6345 12.3309C12.4699 11.5905 13.1187 10.6485 13.5241 9.58695C13.9295 8.52544 14.0793 7.37674 13.9604 6.24108C13.8414 5.10543 13.4574 4.01735 12.8418 3.0718C12.2261 2.12625 11.3976 1.35197 10.4286 0.816529C9.4595 0.281089 8.37931 0.000765142 7.28227 2.15915e-05Z" })
   }
 ));
-ee.displayName = "HistoryIcon";
-const te = f(() => /* @__PURE__ */ a(
+le.displayName = "HistoryIcon";
+const ce = N(() => /* @__PURE__ */ t(
   "svg",
   {
     viewBox: "0 0 14 14",
     xmlns: "http://www.w3.org/2000/svg",
-    children: /* @__PURE__ */ a("path", { d: "M14 7C14 7.15471 13.9385 7.30308 13.8291 7.41248C13.7197 7.52188 13.5714 7.58333 13.4167 7.58333H7.58333V13.4167C7.58333 13.5714 7.52188 13.7197 7.41248 13.8291C7.30308 13.9385 7.15471 14 7 14C6.84529 14 6.69692 13.9385 6.58752 13.8291C6.47812 13.7197 6.41667 13.5714 6.41667 13.4167V7.58333H0.583333C0.428624 7.58333 0.280251 7.52188 0.170854 7.41248C0.0614583 7.30308 0 7.15471 0 7C0 6.84529 0.0614583 6.69692 0.170854 6.58752C0.280251 6.47812 0.428624 6.41667 0.583333 6.41667H6.41667V0.583333C6.41667 0.428624 6.47812 0.280251 6.58752 0.170854C6.69692 0.0614583 6.84529 0 7 0C7.15471 0 7.30308 0.0614583 7.41248 0.170854C7.52188 0.280251 7.58333 0.428624 7.58333 0.583333V6.41667H13.4167C13.5714 6.41667 13.7197 6.47812 13.8291 6.58752C13.9385 6.69692 14 6.84529 14 7Z" })
+    children: /* @__PURE__ */ t("path", { d: "M14 7C14 7.15471 13.9385 7.30308 13.8291 7.41248C13.7197 7.52188 13.5714 7.58333 13.4167 7.58333H7.58333V13.4167C7.58333 13.5714 7.52188 13.7197 7.41248 13.8291C7.30308 13.9385 7.15471 14 7 14C6.84529 14 6.69692 13.9385 6.58752 13.8291C6.47812 13.7197 6.41667 13.5714 6.41667 13.4167V7.58333H0.583333C0.428624 7.58333 0.280251 7.52188 0.170854 7.41248C0.0614583 7.30308 0 7.15471 0 7C0 6.84529 0.0614583 6.69692 0.170854 6.58752C0.280251 6.47812 0.428624 6.41667 0.583333 6.41667H6.41667V0.583333C6.41667 0.428624 6.47812 0.280251 6.58752 0.170854C6.69692 0.0614583 6.84529 0 7 0C7.15471 0 7.30308 0.0614583 7.41248 0.170854C7.52188 0.280251 7.58333 0.428624 7.58333 0.583333V6.41667H13.4167C13.5714 6.41667 13.7197 6.47812 13.8291 6.58752C13.9385 6.69692 14 6.84529 14 7Z" })
   }
 ));
-te.displayName = "PlusIcon";
-const ae = f(() => /* @__PURE__ */ a(
+ce.displayName = "PlusIcon";
+const de = N(() => /* @__PURE__ */ t(
   "svg",
   {
     viewBox: "0 0 13 14",
     xmlns: "http://www.w3.org/2000/svg",
-    children: /* @__PURE__ */ a("path", { d: "M13 6.99208C13.0005 7.17027 12.9514 7.34536 12.8579 7.49921C12.7644 7.65307 12.6299 7.78012 12.4682 7.86721L1.55229 13.8687C1.39545 13.9542 1.21835 13.9995 1.03805 14C0.871785 13.9997 0.708022 13.961 0.56049 13.8873C0.412958 13.8136 0.285957 13.7069 0.190131 13.5763C0.0943049 13.4456 0.0324474 13.2948 0.00974343 13.1364C-0.0129605 12.9781 0.00415071 12.8168 0.0596426 12.6661L1.83768 7.66843C1.8552 7.61898 1.88839 7.57606 1.93258 7.54567C1.97677 7.51529 2.02975 7.49898 2.08407 7.49903H6.75898C6.83028 7.49918 6.90085 7.48523 6.9663 7.45806C7.03176 7.43088 7.0907 7.39105 7.13948 7.34105C7.18825 7.29104 7.22581 7.23193 7.24982 7.16738C7.27384 7.10283 7.28379 7.03423 7.27907 6.96582C7.26727 6.83723 7.20539 6.71767 7.10582 6.63108C7.00624 6.5445 6.87632 6.49728 6.74208 6.49888H2.08862C2.03438 6.49897 1.98146 6.48275 1.93728 6.45249C1.89309 6.42222 1.85986 6.37943 1.84223 6.3301L0.0583424 1.32936C-0.0111263 1.13773 -0.018329 0.930327 0.0376911 0.734676C0.0937111 0.539025 0.210303 0.364388 0.371984 0.233956C0.533666 0.103523 0.732787 0.0234668 0.942905 0.00441721C1.15302 -0.0146324 1.3642 0.0282263 1.54838 0.127302L12.4702 6.12132C12.6308 6.20829 12.7645 6.33476 12.8576 6.48776C12.9507 6.64076 12.9999 6.81481 13 6.99208Z" })
+    children: /* @__PURE__ */ t("path", { d: "M13 6.99208C13.0005 7.17027 12.9514 7.34536 12.8579 7.49921C12.7644 7.65307 12.6299 7.78012 12.4682 7.86721L1.55229 13.8687C1.39545 13.9542 1.21835 13.9995 1.03805 14C0.871785 13.9997 0.708022 13.961 0.56049 13.8873C0.412958 13.8136 0.285957 13.7069 0.190131 13.5763C0.0943049 13.4456 0.0324474 13.2948 0.00974343 13.1364C-0.0129605 12.9781 0.00415071 12.8168 0.0596426 12.6661L1.83768 7.66843C1.8552 7.61898 1.88839 7.57606 1.93258 7.54567C1.97677 7.51529 2.02975 7.49898 2.08407 7.49903H6.75898C6.83028 7.49918 6.90085 7.48523 6.9663 7.45806C7.03176 7.43088 7.0907 7.39105 7.13948 7.34105C7.18825 7.29104 7.22581 7.23193 7.24982 7.16738C7.27384 7.10283 7.28379 7.03423 7.27907 6.96582C7.26727 6.83723 7.20539 6.71767 7.10582 6.63108C7.00624 6.5445 6.87632 6.49728 6.74208 6.49888H2.08862C2.03438 6.49897 1.98146 6.48275 1.93728 6.45249C1.89309 6.42222 1.85986 6.37943 1.84223 6.3301L0.0583424 1.32936C-0.0111263 1.13773 -0.018329 0.930327 0.0376911 0.734676C0.0937111 0.539025 0.210303 0.364388 0.371984 0.233956C0.533666 0.103523 0.732787 0.0234668 0.942905 0.00441721C1.15302 -0.0146324 1.3642 0.0282263 1.54838 0.127302L12.4702 6.12132C12.6308 6.20829 12.7645 6.33476 12.8576 6.48776C12.9507 6.64076 12.9999 6.81481 13 6.99208Z" })
   }
 ));
-ae.displayName = "SendIcon";
-const se = f(() => /* @__PURE__ */ a(
+de.displayName = "SendIcon";
+const ue = N(() => /* @__PURE__ */ t(
   "svg",
   {
     viewBox: "0 0 24 24",
     xmlns: "http://www.w3.org/2000/svg",
-    children: /* @__PURE__ */ a("path", { d: "M12 12C14.21 12 16 10.21 16 8C16 5.79 14.21 4 12 4C9.79 4 8 5.79 8 8C8 10.21 9.79 12 12 12ZM12 14C9.33 14 4 15.34 4 18V20H20V18C20 15.34 14.67 14 12 14Z" })
+    children: /* @__PURE__ */ t("path", { d: "M12 12C14.21 12 16 10.21 16 8C16 5.79 14.21 4 12 4C9.79 4 8 5.79 8 8C8 10.21 9.79 12 12 12ZM12 14C9.33 14 4 15.34 4 18V20H20V18C20 15.34 14.67 14 12 14Z" })
   }
 ));
-se.displayName = "UserIcon";
-const ne = f((e) => {
-  const { onClick: s } = e;
-  return /* @__PURE__ */ a(
+ue.displayName = "UserIcon";
+const Ce = N((e) => {
+  const { onClick: a } = e;
+  return /* @__PURE__ */ t(
     "button",
     {
       className: "elitea-assistant-button",
-      onClick: s,
+      onClick: a,
       "aria-label": "Support Assistant",
       type: "button",
-      children: /* @__PURE__ */ a(j, {})
+      children: /* @__PURE__ */ t(ee, {})
     }
   );
 });
-ne.displayName = "ChatButton";
-const $ = f((e) => {
-  const { content: s, children: n, placement: t = "top" } = e, o = F(null), r = F(null), [i, d] = A(!1), [m, h] = A(!1), [C, u] = A({ top: 0, left: 0 }), E = g(() => {
-    const S = o.current, p = r.current;
-    if (!S || !p) return;
-    const b = S.getBoundingClientRect(), y = p.getBoundingClientRect();
-    let N;
-    t === "top" ? N = b.top - y.height - 8 : N = b.bottom + 8;
-    let B = b.left + b.width / 2 - y.width / 2;
-    const c = 8;
-    B < c && (B = c), B + y.width > window.innerWidth - c && (B = window.innerWidth - c - y.width), N < c && (N = b.bottom + 8), u({ top: N, left: B }), h(!0);
-  }, [t]);
-  return pe(() => {
-    i && r.current && E(), i || h(!1);
-  }, [i, E]), /* @__PURE__ */ k(Ce, { children: [
-    /* @__PURE__ */ a(
+Ce.displayName = "ChatButton";
+const z = N((e) => {
+  const { content: a, children: n, placement: o = "top" } = e, i = P(null), s = P(null), [l, g] = y(!1), [r, C] = y(!1), [m, d] = y({ top: 0, left: 0 }), k = w(() => {
+    const b = i.current, I = s.current;
+    if (!b || !I) return;
+    const c = b.getBoundingClientRect(), u = I.getBoundingClientRect();
+    let v;
+    o === "top" ? v = c.top - u.height - 8 : v = c.bottom + 8;
+    let A = c.left + c.width / 2 - u.width / 2;
+    const B = 8;
+    A < B && (A = B), A + u.width > window.innerWidth - B && (A = window.innerWidth - B - u.width), v < B && (v = c.bottom + 8), d({ top: v, left: A }), C(!0);
+  }, [o]);
+  return ke(() => {
+    l && s.current && k(), l || C(!1);
+  }, [l, k]), /* @__PURE__ */ f(ye, { children: [
+    /* @__PURE__ */ t(
       "div",
       {
-        ref: o,
-        onMouseEnter: () => d(!0),
-        onMouseLeave: () => d(!1),
+        ref: i,
+        onMouseEnter: () => g(!0),
+        onMouseLeave: () => g(!1),
         className: "elitea-assistant-tooltip-trigger",
         children: n
       }
     ),
-    i && me(
-      /* @__PURE__ */ a(
+    l && Ne(
+      /* @__PURE__ */ t(
         "div",
         {
-          ref: r,
+          ref: s,
           style: {
             position: "fixed",
             zIndex: 2147483647,
-            top: C.top,
-            left: C.left,
+            top: m.top,
+            left: m.left,
             padding: ".25rem .5rem",
             borderRadius: ".25rem",
             background: "rgb(233, 235, 240)",
@@ -188,360 +188,392 @@ const $ = f((e) => {
             overflow: "hidden",
             textOverflow: "ellipsis",
             pointerEvents: "none",
-            opacity: m ? 1 : 0,
+            opacity: r ? 1 : 0,
             transition: "opacity 0.15s ease"
           },
           role: "tooltip",
-          children: s
+          children: a
         }
       ),
       document.body
     )
   ] });
 });
-$.displayName = "Tooltip";
-const oe = f((e) => {
+z.displayName = "Tooltip";
+const pe = N((e) => {
   const {
-    title: s,
+    title: a,
     expanded: n,
-    history: t,
-    currentConversationId: o,
-    onClose: r,
-    onExpand: i,
-    onNewChat: d,
-    onSelectConversation: m
-  } = e, h = F(null), [C, u] = A(!1);
-  R(() => {
-    if (!C) return;
-    const p = (b) => {
-      h.current && !h.current.contains(b.target) && u(!1);
+    history: o,
+    currentConversationId: i,
+    disabled: s,
+    onClose: l,
+    onExpand: g,
+    onNewChat: r,
+    onSelectConversation: C
+  } = e, m = P(null), [d, k] = y(!1);
+  F(() => {
+    if (!d) return;
+    const c = (u) => {
+      m.current && !m.current.contains(u.target) && k(!1);
     };
-    return document.addEventListener("mousedown", p), () => document.removeEventListener("mousedown", p);
-  }, [C]);
-  const E = g(() => {
-    t.length > 0 && u((p) => !p);
-  }, [t.length]), S = g(
-    (p) => {
-      m(p), u(!1);
+    return document.addEventListener("mousedown", c), () => document.removeEventListener("mousedown", c);
+  }, [d]);
+  const b = w(() => {
+    o.length > 0 && k((c) => !c);
+  }, [o.length]), I = w(
+    (c) => {
+      C(c), k(!1);
     },
-    [m]
+    [C]
   );
-  return /* @__PURE__ */ k("div", { className: "elitea-assistant-header", children: [
-    /* @__PURE__ */ k("div", { className: "elitea-assistant-header-left", children: [
-      /* @__PURE__ */ a(
+  return /* @__PURE__ */ f("div", { className: "elitea-assistant-header", children: [
+    /* @__PURE__ */ f("div", { className: "elitea-assistant-header-left", children: [
+      /* @__PURE__ */ t(
         "button",
         {
           className: "elitea-assistant-header-close-action",
-          onClick: r,
+          onClick: l,
           "aria-label": "Close chat",
           type: "button",
-          children: /* @__PURE__ */ a(W, {})
+          children: /* @__PURE__ */ t(Y, {})
         }
       ),
-      /* @__PURE__ */ a("h2", { className: "elitea-assistant-header-title", children: s })
+      /* @__PURE__ */ t("h2", { className: "elitea-assistant-header-title", children: a })
     ] }),
-    /* @__PURE__ */ k("div", { className: "elitea-assistant-header-right", children: [
-      /* @__PURE__ */ a($, { content: "New conversation", children: /* @__PURE__ */ a(
+    /* @__PURE__ */ f("div", { className: "elitea-assistant-header-right", children: [
+      /* @__PURE__ */ t(z, { content: "New conversation", children: /* @__PURE__ */ t(
         "button",
         {
           className: "elitea-assistant-header-action",
-          onClick: d,
+          onClick: r,
           "aria-label": "New chat",
           type: "button",
-          children: /* @__PURE__ */ a(te, {})
+          disabled: s,
+          children: /* @__PURE__ */ t(ce, {})
         }
       ) }),
-      /* @__PURE__ */ a($, { content: "Conversations history", children: /* @__PURE__ */ k(
+      /* @__PURE__ */ t(z, { content: "Conversations history", children: /* @__PURE__ */ f(
         "div",
         {
-          ref: h,
+          ref: m,
           className: "elitea-assistant-history-wrapper",
           children: [
-            /* @__PURE__ */ a(
+            /* @__PURE__ */ t(
               "button",
               {
                 className: "elitea-assistant-header-action",
-                onClick: E,
+                onClick: b,
                 "aria-label": "Chat history",
                 type: "button",
-                disabled: t.length === 0,
-                children: /* @__PURE__ */ a(ee, {})
+                disabled: s || o.length === 0,
+                children: /* @__PURE__ */ t(le, {})
               }
             ),
-            C && t.length > 0 && /* @__PURE__ */ a("div", { className: "elitea-assistant-history-dropdown", children: t.map((p) => /* @__PURE__ */ a(
+            d && o.length > 0 && /* @__PURE__ */ t("div", { className: "elitea-assistant-history-dropdown", children: o.map((c) => /* @__PURE__ */ t(
               "button",
               {
                 className: "elitea-assistant-history-item",
-                onClick: () => S(p.uuid),
+                onClick: () => I(c.uuid),
                 type: "button",
-                disabled: p.uuid === o,
-                children: p.name
+                disabled: c.uuid === i,
+                children: c.name
               },
-              p.uuid
+              c.uuid
             )) })
           ]
         }
       ) }),
-      /* @__PURE__ */ a($, { content: n ? "Collapse" : "Expand", children: /* @__PURE__ */ a(
+      /* @__PURE__ */ t(z, { content: n ? "Collapse" : "Expand", children: /* @__PURE__ */ t(
         "button",
         {
           className: "elitea-assistant-header-action",
-          onClick: i,
+          onClick: g,
           "aria-label": "Expand chat",
           type: "button",
-          children: /* @__PURE__ */ a(Y, {})
+          children: /* @__PURE__ */ t(ie, {})
         }
       ) })
     ] })
   ] });
 });
-oe.displayName = "ChatHeader";
-const fe = (e) => {
+pe.displayName = "ChatHeader";
+const Te = (e) => {
   if (typeof e == "number") return e < 4102444800 ? e * 1e3 : e;
   if (typeof e == "string") {
-    const s = new Date(e);
-    return isNaN(s.getTime()) ? 0 : s.getTime();
+    const a = new Date(e);
+    return isNaN(a.getTime()) ? 0 : a.getTime();
   }
   return 0;
-}, ye = (e) => {
-  var t;
-  const s = e.sent_to != null ? "user" : "assistant";
+}, Se = (e) => {
+  var o;
+  const a = e.sent_to != null ? "user" : "assistant";
   let n = "";
-  for (const o of e.message_items ?? []) {
-    const r = o.item_type ?? o.type;
-    if (r === "text_message" || r === "text") {
-      n = ((t = o.item_details) == null ? void 0 : t.content) ?? o.content ?? "";
+  for (const i of e.message_items ?? []) {
+    const s = i.item_type ?? i.type;
+    if (s === "text_message" || s === "text") {
+      n = ((o = i.item_details) == null ? void 0 : o.content) ?? i.content ?? "";
       break;
     }
   }
   return {
     id: String(e.uuid ?? e.id ?? ""),
-    role: s,
+    role: a,
     content: n,
-    timestamp: fe(e.created_at_ts ?? e.created_at)
+    timestamp: Te(e.created_at_ts ?? e.created_at)
   };
-}, G = (e) => (e.message_groups ?? []).map(ye), Be = (e) => new Date(e).toLocaleTimeString([], { hour: "2-digit", minute: "2-digit" }), q = (e, s) => {
-  const { frequency: n, start: t, peak: o, end: r } = s, i = e.createOscillator(), d = e.createGain();
-  return i.connect(d), d.connect(e.destination), i.type = "sine", i.frequency.value = n, d.gain.setValueAtTime(0, t), d.gain.linearRampToValueAtTime(0.12, o), d.gain.exponentialRampToValueAtTime(0.01, r), i.start(t), i.stop(r), i;
-}, ke = async () => {
+}, te = (e) => (e.message_groups ?? []).map(Se), Le = (e) => new Date(e).toLocaleTimeString([], { hour: "2-digit", minute: "2-digit" }), ae = (e, a) => {
+  const { frequency: n, start: o, peak: i, end: s } = a, l = e.createOscillator(), g = e.createGain();
+  return l.connect(g), g.connect(e.destination), l.type = "sine", l.frequency.value = n, g.gain.setValueAtTime(0, o), g.gain.linearRampToValueAtTime(0.12, i), g.gain.exponentialRampToValueAtTime(0.01, s), l.start(o), l.stop(s), l;
+}, Me = async () => {
   try {
     const e = new AudioContext();
     if (e.state === "suspended" && await e.resume(), e.state !== "running") {
       e.close();
       return;
     }
-    const s = e.currentTime;
-    q(e, { frequency: 784, start: s, peak: s + 0.02, end: s + 0.2 });
-    const n = q(e, { frequency: 1047, start: s + 0.12, peak: s + 0.14, end: s + 0.37 });
+    const a = e.currentTime;
+    ae(e, { frequency: 784, start: a, peak: a + 0.02, end: a + 0.2 });
+    const n = ae(e, { frequency: 1047, start: a + 0.12, peak: a + 0.14, end: a + 0.37 });
     n.onended = () => e.close();
   } catch {
   }
-}, Ae = (e) => {
+}, _e = (e) => {
   if (e.startsWith("/")) return "";
   try {
     return new URL(e).origin;
   } catch {
     return "";
   }
-}, re = f((e) => {
-  const { messages: s } = e, n = F(null);
-  return R(() => {
-    var t;
-    (t = n.current) == null || t.scrollIntoView({ behavior: "smooth" });
-  }, [s]), s.length === 0 ? /* @__PURE__ */ a("div", { className: "elitea-assistant-empty", children: "Send a message to start a conversation" }) : /* @__PURE__ */ k("div", { className: "elitea-assistant-messages", children: [
-    s.map((t) => /* @__PURE__ */ k(
+}, he = N((e) => {
+  const { messages: a, isLoading: n } = e, o = P(null), i = P(!1);
+  return F(() => {
+    var l;
+    if (a.length === 0) {
+      i.current = !1;
+      return;
+    }
+    const s = i.current ? "smooth" : "instant";
+    i.current = !0, (l = o.current) == null || l.scrollIntoView({ behavior: s });
+  }, [a]), n ? /* @__PURE__ */ t("div", { className: "elitea-assistant-messages", children: Array.from({ length: 3 }).map((s, l) => /* @__PURE__ */ f(
+    "div",
+    {
+      className: `elitea-assistant-skeleton-row ${l % 2 === 0 ? "elitea-assistant-skeleton-row--left" : "elitea-assistant-skeleton-row--right"}`,
+      children: [
+        /* @__PURE__ */ f("div", { className: "elitea-assistant-skeleton-meta", children: [
+          /* @__PURE__ */ t("div", { className: "elitea-assistant-skeleton elitea-assistant-skeleton--avatar" }),
+          /* @__PURE__ */ t("div", { className: "elitea-assistant-skeleton elitea-assistant-skeleton--time" })
+        ] }),
+        /* @__PURE__ */ t("div", { className: "elitea-assistant-skeleton elitea-assistant-skeleton--bubble" })
+      ]
+    },
+    l
+  )) }) : a.length === 0 ? /* @__PURE__ */ t("div", { className: "elitea-assistant-empty", children: "Send a message to start a conversation" }) : /* @__PURE__ */ f("div", { className: "elitea-assistant-messages", children: [
+    a.map((s) => /* @__PURE__ */ f(
       "div",
       {
-        className: `elitea-assistant-message-wrapper elitea-assistant-message-wrapper--${t.role}`,
+        className: `elitea-assistant-message-wrapper elitea-assistant-message-wrapper--${s.role}`,
         children: [
-          /* @__PURE__ */ k("div", { className: `elitea-assistant-message-meta elitea-assistant-message-meta--${t.role}`, children: [
-            t.role === "assistant" && /* @__PURE__ */ a("span", { className: "elitea-assistant-message-avatar elitea-assistant-message-avatar--assistant", children: /* @__PURE__ */ a(j, {}) }),
-            /* @__PURE__ */ a("span", { className: "elitea-assistant-message-time", children: Be(t.timestamp) }),
-            t.role === "user" && /* @__PURE__ */ a("span", { className: "elitea-assistant-message-avatar elitea-assistant-message-avatar--user", children: /* @__PURE__ */ a(se, {}) })
+          /* @__PURE__ */ f("div", { className: `elitea-assistant-message-meta elitea-assistant-message-meta--${s.role}`, children: [
+            s.role === "assistant" && /* @__PURE__ */ t("span", { className: "elitea-assistant-message-avatar elitea-assistant-message-avatar--assistant", children: /* @__PURE__ */ t(ee, {}) }),
+            /* @__PURE__ */ t("span", { className: "elitea-assistant-message-time", children: Le(s.timestamp) }),
+            s.role === "user" && /* @__PURE__ */ t("span", { className: "elitea-assistant-message-avatar elitea-assistant-message-avatar--user", children: /* @__PURE__ */ t(ue, {}) })
           ] }),
-          /* @__PURE__ */ a(
+          /* @__PURE__ */ t(
             "div",
             {
-              className: `elitea-assistant-message elitea-assistant-message--${t.role}${t.isError ? " elitea-assistant-message--error" : ""}`,
-              children: t.content || (t.isStreaming ? "..." : "")
+              className: `elitea-assistant-message elitea-assistant-message--${s.role}${s.isError ? " elitea-assistant-message--error" : ""}`,
+              children: s.content || (s.isStreaming ? /* @__PURE__ */ f("span", { className: "elitea-assistant-typing-indicator", children: [
+                /* @__PURE__ */ t("span", { className: "elitea-assistant-typing-dot" }),
+                /* @__PURE__ */ t("span", { className: "elitea-assistant-typing-dot" }),
+                /* @__PURE__ */ t("span", { className: "elitea-assistant-typing-dot" })
+              ] }) : "")
             }
           )
         ]
       },
-      t.id
+      s.id
     )),
-    /* @__PURE__ */ a("div", { ref: n })
+    /* @__PURE__ */ t("div", { ref: o })
   ] });
 });
-re.displayName = "MessageList";
-const ie = f((e) => {
-  const { placeholder: s, text: n, onTextChange: t, files: o, onFilesChange: r, onSend: i, expanded: d } = e, m = F(null), [h, C] = A(0), u = () => {
-    const c = n.trim();
-    !c && o.length === 0 || (i(c, o.length > 0 ? o : void 0), t(""), r([]));
-  }, E = (c) => {
-    c.key === "Enter" && !c.shiftKey && (c.preventDefault(), u());
-  }, S = () => {
-    var c;
-    (c = m.current) == null || c.click();
-  }, p = (c) => {
-    const T = c.target.files;
-    T && r([...o, ...Array.from(T)]), C((H) => H + 1);
-  }, b = (c) => {
-    r(o.filter((T, H) => H !== c));
-  }, y = d ? 3 : 2, N = o.slice(0, y), B = o.length - y;
-  return /* @__PURE__ */ k("div", { className: "elitea-assistant-input-area", children: [
-    o.length > 0 && /* @__PURE__ */ k("div", { className: "elitea-assistant-file-list", children: [
-      N.map((c, T) => /* @__PURE__ */ a(
-        $,
+he.displayName = "MessageList";
+const ge = N((e) => {
+  const { placeholder: a, text: n, onTextChange: o, files: i, onFilesChange: s, onSend: l, expanded: g, disabled: r } = e, C = P(null), [m, d] = y(0), k = () => {
+    const p = n.trim();
+    !p && i.length === 0 || (l(p, i.length > 0 ? i : void 0), o(""), s([]));
+  }, b = (p) => {
+    p.key === "Enter" && !p.shiftKey && (p.preventDefault(), k());
+  }, I = () => {
+    var p;
+    (p = C.current) == null || p.click();
+  }, c = (p) => {
+    const S = p.target.files;
+    S && s([...i, ...Array.from(S)]), d((M) => M + 1);
+  }, u = (p) => {
+    s(i.filter((S, M) => M !== p));
+  }, v = g ? 3 : 2, A = i.slice(0, v), B = i.length - v;
+  return /* @__PURE__ */ f("div", { className: "elitea-assistant-input-area", children: [
+    i.length > 0 && /* @__PURE__ */ f("div", { className: "elitea-assistant-file-list", children: [
+      A.map((p, S) => /* @__PURE__ */ t(
+        z,
         {
-          content: c.name,
-          children: /* @__PURE__ */ k("div", { className: "elitea-assistant-file-chip", children: [
-            /* @__PURE__ */ a("span", { className: "elitea-assistant-file-chip-icon", children: /* @__PURE__ */ a(Q, {}) }),
-            /* @__PURE__ */ a("span", { className: "elitea-assistant-file-chip-name", children: c.name }),
-            /* @__PURE__ */ a(
+          content: p.name,
+          children: /* @__PURE__ */ f("div", { className: "elitea-assistant-file-chip", children: [
+            /* @__PURE__ */ t("span", { className: "elitea-assistant-file-chip-icon", children: /* @__PURE__ */ t(re, {}) }),
+            /* @__PURE__ */ t("span", { className: "elitea-assistant-file-chip-name", children: p.name }),
+            /* @__PURE__ */ t(
               "button",
               {
                 className: "elitea-assistant-file-chip-remove",
-                onClick: () => b(T),
-                "aria-label": `Remove ${c.name}`,
+                onClick: () => u(S),
+                "aria-label": `Remove ${p.name}`,
                 type: "button",
-                children: /* @__PURE__ */ a(W, {})
+                children: /* @__PURE__ */ t(Y, {})
               }
             )
           ] })
         },
-        T
+        S
       )),
-      B > 0 && /* @__PURE__ */ k("div", { className: "elitea-assistant-file-chip elitea-assistant-file-chip--count", children: [
+      B > 0 && /* @__PURE__ */ f("div", { className: "elitea-assistant-file-chip elitea-assistant-file-chip--count", children: [
         "+",
         B
       ] })
     ] }),
-    /* @__PURE__ */ k("div", { className: "elitea-assistant-input-row", children: [
-      /* @__PURE__ */ a(
+    /* @__PURE__ */ f("div", { className: "elitea-assistant-input-row", children: [
+      /* @__PURE__ */ t(
         "input",
         {
-          ref: m,
+          ref: C,
           type: "file",
           multiple: !0,
-          onChange: p,
+          onChange: c,
           style: { display: "none" }
         },
-        h
+        m
       ),
-      /* @__PURE__ */ a(
+      /* @__PURE__ */ t(
         "button",
         {
           className: "elitea-assistant-attach-button",
-          onClick: S,
+          onClick: I,
           "aria-label": "Attach file",
           type: "button",
-          children: /* @__PURE__ */ a(J, {})
+          disabled: r,
+          children: /* @__PURE__ */ t(oe, {})
         }
       ),
-      /* @__PURE__ */ a(
+      /* @__PURE__ */ t(
         "textarea",
         {
           id: "elitea-assistant-message-input",
           className: "elitea-assistant-input",
           value: n,
-          onChange: (c) => t(c.target.value),
-          onKeyDown: E,
-          placeholder: s,
+          onChange: (p) => o(p.target.value),
+          onKeyDown: b,
+          placeholder: a,
           rows: 1,
-          autoFocus: !0
+          autoFocus: !0,
+          disabled: r
         }
       ),
-      /* @__PURE__ */ a(
+      /* @__PURE__ */ t(
         "button",
         {
           className: "elitea-assistant-send-button",
-          onClick: u,
-          disabled: !n.trim() && o.length === 0,
+          onClick: k,
+          disabled: r || !n.trim() && i.length === 0,
           "aria-label": "Send message",
           type: "button",
-          children: /* @__PURE__ */ a(ae, {})
+          children: /* @__PURE__ */ t(de, {})
         }
       )
     ] })
   ] });
 });
-ie.displayName = "MessageInput";
-const ce = z(null), Ee = () => {
-  const e = X(ce);
+ge.displayName = "MessageInput";
+const me = se(null), He = () => {
+  const e = ne(me);
   if (!e) throw new Error("useApi must be used within EliteaAssistant");
   return e;
-}, xe = () => {
-  const [e, s] = A(!1), [n, t] = A(!1), o = g(() => s(!0), []), r = g(() => s(!1), []), i = g(() => s((C) => !C), []), d = g(() => t(!0), []), m = g(() => t(!1), []), h = g(() => t((C) => !C), []);
+}, Pe = () => {
+  const [e, a] = y(!1), [n, o] = y(!1), i = w(() => a(!0), []), s = w(() => a(!1), []), l = w(() => a((m) => !m), []), g = w(() => o(!0), []), r = w(() => o(!1), []), C = w(() => o((m) => !m), []);
   return {
     isOpen: e,
     isExpanded: n,
-    open: o,
-    close: r,
-    toggle: i,
-    expandFullscreen: d,
-    collapseFullscreen: m,
-    toggleFullscreen: h
+    open: i,
+    close: s,
+    toggle: l,
+    expandFullscreen: g,
+    collapseFullscreen: r,
+    toggleFullscreen: C
   };
-}, P = {
+}, H = {
   ENTER_ROOM: "chat_enter_room",
   LEAVE_ROOM: "chat_leave_room",
   PREDICT: "support_predict",
   PREDICT_RESPONSE: "chat_predict",
+  CONVERSATION_NAME_UPDATED: "chat_conversation_name_updated",
   ERROR: "support_error"
 }, D = {
   START_TASK: "start_task",
   CHUNK: "chunk",
   AI_MESSAGE_CHUNK: "AIMessageChunk",
+  AGENT_LLM_CHUNK: "agent_llm_chunk",
   AGENT_RESPONSE: "agent_response",
+  PIPELINE_FINISH: "pipeline_finish",
   ERROR: "error",
   AGENT_EXCEPTION: "agent_exception"
-}, le = z(null), Ne = () => X(le), Te = (e) => {
-  const [s, n] = A(null);
-  return R(() => {
-    const t = be(e.url, {
+}, be = se(null), Re = () => ne(be), De = (e) => {
+  const [a, n] = y(null);
+  return F(() => {
+    const o = Be(e.url, {
       path: e.path,
       extraHeaders: { Authorization: `Bearer ${e.token}` },
       reconnectionDelayMax: 2e3
     });
-    return t.on("connect", () => {
-      n(t);
-    }), t.on("connect_error", () => {
+    return o.on("connect", () => {
+      n(o);
+    }), o.on("connect_error", () => {
     }), () => {
-      t.disconnect();
+      o.disconnect();
     };
-  }, [e.url, e.path, e.token]), s;
-}, Se = (e, s) => {
-  const n = Ee(), t = Ne(), o = g(
-    () => e ? [{ id: "welcome", role: "assistant", content: e, timestamp: Date.now() }] : [],
-    [e]
-  ), [r, i] = A(o), [d, m] = A(""), [h, C] = A([]), [u, E] = A(null), [S, p] = A([]), b = g(
-    (l) => {
-      t == null || t.emit(P.ENTER_ROOM, {
-        project_id: s,
-        conversation_id: l
+  }, [e.url, e.path, e.token]), a;
+}, Fe = (e) => {
+  const { welcomeMessage: a, supportProjectId: n, initialHistory: o, initialConversation: i, isInitLoading: s } = e, l = P(!1), g = He(), r = Re(), C = w(
+    () => a ? [{ id: "welcome", role: "assistant", content: a, timestamp: Date.now() }] : [],
+    [a]
+  ), [m, d] = y([]), [k, b] = y(""), [I, c] = y([]), [u, v] = y(null), [A, B] = y([]), [p, S] = y(!1), M = J(
+    () => s || p,
+    [s, p]
+  ), T = w(
+    (h) => {
+      r == null || r.emit(H.ENTER_ROOM, {
+        project_id: n,
+        conversation_id: h
       });
     },
-    [t, s]
-  ), y = g(
-    (l) => {
-      t == null || t.emit(P.LEAVE_ROOM, {
-        project_id: s,
-        conversation_id: l
+    [r, n]
+  ), R = w(
+    (h) => {
+      r == null || r.emit(H.LEAVE_ROOM, {
+        project_id: n,
+        conversation_id: h
       });
     },
-    [t, s]
-  ), N = g(
-    (l) => {
-      t == null || t.emit(P.PREDICT, l);
+    [r, n]
+  ), $ = w(
+    (h) => {
+      r == null || r.emit(H.PREDICT, h);
     },
-    [t]
-  ), B = g((l) => {
-    const { message_id: x, type: w, content: v, response_metadata: I } = l;
-    switch (w) {
+    [r]
+  ), V = w((h) => {
+    const { message_id: x, type: E, content: L, response_metadata: K } = h;
+    switch (E) {
       case D.START_TASK:
-        i((M) => [
-          ...M,
+        d((U) => [
+          ...U,
           {
             id: x,
             role: "assistant",
@@ -553,78 +585,81 @@ const ce = z(null), Ee = () => {
         break;
       case D.CHUNK:
       case D.AI_MESSAGE_CHUNK:
+      case D.AGENT_LLM_CHUNK:
       case D.AGENT_RESPONSE: {
-        const M = typeof v == "string" ? v : JSON.stringify(v), L = !!(I != null && I.finish_reason);
-        i(
-          (V) => V.map(
-            (_) => _.id === x ? { ..._, content: _.content + M, ...L && { isStreaming: !1 } } : _
+        const U = typeof L == "string" ? L : JSON.stringify(L), _ = !!(K != null && K.finish_reason);
+        d(
+          (fe) => fe.map(
+            (X) => X.id === x ? { ...X, content: X.content + U, ..._ && { isStreaming: !1 } } : X
           )
         );
         break;
       }
+      case D.PIPELINE_FINISH:
+        d(
+          (U) => U.map((_) => _.id === x && _.isStreaming ? { ..._, isStreaming: !1 } : _)
+        );
+        break;
       case D.ERROR:
       case D.AGENT_EXCEPTION:
-        i(
-          (M) => M.map(
-            (L) => L.id === x ? {
-              ...L,
-              content: typeof v == "string" ? v : "An error occurred",
+        d(
+          (U) => U.map(
+            (_) => _.id === x ? {
+              ..._,
+              content: typeof L == "string" ? L : "An error occurred",
               isStreaming: !1,
               isError: !0
-            } : L
+            } : _
           )
         );
         break;
     }
-  }, []), c = g((l) => {
-    i((x) => [
+  }, []), O = w((h) => {
+    d((x) => [
       ...x,
       {
         id: crypto.randomUUID(),
         role: "assistant",
-        content: l.error || "An error occurred",
+        content: h.error || "An error occurred",
         timestamp: Date.now(),
         isError: !0
       }
     ]);
+  }, []), Z = w((h) => {
+    B(
+      (x) => x.map((E) => E.uuid === h.conversation_uuid ? { ...E, name: h.name } : E)
+    );
   }, []);
-  R(() => {
-    let l = !1;
-    return t && (t.on(P.PREDICT_RESPONSE, B), t.on(P.ERROR, c)), n.getConversations().then((x) => {
-      if (l) return;
-      const w = x.items || [];
-      if (p(w), w.length > 0) {
-        const v = w[0];
-        E(v.uuid), b(v.uuid), n.getConversation(v.uuid).then((I) => {
-          if (l) return;
-          const M = G(I);
-          i(M.length > 0 ? M : o());
-        }).catch(() => {
-          l || i(o());
-        });
-      }
-    }).catch(() => {
-    }), () => {
-      l = !0, t && (t.off(P.PREDICT_RESPONSE, B), t.off(P.ERROR, c));
-    };
-  }, []);
-  const T = g(
-    async (l) => {
+  F(() => {
+    if (!(s || l.current))
+      if (l.current = !0, B(o), o.length > 0 && i) {
+        const h = te(i);
+        d(h.length > 0 ? h : C()), v(o[0].uuid), T(o[0].uuid);
+      } else
+        d(C());
+  }, [s, o, i, C, T]), F(() => {
+    if (r)
+      return r.on(H.PREDICT_RESPONSE, V), r.on(H.ERROR, O), r.on(H.CONVERSATION_NAME_UPDATED, Z), () => {
+        r.off(H.PREDICT_RESPONSE, V), r.off(H.ERROR, O), r.off(H.CONVERSATION_NAME_UPDATED, Z);
+      };
+  }, [r, V, O, Z]);
+  const q = w(
+    async (h) => {
       const x = {
         id: crypto.randomUUID(),
         role: "user",
-        content: l,
+        content: h,
         timestamp: Date.now()
       };
-      i((v) => [...v, x]);
-      let w = u;
-      if (!w)
+      d((L) => [...L, x]);
+      let E = u;
+      if (!E)
         try {
-          const v = await n.createConversation();
-          w = v.uuid, E(w), p((I) => [v, ...I]), b(w);
+          const L = await g.createConversation();
+          E = L.uuid, v(E), B((K) => [L, ...K]), T(E);
         } catch {
-          i((v) => [
-            ...v,
+          d((L) => [
+            ...L,
             {
               id: crypto.randomUUID(),
               role: "assistant",
@@ -635,140 +670,179 @@ const ce = z(null), Ee = () => {
           ]);
           return;
         }
-      w && N({ conversation_uuid: w, content: l });
+      E && $({ conversation_uuid: E, content: h });
     },
-    [u, n, b, N]
-  ), H = g(() => {
-    u && y(u), E(null), i(o()), m(""), C([]);
-  }, [u, y, o]), U = g(
-    async (l) => {
-      if (u !== l) {
-        u && y(u), E(l), b(l), m(""), C([]);
+    [u, g, T, $]
+  ), j = w(() => {
+    u && R(u), v(null), d(C()), b(""), c([]);
+  }, [u, R, C]), Q = w(
+    async (h) => {
+      if (u !== h) {
+        u && R(u), v(h), T(h), b(""), c([]), d([]), S(!0);
         try {
-          const x = await n.getConversation(l), w = G(x);
-          i(w.length > 0 ? w : o());
+          const x = await g.getConversation(h), E = te(x);
+          d(E.length > 0 ? E : C());
         } catch {
-          i(o());
+          d(C());
+        } finally {
+          S(!1);
         }
       }
     },
-    [u, y, b, o, n]
+    [u, R, T, C, g]
   );
   return {
-    messages: r,
-    inputText: d,
-    setInputText: m,
-    files: h,
-    setFiles: C,
-    history: S,
+    messages: m,
+    inputText: k,
+    setInputText: b,
+    files: I,
+    setFiles: c,
+    history: A,
     currentConversationId: u ?? "",
-    handleNewChat: H,
-    handleSelectConversation: U,
-    handleSend: T
+    isLoading: M,
+    handleNewChat: j,
+    handleSelectConversation: Q,
+    handleSend: q
   };
-}, Ie = (e) => {
-  const { api: s, title: n, welcomeMessage: t, placeholder: o } = e, [r, i] = A(null), [d, m] = A(!0);
-  return R(() => {
-    let h = !1;
-    return s.getConfig().then((C) => {
-      h || i(C);
+}, Ve = (e) => {
+  const { api: a, title: n, welcomeMessage: o, placeholder: i } = e, [s, l] = y(null), [g, r] = y([]), [C, m] = y(null), [d, k] = y(!0);
+  return F(() => {
+    let b = !1;
+    const I = a.getConfig().then((u) => {
+      b || l(u);
     }).catch(() => {
-    }).finally(() => {
-      h || m(!1);
+    }), c = a.getConversations().then(async (u) => {
+      if (b) return;
+      const v = u.items || [];
+      if (r(v), v.length > 0)
+        try {
+          const A = await a.getConversation(v[0].uuid);
+          b || m(A);
+        } catch {
+        }
+    }).catch(() => {
+    });
+    return Promise.all([I, c]).finally(() => {
+      b || k(!1);
     }), () => {
-      h = !0;
+      b = !0;
     };
-  }, [s]), {
-    title: (r == null ? void 0 : r.title) || n,
-    welcomeMessage: (r == null ? void 0 : r.welcomeMessage) || t,
-    placeholder: (r == null ? void 0 : r.placeholder) || o,
-    supportProjectId: (r == null ? void 0 : r.support_project_id) ?? null,
+  }, [a]), {
+    title: (s == null ? void 0 : s.title) || n,
+    welcomeMessage: (s == null ? void 0 : s.welcomeMessage) || o,
+    placeholder: (s == null ? void 0 : s.placeholder) || i,
+    supportProjectId: (s == null ? void 0 : s.support_project_id) ?? null,
+    history: g,
+    lastConversation: C,
     isLoading: d
   };
-}, Me = "Hi! Need help? Ask me!", He = 12e3, Le = 12e3, Pe = (e) => {
-  const s = F(null), [n, t] = A(!1), o = g(() => {
-    t(!1), s.current && (clearTimeout(s.current), s.current = null);
-  }, []), r = g(() => {
-    e || (t(!0), ke(), s.current = setTimeout(o, He));
-  }, [e, o]);
-  return R(() => {
-    const i = setTimeout(() => {
-      r();
-    }, Le);
-    return () => {
-      s.current && clearTimeout(s.current), clearTimeout(i);
-    };
-  }, []), R(() => {
-    e && o();
-  }, [e, o]), { showPopup: n, displayPopup: r, hidePopup: o, popupText: Me };
-}, de = f((e) => {
-  const { title: s, placeholder: n, welcomeMessage: t, supportProjectId: o, onClose: r, onExpand: i, expanded: d } = e, {
-    messages: m,
-    inputText: h,
-    setInputText: C,
-    files: u,
-    setFiles: E,
-    history: S,
-    currentConversationId: p,
-    handleNewChat: b,
-    handleSelectConversation: y,
-    handleSend: N
-  } = Se(t, o), B = /* @__PURE__ */ k("div", { className: `elitea-assistant-window${d ? " elitea-assistant-window--expanded" : ""}`, children: [
-    /* @__PURE__ */ a(
-      oe,
+}, Oe = "Hi! Need help? Ask me!", Ue = 12e3, Ze = 12e3, $e = (e) => {
+  const a = P(null), n = P(null), [o, i] = y(!1), s = w(() => {
+    i(!1), a.current && (clearTimeout(a.current), a.current = null), n.current && (clearTimeout(n.current), n.current = null);
+  }, []), l = w(() => {
+    e || (i(!0), Me(), a.current = setTimeout(s, Ue));
+  }, [e, s]);
+  return F(() => (n.current = setTimeout(() => {
+    l();
+  }, Ze), () => {
+    a.current && clearTimeout(a.current), n.current && clearTimeout(n.current);
+  }), []), F(() => {
+    e && s();
+  }, [e, s]), { showPopup: o, displayPopup: l, hidePopup: s, popupText: Oe };
+}, ve = N((e) => {
+  const {
+    title: a,
+    placeholder: n,
+    welcomeMessage: o,
+    supportProjectId: i,
+    initialHistory: s,
+    lastConversation: l,
+    isInitLoading: g,
+    onClose: r,
+    onExpand: C,
+    expanded: m
+  } = e, {
+    messages: d,
+    inputText: k,
+    setInputText: b,
+    files: I,
+    setFiles: c,
+    history: u,
+    currentConversationId: v,
+    isLoading: A,
+    handleNewChat: B,
+    handleSelectConversation: p,
+    handleSend: S
+  } = Fe({
+    welcomeMessage: o,
+    supportProjectId: i,
+    initialHistory: s,
+    initialConversation: l,
+    isInitLoading: g
+  }), M = /* @__PURE__ */ f("div", { className: `elitea-assistant-window${m ? " elitea-assistant-window--expanded" : ""}`, children: [
+    /* @__PURE__ */ t(
+      pe,
       {
-        title: s,
-        expanded: d,
-        history: S,
-        currentConversationId: p,
+        title: a,
+        expanded: m,
+        history: u,
+        currentConversationId: v,
+        disabled: A,
         onClose: r,
-        onExpand: i,
-        onNewChat: b,
-        onSelectConversation: y
+        onExpand: C,
+        onNewChat: B,
+        onSelectConversation: p
       }
     ),
-    /* @__PURE__ */ a(re, { messages: m }),
-    /* @__PURE__ */ a(
-      ie,
+    /* @__PURE__ */ t(
+      he,
+      {
+        messages: d,
+        isLoading: A
+      }
+    ),
+    /* @__PURE__ */ t(
+      ge,
       {
         placeholder: n,
-        text: h,
-        onTextChange: C,
-        files: u,
-        onFilesChange: E,
-        onSend: N,
-        expanded: d
+        text: k,
+        onTextChange: b,
+        files: I,
+        onFilesChange: c,
+        onSend: S,
+        expanded: m,
+        disabled: A
       }
     )
   ] });
-  return d ? /* @__PURE__ */ a(
+  return m ? /* @__PURE__ */ t(
     "div",
     {
       className: "elitea-assistant-overlay",
-      onClick: i,
-      children: /* @__PURE__ */ a("div", { onClick: (c) => c.stopPropagation(), children: B })
+      onClick: C,
+      children: /* @__PURE__ */ t("div", { onClick: (T) => T.stopPropagation(), children: M })
     }
-  ) : B;
+  ) : M;
 });
-de.displayName = "ChatWindow";
-const ue = f((e) => {
-  const { message: s, onClose: n } = e;
-  return /* @__PURE__ */ k("div", { className: "elitea-assistant-popup", children: [
-    /* @__PURE__ */ a("span", { className: "elitea-assistant-popup-text", children: s }),
-    /* @__PURE__ */ a(
+ve.displayName = "ChatWindow";
+const we = N((e) => {
+  const { message: a, onClose: n } = e;
+  return /* @__PURE__ */ f("div", { className: "elitea-assistant-popup", children: [
+    /* @__PURE__ */ t("span", { className: "elitea-assistant-popup-text", children: a }),
+    /* @__PURE__ */ t(
       "button",
       {
         className: "elitea-assistant-popup-close",
         onClick: n,
         "aria-label": "Close popup",
         type: "button",
-        children: /* @__PURE__ */ a(W, {})
+        children: /* @__PURE__ */ t(Y, {})
       }
     )
   ] });
 });
-ue.displayName = "PopupMessage";
-const Re = {
+we.displayName = "PopupMessage";
+const je = {
   buttonBackground: "linear-gradient(50.4deg, #435CFF 0%, #B3BEFF 100%)",
   buttonIcon: "#FFFFFF",
   headerBackground: "rgba(40, 69, 255, 0.25)",
@@ -812,7 +886,7 @@ const Re = {
   historyDropdownBorder: "rgba(203, 206, 213, 1)",
   historyDropdownShadow: "0 0.25rem 0.75rem rgba(0, 0, 0, 0.08)",
   historyDropdownHoverBackground: "rgba(61, 68, 86, 0.06)"
-}, _e = {
+}, Ke = {
   buttonBackground: "linear-gradient(50.4deg, #C428DD 0%, #8A1B9E 100%)",
   buttonIcon: "#FFFFFF",
   headerBackground: "rgba(245, 81, 249, 0.3)",
@@ -856,13 +930,13 @@ const Re = {
   historyDropdownBorder: "rgba(59, 62, 70, 1)",
   historyDropdownShadow: "0 0.5rem 0.75rem rgba(0, 0, 0, 0.3)",
   historyDropdownHoverBackground: "rgba(255, 255, 255, 0.06)"
-}, De = {
-  light: Re,
-  dark: _e
-}, Fe = (e, s) => ({
-  ...De[e],
-  ...s
-}), Ve = (e) => ({
+}, We = {
+  light: je,
+  dark: Ke
+}, Ge = (e, a) => ({
+  ...We[e],
+  ...a
+}), ze = (e) => ({
   "--elitea-assistant-button-bg": e.buttonBackground,
   "--elitea-assistant-button-icon": e.buttonIcon,
   "--elitea-assistant-header-bg": e.headerBackground,
@@ -906,95 +980,106 @@ const Re = {
   "--elitea-assistant-history-dropdown-border": e.historyDropdownBorder,
   "--elitea-assistant-history-dropdown-shadow": e.historyDropdownShadow,
   "--elitea-assistant-history-dropdown-hover-bg": e.historyDropdownHoverBackground
-}), Oe = he((e, s) => {
+}), qe = Ae((e, a) => {
   const {
     apiUrl: n,
-    token: t,
-    socketPath: o = "/socket.io/",
-    apiAdapter: r,
-    title: i = "Elitea Assistant",
-    placeholder: d = "Type a message...",
-    welcomeMessage: m = `Hi! I'm your ELITEA Support Assistant.
+    token: o,
+    socketPath: i = "/socket.io/",
+    apiAdapter: s,
+    title: l = "Elitea Assistant",
+    placeholder: g = "Type a message...",
+    welcomeMessage: r = `Hi! I'm your ELITEA Support Assistant.
 Ask me anything about ELITEA or report any issues you're experiencing. I have context about your current screen and settings.`,
-    position: h = "bottom-right",
-    theme: C = "light",
-    colors: u
-  } = e, E = K(() => Ve(Fe(C, u)), [C, u]), S = K(() => {
-    if (r) return r;
-    if (n && t) return ve(n, t);
+    position: C = "bottom-right",
+    theme: m = "light",
+    colors: d
+  } = e, k = J(() => ze(Ge(m, d)), [m, d]), b = J(() => {
+    if (s) return s;
+    if (n && o) return xe(n, o);
     throw new Error("EliteaAssistant: provide either apiAdapter or both apiUrl and token");
-  }, [r, n, t]), p = K(
+  }, [s, n, o]), I = J(
     () => ({
-      url: n ? Ae(n) : "",
-      path: o,
-      token: t ?? ""
+      url: n ? _e(n) : "",
+      path: i,
+      token: o ?? ""
     }),
-    [n, o, t]
-  ), b = Te(p), { title: y, welcomeMessage: N, placeholder: B, supportProjectId: c } = Ie({
-    api: S,
-    title: i,
-    welcomeMessage: m,
-    placeholder: d
-  }), { isOpen: T, isExpanded: H, open: U, close: l, toggle: x, expandFullscreen: w, collapseFullscreen: v, toggleFullscreen: I } = xe(), { showPopup: M, displayPopup: L, hidePopup: V, popupText: _ } = Pe(T);
-  return ge(
-    s,
+    [n, i, o]
+  ), c = De(I), {
+    title: u,
+    welcomeMessage: v,
+    placeholder: A,
+    supportProjectId: B,
+    history: p,
+    lastConversation: S,
+    isLoading: M
+  } = Ve({
+    api: b,
+    title: l,
+    welcomeMessage: r,
+    placeholder: g
+  }), { isOpen: T, isExpanded: R, open: $, close: V, toggle: O, expandFullscreen: Z, collapseFullscreen: q, toggleFullscreen: j } = Pe(), { showPopup: Q, displayPopup: h, hidePopup: x, popupText: E } = $e(T);
+  return Ee(
+    a,
     () => ({
-      open: U,
-      close: l,
-      toggle: x,
-      expandFullscreen: w,
-      collapseFullscreen: v,
-      toggleFullscreen: I,
-      showPopup: L,
-      hidePopup: V,
+      open: $,
+      close: V,
+      toggle: O,
+      expandFullscreen: Z,
+      collapseFullscreen: q,
+      toggleFullscreen: j,
+      showPopup: h,
+      hidePopup: x,
       isOpen: () => T,
-      isExpanded: () => H
+      isExpanded: () => R
     }),
     [
       T,
-      H,
-      U,
-      l,
-      x,
-      w,
-      v,
-      I,
-      L,
-      V
+      R,
+      $,
+      V,
+      O,
+      Z,
+      q,
+      j,
+      h,
+      x
     ]
-  ), /* @__PURE__ */ a(ce.Provider, { value: S, children: /* @__PURE__ */ a(le.Provider, { value: b, children: /* @__PURE__ */ k(
+  ), /* @__PURE__ */ t(me.Provider, { value: b, children: /* @__PURE__ */ t(be.Provider, { value: c, children: /* @__PURE__ */ f(
     "div",
     {
-      className: `elitea-assistant-container elitea-assistant-container--${h}`,
-      style: E,
+      className: `elitea-assistant-container elitea-assistant-container--${C}`,
+      style: k,
       children: [
-        T && /* @__PURE__ */ a(
-          de,
+        T && /* @__PURE__ */ t(
+          ve,
           {
-            title: y,
-            placeholder: B,
-            welcomeMessage: N,
-            supportProjectId: c,
-            onClose: l,
-            expanded: H,
-            onExpand: I
+            title: u,
+            placeholder: A,
+            welcomeMessage: v,
+            supportProjectId: B,
+            initialHistory: p,
+            lastConversation: S,
+            isInitLoading: M,
+            onClose: V,
+            expanded: R,
+            onExpand: j
           }
         ),
-        M && !T && /* @__PURE__ */ a(
-          ue,
+        Q && !T && /* @__PURE__ */ t(
+          we,
           {
-            message: _,
-            onClose: V
+            message: E,
+            onClose: x
           }
         ),
-        /* @__PURE__ */ a(ne, { onClick: x })
+        /* @__PURE__ */ t(Ce, { onClick: O })
       ]
     }
   ) }) });
 });
-Oe.displayName = "EliteaAssistant";
+qe.displayName = "EliteaAssistant";
 export {
-  Oe as EliteaAssistant,
-  ve as createDefaultAdapter
+  qe as EliteaAssistant,
+  xe as createDefaultAdapter
 };
 //# sourceMappingURL=elitea-assistant.js.map

@@ -8,6 +8,7 @@ const POPUP_DELAY = 12000;
 
 export const usePopup = (isOpen: boolean) => {
   const timerRef = useRef<ReturnType<typeof setTimeout> | null>(null);
+  const delayRef = useRef<ReturnType<typeof setTimeout> | null>(null);
 
   const [showPopup, setShowPopup] = useState(false);
 
@@ -17,6 +18,11 @@ export const usePopup = (isOpen: boolean) => {
     if (timerRef.current) {
       clearTimeout(timerRef.current);
       timerRef.current = null;
+    }
+
+    if (delayRef.current) {
+      clearTimeout(delayRef.current);
+      delayRef.current = null;
     }
   }, []);
 
@@ -30,13 +36,13 @@ export const usePopup = (isOpen: boolean) => {
   }, [isOpen, hidePopup]);
 
   useEffect(() => {
-    const timeout = setTimeout(() => {
+    delayRef.current = setTimeout(() => {
       displayPopup();
     }, POPUP_DELAY);
 
     return () => {
       if (timerRef.current) clearTimeout(timerRef.current);
-      clearTimeout(timeout);
+      if (delayRef.current) clearTimeout(delayRef.current);
     };
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
