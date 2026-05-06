@@ -1,13 +1,25 @@
-import { useCallback, useEffect, useState } from 'react';
+import { useCallback, useEffect, useMemo, useRef, useState } from 'react';
 
-import type { TConversationListItem, TMessage, TSocketMessage } from '@/lib/types';
+import type { TConversationListItem, TMessage, TRawConversation, TSocketMessage } from '@/lib/types';
 import { parseConversationMessages } from '@/lib/utils';
 
 import { MESSAGE_TYPES, SOCKET_EVENTS } from '../constants/chat.constants';
 import { useApi } from './api.hook';
 import { useSocketContext } from './socket.hook';
 
-export const useChat = (welcomeMessage: string, supportProjectId: number | null) => {
+type TUseChatProps = {
+  welcomeMessage: string;
+  supportProjectId: number | null;
+  initialHistory: TConversationListItem[];
+  initialConversation: TRawConversation | null;
+  isInitLoading: boolean;
+};
+
+export const useChat = (props: TUseChatProps) => {
+  const { welcomeMessage, supportProjectId, initialHistory, initialConversation, isInitLoading } = props;
+
+  const hasInitializedRef = useRef(false);
+
   const api = useApi();
   const socket = useSocketContext();
 
@@ -19,11 +31,17 @@ export const useChat = (welcomeMessage: string, supportProjectId: number | null)
     [welcomeMessage],
   );
 
-  const [messages, setMessages] = useState<TMessage[]>(createWelcomeMessages);
+  const [messages, setMessages] = useState<TMessage[]>([]);
   const [inputText, setInputText] = useState('');
   const [files, setFiles] = useState<File[]>([]);
   const [currentConversationId, setCurrentConversationId] = useState<string | null>(null);
   const [history, setHistory] = useState<TConversationListItem[]>([]);
+  const [isSwitchingConversation, setIsSwitchingConversation] = useState(false);
+
+  const isLoading = useMemo(
+    () => isInitLoading || isSwitchingConversation,
+    [isInitLoading, isSwitchingConversation],
+  );
 
   const enterRoom = useCallback(
     (conversationId: string) => {
@@ -71,6 +89,7 @@ export const useChat = (welcomeMessage: string, supportProjectId: number | null)
 
       case MESSAGE_TYPES.CHUNK:
       case MESSAGE_TYPES.AI_MESSAGE_CHUNK:
+      case MESSAGE_TYPES.AGENT_LLM_CHUNK:
       case MESSAGE_TYPES.AGENT_RESPONSE: {
         const chunk = typeof content === 'string' ? content : JSON.stringify(content);
         const finished = !!response_metadata?.finish_reason;
@@ -84,6 +103,12 @@ export const useChat = (welcomeMessage: string, supportProjectId: number | null)
         );
         break;
       }
+
+      case MESSAGE_TYPES.PIPELINE_FINISH:
+        setMessages(prev =>
+          prev.map(m => (m.id === message_id && m.isStreaming ? { ...m, isStreaming: false } : m)),
+        );
+        break;
 
       case MESSAGE_TYPES.ERROR:
       case MESSAGE_TYPES.AGENT_EXCEPTION:
@@ -116,52 +141,41 @@ export const useChat = (welcomeMessage: string, supportProjectId: number | null)
     ]);
   }, []);
 
+  const handleConversationNameUpdated = useCallback((data: { conversation_uuid: string; name: string }) => {
+    setHistory(prev =>
+      prev.map(item => (item.uuid === data.conversation_uuid ? { ...item, name: data.name } : item)),
+    );
+  }, []);
+
   useEffect(() => {
-    let cancelled = false;
+    if (isInitLoading || hasInitializedRef.current) return;
+    hasInitializedRef.current = true;
 
-    if (socket) {
-      socket.on(SOCKET_EVENTS.PREDICT_RESPONSE, handlePredict);
-      socket.on(SOCKET_EVENTS.ERROR, handleError);
+    setHistory(initialHistory);
+
+    if (initialHistory.length > 0 && initialConversation) {
+      const parsed = parseConversationMessages(initialConversation);
+      setMessages(parsed.length > 0 ? parsed : createWelcomeMessages());
+      setCurrentConversationId(initialHistory[0].uuid);
+      enterRoom(initialHistory[0].uuid);
+    } else {
+      setMessages(createWelcomeMessages());
     }
+  }, [isInitLoading, initialHistory, initialConversation, createWelcomeMessages, enterRoom]);
 
-    api
-      .getConversations()
-      .then(data => {
-        if (cancelled) return;
+  useEffect(() => {
+    if (!socket) return;
 
-        const items = data.items || [];
-
-        setHistory(items);
-
-        if (items.length > 0) {
-          const lastConversation = items[0];
-          setCurrentConversationId(lastConversation.uuid);
-          enterRoom(lastConversation.uuid);
-
-          api
-            .getConversation(lastConversation.uuid)
-            .then(conversation => {
-              if (cancelled) return;
-              const parsed = parseConversationMessages(conversation);
-              setMessages(parsed.length > 0 ? parsed : createWelcomeMessages());
-            })
-            .catch(() => {
-              if (!cancelled) setMessages(createWelcomeMessages());
-            });
-        }
-      })
-      .catch(() => {});
+    socket.on(SOCKET_EVENTS.PREDICT_RESPONSE, handlePredict);
+    socket.on(SOCKET_EVENTS.ERROR, handleError);
+    socket.on(SOCKET_EVENTS.CONVERSATION_NAME_UPDATED, handleConversationNameUpdated);
 
     return () => {
-      cancelled = true;
-
-      if (socket) {
-        socket.off(SOCKET_EVENTS.PREDICT_RESPONSE, handlePredict);
-        socket.off(SOCKET_EVENTS.ERROR, handleError);
-      }
+      socket.off(SOCKET_EVENTS.PREDICT_RESPONSE, handlePredict);
+      socket.off(SOCKET_EVENTS.ERROR, handleError);
+      socket.off(SOCKET_EVENTS.CONVERSATION_NAME_UPDATED, handleConversationNameUpdated);
     };
-    // eslint-disable-next-line react-hooks/exhaustive-deps
-  }, []);
+  }, [socket, handlePredict, handleError, handleConversationNameUpdated]);
 
   const handleSend = useCallback(
     async (text: string) => {
@@ -222,6 +236,8 @@ export const useChat = (welcomeMessage: string, supportProjectId: number | null)
       enterRoom(conversationId);
       setInputText('');
       setFiles([]);
+      setMessages([]);
+      setIsSwitchingConversation(true);
 
       try {
         const conversation = await api.getConversation(conversationId);
@@ -229,6 +245,8 @@ export const useChat = (welcomeMessage: string, supportProjectId: number | null)
         setMessages(parsed.length > 0 ? parsed : createWelcomeMessages());
       } catch {
         setMessages(createWelcomeMessages());
+      } finally {
+        setIsSwitchingConversation(false);
       }
     },
     [currentConversationId, leaveRoom, enterRoom, createWelcomeMessages, api],
@@ -242,6 +260,7 @@ export const useChat = (welcomeMessage: string, supportProjectId: number | null)
     setFiles,
     history,
     currentConversationId: currentConversationId ?? '',
+    isLoading,
     handleNewChat,
     handleSelectConversation,
     handleSend,

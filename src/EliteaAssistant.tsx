@@ -50,7 +50,15 @@ const EliteaAssistant = forwardRef<TEliteaAssistantRef, TEliteaAssistantProps>((
 
   const socket = useSocketConnection(socketConfig);
 
-  const { title, welcomeMessage, placeholder, supportProjectId } = useInitAssistant({
+  const {
+    title,
+    welcomeMessage,
+    placeholder,
+    supportProjectId,
+    history: initialHistory,
+    lastConversation,
+    isLoading: isInitLoading,
+  } = useInitAssistant({
     api,
     title: titleProp,
     welcomeMessage: welcomeMessageProp,
@@ -103,6 +111,9 @@ const EliteaAssistant = forwardRef<TEliteaAssistantRef, TEliteaAssistantProps>((
               placeholder={placeholder}
               welcomeMessage={welcomeMessage}
               supportProjectId={supportProjectId}
+              initialHistory={initialHistory}
+              lastConversation={lastConversation}
+              isInitLoading={isInitLoading}
               onClose={close}
               expanded={isExpanded}
               onExpand={toggleFullscreen}

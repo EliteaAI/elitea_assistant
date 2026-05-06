@@ -6,15 +6,44 @@ import { formatTime } from '@/lib/utils';
 
 type TMessageListProps = {
   messages: TMessage[];
+  isLoading?: boolean;
 };
 
 const MessageList: React.FC<TMessageListProps> = memo(props => {
-  const { messages } = props;
+  const { messages, isLoading } = props;
   const bottomRef = useRef<HTMLDivElement>(null);
+  const hasScrolledRef = useRef(false);
 
   useEffect(() => {
-    bottomRef.current?.scrollIntoView({ behavior: 'smooth' });
+    if (messages.length === 0) {
+      hasScrolledRef.current = false;
+      return;
+    }
+
+    const behavior = hasScrolledRef.current ? 'smooth' : 'instant';
+    hasScrolledRef.current = true;
+
+    bottomRef.current?.scrollIntoView({ behavior });
   }, [messages]);
+
+  if (isLoading) {
+    return (
+      <div className="elitea-assistant-messages">
+        {Array.from({ length: 3 }).map((_, i) => (
+          <div
+            key={i}
+            className={`elitea-assistant-skeleton-row ${i % 2 === 0 ? 'elitea-assistant-skeleton-row--left' : 'elitea-assistant-skeleton-row--right'}`}
+          >
+            <div className="elitea-assistant-skeleton-meta">
+              <div className="elitea-assistant-skeleton elitea-assistant-skeleton--avatar" />
+              <div className="elitea-assistant-skeleton elitea-assistant-skeleton--time" />
+            </div>
+            <div className="elitea-assistant-skeleton elitea-assistant-skeleton--bubble" />
+          </div>
+        ))}
+      </div>
+    );
+  }
 
   if (messages.length === 0) {
     return <div className="elitea-assistant-empty">Send a message to start a conversation</div>;
@@ -43,7 +72,16 @@ const MessageList: React.FC<TMessageListProps> = memo(props => {
           <div
             className={`elitea-assistant-message elitea-assistant-message--${msg.role}${msg.isError ? ' elitea-assistant-message--error' : ''}`}
           >
-            {msg.content || (msg.isStreaming ? '...' : '')}
+            {msg.content ||
+              (msg.isStreaming ? (
+                <span className="elitea-assistant-typing-indicator">
+                  <span className="elitea-assistant-typing-dot" />
+                  <span className="elitea-assistant-typing-dot" />
+                  <span className="elitea-assistant-typing-dot" />
+                </span>
+              ) : (
+                ''
+              ))}
           </div>
         </div>
       ))}

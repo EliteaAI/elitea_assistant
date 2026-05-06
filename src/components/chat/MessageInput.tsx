@@ -11,10 +11,11 @@ type TMessageInputProps = {
   onFilesChange: (files: File[]) => void;
   onSend: (text: string, files?: File[]) => void;
   expanded?: boolean;
+  disabled?: boolean;
 };
 
 const MessageInput: React.FC<TMessageInputProps> = memo(props => {
-  const { placeholder, text, onTextChange, files, onFilesChange, onSend, expanded } = props;
+  const { placeholder, text, onTextChange, files, onFilesChange, onSend, expanded, disabled } = props;
 
   const fileInputRef = useRef<HTMLInputElement>(null);
 
@@ -104,6 +105,7 @@ const MessageInput: React.FC<TMessageInputProps> = memo(props => {
           onClick={handleAttachClick}
           aria-label="Attach file"
           type="button"
+          disabled={disabled}
         >
           <AttachmentIcon />
         </button>
@@ -116,11 +118,12 @@ const MessageInput: React.FC<TMessageInputProps> = memo(props => {
           placeholder={placeholder}
           rows={1}
           autoFocus
+          disabled={disabled}
         />
         <button
           className="elitea-assistant-send-button"
           onClick={handleSend}
-          disabled={!text.trim() && files.length === 0}
+          disabled={disabled || (!text.trim() && files.length === 0)}
           aria-label="Send message"
           type="button"
         >

@@ -9,6 +9,7 @@ type TChatHeaderProps = {
   expanded?: boolean;
   history: TConversationListItem[];
   currentConversationId: string;
+  disabled?: boolean;
   onClose: () => void;
   onExpand?: () => void;
   onNewChat: () => void;
@@ -21,6 +22,7 @@ const ChatHeader: React.FC<TChatHeaderProps> = memo(props => {
     expanded,
     history,
     currentConversationId,
+    disabled,
     onClose,
     onExpand,
     onNewChat,
@@ -75,6 +77,7 @@ const ChatHeader: React.FC<TChatHeaderProps> = memo(props => {
             onClick={onNewChat}
             aria-label="New chat"
             type="button"
+            disabled={disabled}
           >
             <PlusIcon />
           </button>
@@ -89,7 +92,7 @@ const ChatHeader: React.FC<TChatHeaderProps> = memo(props => {
               onClick={toggleHistory}
               aria-label="Chat history"
               type="button"
-              disabled={history.length === 0}
+              disabled={disabled || history.length === 0}
             >
               <HistoryIcon />
             </button>

@@ -1,6 +1,7 @@
 import React, { memo } from 'react';
 
 import { useChat } from '@/lib/hooks';
+import type { TConversationListItem, TRawConversation } from '@/lib/types';
 
 import { ChatHeader, MessageInput, MessageList } from './';
 
@@ -9,13 +10,27 @@ type TChatWindowProps = {
   placeholder: string;
   welcomeMessage: string;
   supportProjectId: number | null;
+  initialHistory: TConversationListItem[];
+  lastConversation: TRawConversation | null;
+  isInitLoading: boolean;
   onClose: () => void;
   onExpand?: () => void;
   expanded?: boolean;
 };
 
 const ChatWindow: React.FC<TChatWindowProps> = memo(props => {
-  const { title, placeholder, welcomeMessage, supportProjectId, onClose, onExpand, expanded } = props;
+  const {
+    title,
+    placeholder,
+    welcomeMessage,
+    supportProjectId,
+    initialHistory,
+    lastConversation,
+    isInitLoading,
+    onClose,
+    onExpand,
+    expanded,
+  } = props;
 
   const {
     messages,
@@ -25,10 +40,17 @@ const ChatWindow: React.FC<TChatWindowProps> = memo(props => {
     setFiles,
     history,
     currentConversationId,
+    isLoading,
     handleNewChat,
     handleSelectConversation,
     handleSend,
-  } = useChat(welcomeMessage, supportProjectId);
+  } = useChat({
+    welcomeMessage,
+    supportProjectId,
+    initialHistory,
+    initialConversation: lastConversation,
+    isInitLoading,
+  });
 
   const window = (
     <div className={`elitea-assistant-window${expanded ? ' elitea-assistant-window--expanded' : ''}`}>
@@ -37,12 +59,16 @@ const ChatWindow: React.FC<TChatWindowProps> = memo(props => {
         expanded={expanded}
         history={history}
         currentConversationId={currentConversationId}
+        disabled={isLoading}
         onClose={onClose}
         onExpand={onExpand}
         onNewChat={handleNewChat}
         onSelectConversation={handleSelectConversation}
       />
-      <MessageList messages={messages} />
+      <MessageList
+        messages={messages}
+        isLoading={isLoading}
+      />
       <MessageInput
         placeholder={placeholder}
         text={inputText}
@@ -51,6 +77,7 @@ const ChatWindow: React.FC<TChatWindowProps> = memo(props => {
         onFilesChange={setFiles}
         onSend={handleSend}
         expanded={expanded}
+        disabled={isLoading}
       />
     </div>
   );
