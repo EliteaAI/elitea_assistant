@@ -6,34 +6,45 @@ import type {
   TRawConversation,
 } from '@/lib/types';
 
-const createHeaders = (token: string, json = false): HeadersInit => ({
-  Authorization: `Bearer ${token}`,
+type TAdapterOptions = {
+  token?: string;
+  withCredentials?: boolean;
+};
+
+const createHeaders = (options: TAdapterOptions, json = false): HeadersInit => ({
+  ...(options.token && { Authorization: `Bearer ${options.token}` }),
   ...(json && { 'Content-Type': 'application/json' }),
 });
+
+const getCredentials = (options: TAdapterOptions): RequestCredentials | undefined =>
+  options.withCredentials ? 'include' : undefined;
 
 const assertOk = async (r: Response): Promise<Response> => {
   if (!r.ok) throw new Error(`${r.status} ${r.statusText}`);
   return r;
 };
 
-export const createDefaultAdapter = (baseURL: string, token: string): TChatAPI => ({
+export const createDefaultAdapter = (baseURL: string, options: TAdapterOptions = {}): TChatAPI => ({
   getConfig: () =>
     fetch(`${baseURL}/config/`, {
-      headers: createHeaders(token),
+      headers: createHeaders(options),
+      credentials: getCredentials(options),
     })
       .then(assertOk)
       .then(r => r.json() as Promise<TAssistantConfig>),
 
   getConversations: () =>
     fetch(`${baseURL}/conversations/`, {
-      headers: createHeaders(token),
+      headers: createHeaders(options),
+      credentials: getCredentials(options),
     })
       .then(assertOk)
       .then(r => r.json() as Promise<TConversationsResponse>),
 
   getConversation: (conversationId: string) =>
     fetch(`${baseURL}/conversation/${conversationId}`, {
-      headers: createHeaders(token),
+      headers: createHeaders(options),
+      credentials: getCredentials(options),
     })
       .then(assertOk)
       .then(r => r.json() as Promise<TRawConversation>),
@@ -41,7 +52,8 @@ export const createDefaultAdapter = (baseURL: string, token: string): TChatAPI =
   createConversation: () =>
     fetch(`${baseURL}/conversations/`, {
       method: 'POST',
-      headers: createHeaders(token, true),
+      headers: createHeaders(options, true),
+      credentials: getCredentials(options),
       body: JSON.stringify({}),
     })
       .then(assertOk)
@@ -50,7 +62,8 @@ export const createDefaultAdapter = (baseURL: string, token: string): TChatAPI =
   deleteConversation: (conversationId: string) =>
     fetch(`${baseURL}/conversation/${conversationId}`, {
       method: 'DELETE',
-      headers: createHeaders(token),
+      headers: createHeaders(options),
+      credentials: getCredentials(options),
     })
       .then(assertOk)
       .then(() => undefined),

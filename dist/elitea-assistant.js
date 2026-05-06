@@ -1,35 +1,40 @@
 (function(){"use strict";try{if(typeof document<"u"){var e=document.createElement("style");e.appendChild(document.createTextNode('@import"https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700&display=swap";.elitea-assistant-container{position:fixed;z-index:2147483647;font-family:Montserrat,sans-serif;font-size:.875rem;line-height:1.5;box-sizing:border-box}.elitea-assistant-container *,.elitea-assistant-container *:before,.elitea-assistant-container *:after{box-sizing:border-box}.elitea-assistant-container--bottom-right{bottom:.75rem;right:1.09375rem}.elitea-assistant-container--bottom-left{bottom:.75rem;left:1.09375rem}.elitea-assistant-button{width:1.75rem;height:1.75rem;border-radius:50%;border:none;cursor:pointer;display:flex;align-items:center;justify-content:center;background:var(--elitea-assistant-button-bg);color:var(--elitea-assistant-button-icon);box-shadow:0 .25rem .75rem #00000026;transition:transform .2s ease,box-shadow .2s ease;padding:0}.elitea-assistant-button:hover{transform:scale(1.08);box-shadow:0 .375rem 1.25rem #0003}.elitea-assistant-button svg{width:1.75rem;height:1.75rem;fill:currentColor}.elitea-assistant-window{position:absolute;bottom:0rem;width:28.75rem;height:30rem;border-radius:1rem;overflow:hidden;display:flex;flex-direction:column;box-shadow:var(--elitea-assistant-window-shadow);background:var(--elitea-assistant-chat-bg);border:.0625rem solid var(--elitea-assistant-window-border);animation:elitea-assistant-slide-up .25s ease-out}.elitea-assistant-container--bottom-right .elitea-assistant-window{right:2.875rem}.elitea-assistant-container--bottom-left .elitea-assistant-window{left:2.875rem}@keyframes elitea-assistant-slide-up{0%{opacity:0;transform:translateY(.75rem)}to{opacity:1;transform:translateY(0)}}.elitea-assistant-overlay{position:fixed;top:0;right:0;bottom:0;left:0;z-index:2147483646;background:#00000080;display:flex;align-items:center;justify-content:center;animation:elitea-assistant-fade-in .2s ease-out}@keyframes elitea-assistant-fade-in{0%{opacity:0}to{opacity:1}}.elitea-assistant-window--expanded{position:static;width:45rem;height:42.375rem;animation:elitea-assistant-scale-in .2s ease-out}@keyframes elitea-assistant-scale-in{0%{opacity:0;transform:scale(.95)}to{opacity:1;transform:scale(1)}}.elitea-assistant-header{display:flex;align-items:center;justify-content:space-between;height:3.25rem;padding:0 1rem;background:var(--elitea-assistant-header-bg);color:var(--elitea-assistant-header-text);flex-shrink:0;border-bottom:.0625rem solid var(--elitea-assistant-window-border)}.elitea-assistant-header-left,.elitea-assistant-header-right{display:flex;align-items:center;gap:.5rem}.elitea-assistant-header-title{font-size:.9375rem;font-weight:600;margin:0;white-space:nowrap}.elitea-assistant-header-action{border:.0625rem solid transparent;color:var(--elitea-assistant-header-text);cursor:pointer;padding:0;display:flex;align-items:center;justify-content:center;border-radius:50%;width:1.75rem;height:1.75rem;min-width:auto;box-shadow:none;background:var(--elitea-assistant-header-action-bg);transition:background .15s ease,color .15s ease,border-color .15s ease}.elitea-assistant-header-close-action{border:none;color:var(--elitea-assistant-header-close-icon);cursor:pointer;padding:0;display:flex;align-items:center;justify-content:center;border-radius:50%;width:1.75rem;height:1.75rem;min-width:auto;background:var(--elitea-assistant-header-close-bg);transition:background .15s ease,color .15s ease}.elitea-assistant-header-close-action:hover{background:var(--elitea-assistant-header-close-hover-bg);color:var(--elitea-assistant-header-close-hover-color)}.elitea-assistant-header-close-action:active{background:var(--elitea-assistant-header-close-active-bg);color:var(--elitea-assistant-header-close-active-color)}.elitea-assistant-header-close-action:disabled{background:var(--elitea-assistant-header-close-disabled-bg);color:var(--elitea-assistant-header-close-disabled-color);cursor:not-allowed}.elitea-assistant-header-action:hover{background:var(--elitea-assistant-header-action-hover-bg)}.elitea-assistant-header-action:active{background:var(--elitea-assistant-header-action-active-bg);color:var(--elitea-assistant-header-action-active-color);border-color:var(--elitea-assistant-header-action-active-border)}.elitea-assistant-header-action svg{width:1rem;height:1rem;fill:currentColor}.elitea-assistant-header-close-action svg{width:1.3rem;height:1.3rem;fill:currentColor}.elitea-assistant-history-wrapper{position:relative}.elitea-assistant-header-action:disabled{background:var(--elitea-assistant-header-action-disabled-bg);color:var(--elitea-assistant-header-action-disabled-color);cursor:not-allowed}.elitea-assistant-header-action:disabled:hover{background:var(--elitea-assistant-header-action-disabled-bg)}.elitea-assistant-history-dropdown{position:absolute;top:calc(100% + .55rem);right:-2.65rem;width:19.125rem;max-height:21.875rem;overflow-y:auto;background:var(--elitea-assistant-chat-bg);border:.0625rem solid var(--elitea-assistant-history-dropdown-border);border-radius:.5rem;box-shadow:var(--elitea-assistant-history-dropdown-shadow);z-index:100;padding:.5rem 0}.elitea-assistant-history-item{display:block;width:100%;padding:.5rem .75rem;border:none;background:none;cursor:pointer;text-align:left;color:var(--elitea-assistant-header-text);font-size:.875rem;font-weight:400;line-height:1.5rem;overflow:hidden;text-overflow:ellipsis;white-space:nowrap;transition:background .15s ease}.elitea-assistant-history-item:hover{background:var(--elitea-assistant-history-dropdown-hover-bg)}.elitea-assistant-history-item:disabled{opacity:.45;cursor:default;background:none}.elitea-assistant-messages{flex:1;overflow-y:auto;padding:1rem;display:flex;flex-direction:column;gap:.625rem}.elitea-assistant-message-wrapper{display:flex;flex-direction:column;max-width:80%}.elitea-assistant-message-wrapper--user{align-self:flex-end}.elitea-assistant-message-wrapper--assistant{align-self:flex-start}.elitea-assistant-message-meta{display:flex;align-items:center;gap:.375rem;margin-bottom:.375rem}.elitea-assistant-message-meta--assistant{justify-content:flex-start}.elitea-assistant-message-meta--user{justify-content:flex-end}.elitea-assistant-message-avatar{width:1.5rem;height:1.5rem;border-radius:50%;display:flex;align-items:center;justify-content:center;flex-shrink:0}.elitea-assistant-message-avatar--assistant{background:var(--elitea-assistant-button-bg);color:var(--elitea-assistant-button-icon)}.elitea-assistant-message-avatar--user{background:var(--elitea-assistant-user-avatar-bg);color:var(--elitea-assistant-user-avatar-icon)}.elitea-assistant-message-avatar svg{width:1.25rem;height:1.25rem;fill:currentColor}.elitea-assistant-message-time{font-size:.75rem;opacity:.6;color:var(--elitea-assistant-bot-msg-text)}.elitea-assistant-message{padding:.625rem .875rem;border-radius:.75rem;word-wrap:break-word;white-space:pre-wrap;font-weight:400;font-style:Regular;font-size:.875rem;line-height:1.5rem;letter-spacing:0%}.elitea-assistant-message--user{background:var(--elitea-assistant-user-msg-bg);color:var(--elitea-assistant-user-msg-text);border-radius:1rem 0rem 1rem 1rem}.elitea-assistant-message--assistant{background:var(--elitea-assistant-bot-msg-bg);color:var(--elitea-assistant-bot-msg-text);border-radius:0 1rem 1rem}.elitea-assistant-message--error{border:1px solid #e53e3e;opacity:.9}@keyframes elitea-assistant-typing-bounce{0%,60%,to{transform:translateY(0);opacity:.25}30%{transform:translateY(-.25rem);opacity:.5}}.elitea-assistant-typing-indicator{display:inline-flex;align-items:center;gap:.1875rem;padding:.125rem 0}.elitea-assistant-typing-dot{width:.25rem;height:.25rem;border-radius:50%;background:var(--elitea-assistant-bot-msg-text);opacity:.25;animation:elitea-assistant-typing-bounce 1.2s ease-in-out infinite}.elitea-assistant-typing-dot:nth-child(2){animation-delay:.15s}.elitea-assistant-typing-dot:nth-child(3){animation-delay:.3s}@keyframes elitea-assistant-shimmer{0%{opacity:.4}50%{opacity:.7}to{opacity:.4}}.elitea-assistant-skeleton-row{display:flex;flex-direction:column;gap:.375rem;max-width:70%}.elitea-assistant-skeleton-row--left{align-self:flex-start}.elitea-assistant-skeleton-row--right{align-self:flex-end}.elitea-assistant-skeleton-meta{display:flex;align-items:center;gap:.375rem}.elitea-assistant-skeleton-row--right .elitea-assistant-skeleton-meta{justify-content:flex-end}.elitea-assistant-skeleton{background:var(--elitea-assistant-bot-msg-bg);border-radius:.5rem;animation:elitea-assistant-shimmer 1.4s ease-in-out infinite}.elitea-assistant-skeleton--avatar{width:1.5rem;height:1.5rem;border-radius:50%;flex-shrink:0}.elitea-assistant-skeleton--time{width:2.5rem;height:.75rem;border-radius:.25rem}.elitea-assistant-skeleton--bubble{width:10rem;height:2.5rem;border-radius:.75rem}.elitea-assistant-skeleton-row--right .elitea-assistant-skeleton--bubble{width:8rem}.elitea-assistant-empty{flex:1;display:flex;align-items:center;justify-content:center;color:var(--elitea-assistant-bot-msg-text);opacity:.5;font-size:.8125rem;text-align:center;padding:1.25rem}.elitea-assistant-input-area{display:flex;flex-direction:column;padding:.75rem;background:var(--elitea-assistant-input-bg);flex-shrink:0;border-top:.0625rem solid var(--elitea-assistant-window-border)}.elitea-assistant-input-row{display:flex;align-items:center;gap:.5rem;width:100%}.elitea-assistant-input{flex:1;padding:.5rem .25rem;border:none;border-radius:0;background:transparent;color:var(--elitea-assistant-input-text);font-size:.875rem;font-family:inherit;outline:none;resize:none}.elitea-assistant-input::placeholder{color:var(--elitea-assistant-input-placeholder);opacity:1}.elitea-assistant-attach-button{width:1.75rem;height:1.75rem;border-radius:50%;border:none;cursor:pointer;display:flex;align-items:center;justify-content:center;background:var(--elitea-assistant-header-action-bg);color:var(--elitea-assistant-header-text);flex-shrink:0;transition:opacity .15s ease;padding:0;opacity:.8}.elitea-assistant-attach-button:hover{opacity:1}.elitea-assistant-attach-button svg{width:.875rem;height:.875rem;fill:currentColor}.elitea-assistant-send-button{width:1.75rem;height:1.75rem;border-radius:50%;border:none;cursor:pointer;display:flex;align-items:center;justify-content:center;background:var(--elitea-assistant-send-btn-bg);color:var(--elitea-assistant-send-btn-icon);flex-shrink:0;transition:background .15s ease;padding:0}.elitea-assistant-send-button:disabled{background:var(--elitea-assistant-send-btn-disabled-bg);cursor:default}.elitea-assistant-send-button svg{width:.875rem;height:.875rem;fill:currentColor}.elitea-assistant-file-list{display:flex;align-items:center;gap:.5rem;padding-bottom:.5rem}.elitea-assistant-file-chip{display:flex;align-items:center;gap:.75rem;max-width:11.25rem;height:2.25rem;padding:.375rem .75rem;border-radius:.5rem;background:var(--elitea-assistant-header-action-bg);flex-shrink:0}.elitea-assistant-file-chip-icon{display:flex;align-items:center;justify-content:center;flex-shrink:0;color:var(--elitea-assistant-header-close-icon)}.elitea-assistant-file-chip-icon svg{width:.75rem;height:.875rem}.elitea-assistant-file-chip-name{flex:1;min-width:0;font-size:.75rem;color:var(--elitea-assistant-input-text);white-space:nowrap;overflow:hidden;text-overflow:ellipsis}.elitea-assistant-file-chip-remove{display:flex;align-items:center;justify-content:center;width:1rem;height:1rem;padding:0;border:none;background:none;cursor:pointer;color:var(--elitea-assistant-header-close-icon);flex-shrink:0;opacity:.7;transition:opacity .15s ease}.elitea-assistant-file-chip-remove:hover{opacity:1}.elitea-assistant-file-chip-remove svg{width:2rem;height:2rem;fill:currentColor}.elitea-assistant-file-chip--count{font-size:.75rem;font-weight:400;color:var(--elitea-assistant-input-text);max-width:none;gap:0}.elitea-assistant-tooltip-trigger{display:inline-flex}.elitea-assistant-tooltip{position:fixed;z-index:99999;padding:.375rem .75rem;border-radius:.375rem;background:#14141ceb;color:#fff;font-size:.75rem;line-height:1.4;white-space:nowrap;max-width:20rem;overflow:hidden;text-overflow:ellipsis;pointer-events:none;box-shadow:0 .25rem 1rem #00000040;animation:elitea-tooltip-in .15s ease-out}@keyframes elitea-tooltip-in{0%{opacity:0;transform:translateY(4px)}to{opacity:1;transform:translateY(0)}}.elitea-assistant-popup{position:absolute;bottom:.25rem;display:flex;align-items:center;gap:1rem;padding:.75rem .75rem .75rem 1.25rem;border-radius:1.5rem 1.5rem 1.5rem 0;background:var(--elitea-assistant-popup-bg);color:var(--elitea-assistant-popup-text);font-size:.875rem;font-weight:500;line-height:1.5rem;white-space:nowrap;box-shadow:0 .25rem 1rem #0003;animation:elitea-assistant-popup-in .3s ease-out}.elitea-assistant-popup:before{content:"";position:absolute;top:-.0625rem;right:-.0625rem;bottom:-.0625rem;left:-.0625rem;border-radius:inherit;padding:.0625rem;background:var(--elitea-assistant-popup-border);-webkit-mask:linear-gradient(#fff 0 0) content-box,linear-gradient(#fff 0 0);-webkit-mask-composite:xor;mask:linear-gradient(#fff 0 0) content-box,linear-gradient(#fff 0 0);mask-composite:exclude;pointer-events:none}.elitea-assistant-container--bottom-right .elitea-assistant-popup{right:2.5rem;flex-direction:row-reverse;padding:.75rem 1.25rem .75rem .75rem;border-radius:1.5rem 1.5rem 0}.elitea-assistant-container--bottom-left .elitea-assistant-popup{left:2.5rem}.elitea-assistant-popup-text{-webkit-user-select:none;user-select:none}.elitea-assistant-popup-close{display:flex;align-items:center;justify-content:center;width:1.75rem;height:1.75rem;flex-shrink:0;border:none;border-radius:50%;background:var(--elitea-assistant-popup-close-bg);color:var(--elitea-assistant-popup-text);cursor:pointer;padding:0;transition:background .15s ease}.elitea-assistant-popup-close:hover{background:var(--elitea-assistant-popup-close-hover-bg)}.elitea-assistant-popup-close svg{width:1rem;height:1rem;fill:currentColor}@keyframes elitea-assistant-popup-in{0%{opacity:0;transform:translateY(.5rem)}to{opacity:1;transform:translateY(0)}}')),document.head.appendChild(e)}}catch(t){console.error("vite-plugin-css-injected-by-js",t)}})();
-import { jsx as t, jsxs as f, Fragment as ye } from "react/jsx-runtime";
-import { memo as N, useRef as P, useState as y, useCallback as w, useLayoutEffect as ke, useEffect as F, createContext as se, useContext as ne, useMemo as J, forwardRef as Ae, useImperativeHandle as Ee } from "react";
-import { createPortal as Ne } from "react-dom";
-import { io as Be } from "socket.io-client";
+import { jsx as t, jsxs as y, Fragment as ke } from "react/jsx-runtime";
+import { memo as N, useRef as R, useState as k, useCallback as v, useLayoutEffect as Ae, useEffect as F, createContext as ne, useContext as ie, useMemo as Q, forwardRef as Ee, useImperativeHandle as Ne } from "react";
+import { createPortal as Be } from "react-dom";
+import { io as xe } from "socket.io-client";
 const W = (e, a = !1) => ({
-  Authorization: `Bearer ${e}`,
+  ...e.token && { Authorization: `Bearer ${e.token}` },
   ...a && { "Content-Type": "application/json" }
-}), G = async (e) => {
+}), G = (e) => e.withCredentials ? "include" : void 0, z = async (e) => {
   if (!e.ok) throw new Error(`${e.status} ${e.statusText}`);
   return e;
-}, xe = (e, a) => ({
+}, Ie = (e, a = {}) => ({
   getConfig: () => fetch(`${e}/config/`, {
-    headers: W(a)
-  }).then(G).then((n) => n.json()),
+    headers: W(a),
+    credentials: G(a)
+  }).then(z).then((n) => n.json()),
   getConversations: () => fetch(`${e}/conversations/`, {
-    headers: W(a)
-  }).then(G).then((n) => n.json()),
+    headers: W(a),
+    credentials: G(a)
+  }).then(z).then((n) => n.json()),
   getConversation: (n) => fetch(`${e}/conversation/${n}`, {
-    headers: W(a)
-  }).then(G).then((o) => o.json()),
+    headers: W(a),
+    credentials: G(a)
+  }).then(z).then((i) => i.json()),
   createConversation: () => fetch(`${e}/conversations/`, {
     method: "POST",
     headers: W(a, !0),
+    credentials: G(a),
     body: JSON.stringify({})
-  }).then(G).then((n) => n.json()),
+  }).then(z).then((n) => n.json()),
   deleteConversation: (n) => fetch(`${e}/conversation/${n}`, {
     method: "DELETE",
-    headers: W(a)
-  }).then(G).then(() => {
+    headers: W(a),
+    credentials: G(a)
+  }).then(z).then(() => {
   })
-}), ee = N(() => /* @__PURE__ */ t(
+}), te = N(() => /* @__PURE__ */ t(
   "svg",
   {
     viewBox: "0 0 28 28",
@@ -37,7 +42,7 @@ const W = (e, a = !1) => ({
     children: /* @__PURE__ */ t("path", { d: "M14.2499 4.375C14.8319 4.375 15.3037 4.84137 15.3037 5.41666C15.3037 5.87017 15.0104 6.25575 14.6012 6.39877V8.26399H14.9524C15.5109 8.26399 15.9675 8.69328 16.0037 9.23621H18.2544C20.5477 9.23621 22.4397 10.9331 22.7159 13.1259C23.2816 13.1443 23.7344 13.6031 23.7344 14.1667V15.6945C23.7343 16.2697 23.2625 16.7362 22.6805 16.7362C22.6637 16.7362 22.6469 16.7356 22.6302 16.7348C22.2147 18.5198 20.7287 19.6036 18.2544 20.0695C15.3037 20.625 9.26175 21.875 9.26175 21.875L10.1048 20.0695C8.0024 20.0695 6.23719 18.643 5.74513 16.7159C5.67822 16.7291 5.60903 16.7362 5.53821 16.7362C4.95623 16.7362 4.48444 16.2697 4.48438 15.6945V14.1667C4.48438 13.5914 4.95619 13.1251 5.53821 13.1251C5.57345 13.1251 5.60828 13.1267 5.64263 13.1301C5.91693 10.9353 7.81012 9.23621 10.1048 9.23621H12.3556C12.3917 8.69328 12.8484 8.26399 13.4068 8.26399H13.7581V6.33788C13.4239 6.1632 13.1961 5.81633 13.1961 5.41666C13.1961 4.84137 13.6679 4.375 14.2499 4.375ZM11.2289 11.3195C9.44405 11.3195 7.99715 12.7497 7.99715 14.5139V14.6528C7.99721 16.417 9.44409 17.8473 11.2289 17.8473H17.1304C18.9152 17.8473 20.362 16.417 20.3621 14.6528V14.5139C20.3621 12.7497 18.9152 11.3195 17.1304 11.3195H11.2289ZM11.4397 13.5416C12.0217 13.5416 12.4935 14.008 12.4935 14.5833C12.4935 15.1585 12.0217 15.6249 11.4397 15.6249C10.8577 15.6249 10.3858 15.1585 10.3858 14.5833C10.3858 14.008 10.8577 13.5416 11.4397 13.5416ZM16.9196 13.5416C17.5016 13.5416 17.9734 14.008 17.9734 14.5833C17.9734 15.1585 17.5016 15.6249 16.9196 15.6249C16.3376 15.6249 15.8658 15.1585 15.8658 14.5833C15.8658 14.008 16.3376 13.5416 16.9196 13.5416Z" })
   }
 ));
-ee.displayName = "AssistantIcon";
+te.displayName = "AssistantIcon";
 const oe = N(() => /* @__PURE__ */ t(
   "svg",
   {
@@ -47,7 +52,7 @@ const oe = N(() => /* @__PURE__ */ t(
   }
 ));
 oe.displayName = "AttachmentIcon";
-const Ie = N(() => /* @__PURE__ */ t(
+const Te = N(() => /* @__PURE__ */ t(
   "svg",
   {
     viewBox: "0 0 24 24",
@@ -55,8 +60,8 @@ const Ie = N(() => /* @__PURE__ */ t(
     children: /* @__PURE__ */ t("path", { d: "M20 2H4C2.9 2 2 2.9 2 4V22L6 18H20C21.1 18 22 17.1 22 16V4C22 2.9 21.1 2 20 2ZM20 16H5.2L4 17.2V4H20V16Z" })
   }
 ));
-Ie.displayName = "ChatIcon";
-const Y = N(() => /* @__PURE__ */ t(
+Te.displayName = "ChatIcon";
+const ee = N(() => /* @__PURE__ */ t(
   "svg",
   {
     viewBox: "0 0 24 24",
@@ -64,8 +69,8 @@ const Y = N(() => /* @__PURE__ */ t(
     children: /* @__PURE__ */ t("path", { d: "M19 6.41L17.59 5L12 10.59L6.41 5L5 6.41L10.59 12L5 17.59L6.41 19L12 13.41L17.59 19L19 17.59L13.41 12L19 6.41Z" })
   }
 ));
-Y.displayName = "CloseIcon";
-const ie = N(() => /* @__PURE__ */ t(
+ee.displayName = "CloseIcon";
+const re = N(() => /* @__PURE__ */ t(
   "svg",
   {
     viewBox: "0 0 12 12",
@@ -73,8 +78,8 @@ const ie = N(() => /* @__PURE__ */ t(
     children: /* @__PURE__ */ t("path", { d: "M12 0.545455V3.81818C12 3.96285 11.9425 4.10158 11.8402 4.20388C11.7379 4.30617 11.5992 4.36364 11.4545 4.36364C11.3099 4.36364 11.1711 4.30617 11.0689 4.20388C10.9666 4.10158 10.9091 3.96285 10.9091 3.81818V1.86205L7.47682 5.295C7.37447 5.39735 7.23565 5.45485 7.09091 5.45485C6.94617 5.45485 6.80735 5.39735 6.705 5.295C6.60265 5.19265 6.54515 5.05383 6.54515 4.90909C6.54515 4.76435 6.60265 4.62553 6.705 4.52318L10.138 1.09091H8.18182C8.03715 1.09091 7.89842 1.03344 7.79612 0.931149C7.69383 0.828856 7.63636 0.690118 7.63636 0.545455C7.63636 0.400791 7.69383 0.262053 7.79612 0.15976C7.89842 0.0574675 8.03715 0 8.18182 0H11.4545C11.5992 0 11.7379 0.0574675 11.8402 0.15976C11.9425 0.262053 12 0.400791 12 0.545455ZM4.52318 6.705L1.09091 10.138V8.18182C1.09091 8.03715 1.03344 7.89842 0.931149 7.79612C0.828856 7.69383 0.690118 7.63636 0.545455 7.63636C0.400791 7.63636 0.262053 7.69383 0.15976 7.79612C0.0574675 7.89842 0 8.03715 0 8.18182V11.4545C0 11.5992 0.0574675 11.7379 0.15976 11.8402C0.262053 11.9425 0.400791 12 0.545455 12H3.81818C3.96285 12 4.10158 11.9425 4.20388 11.8402C4.30617 11.7379 4.36364 11.5992 4.36364 11.4545C4.36364 11.3099 4.30617 11.1711 4.20388 11.0689C4.10158 10.9666 3.96285 10.9091 3.81818 10.9091H1.86205L5.295 7.47682C5.39735 7.37447 5.45485 7.23565 5.45485 7.09091C5.45485 6.94617 5.39735 6.80735 5.295 6.705C5.19265 6.60265 5.05383 6.54515 4.90909 6.54515C4.76435 6.54515 4.62553 6.60265 4.52318 6.705Z" })
   }
 ));
-ie.displayName = "ExpandIcon";
-const re = N(() => /* @__PURE__ */ t(
+re.displayName = "ExpandIcon";
+const le = N(() => /* @__PURE__ */ t(
   "svg",
   {
     viewBox: "0 0 12 14",
@@ -90,8 +95,8 @@ const re = N(() => /* @__PURE__ */ t(
     )
   }
 ));
-re.displayName = "FileIcon";
-const le = N(() => /* @__PURE__ */ t(
+le.displayName = "FileIcon";
+const ce = N(() => /* @__PURE__ */ t(
   "svg",
   {
     viewBox: "0 0 14 14",
@@ -99,8 +104,8 @@ const le = N(() => /* @__PURE__ */ t(
     children: /* @__PURE__ */ t("path", { d: "M7.84245 3.50002V6.6697L10.3716 8.2498C10.499 8.32948 10.5908 8.45859 10.6268 8.60874C10.6628 8.75888 10.64 8.91776 10.5635 9.05042C10.487 9.18309 10.363 9.27867 10.2188 9.31614C10.0746 9.3536 9.92206 9.32989 9.79466 9.25022L6.99378 7.50022C6.91089 7.44836 6.8423 7.37503 6.79469 7.28737C6.74708 7.19972 6.72207 7.10072 6.7221 7.00001V3.50002C6.7221 3.34531 6.78112 3.19693 6.88617 3.08754C6.99122 2.97814 7.13371 2.91668 7.28227 2.91668C7.43084 2.91668 7.57333 2.97814 7.67838 3.08754C7.78343 3.19693 7.84245 3.34531 7.84245 3.50002ZM7.28227 2.15915e-05C6.39859 -0.00227058 5.52325 0.177963 4.70691 0.530291C3.89056 0.882618 3.14943 1.40004 2.52639 2.05262C2.01733 2.58929 1.56499 3.10554 1.12035 3.64585V2.33335C1.12035 2.17864 1.06133 2.03027 0.956278 1.92087C0.851225 1.81148 0.708743 1.75002 0.560175 1.75002C0.411607 1.75002 0.269125 1.81148 0.164071 1.92087C0.0590182 2.03027 0 2.17864 0 2.33335V5.25001C0 5.40472 0.0590182 5.5531 0.164071 5.66249C0.269125 5.77189 0.411607 5.83335 0.560175 5.83335H3.36105C3.50962 5.83335 3.6521 5.77189 3.75715 5.66249C3.86221 5.5531 3.92122 5.40472 3.92122 5.25001C3.92122 5.0953 3.86221 4.94693 3.75715 4.83754C3.6521 4.72814 3.50962 4.66668 3.36105 4.66668H1.75055C2.2512 4.05272 2.74976 3.4745 3.31834 2.87512C4.09688 2.0644 5.08758 1.51057 6.16666 1.28283C7.24574 1.05509 8.36535 1.16353 9.38558 1.59462C10.4058 2.02571 11.2814 2.76032 11.903 3.70667C12.5246 4.65301 12.8646 5.76912 12.8805 6.91554C12.8965 8.06195 12.5876 9.18784 11.9926 10.1525C11.3975 11.1172 10.5427 11.8779 9.53484 12.3395C8.52702 12.8011 7.41089 12.9433 6.32594 12.7481C5.24098 12.553 4.23531 12.0292 3.43457 11.2423C3.38106 11.1896 3.3181 11.1485 3.2493 11.1211C3.18051 11.0938 3.10721 11.0808 3.03361 11.083C2.96 11.0852 2.88753 11.1024 2.82033 11.1338C2.75312 11.1651 2.6925 11.2099 2.64193 11.2656C2.59135 11.3214 2.55181 11.3869 2.52557 11.4586C2.49932 11.5302 2.48689 11.6065 2.48897 11.6832C2.49105 11.7598 2.5076 11.8353 2.53769 11.9053C2.56778 11.9753 2.61081 12.0384 2.66433 12.091C3.4622 12.8751 4.43221 13.4439 5.48972 13.7478C6.54722 14.0517 7.66008 14.0814 8.73117 13.8345C9.80226 13.5875 10.799 13.0713 11.6345 12.3309C12.4699 11.5905 13.1187 10.6485 13.5241 9.58695C13.9295 8.52544 14.0793 7.37674 13.9604 6.24108C13.8414 5.10543 13.4574 4.01735 12.8418 3.0718C12.2261 2.12625 11.3976 1.35197 10.4286 0.816529C9.4595 0.281089 8.37931 0.000765142 7.28227 2.15915e-05Z" })
   }
 ));
-le.displayName = "HistoryIcon";
-const ce = N(() => /* @__PURE__ */ t(
+ce.displayName = "HistoryIcon";
+const de = N(() => /* @__PURE__ */ t(
   "svg",
   {
     viewBox: "0 0 14 14",
@@ -108,8 +113,8 @@ const ce = N(() => /* @__PURE__ */ t(
     children: /* @__PURE__ */ t("path", { d: "M14 7C14 7.15471 13.9385 7.30308 13.8291 7.41248C13.7197 7.52188 13.5714 7.58333 13.4167 7.58333H7.58333V13.4167C7.58333 13.5714 7.52188 13.7197 7.41248 13.8291C7.30308 13.9385 7.15471 14 7 14C6.84529 14 6.69692 13.9385 6.58752 13.8291C6.47812 13.7197 6.41667 13.5714 6.41667 13.4167V7.58333H0.583333C0.428624 7.58333 0.280251 7.52188 0.170854 7.41248C0.0614583 7.30308 0 7.15471 0 7C0 6.84529 0.0614583 6.69692 0.170854 6.58752C0.280251 6.47812 0.428624 6.41667 0.583333 6.41667H6.41667V0.583333C6.41667 0.428624 6.47812 0.280251 6.58752 0.170854C6.69692 0.0614583 6.84529 0 7 0C7.15471 0 7.30308 0.0614583 7.41248 0.170854C7.52188 0.280251 7.58333 0.428624 7.58333 0.583333V6.41667H13.4167C13.5714 6.41667 13.7197 6.47812 13.8291 6.58752C13.9385 6.69692 14 6.84529 14 7Z" })
   }
 ));
-ce.displayName = "PlusIcon";
-const de = N(() => /* @__PURE__ */ t(
+de.displayName = "PlusIcon";
+const ue = N(() => /* @__PURE__ */ t(
   "svg",
   {
     viewBox: "0 0 13 14",
@@ -117,8 +122,8 @@ const de = N(() => /* @__PURE__ */ t(
     children: /* @__PURE__ */ t("path", { d: "M13 6.99208C13.0005 7.17027 12.9514 7.34536 12.8579 7.49921C12.7644 7.65307 12.6299 7.78012 12.4682 7.86721L1.55229 13.8687C1.39545 13.9542 1.21835 13.9995 1.03805 14C0.871785 13.9997 0.708022 13.961 0.56049 13.8873C0.412958 13.8136 0.285957 13.7069 0.190131 13.5763C0.0943049 13.4456 0.0324474 13.2948 0.00974343 13.1364C-0.0129605 12.9781 0.00415071 12.8168 0.0596426 12.6661L1.83768 7.66843C1.8552 7.61898 1.88839 7.57606 1.93258 7.54567C1.97677 7.51529 2.02975 7.49898 2.08407 7.49903H6.75898C6.83028 7.49918 6.90085 7.48523 6.9663 7.45806C7.03176 7.43088 7.0907 7.39105 7.13948 7.34105C7.18825 7.29104 7.22581 7.23193 7.24982 7.16738C7.27384 7.10283 7.28379 7.03423 7.27907 6.96582C7.26727 6.83723 7.20539 6.71767 7.10582 6.63108C7.00624 6.5445 6.87632 6.49728 6.74208 6.49888H2.08862C2.03438 6.49897 1.98146 6.48275 1.93728 6.45249C1.89309 6.42222 1.85986 6.37943 1.84223 6.3301L0.0583424 1.32936C-0.0111263 1.13773 -0.018329 0.930327 0.0376911 0.734676C0.0937111 0.539025 0.210303 0.364388 0.371984 0.233956C0.533666 0.103523 0.732787 0.0234668 0.942905 0.00441721C1.15302 -0.0146324 1.3642 0.0282263 1.54838 0.127302L12.4702 6.12132C12.6308 6.20829 12.7645 6.33476 12.8576 6.48776C12.9507 6.64076 12.9999 6.81481 13 6.99208Z" })
   }
 ));
-de.displayName = "SendIcon";
-const ue = N(() => /* @__PURE__ */ t(
+ue.displayName = "SendIcon";
+const Ce = N(() => /* @__PURE__ */ t(
   "svg",
   {
     viewBox: "0 0 24 24",
@@ -126,8 +131,8 @@ const ue = N(() => /* @__PURE__ */ t(
     children: /* @__PURE__ */ t("path", { d: "M12 12C14.21 12 16 10.21 16 8C16 5.79 14.21 4 12 4C9.79 4 8 5.79 8 8C8 10.21 9.79 12 12 12ZM12 14C9.33 14 4 15.34 4 18V20H20V18C20 15.34 14.67 14 12 14Z" })
   }
 ));
-ue.displayName = "UserIcon";
-const Ce = N((e) => {
+Ce.displayName = "UserIcon";
+const pe = N((e) => {
   const { onClick: a } = e;
   return /* @__PURE__ */ t(
     "button",
@@ -136,36 +141,36 @@ const Ce = N((e) => {
       onClick: a,
       "aria-label": "Support Assistant",
       type: "button",
-      children: /* @__PURE__ */ t(ee, {})
+      children: /* @__PURE__ */ t(te, {})
     }
   );
 });
-Ce.displayName = "ChatButton";
-const z = N((e) => {
-  const { content: a, children: n, placement: o = "top" } = e, i = P(null), s = P(null), [l, g] = y(!1), [r, C] = y(!1), [m, d] = y({ top: 0, left: 0 }), k = w(() => {
-    const b = i.current, I = s.current;
-    if (!b || !I) return;
-    const c = b.getBoundingClientRect(), u = I.getBoundingClientRect();
-    let v;
-    o === "top" ? v = c.top - u.height - 8 : v = c.bottom + 8;
-    let A = c.left + c.width / 2 - u.width / 2;
+pe.displayName = "ChatButton";
+const q = N((e) => {
+  const { content: a, children: n, placement: i = "top" } = e, o = R(null), s = R(null), [r, h] = k(!1), [l, C] = k(!1), [m, d] = k({ top: 0, left: 0 }), A = v(() => {
+    const w = o.current, x = s.current;
+    if (!w || !x) return;
+    const c = w.getBoundingClientRect(), u = x.getBoundingClientRect();
+    let b;
+    i === "top" ? b = c.top - u.height - 8 : b = c.bottom + 8;
+    let E = c.left + c.width / 2 - u.width / 2;
     const B = 8;
-    A < B && (A = B), A + u.width > window.innerWidth - B && (A = window.innerWidth - B - u.width), v < B && (v = c.bottom + 8), d({ top: v, left: A }), C(!0);
-  }, [o]);
-  return ke(() => {
-    l && s.current && k(), l || C(!1);
-  }, [l, k]), /* @__PURE__ */ f(ye, { children: [
+    E < B && (E = B), E + u.width > window.innerWidth - B && (E = window.innerWidth - B - u.width), b < B && (b = c.bottom + 8), d({ top: b, left: E }), C(!0);
+  }, [i]);
+  return Ae(() => {
+    r && s.current && A(), r || C(!1);
+  }, [r, A]), /* @__PURE__ */ y(ke, { children: [
     /* @__PURE__ */ t(
       "div",
       {
-        ref: i,
-        onMouseEnter: () => g(!0),
-        onMouseLeave: () => g(!1),
+        ref: o,
+        onMouseEnter: () => h(!0),
+        onMouseLeave: () => h(!1),
         className: "elitea-assistant-tooltip-trigger",
         children: n
       }
     ),
-    l && Ne(
+    r && Be(
       /* @__PURE__ */ t(
         "div",
         {
@@ -188,7 +193,7 @@ const z = N((e) => {
             overflow: "hidden",
             textOverflow: "ellipsis",
             pointerEvents: "none",
-            opacity: r ? 1 : 0,
+            opacity: l ? 1 : 0,
             transition: "opacity 0.15s ease"
           },
           role: "tooltip",
@@ -199,61 +204,61 @@ const z = N((e) => {
     )
   ] });
 });
-z.displayName = "Tooltip";
-const pe = N((e) => {
+q.displayName = "Tooltip";
+const he = N((e) => {
   const {
     title: a,
     expanded: n,
-    history: o,
-    currentConversationId: i,
+    history: i,
+    currentConversationId: o,
     disabled: s,
-    onClose: l,
-    onExpand: g,
-    onNewChat: r,
+    onClose: r,
+    onExpand: h,
+    onNewChat: l,
     onSelectConversation: C
-  } = e, m = P(null), [d, k] = y(!1);
+  } = e, m = R(null), [d, A] = k(!1);
   F(() => {
     if (!d) return;
     const c = (u) => {
-      m.current && !m.current.contains(u.target) && k(!1);
+      m.current && !m.current.contains(u.target) && A(!1);
     };
     return document.addEventListener("mousedown", c), () => document.removeEventListener("mousedown", c);
   }, [d]);
-  const b = w(() => {
-    o.length > 0 && k((c) => !c);
-  }, [o.length]), I = w(
+  const w = v(() => {
+    i.length > 0 && A((c) => !c);
+  }, [i.length]), x = v(
     (c) => {
-      C(c), k(!1);
+      C(c), A(!1);
     },
     [C]
   );
-  return /* @__PURE__ */ f("div", { className: "elitea-assistant-header", children: [
-    /* @__PURE__ */ f("div", { className: "elitea-assistant-header-left", children: [
+  return /* @__PURE__ */ y("div", { className: "elitea-assistant-header", children: [
+    /* @__PURE__ */ y("div", { className: "elitea-assistant-header-left", children: [
       /* @__PURE__ */ t(
         "button",
         {
           className: "elitea-assistant-header-close-action",
-          onClick: l,
+          onClick: r,
           "aria-label": "Close chat",
           type: "button",
-          children: /* @__PURE__ */ t(Y, {})
+          children: /* @__PURE__ */ t(ee, {})
         }
       ),
       /* @__PURE__ */ t("h2", { className: "elitea-assistant-header-title", children: a })
     ] }),
-    /* @__PURE__ */ f("div", { className: "elitea-assistant-header-right", children: [
-      /* @__PURE__ */ t(z, { content: "New conversation", children: /* @__PURE__ */ t(
+    /* @__PURE__ */ y("div", { className: "elitea-assistant-header-right", children: [
+      /* @__PURE__ */ t(q, { content: "New conversation", children: /* @__PURE__ */ t(
         "button",
         {
           className: "elitea-assistant-header-action",
-          onClick: r,
+          onClick: l,
           "aria-label": "New chat",
           type: "button",
           disabled: s,
-          children: /* @__PURE__ */ t(ce, {})
+          children: /* @__PURE__ */ t(de, {})
         }
       ) }),
-      /* @__PURE__ */ t(z, { content: "Conversations history", children: /* @__PURE__ */ f(
+      /* @__PURE__ */ t(q, { content: "Conversations history", children: /* @__PURE__ */ y(
         "div",
         {
           ref: m,
@@ -263,20 +268,20 @@ const pe = N((e) => {
               "button",
               {
                 className: "elitea-assistant-header-action",
-                onClick: b,
+                onClick: w,
                 "aria-label": "Chat history",
                 type: "button",
-                disabled: s || o.length === 0,
-                children: /* @__PURE__ */ t(le, {})
+                disabled: s || i.length === 0,
+                children: /* @__PURE__ */ t(ce, {})
               }
             ),
-            d && o.length > 0 && /* @__PURE__ */ t("div", { className: "elitea-assistant-history-dropdown", children: o.map((c) => /* @__PURE__ */ t(
+            d && i.length > 0 && /* @__PURE__ */ t("div", { className: "elitea-assistant-history-dropdown", children: i.map((c) => /* @__PURE__ */ t(
               "button",
               {
                 className: "elitea-assistant-history-item",
-                onClick: () => I(c.uuid),
+                onClick: () => x(c.uuid),
                 type: "button",
-                disabled: c.uuid === i,
+                disabled: c.uuid === o,
                 children: c.name
               },
               c.uuid
@@ -284,35 +289,35 @@ const pe = N((e) => {
           ]
         }
       ) }),
-      /* @__PURE__ */ t(z, { content: n ? "Collapse" : "Expand", children: /* @__PURE__ */ t(
+      /* @__PURE__ */ t(q, { content: n ? "Collapse" : "Expand", children: /* @__PURE__ */ t(
         "button",
         {
           className: "elitea-assistant-header-action",
-          onClick: g,
+          onClick: h,
           "aria-label": "Expand chat",
           type: "button",
-          children: /* @__PURE__ */ t(ie, {})
+          children: /* @__PURE__ */ t(re, {})
         }
       ) })
     ] })
   ] });
 });
-pe.displayName = "ChatHeader";
-const Te = (e) => {
+he.displayName = "ChatHeader";
+const Se = (e) => {
   if (typeof e == "number") return e < 4102444800 ? e * 1e3 : e;
   if (typeof e == "string") {
     const a = new Date(e);
     return isNaN(a.getTime()) ? 0 : a.getTime();
   }
   return 0;
-}, Se = (e) => {
-  var o;
+}, Le = (e) => {
+  var i;
   const a = e.sent_to != null ? "user" : "assistant";
   let n = "";
-  for (const i of e.message_items ?? []) {
-    const s = i.item_type ?? i.type;
+  for (const o of e.message_items ?? []) {
+    const s = o.item_type ?? o.type;
     if (s === "text_message" || s === "text") {
-      n = ((o = i.item_details) == null ? void 0 : o.content) ?? i.content ?? "";
+      n = ((i = o.item_details) == null ? void 0 : i.content) ?? o.content ?? "";
       break;
     }
   }
@@ -320,12 +325,12 @@ const Te = (e) => {
     id: String(e.uuid ?? e.id ?? ""),
     role: a,
     content: n,
-    timestamp: Te(e.created_at_ts ?? e.created_at)
+    timestamp: Se(e.created_at_ts ?? e.created_at)
   };
-}, te = (e) => (e.message_groups ?? []).map(Se), Le = (e) => new Date(e).toLocaleTimeString([], { hour: "2-digit", minute: "2-digit" }), ae = (e, a) => {
-  const { frequency: n, start: o, peak: i, end: s } = a, l = e.createOscillator(), g = e.createGain();
-  return l.connect(g), g.connect(e.destination), l.type = "sine", l.frequency.value = n, g.gain.setValueAtTime(0, o), g.gain.linearRampToValueAtTime(0.12, i), g.gain.exponentialRampToValueAtTime(0.01, s), l.start(o), l.stop(s), l;
-}, Me = async () => {
+}, ae = (e) => (e.message_groups ?? []).map(Le), Me = (e) => new Date(e).toLocaleTimeString([], { hour: "2-digit", minute: "2-digit" }), se = (e, a) => {
+  const { frequency: n, start: i, peak: o, end: s } = a, r = e.createOscillator(), h = e.createGain();
+  return r.connect(h), h.connect(e.destination), r.type = "sine", r.frequency.value = n, h.gain.setValueAtTime(0, i), h.gain.linearRampToValueAtTime(0.12, o), h.gain.exponentialRampToValueAtTime(0.01, s), r.start(i), r.stop(s), r;
+}, _e = async () => {
   try {
     const e = new AudioContext();
     if (e.state === "suspended" && await e.resume(), e.state !== "running") {
@@ -333,57 +338,57 @@ const Te = (e) => {
       return;
     }
     const a = e.currentTime;
-    ae(e, { frequency: 784, start: a, peak: a + 0.02, end: a + 0.2 });
-    const n = ae(e, { frequency: 1047, start: a + 0.12, peak: a + 0.14, end: a + 0.37 });
+    se(e, { frequency: 784, start: a, peak: a + 0.02, end: a + 0.2 });
+    const n = se(e, { frequency: 1047, start: a + 0.12, peak: a + 0.14, end: a + 0.37 });
     n.onended = () => e.close();
   } catch {
   }
-}, _e = (e) => {
+}, He = (e) => {
   if (e.startsWith("/")) return "";
   try {
     return new URL(e).origin;
   } catch {
     return "";
   }
-}, he = N((e) => {
-  const { messages: a, isLoading: n } = e, o = P(null), i = P(!1);
+}, ge = N((e) => {
+  const { messages: a, isLoading: n } = e, i = R(null), o = R(!1);
   return F(() => {
-    var l;
+    var r;
     if (a.length === 0) {
-      i.current = !1;
+      o.current = !1;
       return;
     }
-    const s = i.current ? "smooth" : "instant";
-    i.current = !0, (l = o.current) == null || l.scrollIntoView({ behavior: s });
-  }, [a]), n ? /* @__PURE__ */ t("div", { className: "elitea-assistant-messages", children: Array.from({ length: 3 }).map((s, l) => /* @__PURE__ */ f(
+    const s = o.current ? "smooth" : "instant";
+    o.current = !0, (r = i.current) == null || r.scrollIntoView({ behavior: s });
+  }, [a]), n ? /* @__PURE__ */ t("div", { className: "elitea-assistant-messages", children: Array.from({ length: 3 }).map((s, r) => /* @__PURE__ */ y(
     "div",
     {
-      className: `elitea-assistant-skeleton-row ${l % 2 === 0 ? "elitea-assistant-skeleton-row--left" : "elitea-assistant-skeleton-row--right"}`,
+      className: `elitea-assistant-skeleton-row ${r % 2 === 0 ? "elitea-assistant-skeleton-row--left" : "elitea-assistant-skeleton-row--right"}`,
       children: [
-        /* @__PURE__ */ f("div", { className: "elitea-assistant-skeleton-meta", children: [
+        /* @__PURE__ */ y("div", { className: "elitea-assistant-skeleton-meta", children: [
           /* @__PURE__ */ t("div", { className: "elitea-assistant-skeleton elitea-assistant-skeleton--avatar" }),
           /* @__PURE__ */ t("div", { className: "elitea-assistant-skeleton elitea-assistant-skeleton--time" })
         ] }),
         /* @__PURE__ */ t("div", { className: "elitea-assistant-skeleton elitea-assistant-skeleton--bubble" })
       ]
     },
-    l
-  )) }) : a.length === 0 ? /* @__PURE__ */ t("div", { className: "elitea-assistant-empty", children: "Send a message to start a conversation" }) : /* @__PURE__ */ f("div", { className: "elitea-assistant-messages", children: [
-    a.map((s) => /* @__PURE__ */ f(
+    r
+  )) }) : a.length === 0 ? /* @__PURE__ */ t("div", { className: "elitea-assistant-empty", children: "Send a message to start a conversation" }) : /* @__PURE__ */ y("div", { className: "elitea-assistant-messages", children: [
+    a.map((s) => /* @__PURE__ */ y(
       "div",
       {
         className: `elitea-assistant-message-wrapper elitea-assistant-message-wrapper--${s.role}`,
         children: [
-          /* @__PURE__ */ f("div", { className: `elitea-assistant-message-meta elitea-assistant-message-meta--${s.role}`, children: [
-            s.role === "assistant" && /* @__PURE__ */ t("span", { className: "elitea-assistant-message-avatar elitea-assistant-message-avatar--assistant", children: /* @__PURE__ */ t(ee, {}) }),
-            /* @__PURE__ */ t("span", { className: "elitea-assistant-message-time", children: Le(s.timestamp) }),
-            s.role === "user" && /* @__PURE__ */ t("span", { className: "elitea-assistant-message-avatar elitea-assistant-message-avatar--user", children: /* @__PURE__ */ t(ue, {}) })
+          /* @__PURE__ */ y("div", { className: `elitea-assistant-message-meta elitea-assistant-message-meta--${s.role}`, children: [
+            s.role === "assistant" && /* @__PURE__ */ t("span", { className: "elitea-assistant-message-avatar elitea-assistant-message-avatar--assistant", children: /* @__PURE__ */ t(te, {}) }),
+            /* @__PURE__ */ t("span", { className: "elitea-assistant-message-time", children: Me(s.timestamp) }),
+            s.role === "user" && /* @__PURE__ */ t("span", { className: "elitea-assistant-message-avatar elitea-assistant-message-avatar--user", children: /* @__PURE__ */ t(Ce, {}) })
           ] }),
           /* @__PURE__ */ t(
             "div",
             {
               className: `elitea-assistant-message elitea-assistant-message--${s.role}${s.isError ? " elitea-assistant-message--error" : ""}`,
-              children: s.content || (s.isStreaming ? /* @__PURE__ */ f("span", { className: "elitea-assistant-typing-indicator", children: [
+              children: s.content || (s.isStreaming ? /* @__PURE__ */ y("span", { className: "elitea-assistant-typing-indicator", children: [
                 /* @__PURE__ */ t("span", { className: "elitea-assistant-typing-dot" }),
                 /* @__PURE__ */ t("span", { className: "elitea-assistant-typing-dot" }),
                 /* @__PURE__ */ t("span", { className: "elitea-assistant-typing-dot" })
@@ -394,33 +399,33 @@ const Te = (e) => {
       },
       s.id
     )),
-    /* @__PURE__ */ t("div", { ref: o })
+    /* @__PURE__ */ t("div", { ref: i })
   ] });
 });
-he.displayName = "MessageList";
-const ge = N((e) => {
-  const { placeholder: a, text: n, onTextChange: o, files: i, onFilesChange: s, onSend: l, expanded: g, disabled: r } = e, C = P(null), [m, d] = y(0), k = () => {
+ge.displayName = "MessageList";
+const me = N((e) => {
+  const { placeholder: a, text: n, onTextChange: i, files: o, onFilesChange: s, onSend: r, expanded: h, disabled: l } = e, C = R(null), [m, d] = k(0), A = () => {
     const p = n.trim();
-    !p && i.length === 0 || (l(p, i.length > 0 ? i : void 0), o(""), s([]));
-  }, b = (p) => {
-    p.key === "Enter" && !p.shiftKey && (p.preventDefault(), k());
-  }, I = () => {
+    !p && o.length === 0 || (r(p, o.length > 0 ? o : void 0), i(""), s([]));
+  }, w = (p) => {
+    p.key === "Enter" && !p.shiftKey && (p.preventDefault(), A());
+  }, x = () => {
     var p;
     (p = C.current) == null || p.click();
   }, c = (p) => {
     const S = p.target.files;
-    S && s([...i, ...Array.from(S)]), d((M) => M + 1);
+    S && s([...o, ...Array.from(S)]), d((L) => L + 1);
   }, u = (p) => {
-    s(i.filter((S, M) => M !== p));
-  }, v = g ? 3 : 2, A = i.slice(0, v), B = i.length - v;
-  return /* @__PURE__ */ f("div", { className: "elitea-assistant-input-area", children: [
-    i.length > 0 && /* @__PURE__ */ f("div", { className: "elitea-assistant-file-list", children: [
-      A.map((p, S) => /* @__PURE__ */ t(
-        z,
+    s(o.filter((S, L) => L !== p));
+  }, b = h ? 3 : 2, E = o.slice(0, b), B = o.length - b;
+  return /* @__PURE__ */ y("div", { className: "elitea-assistant-input-area", children: [
+    o.length > 0 && /* @__PURE__ */ y("div", { className: "elitea-assistant-file-list", children: [
+      E.map((p, S) => /* @__PURE__ */ t(
+        q,
         {
           content: p.name,
-          children: /* @__PURE__ */ f("div", { className: "elitea-assistant-file-chip", children: [
-            /* @__PURE__ */ t("span", { className: "elitea-assistant-file-chip-icon", children: /* @__PURE__ */ t(re, {}) }),
+          children: /* @__PURE__ */ y("div", { className: "elitea-assistant-file-chip", children: [
+            /* @__PURE__ */ t("span", { className: "elitea-assistant-file-chip-icon", children: /* @__PURE__ */ t(le, {}) }),
             /* @__PURE__ */ t("span", { className: "elitea-assistant-file-chip-name", children: p.name }),
             /* @__PURE__ */ t(
               "button",
@@ -429,19 +434,19 @@ const ge = N((e) => {
                 onClick: () => u(S),
                 "aria-label": `Remove ${p.name}`,
                 type: "button",
-                children: /* @__PURE__ */ t(Y, {})
+                children: /* @__PURE__ */ t(ee, {})
               }
             )
           ] })
         },
         S
       )),
-      B > 0 && /* @__PURE__ */ f("div", { className: "elitea-assistant-file-chip elitea-assistant-file-chip--count", children: [
+      B > 0 && /* @__PURE__ */ y("div", { className: "elitea-assistant-file-chip elitea-assistant-file-chip--count", children: [
         "+",
         B
       ] })
     ] }),
-    /* @__PURE__ */ f("div", { className: "elitea-assistant-input-row", children: [
+    /* @__PURE__ */ y("div", { className: "elitea-assistant-input-row", children: [
       /* @__PURE__ */ t(
         "input",
         {
@@ -457,10 +462,10 @@ const ge = N((e) => {
         "button",
         {
           className: "elitea-assistant-attach-button",
-          onClick: I,
+          onClick: x,
           "aria-label": "Attach file",
           type: "button",
-          disabled: r,
+          disabled: l,
           children: /* @__PURE__ */ t(oe, {})
         }
       ),
@@ -470,46 +475,46 @@ const ge = N((e) => {
           id: "elitea-assistant-message-input",
           className: "elitea-assistant-input",
           value: n,
-          onChange: (p) => o(p.target.value),
-          onKeyDown: b,
+          onChange: (p) => i(p.target.value),
+          onKeyDown: w,
           placeholder: a,
           rows: 1,
           autoFocus: !0,
-          disabled: r
+          disabled: l
         }
       ),
       /* @__PURE__ */ t(
         "button",
         {
           className: "elitea-assistant-send-button",
-          onClick: k,
-          disabled: r || !n.trim() && i.length === 0,
+          onClick: A,
+          disabled: l || !n.trim() && o.length === 0,
           "aria-label": "Send message",
           type: "button",
-          children: /* @__PURE__ */ t(de, {})
+          children: /* @__PURE__ */ t(ue, {})
         }
       )
     ] })
   ] });
 });
-ge.displayName = "MessageInput";
-const me = se(null), He = () => {
-  const e = ne(me);
+me.displayName = "MessageInput";
+const be = ne(null), Pe = () => {
+  const e = ie(be);
   if (!e) throw new Error("useApi must be used within EliteaAssistant");
   return e;
-}, Pe = () => {
-  const [e, a] = y(!1), [n, o] = y(!1), i = w(() => a(!0), []), s = w(() => a(!1), []), l = w(() => a((m) => !m), []), g = w(() => o(!0), []), r = w(() => o(!1), []), C = w(() => o((m) => !m), []);
+}, Re = () => {
+  const [e, a] = k(!1), [n, i] = k(!1), o = v(() => a(!0), []), s = v(() => a(!1), []), r = v(() => a((m) => !m), []), h = v(() => i(!0), []), l = v(() => i(!1), []), C = v(() => i((m) => !m), []);
   return {
     isOpen: e,
     isExpanded: n,
-    open: i,
+    open: o,
     close: s,
-    toggle: l,
-    expandFullscreen: g,
-    collapseFullscreen: r,
+    toggle: r,
+    expandFullscreen: h,
+    collapseFullscreen: l,
     toggleFullscreen: C
   };
-}, H = {
+}, P = {
   ENTER_ROOM: "chat_enter_room",
   LEAVE_ROOM: "chat_leave_room",
   PREDICT: "support_predict",
@@ -525,57 +530,58 @@ const me = se(null), He = () => {
   PIPELINE_FINISH: "pipeline_finish",
   ERROR: "error",
   AGENT_EXCEPTION: "agent_exception"
-}, be = se(null), Re = () => ne(be), De = (e) => {
-  const [a, n] = y(null);
+}, ve = ne(null), De = () => ie(ve), Fe = (e) => {
+  const [a, n] = k(null);
   return F(() => {
-    const o = Be(e.url, {
+    const i = xe(e.url, {
       path: e.path,
-      extraHeaders: { Authorization: `Bearer ${e.token}` },
+      ...e.token && { extraHeaders: { Authorization: `Bearer ${e.token}` } },
+      ...e.withCredentials && { withCredentials: !0 },
       reconnectionDelayMax: 2e3
     });
-    return o.on("connect", () => {
-      n(o);
-    }), o.on("connect_error", () => {
+    return i.on("connect", () => {
+      n(i);
+    }), i.on("connect_error", () => {
     }), () => {
-      o.disconnect();
+      i.disconnect();
     };
-  }, [e.url, e.path, e.token]), a;
-}, Fe = (e) => {
-  const { welcomeMessage: a, supportProjectId: n, initialHistory: o, initialConversation: i, isInitLoading: s } = e, l = P(!1), g = He(), r = Re(), C = w(
+  }, [e.url, e.path, e.token, e.withCredentials]), a;
+}, Ve = (e) => {
+  const { welcomeMessage: a, supportProjectId: n, initialHistory: i, initialConversation: o, isInitLoading: s } = e, r = R(!1), h = Pe(), l = De(), C = v(
     () => a ? [{ id: "welcome", role: "assistant", content: a, timestamp: Date.now() }] : [],
     [a]
-  ), [m, d] = y([]), [k, b] = y(""), [I, c] = y([]), [u, v] = y(null), [A, B] = y([]), [p, S] = y(!1), M = J(
+  ), [m, d] = k([]), [A, w] = k(""), [x, c] = k([]), [u, b] = k(null), [E, B] = k([]), [p, S] = k(!1), L = Q(
     () => s || p,
     [s, p]
-  ), T = w(
-    (h) => {
-      r == null || r.emit(H.ENTER_ROOM, {
+  ), M = v(
+    (g) => {
+      l == null || l.emit(P.ENTER_ROOM, {
         project_id: n,
-        conversation_id: h
+        conversation_id: g
       });
     },
-    [r, n]
-  ), R = w(
-    (h) => {
-      r == null || r.emit(H.LEAVE_ROOM, {
+    [l, n]
+  ), _ = v(
+    (g) => {
+      l == null || l.emit(P.LEAVE_ROOM, {
         project_id: n,
-        conversation_id: h
+        conversation_id: g
       });
     },
-    [r, n]
-  ), $ = w(
-    (h) => {
-      r == null || r.emit(H.PREDICT, h);
+    [l, n]
+  ), Z = v(
+    (g) => {
+      l == null || l.emit(P.PREDICT, g);
     },
-    [r]
-  ), V = w((h) => {
-    const { message_id: x, type: E, content: L, response_metadata: K } = h;
-    switch (E) {
+    [l]
+  ), $ = v((g) => {
+    const { message_id: I, type: f, content: T, response_metadata: K } = g;
+    switch (f) {
       case D.START_TASK:
         d((U) => [
           ...U,
           {
-            id: x,
+            id: I,
             role: "assistant",
             content: "",
             timestamp: Date.now(),
@@ -587,79 +593,79 @@ const me = se(null), He = () => {
       case D.AI_MESSAGE_CHUNK:
       case D.AGENT_LLM_CHUNK:
       case D.AGENT_RESPONSE: {
-        const U = typeof L == "string" ? L : JSON.stringify(L), _ = !!(K != null && K.finish_reason);
+        const U = typeof T == "string" ? T : JSON.stringify(T), H = !!(K != null && K.finish_reason);
         d(
-          (fe) => fe.map(
-            (X) => X.id === x ? { ...X, content: X.content + U, ..._ && { isStreaming: !1 } } : X
+          (ye) => ye.map(
+            (Y) => Y.id === I ? { ...Y, content: Y.content + U, ...H && { isStreaming: !1 } } : Y
           )
         );
         break;
       }
       case D.PIPELINE_FINISH:
         d(
-          (U) => U.map((_) => _.id === x && _.isStreaming ? { ..._, isStreaming: !1 } : _)
+          (U) => U.map((H) => H.id === I && H.isStreaming ? { ...H, isStreaming: !1 } : H)
         );
         break;
       case D.ERROR:
       case D.AGENT_EXCEPTION:
         d(
           (U) => U.map(
-            (_) => _.id === x ? {
-              ..._,
-              content: typeof L == "string" ? L : "An error occurred",
+            (H) => H.id === I ? {
+              ...H,
+              content: typeof T == "string" ? T : "An error occurred",
               isStreaming: !1,
               isError: !0
-            } : _
+            } : H
           )
         );
         break;
     }
-  }, []), O = w((h) => {
-    d((x) => [
-      ...x,
+  }, []), V = v((g) => {
+    d((I) => [
+      ...I,
       {
         id: crypto.randomUUID(),
         role: "assistant",
-        content: h.error || "An error occurred",
+        content: g.error || "An error occurred",
         timestamp: Date.now(),
         isError: !0
       }
     ]);
-  }, []), Z = w((h) => {
+  }, []), O = v((g) => {
     B(
-      (x) => x.map((E) => E.uuid === h.conversation_uuid ? { ...E, name: h.name } : E)
+      (I) => I.map((f) => f.uuid === g.conversation_uuid ? { ...f, name: g.name } : f)
     );
   }, []);
   F(() => {
-    if (!(s || l.current))
-      if (l.current = !0, B(o), o.length > 0 && i) {
-        const h = te(i);
-        d(h.length > 0 ? h : C()), v(o[0].uuid), T(o[0].uuid);
+    if (!(s || r.current))
+      if (r.current = !0, B(i), i.length > 0 && o) {
+        const g = ae(o);
+        d(g.length > 0 ? g : C()), b(i[0].uuid), M(i[0].uuid);
       } else
         d(C());
-  }, [s, o, i, C, T]), F(() => {
-    if (r)
-      return r.on(H.PREDICT_RESPONSE, V), r.on(H.ERROR, O), r.on(H.CONVERSATION_NAME_UPDATED, Z), () => {
-        r.off(H.PREDICT_RESPONSE, V), r.off(H.ERROR, O), r.off(H.CONVERSATION_NAME_UPDATED, Z);
+  }, [s, i, o, C, M]), F(() => {
+    if (l)
+      return l.on(P.PREDICT_RESPONSE, $), l.on(P.ERROR, V), l.on(P.CONVERSATION_NAME_UPDATED, O), () => {
+        l.off(P.PREDICT_RESPONSE, $), l.off(P.ERROR, V), l.off(P.CONVERSATION_NAME_UPDATED, O);
       };
-  }, [r, V, O, Z]);
-  const q = w(
-    async (h) => {
-      const x = {
+  }, [l, $, V, O]);
+  const X = v(
+    async (g) => {
+      const I = {
         id: crypto.randomUUID(),
         role: "user",
-        content: h,
+        content: g,
         timestamp: Date.now()
       };
-      d((L) => [...L, x]);
-      let E = u;
-      if (!E)
+      d((T) => [...T, I]);
+      let f = u;
+      if (!f)
         try {
-          const L = await g.createConversation();
-          E = L.uuid, v(E), B((K) => [L, ...K]), T(E);
+          const T = await h.createConversation();
+          f = T.uuid, b(f), B((K) => [T, ...K]), M(f);
         } catch {
-          d((L) => [
-            ...L,
+          d((T) => [
+            ...T,
             {
               id: crypto.randomUUID(),
               role: "assistant",
@@ -670,18 +676,18 @@ const me = se(null), He = () => {
           ]);
           return;
         }
-      E && $({ conversation_uuid: E, content: h });
+      f && Z({ conversation_uuid: f, content: g });
     },
-    [u, g, T, $]
-  ), j = w(() => {
-    u && R(u), v(null), d(C()), b(""), c([]);
-  }, [u, R, C]), Q = w(
-    async (h) => {
-      if (u !== h) {
-        u && R(u), v(h), T(h), b(""), c([]), d([]), S(!0);
+    [u, h, M, Z]
+  ), J = v(() => {
+    u && _(u), b(null), d(C()), w(""), c([]);
+  }, [u, _, C]), j = v(
+    async (g) => {
+      if (u !== g) {
+        u && _(u), b(g), M(g), w(""), c([]), d([]), S(!0);
         try {
-          const x = await g.getConversation(h), E = te(x);
-          d(E.length > 0 ? E : C());
+          const I = await h.getConversation(g), f = ae(I);
+          d(f.length > 0 ? f : C());
         } catch {
           d(C());
         } finally {
@@ -689,129 +695,129 @@ const me = se(null), He = () => {
         }
       }
     },
-    [u, R, T, C, g]
+    [u, _, M, C, h]
   );
   return {
     messages: m,
-    inputText: k,
-    setInputText: b,
-    files: I,
+    inputText: A,
+    setInputText: w,
+    files: x,
     setFiles: c,
-    history: A,
+    history: E,
     currentConversationId: u ?? "",
-    isLoading: M,
-    handleNewChat: j,
-    handleSelectConversation: Q,
-    handleSend: q
+    isLoading: L,
+    handleNewChat: J,
+    handleSelectConversation: j,
+    handleSend: X
   };
-}, Ve = (e) => {
-  const { api: a, title: n, welcomeMessage: o, placeholder: i } = e, [s, l] = y(null), [g, r] = y([]), [C, m] = y(null), [d, k] = y(!0);
+}, Oe = (e) => {
+  const { api: a, title: n, welcomeMessage: i, placeholder: o } = e, [s, r] = k(null), [h, l] = k([]), [C, m] = k(null), [d, A] = k(!0);
   return F(() => {
-    let b = !1;
-    const I = a.getConfig().then((u) => {
-      b || l(u);
+    let w = !1;
+    const x = a.getConfig().then((u) => {
+      w || r(u);
     }).catch(() => {
     }), c = a.getConversations().then(async (u) => {
-      if (b) return;
-      const v = u.items || [];
-      if (r(v), v.length > 0)
+      if (w) return;
+      const b = u.items || [];
+      if (l(b), b.length > 0)
         try {
-          const A = await a.getConversation(v[0].uuid);
-          b || m(A);
+          const E = await a.getConversation(b[0].uuid);
+          w || m(E);
         } catch {
         }
     }).catch(() => {
     });
-    return Promise.all([I, c]).finally(() => {
-      b || k(!1);
+    return Promise.all([x, c]).finally(() => {
+      w || A(!1);
     }), () => {
-      b = !0;
+      w = !0;
     };
   }, [a]), {
     title: (s == null ? void 0 : s.title) || n,
-    welcomeMessage: (s == null ? void 0 : s.welcomeMessage) || o,
-    placeholder: (s == null ? void 0 : s.placeholder) || i,
+    welcomeMessage: (s == null ? void 0 : s.welcomeMessage) || i,
+    placeholder: (s == null ? void 0 : s.placeholder) || o,
     supportProjectId: (s == null ? void 0 : s.support_project_id) ?? null,
-    history: g,
+    history: h,
     lastConversation: C,
     isLoading: d
   };
-}, Oe = "Hi! Need help? Ask me!", Ue = 12e3, Ze = 12e3, $e = (e) => {
-  const a = P(null), n = P(null), [o, i] = y(!1), s = w(() => {
-    i(!1), a.current && (clearTimeout(a.current), a.current = null), n.current && (clearTimeout(n.current), n.current = null);
-  }, []), l = w(() => {
-    e || (i(!0), Me(), a.current = setTimeout(s, Ue));
+}, Ue = "Hi! Need help? Ask me!", Ze = 12e3, $e = 12e3, je = (e) => {
+  const a = R(null), n = R(null), [i, o] = k(!1), s = v(() => {
+    o(!1), a.current && (clearTimeout(a.current), a.current = null), n.current && (clearTimeout(n.current), n.current = null);
+  }, []), r = v(() => {
+    e || (o(!0), _e(), a.current = setTimeout(s, Ze));
   }, [e, s]);
   return F(() => (n.current = setTimeout(() => {
-    l();
-  }, Ze), () => {
+    r();
+  }, $e), () => {
     a.current && clearTimeout(a.current), n.current && clearTimeout(n.current);
   }), []), F(() => {
     e && s();
-  }, [e, s]), { showPopup: o, displayPopup: l, hidePopup: s, popupText: Oe };
-}, ve = N((e) => {
+  }, [e, s]), { showPopup: i, displayPopup: r, hidePopup: s, popupText: Ue };
+}, we = N((e) => {
   const {
     title: a,
     placeholder: n,
-    welcomeMessage: o,
-    supportProjectId: i,
+    welcomeMessage: i,
+    supportProjectId: o,
     initialHistory: s,
-    lastConversation: l,
-    isInitLoading: g,
-    onClose: r,
+    lastConversation: r,
+    isInitLoading: h,
+    onClose: l,
     onExpand: C,
     expanded: m
   } = e, {
     messages: d,
-    inputText: k,
-    setInputText: b,
-    files: I,
+    inputText: A,
+    setInputText: w,
+    files: x,
     setFiles: c,
     history: u,
-    currentConversationId: v,
-    isLoading: A,
+    currentConversationId: b,
+    isLoading: E,
     handleNewChat: B,
     handleSelectConversation: p,
     handleSend: S
-  } = Fe({
-    welcomeMessage: o,
-    supportProjectId: i,
+  } = Ve({
+    welcomeMessage: i,
+    supportProjectId: o,
     initialHistory: s,
-    initialConversation: l,
-    isInitLoading: g
-  }), M = /* @__PURE__ */ f("div", { className: `elitea-assistant-window${m ? " elitea-assistant-window--expanded" : ""}`, children: [
+    initialConversation: r,
+    isInitLoading: h
+  }), L = /* @__PURE__ */ y("div", { className: `elitea-assistant-window${m ? " elitea-assistant-window--expanded" : ""}`, children: [
     /* @__PURE__ */ t(
-      pe,
+      he,
       {
         title: a,
         expanded: m,
         history: u,
-        currentConversationId: v,
-        disabled: A,
-        onClose: r,
+        currentConversationId: b,
+        disabled: E,
+        onClose: l,
         onExpand: C,
         onNewChat: B,
         onSelectConversation: p
       }
     ),
     /* @__PURE__ */ t(
-      he,
+      ge,
       {
         messages: d,
-        isLoading: A
+        isLoading: E
       }
     ),
     /* @__PURE__ */ t(
-      ge,
+      me,
       {
         placeholder: n,
-        text: k,
-        onTextChange: b,
-        files: I,
+        text: A,
+        onTextChange: w,
+        files: x,
         onFilesChange: c,
         onSend: S,
         expanded: m,
-        disabled: A
+        disabled: E
       }
     )
   ] });
@@ -820,14 +826,14 @@ const me = se(null), He = () => {
     {
       className: "elitea-assistant-overlay",
       onClick: C,
-      children: /* @__PURE__ */ t("div", { onClick: (T) => T.stopPropagation(), children: M })
+      children: /* @__PURE__ */ t("div", { onClick: (M) => M.stopPropagation(), children: L })
     }
-  ) : M;
+  ) : L;
 });
-ve.displayName = "ChatWindow";
-const we = N((e) => {
+we.displayName = "ChatWindow";
+const fe = N((e) => {
   const { message: a, onClose: n } = e;
-  return /* @__PURE__ */ f("div", { className: "elitea-assistant-popup", children: [
+  return /* @__PURE__ */ y("div", { className: "elitea-assistant-popup", children: [
     /* @__PURE__ */ t("span", { className: "elitea-assistant-popup-text", children: a }),
     /* @__PURE__ */ t(
       "button",
@@ -836,13 +842,13 @@ const we = N((e) => {
         onClick: n,
         "aria-label": "Close popup",
         type: "button",
-        children: /* @__PURE__ */ t(Y, {})
+        children: /* @__PURE__ */ t(ee, {})
       }
     )
   ] });
 });
-we.displayName = "PopupMessage";
-const je = {
+fe.displayName = "PopupMessage";
+const Ke = {
   buttonBackground: "linear-gradient(50.4deg, #435CFF 0%, #B3BEFF 100%)",
   buttonIcon: "#FFFFFF",
   headerBackground: "rgba(40, 69, 255, 0.25)",
@@ -886,7 +892,7 @@ const je = {
   historyDropdownBorder: "rgba(203, 206, 213, 1)",
   historyDropdownShadow: "0 0.25rem 0.75rem rgba(0, 0, 0, 0.08)",
   historyDropdownHoverBackground: "rgba(61, 68, 86, 0.06)"
-}, Ke = {
+}, We = {
   buttonBackground: "linear-gradient(50.4deg, #C428DD 0%, #8A1B9E 100%)",
   buttonIcon: "#FFFFFF",
   headerBackground: "rgba(245, 81, 249, 0.3)",
@@ -930,13 +936,13 @@ const je = {
   historyDropdownBorder: "rgba(59, 62, 70, 1)",
   historyDropdownShadow: "0 0.5rem 0.75rem rgba(0, 0, 0, 0.3)",
   historyDropdownHoverBackground: "rgba(255, 255, 255, 0.06)"
-}, We = {
-  light: je,
-  dark: Ke
-}, Ge = (e, a) => ({
-  ...We[e],
+}, Ge = {
+  light: Ke,
+  dark: We
+}, ze = (e, a) => ({
+  ...Ge[e],
   ...a
-}), ze = (e) => ({
+}), qe = (e) => ({
   "--elitea-assistant-button-bg": e.buttonBackground,
   "--elitea-assistant-button-icon": e.buttonIcon,
   "--elitea-assistant-header-bg": e.headerBackground,
@@ -980,106 +986,110 @@ const je = {
   "--elitea-assistant-history-dropdown-border": e.historyDropdownBorder,
   "--elitea-assistant-history-dropdown-shadow": e.historyDropdownShadow,
   "--elitea-assistant-history-dropdown-hover-bg": e.historyDropdownHoverBackground
-}), qe = Ae((e, a) => {
+}), Xe = Ee((e, a) => {
   const {
     apiUrl: n,
-    token: o,
-    socketPath: i = "/socket.io/",
-    apiAdapter: s,
-    title: l = "Elitea Assistant",
-    placeholder: g = "Type a message...",
-    welcomeMessage: r = `Hi! I'm your ELITEA Support Assistant.
+    token: i,
+    withCredentials: o = !1,
+    socketPath: s = "/socket.io/",
+    apiAdapter: r,
+    title: h = "Elitea Assistant",
+    placeholder: l = "Type a message...",
+    welcomeMessage: C = `Hi! I'm your ELITEA Support Assistant.
 Ask me anything about ELITEA or report any issues you're experiencing. I have context about your current screen and settings.`,
-    position: C = "bottom-right",
-    theme: m = "light",
-    colors: d
-  } = e, k = J(() => ze(Ge(m, d)), [m, d]), b = J(() => {
-    if (s) return s;
-    if (n && o) return xe(n, o);
-    throw new Error("EliteaAssistant: provide either apiAdapter or both apiUrl and token");
-  }, [s, n, o]), I = J(
+    position: m = "bottom-right",
+    theme: d = "light",
+    colors: A
+  } = e, w = Q(() => qe(ze(d, A)), [d, A]), x = Q(() => {
+    if (r) return r;
+    if (n && (i || o)) return Ie(n, { token: i, withCredentials: o });
+    throw new Error(
+      "EliteaAssistant: provide either apiAdapter, or apiUrl with token, or apiUrl with withCredentials"
+    );
+  }, [r, n, i, o]), c = Q(
     () => ({
-      url: n ? _e(n) : "",
-      path: i,
-      token: o ?? ""
+      url: n ? He(n) : "",
+      path: s,
+      token: i,
+      withCredentials: o
     }),
-    [n, i, o]
-  ), c = De(I), {
-    title: u,
-    welcomeMessage: v,
-    placeholder: A,
-    supportProjectId: B,
-    history: p,
-    lastConversation: S,
+    [n, s, i, o]
+  ), u = Fe(c), {
+    title: b,
+    welcomeMessage: E,
+    placeholder: B,
+    supportProjectId: p,
+    history: S,
+    lastConversation: L,
     isLoading: M
-  } = Ve({
-    api: b,
-    title: l,
-    welcomeMessage: r,
-    placeholder: g
-  }), { isOpen: T, isExpanded: R, open: $, close: V, toggle: O, expandFullscreen: Z, collapseFullscreen: q, toggleFullscreen: j } = Pe(), { showPopup: Q, displayPopup: h, hidePopup: x, popupText: E } = $e(T);
-  return Ee(
+  } = Oe({
+    api: x,
+    title: h,
+    welcomeMessage: C,
+    placeholder: l
+  }), { isOpen: _, isExpanded: Z, open: $, close: V, toggle: O, expandFullscreen: X, collapseFullscreen: J, toggleFullscreen: j } = Re(), { showPopup: g, displayPopup: I, hidePopup: f, popupText: T } = je(_);
+  return Ne(
     a,
     () => ({
       open: $,
       close: V,
       toggle: O,
-      expandFullscreen: Z,
-      collapseFullscreen: q,
+      expandFullscreen: X,
+      collapseFullscreen: J,
       toggleFullscreen: j,
-      showPopup: h,
-      hidePopup: x,
-      isOpen: () => T,
-      isExpanded: () => R
+      showPopup: I,
+      hidePopup: f,
+      isOpen: () => _,
+      isExpanded: () => Z
     }),
     [
-      T,
-      R,
+      _,
+      Z,
       $,
       V,
       O,
-      Z,
-      q,
+      X,
+      J,
       j,
-      h,
-      x
+      I,
+      f
     ]
-  ), /* @__PURE__ */ t(me.Provider, { value: b, children: /* @__PURE__ */ t(be.Provider, { value: c, children: /* @__PURE__ */ f(
+  ), /* @__PURE__ */ t(be.Provider, { value: x, children: /* @__PURE__ */ t(ve.Provider, { value: u, children: /* @__PURE__ */ y(
     "div",
     {
-      className: `elitea-assistant-container elitea-assistant-container--${C}`,
-      style: k,
+      className: `elitea-assistant-container elitea-assistant-container--${m}`,
+      style: w,
       children: [
-        T && /* @__PURE__ */ t(
-          ve,
+        _ && /* @__PURE__ */ t(
+          we,
           {
-            title: u,
-            placeholder: A,
-            welcomeMessage: v,
-            supportProjectId: B,
-            initialHistory: p,
-            lastConversation: S,
+            title: b,
+            placeholder: B,
+            welcomeMessage: E,
+            supportProjectId: p,
+            initialHistory: S,
+            lastConversation: L,
             isInitLoading: M,
             onClose: V,
-            expanded: R,
+            expanded: Z,
             onExpand: j
           }
         ),
-        Q && !T && /* @__PURE__ */ t(
-          we,
+        g && !_ && /* @__PURE__ */ t(
+          fe,
           {
-            message: E,
-            onClose: x
+            message: T,
+            onClose: f
           }
         ),
-        /* @__PURE__ */ t(Ce, { onClick: O })
+        /* @__PURE__ */ t(pe, { onClick: O })
       ]
     }
   ) }) });
 });
-qe.displayName = "EliteaAssistant";
+Xe.displayName = "EliteaAssistant";
 export {
-  qe as EliteaAssistant,
-  xe as createDefaultAdapter
+  Xe as EliteaAssistant,
+  Ie as createDefaultAdapter
 };
 //# sourceMappingURL=elitea-assistant.js.map

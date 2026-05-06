@@ -5,7 +5,8 @@ import { Socket, io } from 'socket.io-client';
 type TSocketConfig = {
   url: string;
   path: string;
-  token: string;
+  token?: string;
+  withCredentials?: boolean;
 };
 
 export const SocketContext = createContext<Socket | null>(null);
@@ -18,7 +19,8 @@ export const useSocketConnection = (config: TSocketConfig): Socket | null => {
   useEffect(() => {
     const s = io(config.url, {
       path: config.path,
-      extraHeaders: { Authorization: `Bearer ${config.token}` },
+      ...(config.token && { extraHeaders: { Authorization: `Bearer ${config.token}` } }),
+      ...(config.withCredentials && { withCredentials: true }),
       reconnectionDelayMax: 2000,
     });
 
@@ -31,7 +33,7 @@ export const useSocketConnection = (config: TSocketConfig): Socket | null => {
     return () => {
       s.disconnect();
     };
-  }, [config.url, config.path, config.token]);
+  }, [config.url, config.path, config.token, config.withCredentials]);
 
   return socket;
 };

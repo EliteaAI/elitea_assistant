@@ -1,8 +1,13 @@
 import { default as default_2 } from 'react';
 
-export declare const createDefaultAdapter: (baseURL: string, token: string) => TChatAPI;
+export declare const createDefaultAdapter: (baseURL: string, options?: TAdapterOptions) => TChatAPI;
 
 export declare const EliteaAssistant: default_2.ForwardRefExoticComponent<TEliteaAssistantProps & default_2.RefAttributes<TEliteaAssistantRef>>;
+
+declare type TAdapterOptions = {
+    token?: string;
+    withCredentials?: boolean;
+};
 
 export declare type TAssistantConfig = {
     enabled: boolean;
@@ -109,6 +114,7 @@ export declare type TEliteaAssistantPosition = 'bottom-right' | 'bottom-left';
 export declare type TEliteaAssistantProps = {
     apiUrl?: string;
     token?: string;
+    withCredentials?: boolean;
     socketPath?: string;
     apiAdapter?: TChatAPI;
     title?: string;

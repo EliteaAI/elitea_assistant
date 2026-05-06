@@ -19,6 +19,7 @@ const EliteaAssistant = forwardRef<TEliteaAssistantRef, TEliteaAssistantProps>((
   const {
     apiUrl,
     token,
+    withCredentials = false,
     socketPath = '/socket.io/',
     apiAdapter,
     title: titleProp = 'Elitea Assistant',
@@ -34,18 +35,21 @@ const EliteaAssistant = forwardRef<TEliteaAssistantRef, TEliteaAssistantProps>((
 
   const api: TChatAPI = useMemo(() => {
     if (apiAdapter) return apiAdapter;
-    if (apiUrl && token) return createDefaultAdapter(apiUrl, token);
+    if (apiUrl && (token || withCredentials)) return createDefaultAdapter(apiUrl, { token, withCredentials });
 
-    throw new Error('EliteaAssistant: provide either apiAdapter or both apiUrl and token');
-  }, [apiAdapter, apiUrl, token]);
+    throw new Error(
+      'EliteaAssistant: provide either apiAdapter, or apiUrl with token, or apiUrl with withCredentials',
+    );
+  }, [apiAdapter, apiUrl, token, withCredentials]);
 
   const socketConfig = useMemo(
     () => ({
       url: apiUrl ? deriveSocketUrl(apiUrl) : '',
       path: socketPath,
-      token: token ?? '',
+      token,
+      withCredentials,
     }),
-    [apiUrl, socketPath, token],
+    [apiUrl, socketPath, token, withCredentials],
   );
 
   const socket = useSocketConnection(socketConfig);

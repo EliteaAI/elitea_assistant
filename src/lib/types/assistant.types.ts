@@ -14,6 +14,7 @@ export type TEliteaAssistantPosition = 'bottom-right' | 'bottom-left';
 export type TEliteaAssistantProps = {
   apiUrl?: string;
   token?: string;
+  withCredentials?: boolean;
   socketPath?: string;
   apiAdapter?: TChatAPI;
   title?: string;
