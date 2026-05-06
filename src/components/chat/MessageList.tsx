@@ -40,8 +40,10 @@ const MessageList: React.FC<TMessageListProps> = memo(props => {
               </span>
             )}
           </div>
-          <div className={`elitea-assistant-message elitea-assistant-message--${msg.role}`}>
-            {msg.content}
+          <div
+            className={`elitea-assistant-message elitea-assistant-message--${msg.role}${msg.isError ? ' elitea-assistant-message--error' : ''}`}
+          >
+            {msg.content || (msg.isStreaming ? '...' : '')}
           </div>
         </div>
       ))}

@@ -6,25 +6,56 @@ export declare const EliteaAssistant: default_2.ForwardRefExoticComponent<TElite
 
 export declare type TAssistantConfig = {
     enabled: boolean;
-    name: string;
-    avatar?: string;
+    title: string;
+    welcomeMessage: string;
+    placeholder: string;
+    support_project_id: number;
 };
 
 export declare type TChatAPI = {
     getConfig: () => Promise<TAssistantConfig>;
-    getConversations: () => Promise<TConversationListItem[]>;
-    createConversation: () => Promise<{
-        id: string;
-    }>;
-    getMessages: (conversationId: string) => Promise<TMessage[]>;
-    sendMessage: (conversationId: string, message: string) => Promise<TMessage>;
+    getConversations: () => Promise<TConversationsResponse>;
+    getConversation: (conversationId: string) => Promise<TRawConversation>;
+    createConversation: () => Promise<TConversationListItem>;
     deleteConversation: (conversationId: string) => Promise<void>;
 };
 
 export declare type TConversationListItem = {
-    id: string;
-    title: string;
-    createdAt: number;
+    id: number;
+    uuid: string;
+    name: string;
+    is_private: boolean;
+    author_id: number;
+    created_at: string;
+    updated_at: string;
+    meta: {
+        is_hidden: boolean;
+        context_strategy: {
+            name: string;
+            enabled: boolean;
+            created_at: string;
+            last_optimized_at: string | null;
+            max_context_tokens: number;
+            enable_summarization: boolean;
+            summary_instructions: string;
+            summary_llm_settings: unknown;
+            preserve_recent_messages: number;
+            preserve_system_messages: boolean;
+        };
+        conversation_type: string;
+    };
+    source: string;
+    attachment_participant_id: string | null;
+    instructions: string | null;
+    participants_count: number;
+    message_groups_count: number;
+    users_count: number;
+    duration: number;
+};
+
+declare type TConversationsResponse = {
+    items: TConversationListItem[];
+    total: number;
 };
 
 export declare type TEliteaAssistantColors = {
@@ -78,6 +109,7 @@ export declare type TEliteaAssistantPosition = 'bottom-right' | 'bottom-left';
 export declare type TEliteaAssistantProps = {
     apiUrl?: string;
     token?: string;
+    socketPath?: string;
     apiAdapter?: TChatAPI;
     title?: string;
     placeholder?: string;
@@ -105,6 +137,33 @@ export declare type TMessage = {
     role: 'user' | 'assistant';
     content: string;
     timestamp: number;
+    isStreaming?: boolean;
+    isError?: boolean;
+};
+
+declare type TRawConversation = {
+    uuid?: string;
+    id?: string;
+    name?: string;
+    message_groups?: TRawMessageGroup[];
+};
+
+declare type TRawMessageGroup = {
+    uuid?: string;
+    id?: string;
+    sent_to?: unknown;
+    message_items?: TRawMessageItem[];
+    created_at_ts?: number;
+    created_at?: string;
+};
+
+declare type TRawMessageItem = {
+    item_type?: string;
+    type?: string;
+    item_details?: {
+        content?: string;
+    };
+    content?: string;
 };
 
 export { }

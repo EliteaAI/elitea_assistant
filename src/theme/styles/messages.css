@@ -94,6 +94,11 @@
   border-radius: 0 1rem 1rem 1rem;
 }
 
+.elitea-assistant-message--error {
+  border: 1px solid #e53e3e;
+  opacity: 0.9;
+}
+
 /* ── Empty State ── */
 
 .elitea-assistant-empty {
