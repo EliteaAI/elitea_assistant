@@ -1,19 +1,20 @@
-import { useCallback, useRef, useState } from 'react';
+import { useCallback, useEffect, useState } from 'react';
 
-import type { TConversation, TMessage } from '@/lib/types';
+import type { TConversationListItem, TMessage, TSocketMessage } from '@/lib/types';
+import { parseConversationMessages } from '@/lib/utils';
 
-export const useChat = (welcomeMessage: string) => {
+import { MESSAGE_TYPES, SOCKET_EVENTS } from '../constants/chat.constants';
+import { useApi } from './api.hook';
+import { useSocketContext } from './socket.hook';
+
+export const useChat = (welcomeMessage: string, supportProjectId: number | null) => {
+  const api = useApi();
+  const socket = useSocketContext();
+
   const createWelcomeMessages = useCallback(
     (): TMessage[] =>
       welcomeMessage
-        ? [
-            {
-              id: 'welcome',
-              role: 'assistant' as const,
-              content: welcomeMessage,
-              timestamp: Date.now(),
-            },
-          ]
+        ? [{ id: 'welcome', role: 'assistant' as const, content: welcomeMessage, timestamp: Date.now() }]
         : [],
     [welcomeMessage],
   );
@@ -21,103 +22,217 @@ export const useChat = (welcomeMessage: string) => {
   const [messages, setMessages] = useState<TMessage[]>(createWelcomeMessages);
   const [inputText, setInputText] = useState('');
   const [files, setFiles] = useState<File[]>([]);
+  const [currentConversationId, setCurrentConversationId] = useState<string | null>(null);
+  const [history, setHistory] = useState<TConversationListItem[]>([]);
 
-  // TODO: Mock conversation history — will be replaced with BE API calls when ready
-  const [currentConversationId, setCurrentConversationId] = useState<string>(() => crypto.randomUUID());
-  const [history, setHistory] = useState<TConversation[]>([]);
+  const enterRoom = useCallback(
+    (conversationId: string) => {
+      socket?.emit(SOCKET_EVENTS.ENTER_ROOM, {
+        project_id: supportProjectId,
+        conversation_id: conversationId,
+      });
+    },
+    [socket, supportProjectId],
+  );
 
-  // Refs to avoid stale closures in callbacks — will be replaced with BE API calls when ready
-  const messagesRef = useRef(messages);
-  messagesRef.current = messages;
-  const currentConversationIdRef = useRef(currentConversationId);
-  currentConversationIdRef.current = currentConversationId;
+  const leaveRoom = useCallback(
+    (conversationId: string) => {
+      socket?.emit(SOCKET_EVENTS.LEAVE_ROOM, {
+        project_id: supportProjectId,
+        conversation_id: conversationId,
+      });
+    },
+    [socket, supportProjectId],
+  );
 
-  const getConversationTitle = useCallback((msgs: TMessage[]): string => {
-    const firstUserMsg = msgs.find(m => m.role === 'user');
+  const emitPredict = useCallback(
+    (params: { conversation_uuid: string; content: string; attachments?: unknown[] }) => {
+      socket?.emit(SOCKET_EVENTS.PREDICT, params);
+    },
+    [socket],
+  );
 
-    if (firstUserMsg) {
-      return firstUserMsg.content.length > 40
-        ? firstUserMsg.content.slice(0, 40) + '…'
-        : firstUserMsg.content;
+  const handlePredict = useCallback((message: TSocketMessage) => {
+    const { message_id, type, content, response_metadata } = message;
+
+    switch (type) {
+      case MESSAGE_TYPES.START_TASK:
+        setMessages(prev => [
+          ...prev,
+          {
+            id: message_id,
+            role: 'assistant',
+            content: '',
+            timestamp: Date.now(),
+            isStreaming: true,
+          },
+        ]);
+        break;
+
+      case MESSAGE_TYPES.CHUNK:
+      case MESSAGE_TYPES.AI_MESSAGE_CHUNK:
+      case MESSAGE_TYPES.AGENT_RESPONSE: {
+        const chunk = typeof content === 'string' ? content : JSON.stringify(content);
+        const finished = !!response_metadata?.finish_reason;
+
+        setMessages(prev =>
+          prev.map(m =>
+            m.id === message_id
+              ? { ...m, content: m.content + chunk, ...(finished && { isStreaming: false }) }
+              : m,
+          ),
+        );
+        break;
+      }
+
+      case MESSAGE_TYPES.ERROR:
+      case MESSAGE_TYPES.AGENT_EXCEPTION:
+        setMessages(prev =>
+          prev.map(m =>
+            m.id === message_id
+              ? {
+                  ...m,
+                  content: typeof content === 'string' ? content : 'An error occurred',
+                  isStreaming: false,
+                  isError: true,
+                }
+              : m,
+          ),
+        );
+        break;
     }
-    return 'New conversation';
   }, []);
 
-  const saveCurrentConversation = useCallback((): TConversation | null => {
-    const currentMessages = messagesRef.current;
-    const currentId = currentConversationIdRef.current;
-    const hasUserMessages = currentMessages.some(m => m.role === 'user');
-    if (!hasUserMessages) return null;
+  const handleError = useCallback((data: { error: string; code: string }) => {
+    setMessages(prev => [
+      ...prev,
+      {
+        id: crypto.randomUUID(),
+        role: 'assistant' as const,
+        content: data.error || 'An error occurred',
+        timestamp: Date.now(),
+        isError: true,
+      },
+    ]);
+  }, []);
 
-    return {
-      id: currentId,
-      title: getConversationTitle(currentMessages),
-      messages: currentMessages,
-      createdAt: Date.now(),
+  useEffect(() => {
+    let cancelled = false;
+
+    if (socket) {
+      socket.on(SOCKET_EVENTS.PREDICT_RESPONSE, handlePredict);
+      socket.on(SOCKET_EVENTS.ERROR, handleError);
+    }
+
+    api
+      .getConversations()
+      .then(data => {
+        if (cancelled) return;
+
+        const items = data.items || [];
+
+        setHistory(items);
+
+        if (items.length > 0) {
+          const lastConversation = items[0];
+          setCurrentConversationId(lastConversation.uuid);
+          enterRoom(lastConversation.uuid);
+
+          api
+            .getConversation(lastConversation.uuid)
+            .then(conversation => {
+              if (cancelled) return;
+              const parsed = parseConversationMessages(conversation);
+              setMessages(parsed.length > 0 ? parsed : createWelcomeMessages());
+            })
+            .catch(() => {
+              if (!cancelled) setMessages(createWelcomeMessages());
+            });
+        }
+      })
+      .catch(() => {});
+
+    return () => {
+      cancelled = true;
+
+      if (socket) {
+        socket.off(SOCKET_EVENTS.PREDICT_RESPONSE, handlePredict);
+        socket.off(SOCKET_EVENTS.ERROR, handleError);
+      }
     };
-  }, [getConversationTitle]);
-
-  const upsertConversation = useCallback((conversation: TConversation) => {
-    setHistory(prev => {
-      const exists = prev.some(c => c.id === conversation.id);
-
-      if (exists) return prev.map(c => (c.id === conversation.id ? conversation : c));
-
-      return [conversation, ...prev];
-    });
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
 
-  // TODO: Mock implementation — real new chat will call BE to create a conversation
+  const handleSend = useCallback(
+    async (text: string) => {
+      const userMessage: TMessage = {
+        id: crypto.randomUUID(),
+        role: 'user',
+        content: text,
+        timestamp: Date.now(),
+      };
+      setMessages(prev => [...prev, userMessage]);
+
+      let activeConversationId = currentConversationId;
+
+      if (!activeConversationId) {
+        try {
+          const created = await api.createConversation();
+          activeConversationId = created.uuid;
+          setCurrentConversationId(activeConversationId);
+          setHistory(prev => [created, ...prev]);
+          enterRoom(activeConversationId);
+        } catch {
+          setMessages(prev => [
+            ...prev,
+            {
+              id: crypto.randomUUID(),
+              role: 'assistant',
+              content: 'Failed to create conversation. Please try again.',
+              timestamp: Date.now(),
+              isError: true,
+            },
+          ]);
+          return;
+        }
+      }
+
+      if (activeConversationId) {
+        emitPredict({ conversation_uuid: activeConversationId, content: text });
+      }
+    },
+    [currentConversationId, api, enterRoom, emitPredict],
+  );
+
   const handleNewChat = useCallback(() => {
-    const conversation = saveCurrentConversation();
+    if (currentConversationId) leaveRoom(currentConversationId);
 
-    if (conversation) upsertConversation(conversation);
-
+    setCurrentConversationId(null);
     setMessages(createWelcomeMessages());
     setInputText('');
     setFiles([]);
-    setCurrentConversationId(crypto.randomUUID());
-  }, [saveCurrentConversation, upsertConversation, createWelcomeMessages]);
+  }, [currentConversationId, leaveRoom, createWelcomeMessages]);
 
-  // TODO: Mock implementation — real history switch will call BE to load conversation
   const handleSelectConversation = useCallback(
-    (conversationId: string) => {
-      const selected = history.find(c => c.id === conversationId);
+    async (conversationId: string) => {
+      if (currentConversationId === conversationId) return;
+      if (currentConversationId) leaveRoom(currentConversationId);
 
-      if (!selected) return;
-
-      const conversation = saveCurrentConversation();
-
-      if (conversation) upsertConversation(conversation);
-
-      setMessages(selected.messages);
+      setCurrentConversationId(conversationId);
+      enterRoom(conversationId);
       setInputText('');
       setFiles([]);
-      setCurrentConversationId(selected.id);
+
+      try {
+        const conversation = await api.getConversation(conversationId);
+        const parsed = parseConversationMessages(conversation);
+        setMessages(parsed.length > 0 ? parsed : createWelcomeMessages());
+      } catch {
+        setMessages(createWelcomeMessages());
+      }
     },
-    [history, saveCurrentConversation, upsertConversation],
+    [currentConversationId, leaveRoom, enterRoom, createWelcomeMessages, api],
   );
-
-  const handleSend = useCallback((text: string) => {
-    const userMessage: TMessage = {
-      id: crypto.randomUUID(),
-      role: 'user',
-      content: text,
-      timestamp: Date.now(),
-    };
-    setMessages(prev => [...prev, userMessage]);
-
-    // Placeholder echo response — will be replaced with API call in future iteration
-    setTimeout(() => {
-      const assistantMessage: TMessage = {
-        id: crypto.randomUUID(),
-        role: 'assistant',
-        content: `Echo: ${text}`,
-        timestamp: Date.now(),
-      };
-      setMessages(prev => [...prev, assistantMessage]);
-    }, 500);
-  }, []);
 
   return {
     messages,
@@ -126,7 +241,7 @@ export const useChat = (welcomeMessage: string) => {
     files,
     setFiles,
     history,
-    currentConversationId,
+    currentConversationId: currentConversationId ?? '',
     handleNewChat,
     handleSelectConversation,
     handleSend,

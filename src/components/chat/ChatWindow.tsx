@@ -8,13 +8,14 @@ type TChatWindowProps = {
   title: string;
   placeholder: string;
   welcomeMessage: string;
+  supportProjectId: number | null;
   onClose: () => void;
   onExpand?: () => void;
   expanded?: boolean;
 };
 
 const ChatWindow: React.FC<TChatWindowProps> = memo(props => {
-  const { title, placeholder, welcomeMessage, onClose, onExpand, expanded } = props;
+  const { title, placeholder, welcomeMessage, supportProjectId, onClose, onExpand, expanded } = props;
 
   const {
     messages,
@@ -27,7 +28,7 @@ const ChatWindow: React.FC<TChatWindowProps> = memo(props => {
     handleNewChat,
     handleSelectConversation,
     handleSend,
-  } = useChat(welcomeMessage);
+  } = useChat(welcomeMessage, supportProjectId);
 
   const window = (
     <div className={`elitea-assistant-window${expanded ? ' elitea-assistant-window--expanded' : ''}`}>

@@ -2,12 +2,12 @@ import React, { memo, useCallback, useEffect, useRef, useState } from 'react';
 
 import { CloseIcon, ExpandIcon, HistoryIcon, PlusIcon } from '@/components/icons';
 import { Tooltip } from '@/components/shared';
-import type { TConversation } from '@/lib/types';
+import type { TConversationListItem } from '@/lib/types';
 
 type TChatHeaderProps = {
   title: string;
   expanded?: boolean;
-  history: TConversation[];
+  history: TConversationListItem[];
   currentConversationId: string;
   onClose: () => void;
   onExpand?: () => void;
@@ -97,13 +97,13 @@ const ChatHeader: React.FC<TChatHeaderProps> = memo(props => {
               <div className="elitea-assistant-history-dropdown">
                 {history.map(conversation => (
                   <button
-                    key={conversation.id}
+                    key={conversation.uuid}
                     className="elitea-assistant-history-item"
-                    onClick={() => handleSelectConversation(conversation.id)}
+                    onClick={() => handleSelectConversation(conversation.uuid)}
                     type="button"
-                    disabled={conversation.id === currentConversationId}
+                    disabled={conversation.uuid === currentConversationId}
                   >
-                    {conversation.title}
+                    {conversation.name}
                   </button>
                 ))}
               </div>

@@ -5,5 +5,12 @@ export type {
   TEliteaAssistantProps,
   TEliteaAssistantRef,
 } from './assistant.types';
-export type { TConversation, TConversationListItem, TMessage } from './chat.types';
+export type {
+  TConversationListItem,
+  TConversationsResponse,
+  TMessage,
+  TRawConversation,
+  TRawMessageGroup,
+  TSocketMessage,
+} from './chat.types';
 export type { TEliteaAssistantColors } from './theme.types';

@@ -1,11 +1,10 @@
 import type { TAssistantConfig } from './assistant.types';
-import type { TConversationListItem, TMessage } from './chat.types';
+import type { TConversationListItem, TConversationsResponse, TRawConversation } from './chat.types';
 
 export type TChatAPI = {
   getConfig: () => Promise<TAssistantConfig>;
-  getConversations: () => Promise<TConversationListItem[]>;
-  createConversation: () => Promise<{ id: string }>;
-  getMessages: (conversationId: string) => Promise<TMessage[]>;
-  sendMessage: (conversationId: string, message: string) => Promise<TMessage>;
+  getConversations: () => Promise<TConversationsResponse>;
+  getConversation: (conversationId: string) => Promise<TRawConversation>;
+  createConversation: () => Promise<TConversationListItem>;
   deleteConversation: (conversationId: string) => Promise<void>;
 };

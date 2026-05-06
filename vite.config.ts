@@ -19,6 +19,21 @@ export default defineConfig({
     }),
     cssInjectedByJsPlugin(),
   ],
+  server: {
+    proxy: {
+      '/api': {
+        target: 'https://dev.elitea.ai',
+        changeOrigin: true,
+        secure: true,
+      },
+      '/socket.io': {
+        target: 'https://dev.elitea.ai',
+        changeOrigin: true,
+        secure: true,
+        ws: true,
+      },
+    },
+  },
   build: {
     lib: {
       entry: resolve(__dirname, 'src/index.ts'),
@@ -27,7 +42,7 @@ export default defineConfig({
       fileName: 'elitea-assistant',
     },
     rollupOptions: {
-      external: ['react', 'react-dom', 'react/jsx-runtime'],
+      external: ['react', 'react-dom', 'react/jsx-runtime', 'socket.io-client'],
       output: {
         globals: {
           react: 'React',

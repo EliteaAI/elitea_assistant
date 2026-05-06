@@ -1,42 +1,57 @@
-import type { TAssistantConfig, TChatAPI, TConversationListItem, TMessage } from '@/lib/types';
+import type {
+  TAssistantConfig,
+  TChatAPI,
+  TConversationListItem,
+  TConversationsResponse,
+  TRawConversation,
+} from '@/lib/types';
 
 const createHeaders = (token: string, json = false): HeadersInit => ({
   Authorization: `Bearer ${token}`,
   ...(json && { 'Content-Type': 'application/json' }),
 });
 
+const assertOk = async (r: Response): Promise<Response> => {
+  if (!r.ok) throw new Error(`${r.status} ${r.statusText}`);
+  return r;
+};
+
 export const createDefaultAdapter = (baseURL: string, token: string): TChatAPI => ({
   getConfig: () =>
-    fetch(`${baseURL}/config`, {
+    fetch(`${baseURL}/config/`, {
       headers: createHeaders(token),
-    }).then(r => r.json() as Promise<TAssistantConfig>),
+    })
+      .then(assertOk)
+      .then(r => r.json() as Promise<TAssistantConfig>),
 
   getConversations: () =>
-    fetch(`${baseURL}/conversations`, {
+    fetch(`${baseURL}/conversations/`, {
       headers: createHeaders(token),
-    }).then(r => r.json() as Promise<TConversationListItem[]>),
+    })
+      .then(assertOk)
+      .then(r => r.json() as Promise<TConversationsResponse>),
+
+  getConversation: (conversationId: string) =>
+    fetch(`${baseURL}/conversation/${conversationId}`, {
+      headers: createHeaders(token),
+    })
+      .then(assertOk)
+      .then(r => r.json() as Promise<TRawConversation>),
 
   createConversation: () =>
-    fetch(`${baseURL}/conversations`, {
+    fetch(`${baseURL}/conversations/`, {
       method: 'POST',
       headers: createHeaders(token, true),
-    }).then(r => r.json() as Promise<{ id: string }>),
-
-  getMessages: (conversationId: string) =>
-    fetch(`${baseURL}/conversations/${conversationId}/messages`, {
-      headers: createHeaders(token),
-    }).then(r => r.json() as Promise<TMessage[]>),
-
-  sendMessage: (conversationId: string, message: string) =>
-    fetch(`${baseURL}/conversations/${conversationId}/messages`, {
-      method: 'POST',
-      headers: createHeaders(token, true),
-      body: JSON.stringify({ content: message }),
-    }).then(r => r.json() as Promise<TMessage>),
+      body: JSON.stringify({}),
+    })
+      .then(assertOk)
+      .then(r => r.json() as Promise<TConversationListItem>),
 
   deleteConversation: (conversationId: string) =>
-    fetch(`${baseURL}/conversations/${conversationId}`, {
+    fetch(`${baseURL}/conversation/${conversationId}`, {
       method: 'DELETE',
       headers: createHeaders(token),
-    }).then(() => undefined),
+    })
+      .then(assertOk)
+      .then(() => undefined),
 });
