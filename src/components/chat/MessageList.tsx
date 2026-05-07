@@ -48,9 +48,8 @@ const MessageList: React.FC<TMessageListProps> = memo(props => {
     );
   }
 
-  if (messages.length === 0) {
+  if (messages.length === 0)
     return <div className="elitea-assistant-empty">Send a message to start a conversation</div>;
-  }
 
   return (
     <div className="elitea-assistant-messages">

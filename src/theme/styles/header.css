@@ -127,13 +127,17 @@
   right: -2.65rem;
   width: 19.125rem;
   max-height: 21.875rem;
-  overflow-y: auto;
   background: var(--elitea-assistant-chat-bg);
   border: 0.0625rem solid var(--elitea-assistant-history-dropdown-border);
   border-radius: 0.5rem;
   box-shadow: var(--elitea-assistant-history-dropdown-shadow);
   z-index: 100;
   padding: 0.5rem 0;
+}
+
+.elitea-assistant-history-dropdown-scroll {
+  max-height: calc(21.875rem - 1rem);
+  overflow-y: auto;
 }
 
 .elitea-assistant-history-item {

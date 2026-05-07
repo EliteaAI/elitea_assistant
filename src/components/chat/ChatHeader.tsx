@@ -98,17 +98,19 @@ const ChatHeader: React.FC<TChatHeaderProps> = memo(props => {
             </button>
             {showHistory && history.length > 0 && (
               <div className="elitea-assistant-history-dropdown">
-                {history.map(conversation => (
-                  <button
-                    key={conversation.uuid}
-                    className="elitea-assistant-history-item"
-                    onClick={() => handleSelectConversation(conversation.uuid)}
-                    type="button"
-                    disabled={conversation.uuid === currentConversationId}
-                  >
-                    {conversation.name}
-                  </button>
-                ))}
+                <div className="elitea-assistant-history-dropdown-scroll">
+                  {history.map(conversation => (
+                    <button
+                      key={conversation.uuid}
+                      className="elitea-assistant-history-item"
+                      onClick={() => handleSelectConversation(conversation.uuid)}
+                      type="button"
+                      disabled={conversation.uuid === currentConversationId}
+                    >
+                      {conversation.name}
+                    </button>
+                  ))}
+                </div>
               </div>
             )}
           </div>

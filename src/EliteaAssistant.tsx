@@ -73,7 +73,7 @@ const EliteaAssistant = forwardRef<TEliteaAssistantRef, TEliteaAssistantProps>((
   const { isOpen, isExpanded, open, close, toggle, expandFullscreen, collapseFullscreen, toggleFullscreen } =
     useAssistantState();
 
-  const { showPopup, displayPopup, hidePopup, popupText } = usePopup(isOpen);
+  const { popupVissible, showPopup, hidePopup, popupText } = usePopup(isOpen);
 
   useImperativeHandle(
     ref,
@@ -84,7 +84,7 @@ const EliteaAssistant = forwardRef<TEliteaAssistantRef, TEliteaAssistantProps>((
       expandFullscreen,
       collapseFullscreen,
       toggleFullscreen,
-      showPopup: displayPopup,
+      showPopup,
       hidePopup,
       isOpen: () => isOpen,
       isExpanded: () => isExpanded,
@@ -98,7 +98,7 @@ const EliteaAssistant = forwardRef<TEliteaAssistantRef, TEliteaAssistantProps>((
       expandFullscreen,
       collapseFullscreen,
       toggleFullscreen,
-      displayPopup,
+      showPopup,
       hidePopup,
     ],
   );
@@ -125,7 +125,7 @@ const EliteaAssistant = forwardRef<TEliteaAssistantRef, TEliteaAssistantProps>((
               onExpand={toggleFullscreen}
             />
           )}
-          {showPopup && !isOpen && (
+          {popupVissible && !isOpen && (
             <PopupMessage
               message={popupText}
               onClose={hidePopup}
