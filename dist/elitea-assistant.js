@@ -1,40 +1,40 @@
-(function(){"use strict";try{if(typeof document<"u"){var e=document.createElement("style");e.appendChild(document.createTextNode('@import"https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700&display=swap";.elitea-assistant-container{position:fixed;z-index:2147483647;font-family:Montserrat,sans-serif;font-size:.875rem;line-height:1.5;box-sizing:border-box}.elitea-assistant-container *,.elitea-assistant-container *:before,.elitea-assistant-container *:after{box-sizing:border-box}.elitea-assistant-container--bottom-right{bottom:.75rem;right:1.09375rem}.elitea-assistant-container--bottom-left{bottom:.75rem;left:1.09375rem}.elitea-assistant-button{width:1.75rem;height:1.75rem;border-radius:50%;border:none;cursor:pointer;display:flex;align-items:center;justify-content:center;background:var(--elitea-assistant-button-bg);color:var(--elitea-assistant-button-icon);box-shadow:0 .25rem .75rem #00000026;transition:transform .2s ease,box-shadow .2s ease;padding:0}.elitea-assistant-button:hover{transform:scale(1.08);box-shadow:0 .375rem 1.25rem #0003}.elitea-assistant-button svg{width:1.75rem;height:1.75rem;fill:currentColor}.elitea-assistant-window{position:absolute;bottom:0rem;width:28.75rem;height:30rem;border-radius:1rem;overflow:hidden;display:flex;flex-direction:column;box-shadow:var(--elitea-assistant-window-shadow);background:var(--elitea-assistant-chat-bg);border:.0625rem solid var(--elitea-assistant-window-border);animation:elitea-assistant-slide-up .25s ease-out}.elitea-assistant-container--bottom-right .elitea-assistant-window{right:2.875rem}.elitea-assistant-container--bottom-left .elitea-assistant-window{left:2.875rem}@keyframes elitea-assistant-slide-up{0%{opacity:0;transform:translateY(.75rem)}to{opacity:1;transform:translateY(0)}}.elitea-assistant-overlay{position:fixed;top:0;right:0;bottom:0;left:0;z-index:2147483646;background:#00000080;display:flex;align-items:center;justify-content:center;animation:elitea-assistant-fade-in .2s ease-out}@keyframes elitea-assistant-fade-in{0%{opacity:0}to{opacity:1}}.elitea-assistant-window--expanded{position:static;width:45rem;height:42.375rem;animation:elitea-assistant-scale-in .2s ease-out}@keyframes elitea-assistant-scale-in{0%{opacity:0;transform:scale(.95)}to{opacity:1;transform:scale(1)}}.elitea-assistant-header{display:flex;align-items:center;justify-content:space-between;height:3.25rem;padding:0 1rem;background:var(--elitea-assistant-header-bg);color:var(--elitea-assistant-header-text);flex-shrink:0;border-bottom:.0625rem solid var(--elitea-assistant-window-border)}.elitea-assistant-header-left,.elitea-assistant-header-right{display:flex;align-items:center;gap:.5rem}.elitea-assistant-header-title{font-size:.9375rem;font-weight:600;margin:0;white-space:nowrap}.elitea-assistant-header-action{border:.0625rem solid transparent;color:var(--elitea-assistant-header-text);cursor:pointer;padding:0;display:flex;align-items:center;justify-content:center;border-radius:50%;width:1.75rem;height:1.75rem;min-width:auto;box-shadow:none;background:var(--elitea-assistant-header-action-bg);transition:background .15s ease,color .15s ease,border-color .15s ease}.elitea-assistant-header-close-action{border:none;color:var(--elitea-assistant-header-close-icon);cursor:pointer;padding:0;display:flex;align-items:center;justify-content:center;border-radius:50%;width:1.75rem;height:1.75rem;min-width:auto;background:var(--elitea-assistant-header-close-bg);transition:background .15s ease,color .15s ease}.elitea-assistant-header-close-action:hover{background:var(--elitea-assistant-header-close-hover-bg);color:var(--elitea-assistant-header-close-hover-color)}.elitea-assistant-header-close-action:active{background:var(--elitea-assistant-header-close-active-bg);color:var(--elitea-assistant-header-close-active-color)}.elitea-assistant-header-close-action:disabled{background:var(--elitea-assistant-header-close-disabled-bg);color:var(--elitea-assistant-header-close-disabled-color);cursor:not-allowed}.elitea-assistant-header-action:hover{background:var(--elitea-assistant-header-action-hover-bg)}.elitea-assistant-header-action:active{background:var(--elitea-assistant-header-action-active-bg);color:var(--elitea-assistant-header-action-active-color);border-color:var(--elitea-assistant-header-action-active-border)}.elitea-assistant-header-action svg{width:1rem;height:1rem;fill:currentColor}.elitea-assistant-header-close-action svg{width:1.3rem;height:1.3rem;fill:currentColor}.elitea-assistant-history-wrapper{position:relative}.elitea-assistant-header-action:disabled{background:var(--elitea-assistant-header-action-disabled-bg);color:var(--elitea-assistant-header-action-disabled-color);cursor:not-allowed}.elitea-assistant-header-action:disabled:hover{background:var(--elitea-assistant-header-action-disabled-bg)}.elitea-assistant-history-dropdown{position:absolute;top:calc(100% + .55rem);right:-2.65rem;width:19.125rem;max-height:21.875rem;overflow-y:auto;background:var(--elitea-assistant-chat-bg);border:.0625rem solid var(--elitea-assistant-history-dropdown-border);border-radius:.5rem;box-shadow:var(--elitea-assistant-history-dropdown-shadow);z-index:100;padding:.5rem 0}.elitea-assistant-history-item{display:block;width:100%;padding:.5rem .75rem;border:none;background:none;cursor:pointer;text-align:left;color:var(--elitea-assistant-header-text);font-size:.875rem;font-weight:400;line-height:1.5rem;overflow:hidden;text-overflow:ellipsis;white-space:nowrap;transition:background .15s ease}.elitea-assistant-history-item:hover{background:var(--elitea-assistant-history-dropdown-hover-bg)}.elitea-assistant-history-item:disabled{opacity:.45;cursor:default;background:none}.elitea-assistant-messages{flex:1;overflow-y:auto;padding:1rem;display:flex;flex-direction:column;gap:.625rem}.elitea-assistant-message-wrapper{display:flex;flex-direction:column;max-width:80%}.elitea-assistant-message-wrapper--user{align-self:flex-end}.elitea-assistant-message-wrapper--assistant{align-self:flex-start}.elitea-assistant-message-meta{display:flex;align-items:center;gap:.375rem;margin-bottom:.375rem}.elitea-assistant-message-meta--assistant{justify-content:flex-start}.elitea-assistant-message-meta--user{justify-content:flex-end}.elitea-assistant-message-avatar{width:1.5rem;height:1.5rem;border-radius:50%;display:flex;align-items:center;justify-content:center;flex-shrink:0}.elitea-assistant-message-avatar--assistant{background:var(--elitea-assistant-button-bg);color:var(--elitea-assistant-button-icon)}.elitea-assistant-message-avatar--user{background:var(--elitea-assistant-user-avatar-bg);color:var(--elitea-assistant-user-avatar-icon)}.elitea-assistant-message-avatar svg{width:1.25rem;height:1.25rem;fill:currentColor}.elitea-assistant-message-time{font-size:.75rem;opacity:.6;color:var(--elitea-assistant-bot-msg-text)}.elitea-assistant-message{padding:.625rem .875rem;border-radius:.75rem;word-wrap:break-word;white-space:pre-wrap;font-weight:400;font-style:Regular;font-size:.875rem;line-height:1.5rem;letter-spacing:0%}.elitea-assistant-message--user{background:var(--elitea-assistant-user-msg-bg);color:var(--elitea-assistant-user-msg-text);border-radius:1rem 0rem 1rem 1rem}.elitea-assistant-message--assistant{background:var(--elitea-assistant-bot-msg-bg);color:var(--elitea-assistant-bot-msg-text);border-radius:0 1rem 1rem}.elitea-assistant-message--error{border:1px solid #e53e3e;opacity:.9}@keyframes elitea-assistant-typing-bounce{0%,60%,to{transform:translateY(0);opacity:.25}30%{transform:translateY(-.25rem);opacity:.5}}.elitea-assistant-typing-indicator{display:inline-flex;align-items:center;gap:.1875rem;padding:.125rem 0}.elitea-assistant-typing-dot{width:.25rem;height:.25rem;border-radius:50%;background:var(--elitea-assistant-bot-msg-text);opacity:.25;animation:elitea-assistant-typing-bounce 1.2s ease-in-out infinite}.elitea-assistant-typing-dot:nth-child(2){animation-delay:.15s}.elitea-assistant-typing-dot:nth-child(3){animation-delay:.3s}@keyframes elitea-assistant-shimmer{0%{opacity:.4}50%{opacity:.7}to{opacity:.4}}.elitea-assistant-skeleton-row{display:flex;flex-direction:column;gap:.375rem;max-width:70%}.elitea-assistant-skeleton-row--left{align-self:flex-start}.elitea-assistant-skeleton-row--right{align-self:flex-end}.elitea-assistant-skeleton-meta{display:flex;align-items:center;gap:.375rem}.elitea-assistant-skeleton-row--right .elitea-assistant-skeleton-meta{justify-content:flex-end}.elitea-assistant-skeleton{background:var(--elitea-assistant-bot-msg-bg);border-radius:.5rem;animation:elitea-assistant-shimmer 1.4s ease-in-out infinite}.elitea-assistant-skeleton--avatar{width:1.5rem;height:1.5rem;border-radius:50%;flex-shrink:0}.elitea-assistant-skeleton--time{width:2.5rem;height:.75rem;border-radius:.25rem}.elitea-assistant-skeleton--bubble{width:10rem;height:2.5rem;border-radius:.75rem}.elitea-assistant-skeleton-row--right .elitea-assistant-skeleton--bubble{width:8rem}.elitea-assistant-empty{flex:1;display:flex;align-items:center;justify-content:center;color:var(--elitea-assistant-bot-msg-text);opacity:.5;font-size:.8125rem;text-align:center;padding:1.25rem}.elitea-assistant-input-area{display:flex;flex-direction:column;padding:.75rem;background:var(--elitea-assistant-input-bg);flex-shrink:0;border-top:.0625rem solid var(--elitea-assistant-window-border)}.elitea-assistant-input-row{display:flex;align-items:center;gap:.5rem;width:100%}.elitea-assistant-input{flex:1;padding:.5rem .25rem;border:none;border-radius:0;background:transparent;color:var(--elitea-assistant-input-text);font-size:.875rem;font-family:inherit;outline:none;resize:none}.elitea-assistant-input::placeholder{color:var(--elitea-assistant-input-placeholder);opacity:1}.elitea-assistant-attach-button{width:1.75rem;height:1.75rem;border-radius:50%;border:none;cursor:pointer;display:flex;align-items:center;justify-content:center;background:var(--elitea-assistant-header-action-bg);color:var(--elitea-assistant-header-text);flex-shrink:0;transition:opacity .15s ease;padding:0;opacity:.8}.elitea-assistant-attach-button:hover{opacity:1}.elitea-assistant-attach-button svg{width:.875rem;height:.875rem;fill:currentColor}.elitea-assistant-send-button{width:1.75rem;height:1.75rem;border-radius:50%;border:none;cursor:pointer;display:flex;align-items:center;justify-content:center;background:var(--elitea-assistant-send-btn-bg);color:var(--elitea-assistant-send-btn-icon);flex-shrink:0;transition:background .15s ease;padding:0}.elitea-assistant-send-button:disabled{background:var(--elitea-assistant-send-btn-disabled-bg);cursor:default}.elitea-assistant-send-button svg{width:.875rem;height:.875rem;fill:currentColor}.elitea-assistant-file-list{display:flex;align-items:center;gap:.5rem;padding-bottom:.5rem}.elitea-assistant-file-chip{display:flex;align-items:center;gap:.75rem;max-width:11.25rem;height:2.25rem;padding:.375rem .75rem;border-radius:.5rem;background:var(--elitea-assistant-header-action-bg);flex-shrink:0}.elitea-assistant-file-chip-icon{display:flex;align-items:center;justify-content:center;flex-shrink:0;color:var(--elitea-assistant-header-close-icon)}.elitea-assistant-file-chip-icon svg{width:.75rem;height:.875rem}.elitea-assistant-file-chip-name{flex:1;min-width:0;font-size:.75rem;color:var(--elitea-assistant-input-text);white-space:nowrap;overflow:hidden;text-overflow:ellipsis}.elitea-assistant-file-chip-remove{display:flex;align-items:center;justify-content:center;width:1rem;height:1rem;padding:0;border:none;background:none;cursor:pointer;color:var(--elitea-assistant-header-close-icon);flex-shrink:0;opacity:.7;transition:opacity .15s ease}.elitea-assistant-file-chip-remove:hover{opacity:1}.elitea-assistant-file-chip-remove svg{width:2rem;height:2rem;fill:currentColor}.elitea-assistant-file-chip--count{font-size:.75rem;font-weight:400;color:var(--elitea-assistant-input-text);max-width:none;gap:0}.elitea-assistant-tooltip-trigger{display:inline-flex}.elitea-assistant-tooltip{position:fixed;z-index:99999;padding:.375rem .75rem;border-radius:.375rem;background:#14141ceb;color:#fff;font-size:.75rem;line-height:1.4;white-space:nowrap;max-width:20rem;overflow:hidden;text-overflow:ellipsis;pointer-events:none;box-shadow:0 .25rem 1rem #00000040;animation:elitea-tooltip-in .15s ease-out}@keyframes elitea-tooltip-in{0%{opacity:0;transform:translateY(4px)}to{opacity:1;transform:translateY(0)}}.elitea-assistant-popup{position:absolute;bottom:.25rem;display:flex;align-items:center;gap:1rem;padding:.75rem .75rem .75rem 1.25rem;border-radius:1.5rem 1.5rem 1.5rem 0;background:var(--elitea-assistant-popup-bg);color:var(--elitea-assistant-popup-text);font-size:.875rem;font-weight:500;line-height:1.5rem;white-space:nowrap;box-shadow:0 .25rem 1rem #0003;animation:elitea-assistant-popup-in .3s ease-out}.elitea-assistant-popup:before{content:"";position:absolute;top:-.0625rem;right:-.0625rem;bottom:-.0625rem;left:-.0625rem;border-radius:inherit;padding:.0625rem;background:var(--elitea-assistant-popup-border);-webkit-mask:linear-gradient(#fff 0 0) content-box,linear-gradient(#fff 0 0);-webkit-mask-composite:xor;mask:linear-gradient(#fff 0 0) content-box,linear-gradient(#fff 0 0);mask-composite:exclude;pointer-events:none}.elitea-assistant-container--bottom-right .elitea-assistant-popup{right:2.5rem;flex-direction:row-reverse;padding:.75rem 1.25rem .75rem .75rem;border-radius:1.5rem 1.5rem 0}.elitea-assistant-container--bottom-left .elitea-assistant-popup{left:2.5rem}.elitea-assistant-popup-text{-webkit-user-select:none;user-select:none}.elitea-assistant-popup-close{display:flex;align-items:center;justify-content:center;width:1.75rem;height:1.75rem;flex-shrink:0;border:none;border-radius:50%;background:var(--elitea-assistant-popup-close-bg);color:var(--elitea-assistant-popup-text);cursor:pointer;padding:0;transition:background .15s ease}.elitea-assistant-popup-close:hover{background:var(--elitea-assistant-popup-close-hover-bg)}.elitea-assistant-popup-close svg{width:1rem;height:1rem;fill:currentColor}@keyframes elitea-assistant-popup-in{0%{opacity:0;transform:translateY(.5rem)}to{opacity:1;transform:translateY(0)}}')),document.head.appendChild(e)}}catch(t){console.error("vite-plugin-css-injected-by-js",t)}})();
-import { jsx as t, jsxs as y, Fragment as ke } from "react/jsx-runtime";
-import { memo as N, useRef as R, useState as k, useCallback as v, useLayoutEffect as Ae, useEffect as F, createContext as ne, useContext as ie, useMemo as Q, forwardRef as Ee, useImperativeHandle as Ne } from "react";
-import { createPortal as Be } from "react-dom";
-import { io as xe } from "socket.io-client";
-const W = (e, a = !1) => ({
+(function(){"use strict";try{if(typeof document<"u"){var e=document.createElement("style");e.appendChild(document.createTextNode('@import"https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700&display=swap";.elitea-assistant-container{position:fixed;z-index:2147483647;font-family:Montserrat,sans-serif;font-size:.875rem;line-height:1.5;box-sizing:border-box}.elitea-assistant-container *,.elitea-assistant-container *:before,.elitea-assistant-container *:after{box-sizing:border-box}.elitea-assistant-container--bottom-right{bottom:.75rem;right:1.09375rem}.elitea-assistant-container--bottom-left{bottom:.75rem;left:1.09375rem}.elitea-assistant-button{width:1.75rem;height:1.75rem;border-radius:50%;border:none;cursor:pointer;display:flex;align-items:center;justify-content:center;background:var(--elitea-assistant-button-bg);color:var(--elitea-assistant-button-icon);box-shadow:0 .25rem .75rem #00000026;transition:transform .2s ease,box-shadow .2s ease;padding:0}.elitea-assistant-button:hover{transform:scale(1.08);box-shadow:0 .375rem 1.25rem #0003}.elitea-assistant-button svg{width:1.75rem;height:1.75rem;fill:currentColor}.elitea-assistant-window{position:absolute;bottom:0rem;width:28.75rem;height:30rem;border-radius:1rem;overflow:hidden;display:flex;flex-direction:column;box-shadow:var(--elitea-assistant-window-shadow);background:var(--elitea-assistant-chat-bg);border:.0625rem solid var(--elitea-assistant-window-border);animation:elitea-assistant-slide-up .25s ease-out}.elitea-assistant-container--bottom-right .elitea-assistant-window{right:2.875rem}.elitea-assistant-container--bottom-left .elitea-assistant-window{left:2.875rem}@keyframes elitea-assistant-slide-up{0%{opacity:0;transform:translateY(.75rem)}to{opacity:1;transform:translateY(0)}}.elitea-assistant-overlay{position:fixed;top:0;right:0;bottom:0;left:0;z-index:2147483646;background:#00000080;display:flex;align-items:center;justify-content:center;animation:elitea-assistant-fade-in .2s ease-out}@keyframes elitea-assistant-fade-in{0%{opacity:0}to{opacity:1}}.elitea-assistant-window--expanded{position:static;width:45rem;height:42.375rem;animation:elitea-assistant-scale-in .2s ease-out}@keyframes elitea-assistant-scale-in{0%{opacity:0;transform:scale(.95)}to{opacity:1;transform:scale(1)}}.elitea-assistant-header{display:flex;align-items:center;justify-content:space-between;height:3.25rem;padding:0 1rem;background:var(--elitea-assistant-header-bg);color:var(--elitea-assistant-header-text);flex-shrink:0;border-bottom:.0625rem solid var(--elitea-assistant-window-border)}.elitea-assistant-header-left,.elitea-assistant-header-right{display:flex;align-items:center;gap:.5rem}.elitea-assistant-header-title{font-size:.9375rem;font-weight:600;margin:0;white-space:nowrap}.elitea-assistant-header-action{border:.0625rem solid transparent;color:var(--elitea-assistant-header-text);cursor:pointer;padding:0;display:flex;align-items:center;justify-content:center;border-radius:50%;width:1.75rem;height:1.75rem;min-width:auto;box-shadow:none;background:var(--elitea-assistant-header-action-bg);transition:background .15s ease,color .15s ease,border-color .15s ease}.elitea-assistant-header-close-action{border:none;color:var(--elitea-assistant-header-close-icon);cursor:pointer;padding:0;display:flex;align-items:center;justify-content:center;border-radius:50%;width:1.75rem;height:1.75rem;min-width:auto;background:var(--elitea-assistant-header-close-bg);transition:background .15s ease,color .15s ease}.elitea-assistant-header-close-action:hover{background:var(--elitea-assistant-header-close-hover-bg);color:var(--elitea-assistant-header-close-hover-color)}.elitea-assistant-header-close-action:active{background:var(--elitea-assistant-header-close-active-bg);color:var(--elitea-assistant-header-close-active-color)}.elitea-assistant-header-close-action:disabled{background:var(--elitea-assistant-header-close-disabled-bg);color:var(--elitea-assistant-header-close-disabled-color);cursor:not-allowed}.elitea-assistant-header-action:hover{background:var(--elitea-assistant-header-action-hover-bg)}.elitea-assistant-header-action:active{background:var(--elitea-assistant-header-action-active-bg);color:var(--elitea-assistant-header-action-active-color);border-color:var(--elitea-assistant-header-action-active-border)}.elitea-assistant-header-action svg{width:1rem;height:1rem;fill:currentColor}.elitea-assistant-header-close-action svg{width:1.3rem;height:1.3rem;fill:currentColor}.elitea-assistant-history-wrapper{position:relative}.elitea-assistant-header-action:disabled{background:var(--elitea-assistant-header-action-disabled-bg);color:var(--elitea-assistant-header-action-disabled-color);cursor:not-allowed}.elitea-assistant-header-action:disabled:hover{background:var(--elitea-assistant-header-action-disabled-bg)}.elitea-assistant-history-dropdown{position:absolute;top:calc(100% + .55rem);right:-2.65rem;width:19.125rem;max-height:21.875rem;overflow-y:auto;background:var(--elitea-assistant-chat-bg);border:.0625rem solid var(--elitea-assistant-history-dropdown-border);border-radius:.5rem;box-shadow:var(--elitea-assistant-history-dropdown-shadow);z-index:100;padding:.5rem 0}.elitea-assistant-history-item{display:block;width:100%;padding:.5rem .75rem;border:none;background:none;cursor:pointer;text-align:left;color:var(--elitea-assistant-header-text);font-size:.875rem;font-weight:400;line-height:1.5rem;overflow:hidden;text-overflow:ellipsis;white-space:nowrap;transition:background .15s ease}.elitea-assistant-history-item:hover{background:var(--elitea-assistant-history-dropdown-hover-bg)}.elitea-assistant-history-item:disabled{opacity:.45;cursor:default;background:none}.elitea-assistant-messages{flex:1;overflow-y:auto;padding:1rem;display:flex;flex-direction:column;gap:.625rem}.elitea-assistant-message-wrapper{display:flex;flex-direction:column;max-width:80%}.elitea-assistant-message-wrapper--user{align-self:flex-end}.elitea-assistant-message-wrapper--assistant{align-self:flex-start}.elitea-assistant-message-meta{display:flex;align-items:center;gap:.375rem;margin-bottom:.375rem}.elitea-assistant-message-meta--assistant{justify-content:flex-start}.elitea-assistant-message-meta--user{justify-content:flex-end}.elitea-assistant-message-avatar{width:1.5rem;height:1.5rem;border-radius:50%;display:flex;align-items:center;justify-content:center;flex-shrink:0}.elitea-assistant-message-avatar--assistant{background:var(--elitea-assistant-button-bg);color:var(--elitea-assistant-button-icon)}.elitea-assistant-message-avatar--user{background:var(--elitea-assistant-user-avatar-bg);color:var(--elitea-assistant-user-avatar-icon)}.elitea-assistant-message-avatar svg{width:1.25rem;height:1.25rem;fill:currentColor}.elitea-assistant-message-time{font-size:.75rem;opacity:.6;color:var(--elitea-assistant-bot-msg-text)}.elitea-assistant-message{padding:.625rem .875rem;border-radius:.75rem;word-wrap:break-word;white-space:pre-wrap;font-weight:400;font-style:Regular;font-size:.875rem;line-height:1.5rem;letter-spacing:0%}.elitea-assistant-message--user{background:var(--elitea-assistant-user-msg-bg);color:var(--elitea-assistant-user-msg-text);border-radius:1rem 0rem 1rem 1rem}.elitea-assistant-message--assistant{background:var(--elitea-assistant-bot-msg-bg);color:var(--elitea-assistant-bot-msg-text);border-radius:0 1rem 1rem;position:relative}.elitea-assistant-message--assistant>.elitea-assistant-tooltip-trigger{position:absolute;bottom:.375rem;right:.375rem;opacity:0;transition:opacity .15s ease}.elitea-assistant-message--assistant:hover>.elitea-assistant-tooltip-trigger{opacity:1}.elitea-assistant-message--error{border:1px solid #e53e3e;opacity:.9}@keyframes elitea-assistant-typing-bounce{0%,60%,to{transform:translateY(0);opacity:.25}30%{transform:translateY(-.25rem);opacity:.5}}.elitea-assistant-typing-indicator{display:inline-flex;align-items:center;gap:.1875rem;padding:.125rem 0}.elitea-assistant-typing-dot{width:.25rem;height:.25rem;border-radius:50%;background:var(--elitea-assistant-bot-msg-text);opacity:.25;animation:elitea-assistant-typing-bounce 1.2s ease-in-out infinite}.elitea-assistant-typing-dot:nth-child(2){animation-delay:.15s}.elitea-assistant-typing-dot:nth-child(3){animation-delay:.3s}@keyframes elitea-assistant-shimmer{0%{opacity:.4}50%{opacity:.7}to{opacity:.4}}.elitea-assistant-skeleton-row{display:flex;flex-direction:column;gap:.375rem;max-width:70%}.elitea-assistant-skeleton-row--left{align-self:flex-start}.elitea-assistant-skeleton-row--right{align-self:flex-end}.elitea-assistant-skeleton-meta{display:flex;align-items:center;gap:.375rem}.elitea-assistant-skeleton-row--right .elitea-assistant-skeleton-meta{justify-content:flex-end}.elitea-assistant-skeleton{background:var(--elitea-assistant-bot-msg-bg);border-radius:.5rem;animation:elitea-assistant-shimmer 1.4s ease-in-out infinite}.elitea-assistant-skeleton--avatar{width:1.5rem;height:1.5rem;border-radius:50%;flex-shrink:0}.elitea-assistant-skeleton--time{width:2.5rem;height:.75rem;border-radius:.25rem}.elitea-assistant-skeleton--bubble{width:10rem;height:2.5rem;border-radius:.75rem}.elitea-assistant-skeleton-row--right .elitea-assistant-skeleton--bubble{width:8rem}.elitea-assistant-empty{flex:1;display:flex;align-items:center;justify-content:center;color:var(--elitea-assistant-bot-msg-text);opacity:.5;font-size:.8125rem;text-align:center;padding:1.25rem}.elitea-assistant-input-area{display:flex;flex-direction:column;padding:.75rem;background:var(--elitea-assistant-input-bg);flex-shrink:0;border-top:.0625rem solid var(--elitea-assistant-window-border)}.elitea-assistant-input-row{display:flex;align-items:center;gap:.5rem;width:100%}.elitea-assistant-input{flex:1;padding:.5rem .25rem;border:none;border-radius:0;background:transparent;color:var(--elitea-assistant-input-text);font-size:.875rem;font-family:inherit;outline:none;resize:none}.elitea-assistant-input::placeholder{color:var(--elitea-assistant-input-placeholder);opacity:1}.elitea-assistant-attach-button{width:1.75rem;height:1.75rem;border-radius:50%;border:none;cursor:pointer;display:flex;align-items:center;justify-content:center;background:var(--elitea-assistant-header-action-bg);color:var(--elitea-assistant-header-text);flex-shrink:0;transition:opacity .15s ease;padding:0;opacity:.8}.elitea-assistant-attach-button:hover{opacity:1}.elitea-assistant-attach-button svg{width:.875rem;height:.875rem;fill:currentColor}.elitea-assistant-send-button{width:1.75rem;height:1.75rem;border-radius:50%;border:none;cursor:pointer;display:flex;align-items:center;justify-content:center;background:var(--elitea-assistant-send-btn-bg);color:var(--elitea-assistant-send-btn-icon);flex-shrink:0;transition:background .15s ease;padding:0}.elitea-assistant-send-button:disabled{background:var(--elitea-assistant-send-btn-disabled-bg);cursor:default}.elitea-assistant-send-button svg{width:.875rem;height:.875rem;fill:currentColor}.elitea-assistant-file-list{display:flex;align-items:center;gap:.5rem;padding-bottom:.5rem}.elitea-assistant-file-chip{display:flex;align-items:center;gap:.75rem;max-width:11.25rem;height:2.25rem;padding:.375rem .75rem;border-radius:.5rem;background:var(--elitea-assistant-header-action-bg);flex-shrink:0}.elitea-assistant-file-chip-icon{display:flex;align-items:center;justify-content:center;flex-shrink:0;color:var(--elitea-assistant-header-close-icon)}.elitea-assistant-file-chip-icon svg{width:.75rem;height:.875rem}.elitea-assistant-file-chip-name{flex:1;min-width:0;font-size:.75rem;color:var(--elitea-assistant-input-text);white-space:nowrap;overflow:hidden;text-overflow:ellipsis}.elitea-assistant-file-chip-remove{display:flex;align-items:center;justify-content:center;width:1rem;height:1rem;padding:0;border:none;background:none;cursor:pointer;color:var(--elitea-assistant-header-close-icon);flex-shrink:0;opacity:.7;transition:opacity .15s ease}.elitea-assistant-file-chip-remove:hover{opacity:1}.elitea-assistant-file-chip-remove svg{width:2rem;height:2rem;fill:currentColor}.elitea-assistant-file-chip--count{font-size:.75rem;font-weight:400;color:var(--elitea-assistant-input-text);max-width:none;gap:0}.elitea-assistant-tooltip-trigger{display:inline-flex}.elitea-assistant-tooltip{position:fixed;z-index:2147483647;padding:.25rem .5rem;border-radius:.25rem;background:#e9ebf0;color:#0e131d;font-size:.6875rem;line-height:1.3;font-weight:500;font-family:Montserrat,sans-serif;white-space:nowrap;max-width:20rem;overflow:hidden;text-overflow:ellipsis;pointer-events:none;box-shadow:0 0 0 .0625rem #00000014,0 .125rem .5rem #0000001f;transition:opacity .15s ease}@keyframes elitea-tooltip-in{0%{opacity:0;transform:translateY(4px)}to{opacity:1;transform:translateY(0)}}.elitea-assistant-popup{position:absolute;bottom:.25rem;display:flex;align-items:center;gap:1rem;padding:.75rem .75rem .75rem 1.25rem;border-radius:1.5rem 1.5rem 1.5rem 0;background:var(--elitea-assistant-popup-bg);color:var(--elitea-assistant-popup-text);font-size:.875rem;font-weight:500;line-height:1.5rem;white-space:nowrap;box-shadow:0 .25rem 1rem #0003;animation:elitea-assistant-popup-in .3s ease-out}.elitea-assistant-popup:before{content:"";position:absolute;top:-.0625rem;right:-.0625rem;bottom:-.0625rem;left:-.0625rem;border-radius:inherit;padding:.0625rem;background:var(--elitea-assistant-popup-border);-webkit-mask:linear-gradient(#fff 0 0) content-box,linear-gradient(#fff 0 0);-webkit-mask-composite:xor;mask:linear-gradient(#fff 0 0) content-box,linear-gradient(#fff 0 0);mask-composite:exclude;pointer-events:none}.elitea-assistant-container--bottom-right .elitea-assistant-popup{right:2.5rem;flex-direction:row-reverse;padding:.75rem 1.25rem .75rem .75rem;border-radius:1.5rem 1.5rem 0}.elitea-assistant-container--bottom-left .elitea-assistant-popup{left:2.5rem}.elitea-assistant-popup-text{-webkit-user-select:none;user-select:none}.elitea-assistant-popup-close{display:flex;align-items:center;justify-content:center;width:1.75rem;height:1.75rem;flex-shrink:0;border:none;border-radius:50%;background:var(--elitea-assistant-popup-close-bg);color:var(--elitea-assistant-popup-text);cursor:pointer;padding:0;transition:background .15s ease}.elitea-assistant-popup-close:hover{background:var(--elitea-assistant-popup-close-hover-bg)}.elitea-assistant-popup-close svg{width:1rem;height:1rem;fill:currentColor}@keyframes elitea-assistant-popup-in{0%{opacity:0;transform:translateY(.5rem)}to{opacity:1;transform:translateY(0)}}')),document.head.appendChild(e)}}catch(t){console.error("vite-plugin-css-injected-by-js",t)}})();
+import { jsx as t, jsxs as f, Fragment as Ee } from "react/jsx-runtime";
+import { memo as k, useState as y, useCallback as b, useRef as D, useLayoutEffect as Be, useEffect as F, createContext as ne, useContext as oe, useMemo as Q, forwardRef as xe, useImperativeHandle as Ie } from "react";
+import { createPortal as Te } from "react-dom";
+import { io as Le } from "socket.io-client";
+const G = (e, a = !1) => ({
   ...e.token && { Authorization: `Bearer ${e.token}` },
   ...a && { "Content-Type": "application/json" }
-}), G = (e) => e.withCredentials ? "include" : void 0, z = async (e) => {
+}), q = (e) => e.withCredentials ? "include" : void 0, z = async (e) => {
   if (!e.ok) throw new Error(`${e.status} ${e.statusText}`);
   return e;
-}, Ie = (e, a = {}) => ({
+}, Se = (e, a = {}) => ({
   getConfig: () => fetch(`${e}/config/`, {
-    headers: W(a),
-    credentials: G(a)
+    headers: G(a),
+    credentials: q(a)
   }).then(z).then((n) => n.json()),
   getConversations: () => fetch(`${e}/conversations/`, {
-    headers: W(a),
-    credentials: G(a)
+    headers: G(a),
+    credentials: q(a)
   }).then(z).then((n) => n.json()),
   getConversation: (n) => fetch(`${e}/conversation/${n}`, {
-    headers: W(a),
-    credentials: G(a)
-  }).then(z).then((i) => i.json()),
+    headers: G(a),
+    credentials: q(a)
+  }).then(z).then((o) => o.json()),
   createConversation: () => fetch(`${e}/conversations/`, {
     method: "POST",
-    headers: W(a, !0),
-    credentials: G(a),
+    headers: G(a, !0),
+    credentials: q(a),
     body: JSON.stringify({})
   }).then(z).then((n) => n.json()),
   deleteConversation: (n) => fetch(`${e}/conversation/${n}`, {
     method: "DELETE",
-    headers: W(a),
-    credentials: G(a)
+    headers: G(a),
+    credentials: q(a)
   }).then(z).then(() => {
   })
-}), te = N(() => /* @__PURE__ */ t(
+}), te = k(() => /* @__PURE__ */ t(
   "svg",
   {
     viewBox: "0 0 28 28",
@@ -43,7 +43,7 @@ const W = (e, a = !1) => ({
   }
 ));
 te.displayName = "AssistantIcon";
-const oe = N(() => /* @__PURE__ */ t(
+const ie = k(() => /* @__PURE__ */ t(
   "svg",
   {
     viewBox: "0 0 12 14",
@@ -51,8 +51,8 @@ const oe = N(() => /* @__PURE__ */ t(
     children: /* @__PURE__ */ t("path", { d: "M11.5876 6.6172C11.6361 6.66719 11.6746 6.72656 11.7008 6.7919C11.7271 6.85725 11.7406 6.9273 11.7406 6.99804C11.7406 7.06878 11.7271 7.13883 11.7008 7.20417C11.6746 7.26952 11.6361 7.32889 11.5876 7.37888L6.23589 12.8964C5.55078 13.6031 4.6216 14.0001 3.65277 14C2.68393 13.9999 1.7548 13.6028 1.06978 12.8961C0.384749 12.1893 -6.11425e-05 11.2307 7.28683e-09 10.2313C6.11571e-05 9.2318 0.384988 8.2733 1.0701 7.56661L7.5443 0.789483C8.03342 0.284364 8.69701 0.000378941 9.3891 3.78958e-07C10.0812 -0.000378183 10.7451 0.282881 11.2347 0.787465C11.7243 1.29205 11.9996 1.97662 12 2.69059C12.0004 3.40456 11.7258 4.08943 11.2367 4.59455L4.76116 11.3717C4.46709 11.6751 4.06823 11.8455 3.65235 11.8455C3.23646 11.8455 2.8376 11.6751 2.54353 11.3717C2.24945 11.0683 2.08424 10.6568 2.08424 10.2278C2.08424 9.79877 2.24945 9.38731 2.54353 9.08393L7.97674 3.39012C8.02433 3.33774 8.0816 3.29571 8.14518 3.26651C8.20875 3.23731 8.27735 3.22152 8.34693 3.22008C8.4165 3.21863 8.48566 3.23156 8.55032 3.2581C8.61498 3.28464 8.67385 3.32425 8.72345 3.37461C8.77305 3.42497 8.81238 3.48506 8.83913 3.55133C8.86588 3.61761 8.87951 3.68874 8.87922 3.76053C8.87893 3.83232 8.86472 3.90333 8.83742 3.96937C8.81013 4.03541 8.77031 4.09515 8.7203 4.14508L3.28643 9.84494C3.23778 9.89474 3.19911 9.95393 3.17264 10.0191C3.14616 10.0843 3.13239 10.1543 3.13212 10.225C3.13185 10.2957 3.14507 10.3658 3.17105 10.4312C3.19702 10.4966 3.23523 10.5561 3.2835 10.6063C3.33177 10.6565 3.38914 10.6964 3.45235 10.7237C3.51556 10.751 3.58337 10.7652 3.6519 10.7655C3.72043 10.7658 3.78835 10.7521 3.85176 10.7253C3.91518 10.6985 3.97287 10.6591 4.02152 10.6093L10.4964 3.83556C10.7904 3.53281 10.9559 3.12194 10.9563 2.69335C10.9568 2.26475 10.7921 1.85354 10.4987 1.55016C10.2052 1.24679 9.80691 1.0761 9.39145 1.07566C8.97599 1.07522 8.57737 1.24506 8.2833 1.54781L1.8104 8.32224C1.56791 8.572 1.37549 8.86858 1.24411 9.19506C1.11273 9.52153 1.04496 9.8715 1.04469 10.225C1.04442 10.5785 1.11164 10.9286 1.24252 11.2553C1.37339 11.5819 1.56536 11.8788 1.80747 12.129C2.04957 12.3792 2.33706 12.5777 2.65353 12.7132C2.97 12.8487 3.30924 12.9186 3.6519 12.9189C3.99456 12.9192 4.33391 12.8498 4.65059 12.7148C4.96727 12.5798 5.25506 12.3818 5.49755 12.132L10.8499 6.6145C10.9481 6.51399 11.0809 6.45781 11.2193 6.45831C11.3576 6.45881 11.4901 6.51596 11.5876 6.6172Z" })
   }
 ));
-oe.displayName = "AttachmentIcon";
-const Te = N(() => /* @__PURE__ */ t(
+ie.displayName = "AttachmentIcon";
+const He = k(() => /* @__PURE__ */ t(
   "svg",
   {
     viewBox: "0 0 24 24",
@@ -60,8 +60,27 @@ const Te = N(() => /* @__PURE__ */ t(
     children: /* @__PURE__ */ t("path", { d: "M20 2H4C2.9 2 2 2.9 2 4V22L6 18H20C21.1 18 22 17.1 22 16V4C22 2.9 21.1 2 20 2ZM20 16H5.2L4 17.2V4H20V16Z" })
   }
 ));
-Te.displayName = "ChatIcon";
-const ee = N(() => /* @__PURE__ */ t(
+He.displayName = "ChatIcon";
+const re = k(() => /* @__PURE__ */ t(
+  "svg",
+  {
+    viewBox: "0 0 14 14",
+    xmlns: "http://www.w3.org/2000/svg",
+    children: /* @__PURE__ */ t(
+      "path",
+      {
+        d: "M11.6667 3.5L5.25 9.91667L2.33333 7",
+        fill: "none",
+        stroke: "currentColor",
+        strokeWidth: "1.2",
+        strokeLinecap: "round",
+        strokeLinejoin: "round"
+      }
+    )
+  }
+));
+re.displayName = "CheckIcon";
+const ee = k(() => /* @__PURE__ */ t(
   "svg",
   {
     viewBox: "0 0 24 24",
@@ -70,7 +89,26 @@ const ee = N(() => /* @__PURE__ */ t(
   }
 ));
 ee.displayName = "CloseIcon";
-const re = N(() => /* @__PURE__ */ t(
+const le = k(() => /* @__PURE__ */ t(
+  "svg",
+  {
+    viewBox: "0 0 14 14",
+    xmlns: "http://www.w3.org/2000/svg",
+    children: /* @__PURE__ */ t(
+      "path",
+      {
+        d: "M4.66667 4.66667V2.33333C4.66667 1.97971 4.80714 1.64057 5.05719 1.39052C5.30724 1.14048 5.64638 1 6 1H11.6667C12.0203 1 12.3594 1.14048 12.6095 1.39052C12.8595 1.64057 13 1.97971 13 2.33333V8C13 8.35362 12.8595 8.69276 12.6095 8.94281C12.3594 9.19286 12.0203 9.33333 11.6667 9.33333H9.33333M2.33333 4.66667H8C8.73638 4.66667 9.33333 5.26362 9.33333 6V11.6667C9.33333 12.403 8.73638 13 8 13H2.33333C1.59695 13 1 12.403 1 11.6667V6C1 5.26362 1.59695 4.66667 2.33333 4.66667Z",
+        fill: "none",
+        stroke: "currentColor",
+        strokeWidth: "1.2",
+        strokeLinecap: "round",
+        strokeLinejoin: "round"
+      }
+    )
+  }
+));
+le.displayName = "CopyIcon";
+const ce = k(() => /* @__PURE__ */ t(
   "svg",
   {
     viewBox: "0 0 12 12",
@@ -78,8 +116,8 @@ const re = N(() => /* @__PURE__ */ t(
     children: /* @__PURE__ */ t("path", { d: "M12 0.545455V3.81818C12 3.96285 11.9425 4.10158 11.8402 4.20388C11.7379 4.30617 11.5992 4.36364 11.4545 4.36364C11.3099 4.36364 11.1711 4.30617 11.0689 4.20388C10.9666 4.10158 10.9091 3.96285 10.9091 3.81818V1.86205L7.47682 5.295C7.37447 5.39735 7.23565 5.45485 7.09091 5.45485C6.94617 5.45485 6.80735 5.39735 6.705 5.295C6.60265 5.19265 6.54515 5.05383 6.54515 4.90909C6.54515 4.76435 6.60265 4.62553 6.705 4.52318L10.138 1.09091H8.18182C8.03715 1.09091 7.89842 1.03344 7.79612 0.931149C7.69383 0.828856 7.63636 0.690118 7.63636 0.545455C7.63636 0.400791 7.69383 0.262053 7.79612 0.15976C7.89842 0.0574675 8.03715 0 8.18182 0H11.4545C11.5992 0 11.7379 0.0574675 11.8402 0.15976C11.9425 0.262053 12 0.400791 12 0.545455ZM4.52318 6.705L1.09091 10.138V8.18182C1.09091 8.03715 1.03344 7.89842 0.931149 7.79612C0.828856 7.69383 0.690118 7.63636 0.545455 7.63636C0.400791 7.63636 0.262053 7.69383 0.15976 7.79612C0.0574675 7.89842 0 8.03715 0 8.18182V11.4545C0 11.5992 0.0574675 11.7379 0.15976 11.8402C0.262053 11.9425 0.400791 12 0.545455 12H3.81818C3.96285 12 4.10158 11.9425 4.20388 11.8402C4.30617 11.7379 4.36364 11.5992 4.36364 11.4545C4.36364 11.3099 4.30617 11.1711 4.20388 11.0689C4.10158 10.9666 3.96285 10.9091 3.81818 10.9091H1.86205L5.295 7.47682C5.39735 7.37447 5.45485 7.23565 5.45485 7.09091C5.45485 6.94617 5.39735 6.80735 5.295 6.705C5.19265 6.60265 5.05383 6.54515 4.90909 6.54515C4.76435 6.54515 4.62553 6.60265 4.52318 6.705Z" })
   }
 ));
-re.displayName = "ExpandIcon";
-const le = N(() => /* @__PURE__ */ t(
+ce.displayName = "ExpandIcon";
+const de = k(() => /* @__PURE__ */ t(
   "svg",
   {
     viewBox: "0 0 12 14",
@@ -95,8 +133,8 @@ const le = N(() => /* @__PURE__ */ t(
     )
   }
 ));
-le.displayName = "FileIcon";
-const ce = N(() => /* @__PURE__ */ t(
+de.displayName = "FileIcon";
+const ue = k(() => /* @__PURE__ */ t(
   "svg",
   {
     viewBox: "0 0 14 14",
@@ -104,8 +142,8 @@ const ce = N(() => /* @__PURE__ */ t(
     children: /* @__PURE__ */ t("path", { d: "M7.84245 3.50002V6.6697L10.3716 8.2498C10.499 8.32948 10.5908 8.45859 10.6268 8.60874C10.6628 8.75888 10.64 8.91776 10.5635 9.05042C10.487 9.18309 10.363 9.27867 10.2188 9.31614C10.0746 9.3536 9.92206 9.32989 9.79466 9.25022L6.99378 7.50022C6.91089 7.44836 6.8423 7.37503 6.79469 7.28737C6.74708 7.19972 6.72207 7.10072 6.7221 7.00001V3.50002C6.7221 3.34531 6.78112 3.19693 6.88617 3.08754C6.99122 2.97814 7.13371 2.91668 7.28227 2.91668C7.43084 2.91668 7.57333 2.97814 7.67838 3.08754C7.78343 3.19693 7.84245 3.34531 7.84245 3.50002ZM7.28227 2.15915e-05C6.39859 -0.00227058 5.52325 0.177963 4.70691 0.530291C3.89056 0.882618 3.14943 1.40004 2.52639 2.05262C2.01733 2.58929 1.56499 3.10554 1.12035 3.64585V2.33335C1.12035 2.17864 1.06133 2.03027 0.956278 1.92087C0.851225 1.81148 0.708743 1.75002 0.560175 1.75002C0.411607 1.75002 0.269125 1.81148 0.164071 1.92087C0.0590182 2.03027 0 2.17864 0 2.33335V5.25001C0 5.40472 0.0590182 5.5531 0.164071 5.66249C0.269125 5.77189 0.411607 5.83335 0.560175 5.83335H3.36105C3.50962 5.83335 3.6521 5.77189 3.75715 5.66249C3.86221 5.5531 3.92122 5.40472 3.92122 5.25001C3.92122 5.0953 3.86221 4.94693 3.75715 4.83754C3.6521 4.72814 3.50962 4.66668 3.36105 4.66668H1.75055C2.2512 4.05272 2.74976 3.4745 3.31834 2.87512C4.09688 2.0644 5.08758 1.51057 6.16666 1.28283C7.24574 1.05509 8.36535 1.16353 9.38558 1.59462C10.4058 2.02571 11.2814 2.76032 11.903 3.70667C12.5246 4.65301 12.8646 5.76912 12.8805 6.91554C12.8965 8.06195 12.5876 9.18784 11.9926 10.1525C11.3975 11.1172 10.5427 11.8779 9.53484 12.3395C8.52702 12.8011 7.41089 12.9433 6.32594 12.7481C5.24098 12.553 4.23531 12.0292 3.43457 11.2423C3.38106 11.1896 3.3181 11.1485 3.2493 11.1211C3.18051 11.0938 3.10721 11.0808 3.03361 11.083C2.96 11.0852 2.88753 11.1024 2.82033 11.1338C2.75312 11.1651 2.6925 11.2099 2.64193 11.2656C2.59135 11.3214 2.55181 11.3869 2.52557 11.4586C2.49932 11.5302 2.48689 11.6065 2.48897 11.6832C2.49105 11.7598 2.5076 11.8353 2.53769 11.9053C2.56778 11.9753 2.61081 12.0384 2.66433 12.091C3.4622 12.8751 4.43221 13.4439 5.48972 13.7478C6.54722 14.0517 7.66008 14.0814 8.73117 13.8345C9.80226 13.5875 10.799 13.0713 11.6345 12.3309C12.4699 11.5905 13.1187 10.6485 13.5241 9.58695C13.9295 8.52544 14.0793 7.37674 13.9604 6.24108C13.8414 5.10543 13.4574 4.01735 12.8418 3.0718C12.2261 2.12625 11.3976 1.35197 10.4286 0.816529C9.4595 0.281089 8.37931 0.000765142 7.28227 2.15915e-05Z" })
   }
 ));
-ce.displayName = "HistoryIcon";
-const de = N(() => /* @__PURE__ */ t(
+ue.displayName = "HistoryIcon";
+const Ce = k(() => /* @__PURE__ */ t(
   "svg",
   {
     viewBox: "0 0 14 14",
@@ -113,8 +151,8 @@ const de = N(() => /* @__PURE__ */ t(
     children: /* @__PURE__ */ t("path", { d: "M14 7C14 7.15471 13.9385 7.30308 13.8291 7.41248C13.7197 7.52188 13.5714 7.58333 13.4167 7.58333H7.58333V13.4167C7.58333 13.5714 7.52188 13.7197 7.41248 13.8291C7.30308 13.9385 7.15471 14 7 14C6.84529 14 6.69692 13.9385 6.58752 13.8291C6.47812 13.7197 6.41667 13.5714 6.41667 13.4167V7.58333H0.583333C0.428624 7.58333 0.280251 7.52188 0.170854 7.41248C0.0614583 7.30308 0 7.15471 0 7C0 6.84529 0.0614583 6.69692 0.170854 6.58752C0.280251 6.47812 0.428624 6.41667 0.583333 6.41667H6.41667V0.583333C6.41667 0.428624 6.47812 0.280251 6.58752 0.170854C6.69692 0.0614583 6.84529 0 7 0C7.15471 0 7.30308 0.0614583 7.41248 0.170854C7.52188 0.280251 7.58333 0.428624 7.58333 0.583333V6.41667H13.4167C13.5714 6.41667 13.7197 6.47812 13.8291 6.58752C13.9385 6.69692 14 6.84529 14 7Z" })
   }
 ));
-de.displayName = "PlusIcon";
-const ue = N(() => /* @__PURE__ */ t(
+Ce.displayName = "PlusIcon";
+const pe = k(() => /* @__PURE__ */ t(
   "svg",
   {
     viewBox: "0 0 13 14",
@@ -122,8 +160,8 @@ const ue = N(() => /* @__PURE__ */ t(
     children: /* @__PURE__ */ t("path", { d: "M13 6.99208C13.0005 7.17027 12.9514 7.34536 12.8579 7.49921C12.7644 7.65307 12.6299 7.78012 12.4682 7.86721L1.55229 13.8687C1.39545 13.9542 1.21835 13.9995 1.03805 14C0.871785 13.9997 0.708022 13.961 0.56049 13.8873C0.412958 13.8136 0.285957 13.7069 0.190131 13.5763C0.0943049 13.4456 0.0324474 13.2948 0.00974343 13.1364C-0.0129605 12.9781 0.00415071 12.8168 0.0596426 12.6661L1.83768 7.66843C1.8552 7.61898 1.88839 7.57606 1.93258 7.54567C1.97677 7.51529 2.02975 7.49898 2.08407 7.49903H6.75898C6.83028 7.49918 6.90085 7.48523 6.9663 7.45806C7.03176 7.43088 7.0907 7.39105 7.13948 7.34105C7.18825 7.29104 7.22581 7.23193 7.24982 7.16738C7.27384 7.10283 7.28379 7.03423 7.27907 6.96582C7.26727 6.83723 7.20539 6.71767 7.10582 6.63108C7.00624 6.5445 6.87632 6.49728 6.74208 6.49888H2.08862C2.03438 6.49897 1.98146 6.48275 1.93728 6.45249C1.89309 6.42222 1.85986 6.37943 1.84223 6.3301L0.0583424 1.32936C-0.0111263 1.13773 -0.018329 0.930327 0.0376911 0.734676C0.0937111 0.539025 0.210303 0.364388 0.371984 0.233956C0.533666 0.103523 0.732787 0.0234668 0.942905 0.00441721C1.15302 -0.0146324 1.3642 0.0282263 1.54838 0.127302L12.4702 6.12132C12.6308 6.20829 12.7645 6.33476 12.8576 6.48776C12.9507 6.64076 12.9999 6.81481 13 6.99208Z" })
   }
 ));
-ue.displayName = "SendIcon";
-const Ce = N(() => /* @__PURE__ */ t(
+pe.displayName = "SendIcon";
+const he = k(() => /* @__PURE__ */ t(
   "svg",
   {
     viewBox: "0 0 24 24",
@@ -131,8 +169,8 @@ const Ce = N(() => /* @__PURE__ */ t(
     children: /* @__PURE__ */ t("path", { d: "M12 12C14.21 12 16 10.21 16 8C16 5.79 14.21 4 12 4C9.79 4 8 5.79 8 8C8 10.21 9.79 12 12 12ZM12 14C9.33 14 4 15.34 4 18V20H20V18C20 15.34 14.67 14 12 14Z" })
   }
 ));
-Ce.displayName = "UserIcon";
-const pe = N((e) => {
+he.displayName = "UserIcon";
+const ge = k((e) => {
   const { onClick: a } = e;
   return /* @__PURE__ */ t(
     "button",
@@ -145,56 +183,57 @@ const pe = N((e) => {
     }
   );
 });
-pe.displayName = "ChatButton";
-const q = N((e) => {
-  const { content: a, children: n, placement: i = "top" } = e, o = R(null), s = R(null), [r, h] = k(!1), [l, C] = k(!1), [m, d] = k({ top: 0, left: 0 }), A = v(() => {
-    const w = o.current, x = s.current;
+ge.displayName = "ChatButton";
+const me = k((e) => {
+  const { text: a } = e, [n, o] = y(!1), i = b(() => {
+    navigator.clipboard.writeText(a), o(!0), setTimeout(() => o(!1), 2e3);
+  }, [a]);
+  return /* @__PURE__ */ t(j, { content: "Copy to clipboard", children: /* @__PURE__ */ t(
+    "button",
+    {
+      className: "elitea-assistant-header-action",
+      onClick: i,
+      "aria-label": "Copy to clipboard",
+      type: "button",
+      children: n ? /* @__PURE__ */ t(re, {}) : /* @__PURE__ */ t(le, {})
+    }
+  ) });
+});
+me.displayName = "CopyButton";
+const j = k((e) => {
+  const { content: a, children: n, placement: o = "top" } = e, i = D(null), s = D(null), [r, h] = y(!1), [l, C] = y(!1), [m, d] = y({ top: 0, left: 0 }), A = b(() => {
+    const w = i.current, x = s.current;
     if (!w || !x) return;
     const c = w.getBoundingClientRect(), u = x.getBoundingClientRect();
-    let b;
-    i === "top" ? b = c.top - u.height - 8 : b = c.bottom + 8;
+    let v;
+    o === "top" ? v = c.top - u.height - 8 : v = c.bottom + 8;
     let E = c.left + c.width / 2 - u.width / 2;
     const B = 8;
-    E < B && (E = B), E + u.width > window.innerWidth - B && (E = window.innerWidth - B - u.width), b < B && (b = c.bottom + 8), d({ top: b, left: E }), C(!0);
-  }, [i]);
-  return Ae(() => {
+    E < B && (E = B), E + u.width > window.innerWidth - B && (E = window.innerWidth - B - u.width), v < B && (v = c.bottom + 8), d({ top: v, left: E }), C(!0);
+  }, [o]);
+  return Be(() => {
     r && s.current && A(), r || C(!1);
-  }, [r, A]), /* @__PURE__ */ y(ke, { children: [
+  }, [r, A]), /* @__PURE__ */ f(Ee, { children: [
     /* @__PURE__ */ t(
       "div",
       {
-        ref: o,
+        ref: i,
         onMouseEnter: () => h(!0),
         onMouseLeave: () => h(!1),
         className: "elitea-assistant-tooltip-trigger",
         children: n
       }
     ),
-    r && Be(
+    r && Te(
       /* @__PURE__ */ t(
         "div",
         {
           ref: s,
+          className: "elitea-assistant-tooltip",
           style: {
-            position: "fixed",
-            zIndex: 2147483647,
             top: m.top,
             left: m.left,
-            padding: ".25rem .5rem",
-            borderRadius: ".25rem",
-            background: "rgb(233, 235, 240)",
-            color: "rgba(14, 19, 29, 1)",
-            fontSize: ".6875rem",
-            lineHeight: "1.3",
-            fontWeight: 500,
-            fontFamily: "'Montserrat', sans-serif",
-            whiteSpace: "nowrap",
-            maxWidth: "20rem",
-            overflow: "hidden",
-            textOverflow: "ellipsis",
-            pointerEvents: "none",
-            opacity: l ? 1 : 0,
-            transition: "opacity 0.15s ease"
+            opacity: l ? 1 : 0
           },
           role: "tooltip",
           children: a
@@ -204,19 +243,19 @@ const q = N((e) => {
     )
   ] });
 });
-q.displayName = "Tooltip";
-const he = N((e) => {
+j.displayName = "Tooltip";
+const be = k((e) => {
   const {
     title: a,
     expanded: n,
-    history: i,
-    currentConversationId: o,
+    history: o,
+    currentConversationId: i,
     disabled: s,
     onClose: r,
     onExpand: h,
     onNewChat: l,
     onSelectConversation: C
-  } = e, m = R(null), [d, A] = k(!1);
+  } = e, m = D(null), [d, A] = y(!1);
   F(() => {
     if (!d) return;
     const c = (u) => {
@@ -224,16 +263,16 @@ const he = N((e) => {
     };
     return document.addEventListener("mousedown", c), () => document.removeEventListener("mousedown", c);
   }, [d]);
-  const w = v(() => {
-    i.length > 0 && A((c) => !c);
-  }, [i.length]), x = v(
+  const w = b(() => {
+    o.length > 0 && A((c) => !c);
+  }, [o.length]), x = b(
     (c) => {
       C(c), A(!1);
     },
     [C]
   );
-  return /* @__PURE__ */ y("div", { className: "elitea-assistant-header", children: [
-    /* @__PURE__ */ y("div", { className: "elitea-assistant-header-left", children: [
+  return /* @__PURE__ */ f("div", { className: "elitea-assistant-header", children: [
+    /* @__PURE__ */ f("div", { className: "elitea-assistant-header-left", children: [
       /* @__PURE__ */ t(
         "button",
         {
@@ -246,8 +285,8 @@ const he = N((e) => {
       ),
       /* @__PURE__ */ t("h2", { className: "elitea-assistant-header-title", children: a })
     ] }),
-    /* @__PURE__ */ y("div", { className: "elitea-assistant-header-right", children: [
-      /* @__PURE__ */ t(q, { content: "New conversation", children: /* @__PURE__ */ t(
+    /* @__PURE__ */ f("div", { className: "elitea-assistant-header-right", children: [
+      /* @__PURE__ */ t(j, { content: "New conversation", children: /* @__PURE__ */ t(
         "button",
         {
           className: "elitea-assistant-header-action",
@@ -255,10 +294,10 @@ const he = N((e) => {
           "aria-label": "New chat",
           type: "button",
           disabled: s,
-          children: /* @__PURE__ */ t(de, {})
+          children: /* @__PURE__ */ t(Ce, {})
         }
       ) }),
-      /* @__PURE__ */ t(q, { content: "Conversations history", children: /* @__PURE__ */ y(
+      /* @__PURE__ */ t(j, { content: "Conversations history", children: /* @__PURE__ */ f(
         "div",
         {
           ref: m,
@@ -271,17 +310,17 @@ const he = N((e) => {
                 onClick: w,
                 "aria-label": "Chat history",
                 type: "button",
-                disabled: s || i.length === 0,
-                children: /* @__PURE__ */ t(ce, {})
+                disabled: s || o.length === 0,
+                children: /* @__PURE__ */ t(ue, {})
               }
             ),
-            d && i.length > 0 && /* @__PURE__ */ t("div", { className: "elitea-assistant-history-dropdown", children: i.map((c) => /* @__PURE__ */ t(
+            d && o.length > 0 && /* @__PURE__ */ t("div", { className: "elitea-assistant-history-dropdown", children: o.map((c) => /* @__PURE__ */ t(
               "button",
               {
                 className: "elitea-assistant-history-item",
                 onClick: () => x(c.uuid),
                 type: "button",
-                disabled: c.uuid === o,
+                disabled: c.uuid === i,
                 children: c.name
               },
               c.uuid
@@ -289,35 +328,35 @@ const he = N((e) => {
           ]
         }
       ) }),
-      /* @__PURE__ */ t(q, { content: n ? "Collapse" : "Expand", children: /* @__PURE__ */ t(
+      /* @__PURE__ */ t(j, { content: n ? "Collapse" : "Expand", children: /* @__PURE__ */ t(
         "button",
         {
           className: "elitea-assistant-header-action",
           onClick: h,
           "aria-label": "Expand chat",
           type: "button",
-          children: /* @__PURE__ */ t(re, {})
+          children: /* @__PURE__ */ t(ce, {})
         }
       ) })
     ] })
   ] });
 });
-he.displayName = "ChatHeader";
-const Se = (e) => {
+be.displayName = "ChatHeader";
+const Me = (e) => {
   if (typeof e == "number") return e < 4102444800 ? e * 1e3 : e;
   if (typeof e == "string") {
     const a = new Date(e);
     return isNaN(a.getTime()) ? 0 : a.getTime();
   }
   return 0;
-}, Le = (e) => {
-  var i;
+}, _e = (e) => {
+  var o;
   const a = e.sent_to != null ? "user" : "assistant";
   let n = "";
-  for (const o of e.message_items ?? []) {
-    const s = o.item_type ?? o.type;
+  for (const i of e.message_items ?? []) {
+    const s = i.item_type ?? i.type;
     if (s === "text_message" || s === "text") {
-      n = ((i = o.item_details) == null ? void 0 : i.content) ?? o.content ?? "";
+      n = ((o = i.item_details) == null ? void 0 : o.content) ?? i.content ?? "";
       break;
     }
   }
@@ -325,12 +364,12 @@ const Se = (e) => {
     id: String(e.uuid ?? e.id ?? ""),
     role: a,
     content: n,
-    timestamp: Se(e.created_at_ts ?? e.created_at)
+    timestamp: Me(e.created_at_ts ?? e.created_at)
   };
-}, ae = (e) => (e.message_groups ?? []).map(Le), Me = (e) => new Date(e).toLocaleTimeString([], { hour: "2-digit", minute: "2-digit" }), se = (e, a) => {
-  const { frequency: n, start: i, peak: o, end: s } = a, r = e.createOscillator(), h = e.createGain();
-  return r.connect(h), h.connect(e.destination), r.type = "sine", r.frequency.value = n, h.gain.setValueAtTime(0, i), h.gain.linearRampToValueAtTime(0.12, o), h.gain.exponentialRampToValueAtTime(0.01, s), r.start(i), r.stop(s), r;
-}, _e = async () => {
+}, ae = (e) => (e.message_groups ?? []).map(_e), Pe = (e) => new Date(e).toLocaleTimeString([], { hour: "2-digit", minute: "2-digit" }), se = (e, a) => {
+  const { frequency: n, start: o, peak: i, end: s } = a, r = e.createOscillator(), h = e.createGain();
+  return r.connect(h), h.connect(e.destination), r.type = "sine", r.frequency.value = n, h.gain.setValueAtTime(0, o), h.gain.linearRampToValueAtTime(0.12, i), h.gain.exponentialRampToValueAtTime(0.01, s), r.start(o), r.stop(s), r;
+}, De = async () => {
   try {
     const e = new AudioContext();
     if (e.state === "suspended" && await e.resume(), e.state !== "running") {
@@ -343,29 +382,29 @@ const Se = (e) => {
     n.onended = () => e.close();
   } catch {
   }
-}, He = (e) => {
+}, Re = (e) => {
   if (e.startsWith("/")) return "";
   try {
     return new URL(e).origin;
   } catch {
     return "";
   }
-}, ge = N((e) => {
-  const { messages: a, isLoading: n } = e, i = R(null), o = R(!1);
+}, ve = k((e) => {
+  const { messages: a, isLoading: n } = e, o = D(null), i = D(!1);
   return F(() => {
     var r;
     if (a.length === 0) {
-      o.current = !1;
+      i.current = !1;
       return;
     }
-    const s = o.current ? "smooth" : "instant";
-    o.current = !0, (r = i.current) == null || r.scrollIntoView({ behavior: s });
-  }, [a]), n ? /* @__PURE__ */ t("div", { className: "elitea-assistant-messages", children: Array.from({ length: 3 }).map((s, r) => /* @__PURE__ */ y(
+    const s = i.current ? "smooth" : "instant";
+    i.current = !0, (r = o.current) == null || r.scrollIntoView({ behavior: s });
+  }, [a]), n ? /* @__PURE__ */ t("div", { className: "elitea-assistant-messages", children: Array.from({ length: 3 }).map((s, r) => /* @__PURE__ */ f(
     "div",
     {
       className: `elitea-assistant-skeleton-row ${r % 2 === 0 ? "elitea-assistant-skeleton-row--left" : "elitea-assistant-skeleton-row--right"}`,
       children: [
-        /* @__PURE__ */ y("div", { className: "elitea-assistant-skeleton-meta", children: [
+        /* @__PURE__ */ f("div", { className: "elitea-assistant-skeleton-meta", children: [
           /* @__PURE__ */ t("div", { className: "elitea-assistant-skeleton elitea-assistant-skeleton--avatar" }),
           /* @__PURE__ */ t("div", { className: "elitea-assistant-skeleton elitea-assistant-skeleton--time" })
         ] }),
@@ -373,65 +412,68 @@ const Se = (e) => {
       ]
     },
     r
-  )) }) : a.length === 0 ? /* @__PURE__ */ t("div", { className: "elitea-assistant-empty", children: "Send a message to start a conversation" }) : /* @__PURE__ */ y("div", { className: "elitea-assistant-messages", children: [
-    a.map((s) => /* @__PURE__ */ y(
+  )) }) : a.length === 0 ? /* @__PURE__ */ t("div", { className: "elitea-assistant-empty", children: "Send a message to start a conversation" }) : /* @__PURE__ */ f("div", { className: "elitea-assistant-messages", children: [
+    a.map((s) => /* @__PURE__ */ f(
       "div",
       {
         className: `elitea-assistant-message-wrapper elitea-assistant-message-wrapper--${s.role}`,
         children: [
-          /* @__PURE__ */ y("div", { className: `elitea-assistant-message-meta elitea-assistant-message-meta--${s.role}`, children: [
+          /* @__PURE__ */ f("div", { className: `elitea-assistant-message-meta elitea-assistant-message-meta--${s.role}`, children: [
             s.role === "assistant" && /* @__PURE__ */ t("span", { className: "elitea-assistant-message-avatar elitea-assistant-message-avatar--assistant", children: /* @__PURE__ */ t(te, {}) }),
-            /* @__PURE__ */ t("span", { className: "elitea-assistant-message-time", children: Me(s.timestamp) }),
-            s.role === "user" && /* @__PURE__ */ t("span", { className: "elitea-assistant-message-avatar elitea-assistant-message-avatar--user", children: /* @__PURE__ */ t(Ce, {}) })
+            /* @__PURE__ */ t("span", { className: "elitea-assistant-message-time", children: Pe(s.timestamp) }),
+            s.role === "user" && /* @__PURE__ */ t("span", { className: "elitea-assistant-message-avatar elitea-assistant-message-avatar--user", children: /* @__PURE__ */ t(he, {}) })
           ] }),
-          /* @__PURE__ */ t(
+          /* @__PURE__ */ f(
             "div",
             {
               className: `elitea-assistant-message elitea-assistant-message--${s.role}${s.isError ? " elitea-assistant-message--error" : ""}`,
-              children: s.content || (s.isStreaming ? /* @__PURE__ */ y("span", { className: "elitea-assistant-typing-indicator", children: [
-                /* @__PURE__ */ t("span", { className: "elitea-assistant-typing-dot" }),
-                /* @__PURE__ */ t("span", { className: "elitea-assistant-typing-dot" }),
-                /* @__PURE__ */ t("span", { className: "elitea-assistant-typing-dot" })
-              ] }) : "")
+              children: [
+                s.content || (s.isStreaming ? /* @__PURE__ */ f("span", { className: "elitea-assistant-typing-indicator", children: [
+                  /* @__PURE__ */ t("span", { className: "elitea-assistant-typing-dot" }),
+                  /* @__PURE__ */ t("span", { className: "elitea-assistant-typing-dot" }),
+                  /* @__PURE__ */ t("span", { className: "elitea-assistant-typing-dot" })
+                ] }) : ""),
+                s.role === "assistant" && s.content && !s.isStreaming && /* @__PURE__ */ t(me, { text: s.content })
+              ]
             }
           )
         ]
       },
       s.id
     )),
-    /* @__PURE__ */ t("div", { ref: i })
+    /* @__PURE__ */ t("div", { ref: o })
   ] });
 });
-ge.displayName = "MessageList";
-const me = N((e) => {
-  const { placeholder: a, text: n, onTextChange: i, files: o, onFilesChange: s, onSend: r, expanded: h, disabled: l } = e, C = R(null), [m, d] = k(0), A = () => {
+ve.displayName = "MessageList";
+const we = k((e) => {
+  const { placeholder: a, text: n, onTextChange: o, files: i, onFilesChange: s, onSend: r, expanded: h, disabled: l } = e, C = D(null), [m, d] = y(0), A = () => {
     const p = n.trim();
-    !p && o.length === 0 || (r(p, o.length > 0 ? o : void 0), i(""), s([]));
+    !p && i.length === 0 || (r(p, i.length > 0 ? i : void 0), o(""), s([]));
   }, w = (p) => {
     p.key === "Enter" && !p.shiftKey && (p.preventDefault(), A());
   }, x = () => {
     var p;
     (p = C.current) == null || p.click();
   }, c = (p) => {
-    const S = p.target.files;
-    S && s([...o, ...Array.from(S)]), d((L) => L + 1);
+    const L = p.target.files;
+    L && s([...i, ...Array.from(L)]), d((S) => S + 1);
   }, u = (p) => {
-    s(o.filter((S, L) => L !== p));
-  }, b = h ? 3 : 2, E = o.slice(0, b), B = o.length - b;
-  return /* @__PURE__ */ y("div", { className: "elitea-assistant-input-area", children: [
-    o.length > 0 && /* @__PURE__ */ y("div", { className: "elitea-assistant-file-list", children: [
-      E.map((p, S) => /* @__PURE__ */ t(
-        q,
+    s(i.filter((L, S) => S !== p));
+  }, v = h ? 3 : 2, E = i.slice(0, v), B = i.length - v;
+  return /* @__PURE__ */ f("div", { className: "elitea-assistant-input-area", children: [
+    i.length > 0 && /* @__PURE__ */ f("div", { className: "elitea-assistant-file-list", children: [
+      E.map((p, L) => /* @__PURE__ */ t(
+        j,
         {
           content: p.name,
-          children: /* @__PURE__ */ y("div", { className: "elitea-assistant-file-chip", children: [
-            /* @__PURE__ */ t("span", { className: "elitea-assistant-file-chip-icon", children: /* @__PURE__ */ t(le, {}) }),
+          children: /* @__PURE__ */ f("div", { className: "elitea-assistant-file-chip", children: [
+            /* @__PURE__ */ t("span", { className: "elitea-assistant-file-chip-icon", children: /* @__PURE__ */ t(de, {}) }),
             /* @__PURE__ */ t("span", { className: "elitea-assistant-file-chip-name", children: p.name }),
             /* @__PURE__ */ t(
               "button",
               {
                 className: "elitea-assistant-file-chip-remove",
-                onClick: () => u(S),
+                onClick: () => u(L),
                 "aria-label": `Remove ${p.name}`,
                 type: "button",
                 children: /* @__PURE__ */ t(ee, {})
@@ -439,14 +481,14 @@ const me = N((e) => {
             )
           ] })
         },
-        S
+        L
       )),
-      B > 0 && /* @__PURE__ */ y("div", { className: "elitea-assistant-file-chip elitea-assistant-file-chip--count", children: [
+      B > 0 && /* @__PURE__ */ f("div", { className: "elitea-assistant-file-chip elitea-assistant-file-chip--count", children: [
         "+",
         B
       ] })
     ] }),
-    /* @__PURE__ */ y("div", { className: "elitea-assistant-input-row", children: [
+    /* @__PURE__ */ f("div", { className: "elitea-assistant-input-row", children: [
       /* @__PURE__ */ t(
         "input",
         {
@@ -466,7 +508,7 @@ const me = N((e) => {
           "aria-label": "Attach file",
           type: "button",
           disabled: l,
-          children: /* @__PURE__ */ t(oe, {})
+          children: /* @__PURE__ */ t(ie, {})
         }
       ),
       /* @__PURE__ */ t(
@@ -475,7 +517,7 @@ const me = N((e) => {
           id: "elitea-assistant-message-input",
           className: "elitea-assistant-input",
           value: n,
-          onChange: (p) => i(p.target.value),
+          onChange: (p) => o(p.target.value),
           onKeyDown: w,
           placeholder: a,
           rows: 1,
@@ -488,26 +530,26 @@ const me = N((e) => {
         {
           className: "elitea-assistant-send-button",
           onClick: A,
-          disabled: l || !n.trim() && o.length === 0,
+          disabled: l || !n.trim() && i.length === 0,
           "aria-label": "Send message",
           type: "button",
-          children: /* @__PURE__ */ t(ue, {})
+          children: /* @__PURE__ */ t(pe, {})
         }
       )
     ] })
   ] });
 });
-me.displayName = "MessageInput";
-const be = ne(null), Pe = () => {
-  const e = ie(be);
+we.displayName = "MessageInput";
+const fe = ne(null), Fe = () => {
+  const e = oe(fe);
   if (!e) throw new Error("useApi must be used within EliteaAssistant");
   return e;
-}, Re = () => {
-  const [e, a] = k(!1), [n, i] = k(!1), o = v(() => a(!0), []), s = v(() => a(!1), []), r = v(() => a((m) => !m), []), h = v(() => i(!0), []), l = v(() => i(!1), []), C = v(() => i((m) => !m), []);
+}, Ve = () => {
+  const [e, a] = y(!1), [n, o] = y(!1), i = b(() => a(!0), []), s = b(() => a(!1), []), r = b(() => a((m) => !m), []), h = b(() => o(!0), []), l = b(() => o(!1), []), C = b(() => o((m) => !m), []);
   return {
     isOpen: e,
     isExpanded: n,
-    open: o,
+    open: i,
     close: s,
     toggle: r,
     expandFullscreen: h,
@@ -521,7 +563,7 @@ const be = ne(null), Pe = () => {
   PREDICT_RESPONSE: "chat_predict",
   CONVERSATION_NAME_UPDATED: "chat_conversation_name_updated",
   ERROR: "support_error"
-}, D = {
+}, R = {
   START_TASK: "start_task",
   CHUNK: "chunk",
   AI_MESSAGE_CHUNK: "AIMessageChunk",
@@ -530,30 +572,30 @@ const be = ne(null), Pe = () => {
   PIPELINE_FINISH: "pipeline_finish",
   ERROR: "error",
   AGENT_EXCEPTION: "agent_exception"
-}, ve = ne(null), De = () => ie(ve), Fe = (e) => {
-  const [a, n] = k(null);
+}, ye = ne(null), Oe = () => oe(ye), Ue = (e) => {
+  const [a, n] = y(null);
   return F(() => {
-    const i = xe(e.url, {
+    const o = Le(e.url, {
       path: e.path,
       ...e.token && { extraHeaders: { Authorization: `Bearer ${e.token}` } },
       ...e.withCredentials && { withCredentials: !0 },
       reconnectionDelayMax: 2e3
     });
-    return i.on("connect", () => {
-      n(i);
-    }), i.on("connect_error", () => {
+    return o.on("connect", () => {
+      n(o);
+    }), o.on("connect_error", () => {
     }), () => {
-      i.disconnect();
+      o.disconnect();
     };
   }, [e.url, e.path, e.token, e.withCredentials]), a;
-}, Ve = (e) => {
-  const { welcomeMessage: a, supportProjectId: n, initialHistory: i, initialConversation: o, isInitLoading: s } = e, r = R(!1), h = Pe(), l = De(), C = v(
+}, Ze = (e) => {
+  const { welcomeMessage: a, supportProjectId: n, initialHistory: o, initialConversation: i, isInitLoading: s } = e, r = D(!1), h = Fe(), l = Oe(), C = b(
     () => a ? [{ id: "welcome", role: "assistant", content: a, timestamp: Date.now() }] : [],
     [a]
-  ), [m, d] = k([]), [A, w] = k(""), [x, c] = k([]), [u, b] = k(null), [E, B] = k([]), [p, S] = k(!1), L = Q(
+  ), [m, d] = y([]), [A, w] = y(""), [x, c] = y([]), [u, v] = y(null), [E, B] = y([]), [p, L] = y(!1), S = Q(
     () => s || p,
     [s, p]
-  ), M = v(
+  ), H = b(
     (g) => {
       l == null || l.emit(P.ENTER_ROOM, {
         project_id: n,
@@ -561,7 +603,7 @@ const be = ne(null), Pe = () => {
       });
     },
     [l, n]
-  ), _ = v(
+  ), M = b(
     (g) => {
       l == null || l.emit(P.LEAVE_ROOM, {
         project_id: n,
@@ -569,15 +611,15 @@ const be = ne(null), Pe = () => {
       });
     },
     [l, n]
-  ), Z = v(
+  ), Z = b(
     (g) => {
       l == null || l.emit(P.PREDICT, g);
     },
     [l]
-  ), $ = v((g) => {
-    const { message_id: I, type: f, content: T, response_metadata: K } = g;
-    switch (f) {
-      case D.START_TASK:
+  ), $ = b((g) => {
+    const { message_id: I, type: N, content: T, response_metadata: W } = g;
+    switch (N) {
+      case R.START_TASK:
         d((U) => [
           ...U,
           {
@@ -589,38 +631,38 @@ const be = ne(null), Pe = () => {
           }
         ]);
         break;
-      case D.CHUNK:
-      case D.AI_MESSAGE_CHUNK:
-      case D.AGENT_LLM_CHUNK:
-      case D.AGENT_RESPONSE: {
-        const U = typeof T == "string" ? T : JSON.stringify(T), H = !!(K != null && K.finish_reason);
+      case R.CHUNK:
+      case R.AI_MESSAGE_CHUNK:
+      case R.AGENT_LLM_CHUNK:
+      case R.AGENT_RESPONSE: {
+        const U = typeof T == "string" ? T : JSON.stringify(T), _ = !!(W != null && W.finish_reason);
         d(
-          (ye) => ye.map(
-            (Y) => Y.id === I ? { ...Y, content: Y.content + U, ...H && { isStreaming: !1 } } : Y
+          (Ae) => Ae.map(
+            (Y) => Y.id === I ? { ...Y, content: Y.content + U, ..._ && { isStreaming: !1 } } : Y
           )
         );
         break;
       }
-      case D.PIPELINE_FINISH:
+      case R.PIPELINE_FINISH:
         d(
-          (U) => U.map((H) => H.id === I && H.isStreaming ? { ...H, isStreaming: !1 } : H)
+          (U) => U.map((_) => _.id === I && _.isStreaming ? { ..._, isStreaming: !1 } : _)
         );
         break;
-      case D.ERROR:
-      case D.AGENT_EXCEPTION:
+      case R.ERROR:
+      case R.AGENT_EXCEPTION:
         d(
           (U) => U.map(
-            (H) => H.id === I ? {
-              ...H,
+            (_) => _.id === I ? {
+              ..._,
               content: typeof T == "string" ? T : "An error occurred",
               isStreaming: !1,
               isError: !0
-            } : H
+            } : _
           )
         );
         break;
     }
-  }, []), V = v((g) => {
+  }, []), V = b((g) => {
     d((I) => [
       ...I,
       {
@@ -631,25 +673,25 @@ const be = ne(null), Pe = () => {
         isError: !0
       }
     ]);
-  }, []), O = v((g) => {
+  }, []), O = b((g) => {
     B(
-      (I) => I.map((f) => f.uuid === g.conversation_uuid ? { ...f, name: g.name } : f)
+      (I) => I.map((N) => N.uuid === g.conversation_uuid ? { ...N, name: g.name } : N)
     );
   }, []);
   F(() => {
     if (!(s || r.current))
-      if (r.current = !0, B(i), i.length > 0 && o) {
-        const g = ae(o);
-        d(g.length > 0 ? g : C()), b(i[0].uuid), M(i[0].uuid);
+      if (r.current = !0, B(o), o.length > 0 && i) {
+        const g = ae(i);
+        d(g.length > 0 ? g : C()), v(o[0].uuid), H(o[0].uuid);
       } else
         d(C());
-  }, [s, i, o, C, M]), F(() => {
+  }, [s, o, i, C, H]), F(() => {
     if (l)
       return l.on(P.PREDICT_RESPONSE, $), l.on(P.ERROR, V), l.on(P.CONVERSATION_NAME_UPDATED, O), () => {
         l.off(P.PREDICT_RESPONSE, $), l.off(P.ERROR, V), l.off(P.CONVERSATION_NAME_UPDATED, O);
       };
   }, [l, $, V, O]);
-  const X = v(
+  const X = b(
     async (g) => {
       const I = {
         id: crypto.randomUUID(),
@@ -658,11 +700,11 @@ const be = ne(null), Pe = () => {
         timestamp: Date.now()
       };
       d((T) => [...T, I]);
-      let f = u;
-      if (!f)
+      let N = u;
+      if (!N)
         try {
           const T = await h.createConversation();
-          f = T.uuid, b(f), B((K) => [T, ...K]), M(f);
+          N = T.uuid, v(N), B((W) => [T, ...W]), H(N);
         } catch {
           d((T) => [
             ...T,
@@ -676,26 +718,26 @@ const be = ne(null), Pe = () => {
           ]);
           return;
         }
-      f && Z({ conversation_uuid: f, content: g });
+      N && Z({ conversation_uuid: N, content: g });
     },
-    [u, h, M, Z]
-  ), J = v(() => {
-    u && _(u), b(null), d(C()), w(""), c([]);
-  }, [u, _, C]), j = v(
+    [u, h, H, Z]
+  ), J = b(() => {
+    u && M(u), v(null), d(C()), w(""), c([]);
+  }, [u, M, C]), K = b(
     async (g) => {
       if (u !== g) {
-        u && _(u), b(g), M(g), w(""), c([]), d([]), S(!0);
+        u && M(u), v(g), H(g), w(""), c([]), d([]), L(!0);
         try {
-          const I = await h.getConversation(g), f = ae(I);
-          d(f.length > 0 ? f : C());
+          const I = await h.getConversation(g), N = ae(I);
+          d(N.length > 0 ? N : C());
         } catch {
           d(C());
         } finally {
-          S(!1);
+          L(!1);
         }
       }
     },
-    [u, _, M, C, h]
+    [u, M, H, C, h]
   );
   return {
     messages: m,
@@ -705,13 +747,13 @@ const be = ne(null), Pe = () => {
     setFiles: c,
     history: E,
     currentConversationId: u ?? "",
-    isLoading: L,
+    isLoading: S,
     handleNewChat: J,
-    handleSelectConversation: j,
+    handleSelectConversation: K,
     handleSend: X
   };
-}, Oe = (e) => {
-  const { api: a, title: n, welcomeMessage: i, placeholder: o } = e, [s, r] = k(null), [h, l] = k([]), [C, m] = k(null), [d, A] = k(!0);
+}, $e = (e) => {
+  const { api: a, title: n, welcomeMessage: o, placeholder: i } = e, [s, r] = y(null), [h, l] = y([]), [C, m] = y(null), [d, A] = y(!0);
   return F(() => {
     let w = !1;
     const x = a.getConfig().then((u) => {
@@ -719,10 +761,10 @@ const be = ne(null), Pe = () => {
     }).catch(() => {
     }), c = a.getConversations().then(async (u) => {
       if (w) return;
-      const b = u.items || [];
-      if (l(b), b.length > 0)
+      const v = u.items || [];
+      if (l(v), v.length > 0)
         try {
-          const E = await a.getConversation(b[0].uuid);
+          const E = await a.getConversation(v[0].uuid);
           w || m(E);
         } catch {
         }
@@ -735,32 +777,32 @@ const be = ne(null), Pe = () => {
     };
   }, [a]), {
     title: (s == null ? void 0 : s.title) || n,
-    welcomeMessage: (s == null ? void 0 : s.welcomeMessage) || i,
-    placeholder: (s == null ? void 0 : s.placeholder) || o,
+    welcomeMessage: (s == null ? void 0 : s.welcomeMessage) || o,
+    placeholder: (s == null ? void 0 : s.placeholder) || i,
     supportProjectId: (s == null ? void 0 : s.support_project_id) ?? null,
     history: h,
     lastConversation: C,
     isLoading: d
   };
-}, Ue = "Hi! Need help? Ask me!", Ze = 12e3, $e = 12e3, je = (e) => {
-  const a = R(null), n = R(null), [i, o] = k(!1), s = v(() => {
-    o(!1), a.current && (clearTimeout(a.current), a.current = null), n.current && (clearTimeout(n.current), n.current = null);
-  }, []), r = v(() => {
-    e || (o(!0), _e(), a.current = setTimeout(s, Ze));
+}, je = "Hi! Need help? Ask me!", Ke = 12e3, We = 12e3, Ge = (e) => {
+  const a = D(null), n = D(null), [o, i] = y(!1), s = b(() => {
+    i(!1), a.current && (clearTimeout(a.current), a.current = null), n.current && (clearTimeout(n.current), n.current = null);
+  }, []), r = b(() => {
+    e || (i(!0), De(), a.current = setTimeout(s, Ke));
   }, [e, s]);
   return F(() => (n.current = setTimeout(() => {
     r();
-  }, $e), () => {
+  }, We), () => {
     a.current && clearTimeout(a.current), n.current && clearTimeout(n.current);
   }), []), F(() => {
     e && s();
-  }, [e, s]), { showPopup: i, displayPopup: r, hidePopup: s, popupText: Ue };
-}, we = N((e) => {
+  }, [e, s]), { showPopup: o, displayPopup: r, hidePopup: s, popupText: je };
+}, ke = k((e) => {
   const {
     title: a,
     placeholder: n,
-    welcomeMessage: i,
-    supportProjectId: o,
+    welcomeMessage: o,
+    supportProjectId: i,
     initialHistory: s,
     lastConversation: r,
     isInitLoading: h,
@@ -774,25 +816,25 @@ const be = ne(null), Pe = () => {
     files: x,
     setFiles: c,
     history: u,
-    currentConversationId: b,
+    currentConversationId: v,
     isLoading: E,
     handleNewChat: B,
     handleSelectConversation: p,
-    handleSend: S
-  } = Ve({
-    welcomeMessage: i,
-    supportProjectId: o,
+    handleSend: L
+  } = Ze({
+    welcomeMessage: o,
+    supportProjectId: i,
     initialHistory: s,
     initialConversation: r,
     isInitLoading: h
-  }), L = /* @__PURE__ */ y("div", { className: `elitea-assistant-window${m ? " elitea-assistant-window--expanded" : ""}`, children: [
+  }), S = /* @__PURE__ */ f("div", { className: `elitea-assistant-window${m ? " elitea-assistant-window--expanded" : ""}`, children: [
     /* @__PURE__ */ t(
-      he,
+      be,
       {
         title: a,
         expanded: m,
         history: u,
-        currentConversationId: b,
+        currentConversationId: v,
         disabled: E,
         onClose: l,
         onExpand: C,
@@ -801,21 +843,21 @@ const be = ne(null), Pe = () => {
       }
     ),
     /* @__PURE__ */ t(
-      ge,
+      ve,
       {
         messages: d,
         isLoading: E
       }
     ),
     /* @__PURE__ */ t(
-      me,
+      we,
       {
         placeholder: n,
         text: A,
         onTextChange: w,
         files: x,
         onFilesChange: c,
-        onSend: S,
+        onSend: L,
         expanded: m,
         disabled: E
       }
@@ -826,14 +868,14 @@ const be = ne(null), Pe = () => {
     {
       className: "elitea-assistant-overlay",
       onClick: C,
-      children: /* @__PURE__ */ t("div", { onClick: (M) => M.stopPropagation(), children: L })
+      children: /* @__PURE__ */ t("div", { onClick: (H) => H.stopPropagation(), children: S })
     }
-  ) : L;
+  ) : S;
 });
-we.displayName = "ChatWindow";
-const fe = N((e) => {
+ke.displayName = "ChatWindow";
+const Ne = k((e) => {
   const { message: a, onClose: n } = e;
-  return /* @__PURE__ */ y("div", { className: "elitea-assistant-popup", children: [
+  return /* @__PURE__ */ f("div", { className: "elitea-assistant-popup", children: [
     /* @__PURE__ */ t("span", { className: "elitea-assistant-popup-text", children: a }),
     /* @__PURE__ */ t(
       "button",
@@ -847,8 +889,8 @@ const fe = N((e) => {
     )
   ] });
 });
-fe.displayName = "PopupMessage";
-const Ke = {
+Ne.displayName = "PopupMessage";
+const qe = {
   buttonBackground: "linear-gradient(50.4deg, #435CFF 0%, #B3BEFF 100%)",
   buttonIcon: "#FFFFFF",
   headerBackground: "rgba(40, 69, 255, 0.25)",
@@ -892,7 +934,7 @@ const Ke = {
   historyDropdownBorder: "rgba(203, 206, 213, 1)",
   historyDropdownShadow: "0 0.25rem 0.75rem rgba(0, 0, 0, 0.08)",
   historyDropdownHoverBackground: "rgba(61, 68, 86, 0.06)"
-}, We = {
+}, ze = {
   buttonBackground: "linear-gradient(50.4deg, #C428DD 0%, #8A1B9E 100%)",
   buttonIcon: "#FFFFFF",
   headerBackground: "rgba(245, 81, 249, 0.3)",
@@ -936,13 +978,13 @@ const Ke = {
   historyDropdownBorder: "rgba(59, 62, 70, 1)",
   historyDropdownShadow: "0 0.5rem 0.75rem rgba(0, 0, 0, 0.3)",
   historyDropdownHoverBackground: "rgba(255, 255, 255, 0.06)"
-}, Ge = {
-  light: Ke,
-  dark: We
-}, ze = (e, a) => ({
-  ...Ge[e],
+}, Xe = {
+  light: qe,
+  dark: ze
+}, Je = (e, a) => ({
+  ...Xe[e],
   ...a
-}), qe = (e) => ({
+}), Ye = (e) => ({
   "--elitea-assistant-button-bg": e.buttonBackground,
   "--elitea-assistant-button-icon": e.buttonIcon,
   "--elitea-assistant-header-bg": e.headerBackground,
@@ -986,11 +1028,11 @@ const Ke = {
   "--elitea-assistant-history-dropdown-border": e.historyDropdownBorder,
   "--elitea-assistant-history-dropdown-shadow": e.historyDropdownShadow,
   "--elitea-assistant-history-dropdown-hover-bg": e.historyDropdownHoverBackground
-}), Xe = Ee((e, a) => {
+}), Qe = xe((e, a) => {
   const {
     apiUrl: n,
-    token: i,
-    withCredentials: o = !1,
+    token: o,
+    withCredentials: i = !1,
     socketPath: s = "/socket.io/",
     apiAdapter: r,
     title: h = "Elitea Assistant",
@@ -1000,35 +1042,35 @@ Ask me anything about ELITEA or report any issues you're experiencing. I have co
     position: m = "bottom-right",
     theme: d = "light",
     colors: A
-  } = e, w = Q(() => qe(ze(d, A)), [d, A]), x = Q(() => {
+  } = e, w = Q(() => Ye(Je(d, A)), [d, A]), x = Q(() => {
     if (r) return r;
-    if (n && (i || o)) return Ie(n, { token: i, withCredentials: o });
+    if (n && (o || i)) return Se(n, { token: o, withCredentials: i });
     throw new Error(
       "EliteaAssistant: provide either apiAdapter, or apiUrl with token, or apiUrl with withCredentials"
     );
-  }, [r, n, i, o]), c = Q(
+  }, [r, n, o, i]), c = Q(
     () => ({
-      url: n ? He(n) : "",
+      url: n ? Re(n) : "",
       path: s,
-      token: i,
-      withCredentials: o
+      token: o,
+      withCredentials: i
     }),
-    [n, s, i, o]
-  ), u = Fe(c), {
-    title: b,
+    [n, s, o, i]
+  ), u = Ue(c), {
+    title: v,
     welcomeMessage: E,
     placeholder: B,
     supportProjectId: p,
-    history: S,
-    lastConversation: L,
-    isLoading: M
-  } = Oe({
+    history: L,
+    lastConversation: S,
+    isLoading: H
+  } = $e({
     api: x,
     title: h,
     welcomeMessage: C,
     placeholder: l
-  }), { isOpen: _, isExpanded: Z, open: $, close: V, toggle: O, expandFullscreen: X, collapseFullscreen: J, toggleFullscreen: j } = Re(), { showPopup: g, displayPopup: I, hidePopup: f, popupText: T } = je(_);
-  return Ne(
+  }), { isOpen: M, isExpanded: Z, open: $, close: V, toggle: O, expandFullscreen: X, collapseFullscreen: J, toggleFullscreen: K } = Ve(), { showPopup: g, displayPopup: I, hidePopup: N, popupText: T } = Ge(M);
+  return Ie(
     a,
     () => ({
       open: $,
@@ -1036,60 +1078,60 @@ Ask me anything about ELITEA or report any issues you're experiencing. I have co
       toggle: O,
       expandFullscreen: X,
       collapseFullscreen: J,
-      toggleFullscreen: j,
+      toggleFullscreen: K,
       showPopup: I,
-      hidePopup: f,
-      isOpen: () => _,
+      hidePopup: N,
+      isOpen: () => M,
       isExpanded: () => Z
     }),
     [
-      _,
+      M,
       Z,
       $,
       V,
       O,
       X,
       J,
-      j,
+      K,
       I,
-      f
+      N
     ]
-  ), /* @__PURE__ */ t(be.Provider, { value: x, children: /* @__PURE__ */ t(ve.Provider, { value: u, children: /* @__PURE__ */ y(
+  ), /* @__PURE__ */ t(fe.Provider, { value: x, children: /* @__PURE__ */ t(ye.Provider, { value: u, children: /* @__PURE__ */ f(
     "div",
     {
       className: `elitea-assistant-container elitea-assistant-container--${m}`,
       style: w,
       children: [
-        _ && /* @__PURE__ */ t(
-          we,
+        M && /* @__PURE__ */ t(
+          ke,
           {
-            title: b,
+            title: v,
             placeholder: B,
             welcomeMessage: E,
             supportProjectId: p,
-            initialHistory: S,
-            lastConversation: L,
-            isInitLoading: M,
+            initialHistory: L,
+            lastConversation: S,
+            isInitLoading: H,
             onClose: V,
             expanded: Z,
-            onExpand: j
+            onExpand: K
           }
         ),
-        g && !_ && /* @__PURE__ */ t(
-          fe,
+        g && !M && /* @__PURE__ */ t(
+          Ne,
           {
             message: T,
-            onClose: f
+            onClose: N
           }
         ),
-        /* @__PURE__ */ t(pe, { onClick: O })
+        /* @__PURE__ */ t(ge, { onClick: O })
       ]
     }
   ) }) });
 });
-Xe.displayName = "EliteaAssistant";
+Qe.displayName = "EliteaAssistant";
 export {
-  Xe as EliteaAssistant,
-  Ie as createDefaultAdapter
+  Qe as EliteaAssistant,
+  Se as createDefaultAdapter
 };
 //# sourceMappingURL=elitea-assistant.js.map

@@ -1,6 +1,7 @@
 import React, { memo, useEffect, useRef } from 'react';
 
 import { AssistantIcon, UserIcon } from '@/components/icons';
+import { CopyButton } from '@/components/shared';
 import type { TMessage } from '@/lib/types';
 import { formatTime } from '@/lib/utils';
 
@@ -82,6 +83,7 @@ const MessageList: React.FC<TMessageListProps> = memo(props => {
               ) : (
                 ''
               ))}
+            {msg.role === 'assistant' && msg.content && !msg.isStreaming && <CopyButton text={msg.content} />}
           </div>
         </div>
       ))}

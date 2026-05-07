@@ -66,26 +66,11 @@ const Tooltip: React.FC<TTooltipProps> = memo(props => {
         createPortal(
           <div
             ref={tooltipRef}
+            className="elitea-assistant-tooltip"
             style={{
-              position: 'fixed',
-              zIndex: 2147483647,
               top: coords.top,
               left: coords.left,
-              padding: '.25rem .5rem',
-              borderRadius: '.25rem',
-              background: 'rgb(233, 235, 240)',
-              color: 'rgba(14, 19, 29, 1)',
-              fontSize: '.6875rem',
-              lineHeight: '1.3',
-              fontWeight: 500,
-              fontFamily: "'Montserrat', sans-serif",
-              whiteSpace: 'nowrap',
-              maxWidth: '20rem',
-              overflow: 'hidden',
-              textOverflow: 'ellipsis',
-              pointerEvents: 'none',
               opacity: positioned ? 1 : 0,
-              transition: 'opacity 0.15s ease',
             }}
             role="tooltip"
           >
