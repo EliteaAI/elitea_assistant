@@ -81,7 +81,6 @@
   padding: 0.625rem 0.875rem;
   border-radius: 0.75rem;
   word-wrap: break-word;
-  white-space: pre-wrap;
   font-weight: 400;
   font-style: Regular;
   font-size: 0.875rem;
@@ -90,6 +89,7 @@
 }
 
 .elitea-assistant-message--user {
+  white-space: pre-wrap;
   background: var(--elitea-assistant-user-msg-bg);
   color: var(--elitea-assistant-user-msg-text);
   border-radius: 1rem 0rem 1rem 1rem;
