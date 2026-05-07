@@ -17,6 +17,11 @@ type TInitAssistantResult = {
   history: TConversationListItem[];
   lastConversation: TRawConversation | null;
   isLoading: boolean;
+  user: {
+    id: number;
+    name: string;
+    avatar: string;
+  };
 };
 
 export const useInitAssistant = (props: TInitAssistantProps): TInitAssistantResult => {
@@ -70,6 +75,7 @@ export const useInitAssistant = (props: TInitAssistantProps): TInitAssistantResu
     welcomeMessage: config?.welcomeMessage || welcomeMessage,
     placeholder: config?.placeholder || placeholder,
     supportProjectId: config?.support_project_id ?? null,
+    user: config?.user || { id: 0, name: 'Guest', avatar: '' },
     history,
     lastConversation,
     isLoading,

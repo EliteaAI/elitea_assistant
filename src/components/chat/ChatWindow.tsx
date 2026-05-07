@@ -6,6 +6,7 @@ import type { TConversationListItem, TRawConversation } from '@/lib/types';
 import { ChatHeader, MessageInput, MessageList } from './';
 
 type TChatWindowProps = {
+  avatar: string;
   title: string;
   placeholder: string;
   welcomeMessage: string;
@@ -20,6 +21,7 @@ type TChatWindowProps = {
 
 const ChatWindow: React.FC<TChatWindowProps> = memo(props => {
   const {
+    avatar,
     title,
     placeholder,
     welcomeMessage,
@@ -66,6 +68,7 @@ const ChatWindow: React.FC<TChatWindowProps> = memo(props => {
         onSelectConversation={handleSelectConversation}
       />
       <MessageList
+        avatar={avatar}
         messages={messages}
         isLoading={isLoading}
       />

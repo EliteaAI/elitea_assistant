@@ -1,6 +1,6 @@
-(function(){"use strict";try{if(typeof document<"u"){var e=document.createElement("style");e.appendChild(document.createTextNode('@import"https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700&display=swap";.elitea-assistant-container{position:fixed;z-index:2147483647;font-family:Montserrat,sans-serif;font-size:.875rem;line-height:1.5;box-sizing:border-box}.elitea-assistant-container *,.elitea-assistant-container *:before,.elitea-assistant-container *:after{box-sizing:border-box}.elitea-assistant-container--bottom-right{bottom:.75rem;right:1.09375rem}.elitea-assistant-container--bottom-left{bottom:.75rem;left:1.09375rem}.elitea-assistant-button{width:1.75rem;height:1.75rem;border-radius:50%;border:none;cursor:pointer;display:flex;align-items:center;justify-content:center;background:var(--elitea-assistant-button-bg);color:var(--elitea-assistant-button-icon);box-shadow:0 .25rem .75rem #00000026;transition:transform .2s ease,box-shadow .2s ease;padding:0}.elitea-assistant-button:hover{transform:scale(1.08);box-shadow:0 .375rem 1.25rem #0003}.elitea-assistant-button svg{width:1.75rem;height:1.75rem;fill:currentColor}.elitea-assistant-window{position:absolute;bottom:0rem;width:28.75rem;height:30rem;border-radius:1rem;overflow:hidden;display:flex;flex-direction:column;box-shadow:var(--elitea-assistant-window-shadow);background:var(--elitea-assistant-chat-bg);border:.0625rem solid var(--elitea-assistant-window-border);animation:elitea-assistant-slide-up .25s ease-out}.elitea-assistant-container--bottom-right .elitea-assistant-window{right:2.875rem}.elitea-assistant-container--bottom-left .elitea-assistant-window{left:2.875rem}@keyframes elitea-assistant-slide-up{0%{opacity:0;transform:translateY(.75rem)}to{opacity:1;transform:translateY(0)}}.elitea-assistant-overlay{position:fixed;top:0;right:0;bottom:0;left:0;z-index:2147483646;background:#00000080;display:flex;align-items:center;justify-content:center;animation:elitea-assistant-fade-in .2s ease-out}@keyframes elitea-assistant-fade-in{0%{opacity:0}to{opacity:1}}.elitea-assistant-window--expanded{position:static;width:45rem;height:42.375rem;animation:elitea-assistant-scale-in .2s ease-out}@keyframes elitea-assistant-scale-in{0%{opacity:0;transform:scale(.95)}to{opacity:1;transform:scale(1)}}.elitea-assistant-header{display:flex;align-items:center;justify-content:space-between;height:3.25rem;padding:0 1rem;background:var(--elitea-assistant-header-bg);color:var(--elitea-assistant-header-text);flex-shrink:0;border-bottom:.0625rem solid var(--elitea-assistant-window-border)}.elitea-assistant-header-left,.elitea-assistant-header-right{display:flex;align-items:center;gap:.5rem}.elitea-assistant-header-title{font-size:.9375rem;font-weight:600;margin:0;white-space:nowrap}.elitea-assistant-header-action{border:.0625rem solid transparent;color:var(--elitea-assistant-header-text);cursor:pointer;padding:0;display:flex;align-items:center;justify-content:center;border-radius:50%;width:1.75rem;height:1.75rem;min-width:auto;box-shadow:none;background:var(--elitea-assistant-header-action-bg);transition:background .15s ease,color .15s ease,border-color .15s ease}.elitea-assistant-header-close-action{border:none;color:var(--elitea-assistant-header-close-icon);cursor:pointer;padding:0;display:flex;align-items:center;justify-content:center;border-radius:50%;width:1.75rem;height:1.75rem;min-width:auto;background:var(--elitea-assistant-header-close-bg);transition:background .15s ease,color .15s ease}.elitea-assistant-header-close-action:hover{background:var(--elitea-assistant-header-close-hover-bg);color:var(--elitea-assistant-header-close-hover-color)}.elitea-assistant-header-close-action:active{background:var(--elitea-assistant-header-close-active-bg);color:var(--elitea-assistant-header-close-active-color)}.elitea-assistant-header-close-action:disabled{background:var(--elitea-assistant-header-close-disabled-bg);color:var(--elitea-assistant-header-close-disabled-color);cursor:not-allowed}.elitea-assistant-header-action:hover{background:var(--elitea-assistant-header-action-hover-bg)}.elitea-assistant-header-action:active{background:var(--elitea-assistant-header-action-active-bg);color:var(--elitea-assistant-header-action-active-color);border-color:var(--elitea-assistant-header-action-active-border)}.elitea-assistant-header-action svg{width:1rem;height:1rem;fill:currentColor}.elitea-assistant-header-close-action svg{width:1.3rem;height:1.3rem;fill:currentColor}.elitea-assistant-history-wrapper{position:relative}.elitea-assistant-header-action:disabled{background:var(--elitea-assistant-header-action-disabled-bg);color:var(--elitea-assistant-header-action-disabled-color);cursor:not-allowed}.elitea-assistant-header-action:disabled:hover{background:var(--elitea-assistant-header-action-disabled-bg)}.elitea-assistant-history-dropdown{position:absolute;top:calc(100% + .55rem);right:-2.65rem;width:19.125rem;max-height:21.875rem;overflow-y:auto;background:var(--elitea-assistant-chat-bg);border:.0625rem solid var(--elitea-assistant-history-dropdown-border);border-radius:.5rem;box-shadow:var(--elitea-assistant-history-dropdown-shadow);z-index:100;padding:.5rem 0}.elitea-assistant-history-item{display:block;width:100%;padding:.5rem .75rem;border:none;background:none;cursor:pointer;text-align:left;color:var(--elitea-assistant-header-text);font-size:.875rem;font-weight:400;line-height:1.5rem;overflow:hidden;text-overflow:ellipsis;white-space:nowrap;transition:background .15s ease}.elitea-assistant-history-item:hover{background:var(--elitea-assistant-history-dropdown-hover-bg)}.elitea-assistant-history-item:disabled{opacity:.45;cursor:default;background:none}.elitea-assistant-messages{flex:1;overflow-y:auto;padding:1rem;display:flex;flex-direction:column;gap:.625rem}.elitea-assistant-message-wrapper{display:flex;flex-direction:column;max-width:80%}.elitea-assistant-message-wrapper--user{align-self:flex-end}.elitea-assistant-message-wrapper--assistant{align-self:flex-start}.elitea-assistant-message-meta{display:flex;align-items:center;gap:.375rem;margin-bottom:.375rem}.elitea-assistant-message-meta--assistant{justify-content:flex-start}.elitea-assistant-message-meta--user{justify-content:flex-end}.elitea-assistant-message-avatar{width:1.5rem;height:1.5rem;border-radius:50%;display:flex;align-items:center;justify-content:center;flex-shrink:0}.elitea-assistant-message-avatar--assistant{background:var(--elitea-assistant-button-bg);color:var(--elitea-assistant-button-icon)}.elitea-assistant-message-avatar--user{background:var(--elitea-assistant-user-avatar-bg);color:var(--elitea-assistant-user-avatar-icon)}.elitea-assistant-message-avatar svg{width:1.25rem;height:1.25rem;fill:currentColor}.elitea-assistant-message-time{font-size:.75rem;opacity:.6;color:var(--elitea-assistant-bot-msg-text)}.elitea-assistant-message{padding:.625rem .875rem;border-radius:.75rem;word-wrap:break-word;white-space:pre-wrap;font-weight:400;font-style:Regular;font-size:.875rem;line-height:1.5rem;letter-spacing:0%}.elitea-assistant-message--user{background:var(--elitea-assistant-user-msg-bg);color:var(--elitea-assistant-user-msg-text);border-radius:1rem 0rem 1rem 1rem}.elitea-assistant-message--assistant{background:var(--elitea-assistant-bot-msg-bg);color:var(--elitea-assistant-bot-msg-text);border-radius:0 1rem 1rem;position:relative}.elitea-assistant-message--assistant>.elitea-assistant-tooltip-trigger{position:absolute;bottom:.375rem;right:.375rem;opacity:0;transition:opacity .15s ease}.elitea-assistant-message--assistant:hover>.elitea-assistant-tooltip-trigger{opacity:1}.elitea-assistant-message--error{border:1px solid #e53e3e;opacity:.9}@keyframes elitea-assistant-typing-bounce{0%,60%,to{transform:translateY(0);opacity:.25}30%{transform:translateY(-.25rem);opacity:.5}}.elitea-assistant-typing-indicator{display:inline-flex;align-items:center;gap:.1875rem;padding:.125rem 0}.elitea-assistant-typing-dot{width:.25rem;height:.25rem;border-radius:50%;background:var(--elitea-assistant-bot-msg-text);opacity:.25;animation:elitea-assistant-typing-bounce 1.2s ease-in-out infinite}.elitea-assistant-typing-dot:nth-child(2){animation-delay:.15s}.elitea-assistant-typing-dot:nth-child(3){animation-delay:.3s}@keyframes elitea-assistant-shimmer{0%{opacity:.4}50%{opacity:.7}to{opacity:.4}}.elitea-assistant-skeleton-row{display:flex;flex-direction:column;gap:.375rem;max-width:70%}.elitea-assistant-skeleton-row--left{align-self:flex-start}.elitea-assistant-skeleton-row--right{align-self:flex-end}.elitea-assistant-skeleton-meta{display:flex;align-items:center;gap:.375rem}.elitea-assistant-skeleton-row--right .elitea-assistant-skeleton-meta{justify-content:flex-end}.elitea-assistant-skeleton{background:var(--elitea-assistant-bot-msg-bg);border-radius:.5rem;animation:elitea-assistant-shimmer 1.4s ease-in-out infinite}.elitea-assistant-skeleton--avatar{width:1.5rem;height:1.5rem;border-radius:50%;flex-shrink:0}.elitea-assistant-skeleton--time{width:2.5rem;height:.75rem;border-radius:.25rem}.elitea-assistant-skeleton--bubble{width:10rem;height:2.5rem;border-radius:.75rem}.elitea-assistant-skeleton-row--right .elitea-assistant-skeleton--bubble{width:8rem}.elitea-assistant-empty{flex:1;display:flex;align-items:center;justify-content:center;color:var(--elitea-assistant-bot-msg-text);opacity:.5;font-size:.8125rem;text-align:center;padding:1.25rem}.elitea-assistant-input-area{display:flex;flex-direction:column;padding:.75rem;background:var(--elitea-assistant-input-bg);flex-shrink:0;border-top:.0625rem solid var(--elitea-assistant-window-border)}.elitea-assistant-input-row{display:flex;align-items:center;gap:.5rem;width:100%}.elitea-assistant-input{flex:1;padding:.5rem .25rem;border:none;border-radius:0;background:transparent;color:var(--elitea-assistant-input-text);font-size:.875rem;font-family:inherit;outline:none;resize:none}.elitea-assistant-input::placeholder{color:var(--elitea-assistant-input-placeholder);opacity:1}.elitea-assistant-attach-button{width:1.75rem;height:1.75rem;border-radius:50%;border:none;cursor:pointer;display:flex;align-items:center;justify-content:center;background:var(--elitea-assistant-header-action-bg);color:var(--elitea-assistant-header-text);flex-shrink:0;transition:opacity .15s ease;padding:0;opacity:.8}.elitea-assistant-attach-button:hover{opacity:1}.elitea-assistant-attach-button svg{width:.875rem;height:.875rem;fill:currentColor}.elitea-assistant-send-button{width:1.75rem;height:1.75rem;border-radius:50%;border:none;cursor:pointer;display:flex;align-items:center;justify-content:center;background:var(--elitea-assistant-send-btn-bg);color:var(--elitea-assistant-send-btn-icon);flex-shrink:0;transition:background .15s ease;padding:0}.elitea-assistant-send-button:disabled{background:var(--elitea-assistant-send-btn-disabled-bg);cursor:default}.elitea-assistant-send-button svg{width:.875rem;height:.875rem;fill:currentColor}.elitea-assistant-file-list{display:flex;align-items:center;gap:.5rem;padding-bottom:.5rem}.elitea-assistant-file-chip{display:flex;align-items:center;gap:.75rem;max-width:11.25rem;height:2.25rem;padding:.375rem .75rem;border-radius:.5rem;background:var(--elitea-assistant-header-action-bg);flex-shrink:0}.elitea-assistant-file-chip-icon{display:flex;align-items:center;justify-content:center;flex-shrink:0;color:var(--elitea-assistant-header-close-icon)}.elitea-assistant-file-chip-icon svg{width:.75rem;height:.875rem}.elitea-assistant-file-chip-name{flex:1;min-width:0;font-size:.75rem;color:var(--elitea-assistant-input-text);white-space:nowrap;overflow:hidden;text-overflow:ellipsis}.elitea-assistant-file-chip-remove{display:flex;align-items:center;justify-content:center;width:1rem;height:1rem;padding:0;border:none;background:none;cursor:pointer;color:var(--elitea-assistant-header-close-icon);flex-shrink:0;opacity:.7;transition:opacity .15s ease}.elitea-assistant-file-chip-remove:hover{opacity:1}.elitea-assistant-file-chip-remove svg{width:2rem;height:2rem;fill:currentColor}.elitea-assistant-file-chip--count{font-size:.75rem;font-weight:400;color:var(--elitea-assistant-input-text);max-width:none;gap:0}.elitea-assistant-tooltip-trigger{display:inline-flex}.elitea-assistant-tooltip{position:fixed;z-index:2147483647;padding:.25rem .5rem;border-radius:.25rem;background:#e9ebf0;color:#0e131d;font-size:.6875rem;line-height:1.3;font-weight:500;font-family:Montserrat,sans-serif;white-space:nowrap;max-width:20rem;overflow:hidden;text-overflow:ellipsis;pointer-events:none;box-shadow:0 0 0 .0625rem #00000014,0 .125rem .5rem #0000001f;transition:opacity .15s ease}@keyframes elitea-tooltip-in{0%{opacity:0;transform:translateY(4px)}to{opacity:1;transform:translateY(0)}}.elitea-assistant-popup{position:absolute;bottom:.25rem;display:flex;align-items:center;gap:1rem;padding:.75rem .75rem .75rem 1.25rem;border-radius:1.5rem 1.5rem 1.5rem 0;background:var(--elitea-assistant-popup-bg);color:var(--elitea-assistant-popup-text);font-size:.875rem;font-weight:500;line-height:1.5rem;white-space:nowrap;box-shadow:0 .25rem 1rem #0003;animation:elitea-assistant-popup-in .3s ease-out}.elitea-assistant-popup:before{content:"";position:absolute;top:-.0625rem;right:-.0625rem;bottom:-.0625rem;left:-.0625rem;border-radius:inherit;padding:.0625rem;background:var(--elitea-assistant-popup-border);-webkit-mask:linear-gradient(#fff 0 0) content-box,linear-gradient(#fff 0 0);-webkit-mask-composite:xor;mask:linear-gradient(#fff 0 0) content-box,linear-gradient(#fff 0 0);mask-composite:exclude;pointer-events:none}.elitea-assistant-container--bottom-right .elitea-assistant-popup{right:2.5rem;flex-direction:row-reverse;padding:.75rem 1.25rem .75rem .75rem;border-radius:1.5rem 1.5rem 0}.elitea-assistant-container--bottom-left .elitea-assistant-popup{left:2.5rem}.elitea-assistant-popup-text{-webkit-user-select:none;user-select:none}.elitea-assistant-popup-close{display:flex;align-items:center;justify-content:center;width:1.75rem;height:1.75rem;flex-shrink:0;border:none;border-radius:50%;background:var(--elitea-assistant-popup-close-bg);color:var(--elitea-assistant-popup-text);cursor:pointer;padding:0;transition:background .15s ease}.elitea-assistant-popup-close:hover{background:var(--elitea-assistant-popup-close-hover-bg)}.elitea-assistant-popup-close svg{width:1rem;height:1rem;fill:currentColor}@keyframes elitea-assistant-popup-in{0%{opacity:0;transform:translateY(.5rem)}to{opacity:1;transform:translateY(0)}}')),document.head.appendChild(e)}}catch(t){console.error("vite-plugin-css-injected-by-js",t)}})();
+(function(){"use strict";try{if(typeof document<"u"){var e=document.createElement("style");e.appendChild(document.createTextNode('@import"https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700&display=swap";.elitea-assistant-container{position:fixed;z-index:2147483647;font-family:Montserrat,sans-serif;font-size:.875rem;line-height:1.5;box-sizing:border-box}.elitea-assistant-container *,.elitea-assistant-container *:before,.elitea-assistant-container *:after{box-sizing:border-box}.elitea-assistant-container--bottom-right{bottom:.75rem;right:1.09375rem}.elitea-assistant-container--bottom-left{bottom:.75rem;left:1.09375rem}.elitea-assistant-button{width:1.75rem;height:1.75rem;border-radius:50%;border:none;cursor:pointer;display:flex;align-items:center;justify-content:center;background:var(--elitea-assistant-button-bg);color:var(--elitea-assistant-button-icon);box-shadow:0 .25rem .75rem #00000026;transition:transform .2s ease,box-shadow .2s ease;padding:0}.elitea-assistant-button:hover{transform:scale(1.08);box-shadow:0 .375rem 1.25rem #0003}.elitea-assistant-button svg{width:1.75rem;height:1.75rem;fill:currentColor}.elitea-assistant-window{position:absolute;bottom:0rem;width:28.75rem;height:30rem;border-radius:1rem;overflow:hidden;display:flex;flex-direction:column;box-shadow:var(--elitea-assistant-window-shadow);background:var(--elitea-assistant-chat-bg);border:.0625rem solid var(--elitea-assistant-window-border);animation:elitea-assistant-slide-up .25s ease-out}.elitea-assistant-container--bottom-right .elitea-assistant-window{right:2.875rem}.elitea-assistant-container--bottom-left .elitea-assistant-window{left:2.875rem}@keyframes elitea-assistant-slide-up{0%{opacity:0;transform:translateY(.75rem)}to{opacity:1;transform:translateY(0)}}.elitea-assistant-overlay{position:fixed;top:0;right:0;bottom:0;left:0;z-index:2147483646;background:#00000080;display:flex;align-items:center;justify-content:center;animation:elitea-assistant-fade-in .2s ease-out}@keyframes elitea-assistant-fade-in{0%{opacity:0}to{opacity:1}}.elitea-assistant-window--expanded{position:static;width:45rem;height:42.375rem;animation:elitea-assistant-scale-in .2s ease-out}@keyframes elitea-assistant-scale-in{0%{opacity:0;transform:scale(.95)}to{opacity:1;transform:scale(1)}}.elitea-assistant-header{display:flex;align-items:center;justify-content:space-between;height:3.25rem;padding:0 1rem;background:var(--elitea-assistant-header-bg);color:var(--elitea-assistant-header-text);flex-shrink:0;border-bottom:.0625rem solid var(--elitea-assistant-window-border)}.elitea-assistant-header-left,.elitea-assistant-header-right{display:flex;align-items:center;gap:.5rem}.elitea-assistant-header-title{font-size:.9375rem;font-weight:600;margin:0;white-space:nowrap}.elitea-assistant-header-action{border:.0625rem solid transparent;color:var(--elitea-assistant-header-text);cursor:pointer;padding:0;display:flex;align-items:center;justify-content:center;border-radius:50%;width:1.75rem;height:1.75rem;min-width:auto;box-shadow:none;background:var(--elitea-assistant-header-action-bg);transition:background .15s ease,color .15s ease,border-color .15s ease}.elitea-assistant-header-close-action{border:none;color:var(--elitea-assistant-header-close-icon);cursor:pointer;padding:0;display:flex;align-items:center;justify-content:center;border-radius:50%;width:1.75rem;height:1.75rem;min-width:auto;background:var(--elitea-assistant-header-close-bg);transition:background .15s ease,color .15s ease}.elitea-assistant-header-close-action:hover{background:var(--elitea-assistant-header-close-hover-bg);color:var(--elitea-assistant-header-close-hover-color)}.elitea-assistant-header-close-action:active{background:var(--elitea-assistant-header-close-active-bg);color:var(--elitea-assistant-header-close-active-color)}.elitea-assistant-header-close-action:disabled{background:var(--elitea-assistant-header-close-disabled-bg);color:var(--elitea-assistant-header-close-disabled-color);cursor:not-allowed}.elitea-assistant-header-action:hover{background:var(--elitea-assistant-header-action-hover-bg)}.elitea-assistant-header-action:active{background:var(--elitea-assistant-header-action-active-bg);color:var(--elitea-assistant-header-action-active-color);border-color:var(--elitea-assistant-header-action-active-border)}.elitea-assistant-header-action svg{width:1rem;height:1rem;fill:currentColor}.elitea-assistant-header-close-action svg{width:1.3rem;height:1.3rem;fill:currentColor}.elitea-assistant-history-wrapper{position:relative}.elitea-assistant-header-action:disabled{background:var(--elitea-assistant-header-action-disabled-bg);color:var(--elitea-assistant-header-action-disabled-color);cursor:not-allowed}.elitea-assistant-header-action:disabled:hover{background:var(--elitea-assistant-header-action-disabled-bg)}.elitea-assistant-history-dropdown{position:absolute;top:calc(100% + .55rem);right:-2.65rem;width:19.125rem;max-height:21.875rem;overflow-y:auto;background:var(--elitea-assistant-chat-bg);border:.0625rem solid var(--elitea-assistant-history-dropdown-border);border-radius:.5rem;box-shadow:var(--elitea-assistant-history-dropdown-shadow);z-index:100;padding:.5rem 0}.elitea-assistant-history-item{display:block;width:100%;padding:.5rem .75rem;border:none;background:none;cursor:pointer;text-align:left;color:var(--elitea-assistant-header-text);font-size:.875rem;font-weight:400;line-height:1.5rem;overflow:hidden;text-overflow:ellipsis;white-space:nowrap;transition:background .15s ease}.elitea-assistant-history-item:hover{background:var(--elitea-assistant-history-dropdown-hover-bg)}.elitea-assistant-history-item:disabled{opacity:.45;cursor:default;background:none}.elitea-assistant-messages{flex:1;overflow-y:auto;padding:1rem;display:flex;flex-direction:column;gap:.625rem}.elitea-assistant-message-wrapper{display:flex;flex-direction:column;max-width:80%}.elitea-assistant-message-wrapper--user{align-self:flex-end}.elitea-assistant-message-wrapper--assistant{align-self:flex-start}.elitea-assistant-message-meta{display:flex;align-items:center;gap:.375rem;margin-bottom:.375rem}.elitea-assistant-message-meta--assistant{justify-content:flex-start}.elitea-assistant-message-meta--user{justify-content:flex-end}.elitea-assistant-message-avatar{width:1.5rem;height:1.5rem;border-radius:50%;display:flex;align-items:center;justify-content:center;flex-shrink:0}.elitea-assistant-message-avatar--assistant{background:var(--elitea-assistant-button-bg);color:var(--elitea-assistant-button-icon)}.elitea-assistant-message-avatar--user{background:var(--elitea-assistant-user-avatar-bg);color:var(--elitea-assistant-user-avatar-icon)}.elitea-assistant-message-avatar svg{width:1.25rem;height:1.25rem;fill:currentColor}.elitea-assistant-message-avatar img{width:100%;height:100%;border-radius:50%;object-fit:cover}.elitea-assistant-message-time{font-size:.75rem;opacity:.6;color:var(--elitea-assistant-bot-msg-text)}.elitea-assistant-message{padding:.625rem .875rem;border-radius:.75rem;word-wrap:break-word;white-space:pre-wrap;font-weight:400;font-style:Regular;font-size:.875rem;line-height:1.5rem;letter-spacing:0%}.elitea-assistant-message--user{background:var(--elitea-assistant-user-msg-bg);color:var(--elitea-assistant-user-msg-text);border-radius:1rem 0rem 1rem 1rem}.elitea-assistant-message--assistant{background:var(--elitea-assistant-bot-msg-bg);color:var(--elitea-assistant-bot-msg-text);border-radius:0 1rem 1rem;position:relative}.elitea-assistant-message--assistant>.elitea-assistant-tooltip-trigger{position:absolute;bottom:.375rem;right:.375rem;opacity:0;transition:opacity .15s ease}.elitea-assistant-message--assistant:hover>.elitea-assistant-tooltip-trigger{opacity:1}.elitea-assistant-message--error{border:1px solid #e53e3e;opacity:.9}@keyframes elitea-assistant-typing-bounce{0%,60%,to{transform:translateY(0);opacity:.25}30%{transform:translateY(-.25rem);opacity:.5}}.elitea-assistant-typing-indicator{display:inline-flex;align-items:center;gap:.1875rem;padding:.125rem 0}.elitea-assistant-typing-dot{width:.25rem;height:.25rem;border-radius:50%;background:var(--elitea-assistant-bot-msg-text);opacity:.25;animation:elitea-assistant-typing-bounce 1.2s ease-in-out infinite}.elitea-assistant-typing-dot:nth-child(2){animation-delay:.15s}.elitea-assistant-typing-dot:nth-child(3){animation-delay:.3s}@keyframes elitea-assistant-shimmer{0%{opacity:.4}50%{opacity:.7}to{opacity:.4}}.elitea-assistant-skeleton-row{display:flex;flex-direction:column;gap:.375rem;max-width:70%}.elitea-assistant-skeleton-row--left{align-self:flex-start}.elitea-assistant-skeleton-row--right{align-self:flex-end}.elitea-assistant-skeleton-meta{display:flex;align-items:center;gap:.375rem}.elitea-assistant-skeleton-row--right .elitea-assistant-skeleton-meta{justify-content:flex-end}.elitea-assistant-skeleton{background:var(--elitea-assistant-bot-msg-bg);border-radius:.5rem;animation:elitea-assistant-shimmer 1.4s ease-in-out infinite}.elitea-assistant-skeleton--avatar{width:1.5rem;height:1.5rem;border-radius:50%;flex-shrink:0}.elitea-assistant-skeleton--time{width:2.5rem;height:.75rem;border-radius:.25rem}.elitea-assistant-skeleton--bubble{width:10rem;height:2.5rem;border-radius:.75rem}.elitea-assistant-skeleton-row--right .elitea-assistant-skeleton--bubble{width:8rem}.elitea-assistant-empty{flex:1;display:flex;align-items:center;justify-content:center;color:var(--elitea-assistant-bot-msg-text);opacity:.5;font-size:.8125rem;text-align:center;padding:1.25rem}.elitea-assistant-input-area{display:flex;flex-direction:column;padding:.75rem;background:var(--elitea-assistant-input-bg);flex-shrink:0;border-top:.0625rem solid var(--elitea-assistant-window-border)}.elitea-assistant-input-row{display:flex;align-items:center;gap:.5rem;width:100%}.elitea-assistant-input{flex:1;padding:.5rem .25rem;border:none;border-radius:0;background:transparent;color:var(--elitea-assistant-input-text);font-size:.875rem;font-family:inherit;outline:none;resize:none}.elitea-assistant-input::placeholder{color:var(--elitea-assistant-input-placeholder);opacity:1}.elitea-assistant-attach-button{width:1.75rem;height:1.75rem;border-radius:50%;border:none;cursor:pointer;display:flex;align-items:center;justify-content:center;background:var(--elitea-assistant-header-action-bg);color:var(--elitea-assistant-header-text);flex-shrink:0;transition:opacity .15s ease;padding:0;opacity:.8}.elitea-assistant-attach-button:hover{opacity:1}.elitea-assistant-attach-button svg{width:.875rem;height:.875rem;fill:currentColor}.elitea-assistant-send-button{width:1.75rem;height:1.75rem;border-radius:50%;border:none;cursor:pointer;display:flex;align-items:center;justify-content:center;background:var(--elitea-assistant-send-btn-bg);color:var(--elitea-assistant-send-btn-icon);flex-shrink:0;transition:background .15s ease;padding:0}.elitea-assistant-send-button:disabled{background:var(--elitea-assistant-send-btn-disabled-bg);cursor:default}.elitea-assistant-send-button svg{width:.875rem;height:.875rem;fill:currentColor}.elitea-assistant-file-list{display:flex;align-items:center;gap:.5rem;padding-bottom:.5rem}.elitea-assistant-file-chip{display:flex;align-items:center;gap:.75rem;max-width:11.25rem;height:2.25rem;padding:.375rem .75rem;border-radius:.5rem;background:var(--elitea-assistant-header-action-bg);flex-shrink:0}.elitea-assistant-file-chip-icon{display:flex;align-items:center;justify-content:center;flex-shrink:0;color:var(--elitea-assistant-header-close-icon)}.elitea-assistant-file-chip-icon svg{width:.75rem;height:.875rem}.elitea-assistant-file-chip-name{flex:1;min-width:0;font-size:.75rem;color:var(--elitea-assistant-input-text);white-space:nowrap;overflow:hidden;text-overflow:ellipsis}.elitea-assistant-file-chip-remove{display:flex;align-items:center;justify-content:center;width:1rem;height:1rem;padding:0;border:none;background:none;cursor:pointer;color:var(--elitea-assistant-header-close-icon);flex-shrink:0;opacity:.7;transition:opacity .15s ease}.elitea-assistant-file-chip-remove:hover{opacity:1}.elitea-assistant-file-chip-remove svg{width:2rem;height:2rem;fill:currentColor}.elitea-assistant-file-chip--count{font-size:.75rem;font-weight:400;color:var(--elitea-assistant-input-text);max-width:none;gap:0}.elitea-assistant-tooltip-trigger{display:inline-flex}.elitea-assistant-tooltip{position:fixed;z-index:2147483647;padding:.25rem .5rem;border-radius:.25rem;background:#e9ebf0;color:#0e131d;font-size:.6875rem;line-height:1.3;font-weight:500;font-family:Montserrat,sans-serif;white-space:nowrap;max-width:20rem;overflow:hidden;text-overflow:ellipsis;pointer-events:none;box-shadow:0 0 0 .0625rem #00000014,0 .125rem .5rem #0000001f;transition:opacity .15s ease}@keyframes elitea-tooltip-in{0%{opacity:0;transform:translateY(4px)}to{opacity:1;transform:translateY(0)}}.elitea-assistant-popup{position:absolute;bottom:.25rem;display:flex;align-items:center;gap:1rem;padding:.75rem .75rem .75rem 1.25rem;border-radius:1.5rem 1.5rem 1.5rem 0;background:var(--elitea-assistant-popup-bg);color:var(--elitea-assistant-popup-text);font-size:.875rem;font-weight:500;line-height:1.5rem;white-space:nowrap;box-shadow:0 .25rem 1rem #0003;animation:elitea-assistant-popup-in .3s ease-out}.elitea-assistant-popup:before{content:"";position:absolute;top:-.0625rem;right:-.0625rem;bottom:-.0625rem;left:-.0625rem;border-radius:inherit;padding:.0625rem;background:var(--elitea-assistant-popup-border);-webkit-mask:linear-gradient(#fff 0 0) content-box,linear-gradient(#fff 0 0);-webkit-mask-composite:xor;mask:linear-gradient(#fff 0 0) content-box,linear-gradient(#fff 0 0);mask-composite:exclude;pointer-events:none}.elitea-assistant-container--bottom-right .elitea-assistant-popup{right:2.5rem;flex-direction:row-reverse;padding:.75rem 1.25rem .75rem .75rem;border-radius:1.5rem 1.5rem 0}.elitea-assistant-container--bottom-left .elitea-assistant-popup{left:2.5rem}.elitea-assistant-popup-text{-webkit-user-select:none;user-select:none}.elitea-assistant-popup-close{display:flex;align-items:center;justify-content:center;width:1.75rem;height:1.75rem;flex-shrink:0;border:none;border-radius:50%;background:var(--elitea-assistant-popup-close-bg);color:var(--elitea-assistant-popup-text);cursor:pointer;padding:0;transition:background .15s ease}.elitea-assistant-popup-close:hover{background:var(--elitea-assistant-popup-close-hover-bg)}.elitea-assistant-popup-close svg{width:1rem;height:1rem;fill:currentColor}@keyframes elitea-assistant-popup-in{0%{opacity:0;transform:translateY(.5rem)}to{opacity:1;transform:translateY(0)}}')),document.head.appendChild(e)}}catch(t){console.error("vite-plugin-css-injected-by-js",t)}})();
 import { jsx as t, jsxs as f, Fragment as Ee } from "react/jsx-runtime";
-import { memo as k, useState as y, useCallback as b, useRef as D, useLayoutEffect as Be, useEffect as F, createContext as ne, useContext as oe, useMemo as Q, forwardRef as xe, useImperativeHandle as Ie } from "react";
+import { memo as k, useState as y, useCallback as m, useRef as P, useLayoutEffect as Be, useEffect as V, createContext as ne, useContext as oe, useMemo as Q, forwardRef as xe, useImperativeHandle as Ie } from "react";
 import { createPortal as Te } from "react-dom";
 import { io as Le } from "socket.io-client";
 const G = (e, a = !1) => ({
@@ -13,12 +13,12 @@ const G = (e, a = !1) => ({
   getConfig: () => fetch(`${e}/config/`, {
     headers: G(a),
     credentials: q(a)
-  }).then(z).then((n) => n.json()),
+  }).then(z).then((s) => s.json()),
   getConversations: () => fetch(`${e}/conversations/`, {
     headers: G(a),
     credentials: q(a)
-  }).then(z).then((n) => n.json()),
-  getConversation: (n) => fetch(`${e}/conversation/${n}`, {
+  }).then(z).then((s) => s.json()),
+  getConversation: (s) => fetch(`${e}/conversation/${s}`, {
     headers: G(a),
     credentials: q(a)
   }).then(z).then((o) => o.json()),
@@ -27,8 +27,8 @@ const G = (e, a = !1) => ({
     headers: G(a, !0),
     credentials: q(a),
     body: JSON.stringify({})
-  }).then(z).then((n) => n.json()),
-  deleteConversation: (n) => fetch(`${e}/conversation/${n}`, {
+  }).then(z).then((s) => s.json()),
+  deleteConversation: (s) => fetch(`${e}/conversation/${s}`, {
     method: "DELETE",
     headers: G(a),
     credentials: q(a)
@@ -185,54 +185,54 @@ const ge = k((e) => {
 });
 ge.displayName = "ChatButton";
 const me = k((e) => {
-  const { text: a } = e, [n, o] = y(!1), i = b(() => {
+  const { text: a } = e, [s, o] = y(!1), r = m(() => {
     navigator.clipboard.writeText(a), o(!0), setTimeout(() => o(!1), 2e3);
   }, [a]);
-  return /* @__PURE__ */ t(j, { content: "Copy to clipboard", children: /* @__PURE__ */ t(
+  return /* @__PURE__ */ t(K, { content: "Copy to clipboard", children: /* @__PURE__ */ t(
     "button",
     {
       className: "elitea-assistant-header-action",
-      onClick: i,
+      onClick: r,
       "aria-label": "Copy to clipboard",
       type: "button",
-      children: n ? /* @__PURE__ */ t(re, {}) : /* @__PURE__ */ t(le, {})
+      children: s ? /* @__PURE__ */ t(re, {}) : /* @__PURE__ */ t(le, {})
     }
   ) });
 });
 me.displayName = "CopyButton";
-const j = k((e) => {
-  const { content: a, children: n, placement: o = "top" } = e, i = D(null), s = D(null), [r, h] = y(!1), [l, C] = y(!1), [m, d] = y({ top: 0, left: 0 }), A = b(() => {
-    const w = i.current, x = s.current;
+const K = k((e) => {
+  const { content: a, children: s, placement: o = "top" } = e, r = P(null), n = P(null), [i, c] = y(!1), [l, g] = y(!1), [b, d] = y({ top: 0, left: 0 }), N = m(() => {
+    const w = r.current, x = n.current;
     if (!w || !x) return;
-    const c = w.getBoundingClientRect(), u = x.getBoundingClientRect();
+    const u = w.getBoundingClientRect(), C = x.getBoundingClientRect();
     let v;
-    o === "top" ? v = c.top - u.height - 8 : v = c.bottom + 8;
-    let E = c.left + c.width / 2 - u.width / 2;
-    const B = 8;
-    E < B && (E = B), E + u.width > window.innerWidth - B && (E = window.innerWidth - B - u.width), v < B && (v = c.bottom + 8), d({ top: v, left: E }), C(!0);
+    o === "top" ? v = u.top - C.height - 8 : v = u.bottom + 8;
+    let I = u.left + u.width / 2 - C.width / 2;
+    const A = 8;
+    I < A && (I = A), I + C.width > window.innerWidth - A && (I = window.innerWidth - A - C.width), v < A && (v = u.bottom + 8), d({ top: v, left: I }), g(!0);
   }, [o]);
   return Be(() => {
-    r && s.current && A(), r || C(!1);
-  }, [r, A]), /* @__PURE__ */ f(Ee, { children: [
+    i && n.current && N(), i || g(!1);
+  }, [i, N]), /* @__PURE__ */ f(Ee, { children: [
     /* @__PURE__ */ t(
       "div",
       {
-        ref: i,
-        onMouseEnter: () => h(!0),
-        onMouseLeave: () => h(!1),
+        ref: r,
+        onMouseEnter: () => c(!0),
+        onMouseLeave: () => c(!1),
         className: "elitea-assistant-tooltip-trigger",
-        children: n
+        children: s
       }
     ),
-    r && Te(
+    i && Te(
       /* @__PURE__ */ t(
         "div",
         {
-          ref: s,
+          ref: n,
           className: "elitea-assistant-tooltip",
           style: {
-            top: m.top,
-            left: m.left,
+            top: b.top,
+            left: b.left,
             opacity: l ? 1 : 0
           },
           role: "tooltip",
@@ -243,33 +243,33 @@ const j = k((e) => {
     )
   ] });
 });
-j.displayName = "Tooltip";
+K.displayName = "Tooltip";
 const be = k((e) => {
   const {
     title: a,
-    expanded: n,
+    expanded: s,
     history: o,
-    currentConversationId: i,
-    disabled: s,
-    onClose: r,
-    onExpand: h,
+    currentConversationId: r,
+    disabled: n,
+    onClose: i,
+    onExpand: c,
     onNewChat: l,
-    onSelectConversation: C
-  } = e, m = D(null), [d, A] = y(!1);
-  F(() => {
+    onSelectConversation: g
+  } = e, b = P(null), [d, N] = y(!1);
+  V(() => {
     if (!d) return;
-    const c = (u) => {
-      m.current && !m.current.contains(u.target) && A(!1);
+    const u = (C) => {
+      b.current && !b.current.contains(C.target) && N(!1);
     };
-    return document.addEventListener("mousedown", c), () => document.removeEventListener("mousedown", c);
+    return document.addEventListener("mousedown", u), () => document.removeEventListener("mousedown", u);
   }, [d]);
-  const w = b(() => {
-    o.length > 0 && A((c) => !c);
-  }, [o.length]), x = b(
-    (c) => {
-      C(c), A(!1);
+  const w = m(() => {
+    o.length > 0 && N((u) => !u);
+  }, [o.length]), x = m(
+    (u) => {
+      g(u), N(!1);
     },
-    [C]
+    [g]
   );
   return /* @__PURE__ */ f("div", { className: "elitea-assistant-header", children: [
     /* @__PURE__ */ f("div", { className: "elitea-assistant-header-left", children: [
@@ -277,7 +277,7 @@ const be = k((e) => {
         "button",
         {
           className: "elitea-assistant-header-close-action",
-          onClick: r,
+          onClick: i,
           "aria-label": "Close chat",
           type: "button",
           children: /* @__PURE__ */ t(ee, {})
@@ -286,21 +286,21 @@ const be = k((e) => {
       /* @__PURE__ */ t("h2", { className: "elitea-assistant-header-title", children: a })
     ] }),
     /* @__PURE__ */ f("div", { className: "elitea-assistant-header-right", children: [
-      /* @__PURE__ */ t(j, { content: "New conversation", children: /* @__PURE__ */ t(
+      /* @__PURE__ */ t(K, { content: "New conversation", children: /* @__PURE__ */ t(
         "button",
         {
           className: "elitea-assistant-header-action",
           onClick: l,
           "aria-label": "New chat",
           type: "button",
-          disabled: s,
+          disabled: n,
           children: /* @__PURE__ */ t(Ce, {})
         }
       ) }),
-      /* @__PURE__ */ t(j, { content: "Conversations history", children: /* @__PURE__ */ f(
+      /* @__PURE__ */ t(K, { content: "Conversations history", children: /* @__PURE__ */ f(
         "div",
         {
-          ref: m,
+          ref: b,
           className: "elitea-assistant-history-wrapper",
           children: [
             /* @__PURE__ */ t(
@@ -310,29 +310,29 @@ const be = k((e) => {
                 onClick: w,
                 "aria-label": "Chat history",
                 type: "button",
-                disabled: s || o.length === 0,
+                disabled: n || o.length === 0,
                 children: /* @__PURE__ */ t(ue, {})
               }
             ),
-            d && o.length > 0 && /* @__PURE__ */ t("div", { className: "elitea-assistant-history-dropdown", children: o.map((c) => /* @__PURE__ */ t(
+            d && o.length > 0 && /* @__PURE__ */ t("div", { className: "elitea-assistant-history-dropdown", children: o.map((u) => /* @__PURE__ */ t(
               "button",
               {
                 className: "elitea-assistant-history-item",
-                onClick: () => x(c.uuid),
+                onClick: () => x(u.uuid),
                 type: "button",
-                disabled: c.uuid === i,
-                children: c.name
+                disabled: u.uuid === r,
+                children: u.name
               },
-              c.uuid
+              u.uuid
             )) })
           ]
         }
       ) }),
-      /* @__PURE__ */ t(j, { content: n ? "Collapse" : "Expand", children: /* @__PURE__ */ t(
+      /* @__PURE__ */ t(K, { content: s ? "Collapse" : "Expand", children: /* @__PURE__ */ t(
         "button",
         {
           className: "elitea-assistant-header-action",
-          onClick: h,
+          onClick: c,
           "aria-label": "Expand chat",
           type: "button",
           children: /* @__PURE__ */ t(ce, {})
@@ -352,23 +352,23 @@ const Me = (e) => {
 }, _e = (e) => {
   var o;
   const a = e.sent_to != null ? "user" : "assistant";
-  let n = "";
-  for (const i of e.message_items ?? []) {
-    const s = i.item_type ?? i.type;
-    if (s === "text_message" || s === "text") {
-      n = ((o = i.item_details) == null ? void 0 : o.content) ?? i.content ?? "";
+  let s = "";
+  for (const r of e.message_items ?? []) {
+    const n = r.item_type ?? r.type;
+    if (n === "text_message" || n === "text") {
+      s = ((o = r.item_details) == null ? void 0 : o.content) ?? r.content ?? "";
       break;
     }
   }
   return {
     id: String(e.uuid ?? e.id ?? ""),
     role: a,
-    content: n,
+    content: s,
     timestamp: Me(e.created_at_ts ?? e.created_at)
   };
 }, ae = (e) => (e.message_groups ?? []).map(_e), Pe = (e) => new Date(e).toLocaleTimeString([], { hour: "2-digit", minute: "2-digit" }), se = (e, a) => {
-  const { frequency: n, start: o, peak: i, end: s } = a, r = e.createOscillator(), h = e.createGain();
-  return r.connect(h), h.connect(e.destination), r.type = "sine", r.frequency.value = n, h.gain.setValueAtTime(0, o), h.gain.linearRampToValueAtTime(0.12, i), h.gain.exponentialRampToValueAtTime(0.01, s), r.start(o), r.stop(s), r;
+  const { frequency: s, start: o, peak: r, end: n } = a, i = e.createOscillator(), c = e.createGain();
+  return i.connect(c), c.connect(e.destination), i.type = "sine", i.frequency.value = s, c.gain.setValueAtTime(0, o), c.gain.linearRampToValueAtTime(0.12, r), c.gain.exponentialRampToValueAtTime(0.01, n), i.start(o), i.stop(n), i;
 }, De = async () => {
   try {
     const e = new AudioContext();
@@ -378,8 +378,8 @@ const Me = (e) => {
     }
     const a = e.currentTime;
     se(e, { frequency: 784, start: a, peak: a + 0.02, end: a + 0.2 });
-    const n = se(e, { frequency: 1047, start: a + 0.12, peak: a + 0.14, end: a + 0.37 });
-    n.onended = () => e.close();
+    const s = se(e, { frequency: 1047, start: a + 0.12, peak: a + 0.14, end: a + 0.37 });
+    s.onended = () => e.close();
   } catch {
   }
 }, Re = (e) => {
@@ -390,19 +390,19 @@ const Me = (e) => {
     return "";
   }
 }, ve = k((e) => {
-  const { messages: a, isLoading: n } = e, o = D(null), i = D(!1);
-  return F(() => {
-    var r;
-    if (a.length === 0) {
-      i.current = !1;
+  const { avatar: a, messages: s, isLoading: o } = e, r = P(null), n = P(!1);
+  return V(() => {
+    var c;
+    if (s.length === 0) {
+      n.current = !1;
       return;
     }
-    const s = i.current ? "smooth" : "instant";
-    i.current = !0, (r = o.current) == null || r.scrollIntoView({ behavior: s });
-  }, [a]), n ? /* @__PURE__ */ t("div", { className: "elitea-assistant-messages", children: Array.from({ length: 3 }).map((s, r) => /* @__PURE__ */ f(
+    const i = n.current ? "smooth" : "instant";
+    n.current = !0, (c = r.current) == null || c.scrollIntoView({ behavior: i });
+  }, [s]), o ? /* @__PURE__ */ t("div", { className: "elitea-assistant-messages", children: Array.from({ length: 3 }).map((i, c) => /* @__PURE__ */ f(
     "div",
     {
-      className: `elitea-assistant-skeleton-row ${r % 2 === 0 ? "elitea-assistant-skeleton-row--left" : "elitea-assistant-skeleton-row--right"}`,
+      className: `elitea-assistant-skeleton-row ${c % 2 === 0 ? "elitea-assistant-skeleton-row--left" : "elitea-assistant-skeleton-row--right"}`,
       children: [
         /* @__PURE__ */ f("div", { className: "elitea-assistant-skeleton-meta", children: [
           /* @__PURE__ */ t("div", { className: "elitea-assistant-skeleton elitea-assistant-skeleton--avatar" }),
@@ -411,70 +411,77 @@ const Me = (e) => {
         /* @__PURE__ */ t("div", { className: "elitea-assistant-skeleton elitea-assistant-skeleton--bubble" })
       ]
     },
-    r
-  )) }) : a.length === 0 ? /* @__PURE__ */ t("div", { className: "elitea-assistant-empty", children: "Send a message to start a conversation" }) : /* @__PURE__ */ f("div", { className: "elitea-assistant-messages", children: [
-    a.map((s) => /* @__PURE__ */ f(
+    c
+  )) }) : s.length === 0 ? /* @__PURE__ */ t("div", { className: "elitea-assistant-empty", children: "Send a message to start a conversation" }) : /* @__PURE__ */ f("div", { className: "elitea-assistant-messages", children: [
+    s.map((i) => /* @__PURE__ */ f(
       "div",
       {
-        className: `elitea-assistant-message-wrapper elitea-assistant-message-wrapper--${s.role}`,
+        className: `elitea-assistant-message-wrapper elitea-assistant-message-wrapper--${i.role}`,
         children: [
-          /* @__PURE__ */ f("div", { className: `elitea-assistant-message-meta elitea-assistant-message-meta--${s.role}`, children: [
-            s.role === "assistant" && /* @__PURE__ */ t("span", { className: "elitea-assistant-message-avatar elitea-assistant-message-avatar--assistant", children: /* @__PURE__ */ t(te, {}) }),
-            /* @__PURE__ */ t("span", { className: "elitea-assistant-message-time", children: Pe(s.timestamp) }),
-            s.role === "user" && /* @__PURE__ */ t("span", { className: "elitea-assistant-message-avatar elitea-assistant-message-avatar--user", children: /* @__PURE__ */ t(he, {}) })
+          /* @__PURE__ */ f("div", { className: `elitea-assistant-message-meta elitea-assistant-message-meta--${i.role}`, children: [
+            i.role === "assistant" && /* @__PURE__ */ t("span", { className: "elitea-assistant-message-avatar elitea-assistant-message-avatar--assistant", children: /* @__PURE__ */ t(te, {}) }),
+            /* @__PURE__ */ t("span", { className: "elitea-assistant-message-time", children: Pe(i.timestamp) }),
+            i.role === "user" && /* @__PURE__ */ t("span", { className: "elitea-assistant-message-avatar elitea-assistant-message-avatar--user", children: a ? /* @__PURE__ */ t(
+              "img",
+              {
+                src: a,
+                alt: "User avatar",
+                className: "elitea-assistant-avatar-img"
+              }
+            ) : /* @__PURE__ */ t(he, {}) })
           ] }),
           /* @__PURE__ */ f(
             "div",
             {
-              className: `elitea-assistant-message elitea-assistant-message--${s.role}${s.isError ? " elitea-assistant-message--error" : ""}`,
+              className: `elitea-assistant-message elitea-assistant-message--${i.role}${i.isError ? " elitea-assistant-message--error" : ""}`,
               children: [
-                s.content || (s.isStreaming ? /* @__PURE__ */ f("span", { className: "elitea-assistant-typing-indicator", children: [
+                i.content || (i.isStreaming ? /* @__PURE__ */ f("span", { className: "elitea-assistant-typing-indicator", children: [
                   /* @__PURE__ */ t("span", { className: "elitea-assistant-typing-dot" }),
                   /* @__PURE__ */ t("span", { className: "elitea-assistant-typing-dot" }),
                   /* @__PURE__ */ t("span", { className: "elitea-assistant-typing-dot" })
                 ] }) : ""),
-                s.role === "assistant" && s.content && !s.isStreaming && /* @__PURE__ */ t(me, { text: s.content })
+                i.role === "assistant" && i.content && !i.isStreaming && /* @__PURE__ */ t(me, { text: i.content })
               ]
             }
           )
         ]
       },
-      s.id
+      i.id
     )),
-    /* @__PURE__ */ t("div", { ref: o })
+    /* @__PURE__ */ t("div", { ref: r })
   ] });
 });
 ve.displayName = "MessageList";
 const we = k((e) => {
-  const { placeholder: a, text: n, onTextChange: o, files: i, onFilesChange: s, onSend: r, expanded: h, disabled: l } = e, C = D(null), [m, d] = y(0), A = () => {
-    const p = n.trim();
-    !p && i.length === 0 || (r(p, i.length > 0 ? i : void 0), o(""), s([]));
-  }, w = (p) => {
-    p.key === "Enter" && !p.shiftKey && (p.preventDefault(), A());
+  const { placeholder: a, text: s, onTextChange: o, files: r, onFilesChange: n, onSend: i, expanded: c, disabled: l } = e, g = P(null), [b, d] = y(0), N = () => {
+    const h = s.trim();
+    !h && r.length === 0 || (i(h, r.length > 0 ? r : void 0), o(""), n([]));
+  }, w = (h) => {
+    h.key === "Enter" && !h.shiftKey && (h.preventDefault(), N());
   }, x = () => {
-    var p;
-    (p = C.current) == null || p.click();
-  }, c = (p) => {
-    const L = p.target.files;
-    L && s([...i, ...Array.from(L)]), d((S) => S + 1);
-  }, u = (p) => {
-    s(i.filter((L, S) => S !== p));
-  }, v = h ? 3 : 2, E = i.slice(0, v), B = i.length - v;
+    var h;
+    (h = g.current) == null || h.click();
+  }, u = (h) => {
+    const L = h.target.files;
+    L && n([...r, ...Array.from(L)]), d((M) => M + 1);
+  }, C = (h) => {
+    n(r.filter((L, M) => M !== h));
+  }, v = c ? 3 : 2, I = r.slice(0, v), A = r.length - v;
   return /* @__PURE__ */ f("div", { className: "elitea-assistant-input-area", children: [
-    i.length > 0 && /* @__PURE__ */ f("div", { className: "elitea-assistant-file-list", children: [
-      E.map((p, L) => /* @__PURE__ */ t(
-        j,
+    r.length > 0 && /* @__PURE__ */ f("div", { className: "elitea-assistant-file-list", children: [
+      I.map((h, L) => /* @__PURE__ */ t(
+        K,
         {
-          content: p.name,
+          content: h.name,
           children: /* @__PURE__ */ f("div", { className: "elitea-assistant-file-chip", children: [
             /* @__PURE__ */ t("span", { className: "elitea-assistant-file-chip-icon", children: /* @__PURE__ */ t(de, {}) }),
-            /* @__PURE__ */ t("span", { className: "elitea-assistant-file-chip-name", children: p.name }),
+            /* @__PURE__ */ t("span", { className: "elitea-assistant-file-chip-name", children: h.name }),
             /* @__PURE__ */ t(
               "button",
               {
                 className: "elitea-assistant-file-chip-remove",
-                onClick: () => u(L),
-                "aria-label": `Remove ${p.name}`,
+                onClick: () => C(L),
+                "aria-label": `Remove ${h.name}`,
                 type: "button",
                 children: /* @__PURE__ */ t(ee, {})
               }
@@ -483,22 +490,22 @@ const we = k((e) => {
         },
         L
       )),
-      B > 0 && /* @__PURE__ */ f("div", { className: "elitea-assistant-file-chip elitea-assistant-file-chip--count", children: [
+      A > 0 && /* @__PURE__ */ f("div", { className: "elitea-assistant-file-chip elitea-assistant-file-chip--count", children: [
         "+",
-        B
+        A
       ] })
     ] }),
     /* @__PURE__ */ f("div", { className: "elitea-assistant-input-row", children: [
       /* @__PURE__ */ t(
         "input",
         {
-          ref: C,
+          ref: g,
           type: "file",
           multiple: !0,
-          onChange: c,
+          onChange: u,
           style: { display: "none" }
         },
-        m
+        b
       ),
       /* @__PURE__ */ t(
         "button",
@@ -516,8 +523,8 @@ const we = k((e) => {
         {
           id: "elitea-assistant-message-input",
           className: "elitea-assistant-input",
-          value: n,
-          onChange: (p) => o(p.target.value),
+          value: s,
+          onChange: (h) => o(h.target.value),
           onKeyDown: w,
           placeholder: a,
           rows: 1,
@@ -529,8 +536,8 @@ const we = k((e) => {
         "button",
         {
           className: "elitea-assistant-send-button",
-          onClick: A,
-          disabled: l || !n.trim() && i.length === 0,
+          onClick: N,
+          disabled: l || !s.trim() && r.length === 0,
           "aria-label": "Send message",
           type: "button",
           children: /* @__PURE__ */ t(pe, {})
@@ -545,25 +552,25 @@ const fe = ne(null), Fe = () => {
   if (!e) throw new Error("useApi must be used within EliteaAssistant");
   return e;
 }, Ve = () => {
-  const [e, a] = y(!1), [n, o] = y(!1), i = b(() => a(!0), []), s = b(() => a(!1), []), r = b(() => a((m) => !m), []), h = b(() => o(!0), []), l = b(() => o(!1), []), C = b(() => o((m) => !m), []);
+  const [e, a] = y(!1), [s, o] = y(!1), r = m(() => a(!0), []), n = m(() => a(!1), []), i = m(() => a((b) => !b), []), c = m(() => o(!0), []), l = m(() => o(!1), []), g = m(() => o((b) => !b), []);
   return {
     isOpen: e,
-    isExpanded: n,
-    open: i,
-    close: s,
-    toggle: r,
-    expandFullscreen: h,
+    isExpanded: s,
+    open: r,
+    close: n,
+    toggle: i,
+    expandFullscreen: c,
     collapseFullscreen: l,
-    toggleFullscreen: C
+    toggleFullscreen: g
   };
-}, P = {
+}, _ = {
   ENTER_ROOM: "chat_enter_room",
   LEAVE_ROOM: "chat_leave_room",
   PREDICT: "support_predict",
   PREDICT_RESPONSE: "chat_predict",
   CONVERSATION_NAME_UPDATED: "chat_conversation_name_updated",
   ERROR: "support_error"
-}, R = {
+}, F = {
   START_TASK: "start_task",
   CHUNK: "chunk",
   AI_MESSAGE_CHUNK: "AIMessageChunk",
@@ -573,8 +580,8 @@ const fe = ne(null), Fe = () => {
   ERROR: "error",
   AGENT_EXCEPTION: "agent_exception"
 }, ye = ne(null), Oe = () => oe(ye), Ue = (e) => {
-  const [a, n] = y(null);
-  return F(() => {
+  const [a, s] = y(null);
+  return V(() => {
     const o = Le(e.url, {
       path: e.path,
       ...e.token && { extraHeaders: { Authorization: `Bearer ${e.token}` } },
@@ -582,48 +589,48 @@ const fe = ne(null), Fe = () => {
       reconnectionDelayMax: 2e3
     });
     return o.on("connect", () => {
-      n(o);
+      s(o);
     }), o.on("connect_error", () => {
     }), () => {
       o.disconnect();
     };
   }, [e.url, e.path, e.token, e.withCredentials]), a;
 }, Ze = (e) => {
-  const { welcomeMessage: a, supportProjectId: n, initialHistory: o, initialConversation: i, isInitLoading: s } = e, r = D(!1), h = Fe(), l = Oe(), C = b(
+  const { welcomeMessage: a, supportProjectId: s, initialHistory: o, initialConversation: r, isInitLoading: n } = e, i = P(!1), c = Fe(), l = Oe(), g = m(
     () => a ? [{ id: "welcome", role: "assistant", content: a, timestamp: Date.now() }] : [],
     [a]
-  ), [m, d] = y([]), [A, w] = y(""), [x, c] = y([]), [u, v] = y(null), [E, B] = y([]), [p, L] = y(!1), S = Q(
-    () => s || p,
-    [s, p]
-  ), H = b(
-    (g) => {
-      l == null || l.emit(P.ENTER_ROOM, {
-        project_id: n,
-        conversation_id: g
+  ), [b, d] = y([]), [N, w] = y(""), [x, u] = y([]), [C, v] = y(null), [I, A] = y([]), [h, L] = y(!1), M = Q(
+    () => n || h,
+    [n, h]
+  ), S = m(
+    (p) => {
+      l == null || l.emit(_.ENTER_ROOM, {
+        project_id: s,
+        conversation_id: p
       });
     },
-    [l, n]
-  ), M = b(
-    (g) => {
-      l == null || l.emit(P.LEAVE_ROOM, {
-        project_id: n,
-        conversation_id: g
+    [l, s]
+  ), D = m(
+    (p) => {
+      l == null || l.emit(_.LEAVE_ROOM, {
+        project_id: s,
+        conversation_id: p
       });
     },
-    [l, n]
-  ), Z = b(
-    (g) => {
-      l == null || l.emit(P.PREDICT, g);
+    [l, s]
+  ), R = m(
+    (p) => {
+      l == null || l.emit(_.PREDICT, p);
     },
     [l]
-  ), $ = b((g) => {
-    const { message_id: I, type: N, content: T, response_metadata: W } = g;
-    switch (N) {
-      case R.START_TASK:
-        d((U) => [
-          ...U,
+  ), O = m((p) => {
+    const { message_id: T, type: E, content: B, response_metadata: Z } = p;
+    switch (E) {
+      case F.START_TASK:
+        d(($) => [
+          ...$,
           {
-            id: I,
+            id: T,
             role: "assistant",
             content: "",
             timestamp: Date.now(),
@@ -631,83 +638,83 @@ const fe = ne(null), Fe = () => {
           }
         ]);
         break;
-      case R.CHUNK:
-      case R.AI_MESSAGE_CHUNK:
-      case R.AGENT_LLM_CHUNK:
-      case R.AGENT_RESPONSE: {
-        const U = typeof T == "string" ? T : JSON.stringify(T), _ = !!(W != null && W.finish_reason);
+      case F.CHUNK:
+      case F.AI_MESSAGE_CHUNK:
+      case F.AGENT_LLM_CHUNK:
+      case F.AGENT_RESPONSE: {
+        const $ = typeof B == "string" ? B : JSON.stringify(B), H = !!(Z != null && Z.finish_reason);
         d(
           (Ae) => Ae.map(
-            (Y) => Y.id === I ? { ...Y, content: Y.content + U, ..._ && { isStreaming: !1 } } : Y
+            (Y) => Y.id === T ? { ...Y, content: Y.content + $, ...H && { isStreaming: !1 } } : Y
           )
         );
         break;
       }
-      case R.PIPELINE_FINISH:
+      case F.PIPELINE_FINISH:
         d(
-          (U) => U.map((_) => _.id === I && _.isStreaming ? { ..._, isStreaming: !1 } : _)
+          ($) => $.map((H) => H.id === T && H.isStreaming ? { ...H, isStreaming: !1 } : H)
         );
         break;
-      case R.ERROR:
-      case R.AGENT_EXCEPTION:
+      case F.ERROR:
+      case F.AGENT_EXCEPTION:
         d(
-          (U) => U.map(
-            (_) => _.id === I ? {
-              ..._,
-              content: typeof T == "string" ? T : "An error occurred",
+          ($) => $.map(
+            (H) => H.id === T ? {
+              ...H,
+              content: typeof B == "string" ? B : "An error occurred",
               isStreaming: !1,
               isError: !0
-            } : _
+            } : H
           )
         );
         break;
     }
-  }, []), V = b((g) => {
-    d((I) => [
-      ...I,
+  }, []), j = m((p) => {
+    d((T) => [
+      ...T,
       {
         id: crypto.randomUUID(),
         role: "assistant",
-        content: g.error || "An error occurred",
+        content: p.error || "An error occurred",
         timestamp: Date.now(),
         isError: !0
       }
     ]);
-  }, []), O = b((g) => {
-    B(
-      (I) => I.map((N) => N.uuid === g.conversation_uuid ? { ...N, name: g.name } : N)
+  }, []), U = m((p) => {
+    A(
+      (T) => T.map((E) => E.uuid === p.conversation_uuid ? { ...E, name: p.name } : E)
     );
   }, []);
-  F(() => {
-    if (!(s || r.current))
-      if (r.current = !0, B(o), o.length > 0 && i) {
-        const g = ae(i);
-        d(g.length > 0 ? g : C()), v(o[0].uuid), H(o[0].uuid);
+  V(() => {
+    if (!(n || i.current))
+      if (i.current = !0, A(o), o.length > 0 && r) {
+        const p = ae(r);
+        d(p.length > 0 ? p : g()), v(o[0].uuid), S(o[0].uuid);
       } else
-        d(C());
-  }, [s, o, i, C, H]), F(() => {
+        d(g());
+  }, [n, o, r, g, S]), V(() => {
     if (l)
-      return l.on(P.PREDICT_RESPONSE, $), l.on(P.ERROR, V), l.on(P.CONVERSATION_NAME_UPDATED, O), () => {
-        l.off(P.PREDICT_RESPONSE, $), l.off(P.ERROR, V), l.off(P.CONVERSATION_NAME_UPDATED, O);
+      return l.on(_.PREDICT_RESPONSE, O), l.on(_.ERROR, j), l.on(_.CONVERSATION_NAME_UPDATED, U), () => {
+        l.off(_.PREDICT_RESPONSE, O), l.off(_.ERROR, j), l.off(_.CONVERSATION_NAME_UPDATED, U);
       };
-  }, [l, $, V, O]);
-  const X = b(
-    async (g) => {
-      const I = {
+  }, [l, O, j, U]);
+  const W = m(
+    async (p) => {
+      const T = {
         id: crypto.randomUUID(),
         role: "user",
-        content: g,
+        content: p,
         timestamp: Date.now()
       };
-      d((T) => [...T, I]);
-      let N = u;
-      if (!N)
+      d((B) => [...B, T]);
+      let E = C;
+      if (!E)
         try {
-          const T = await h.createConversation();
-          N = T.uuid, v(N), B((W) => [T, ...W]), H(N);
+          const B = await c.createConversation();
+          E = B.uuid, v(E), A((Z) => [B, ...Z]), S(E);
         } catch {
-          d((T) => [
-            ...T,
+          d((B) => [
+            ...B,
             {
               id: crypto.randomUUID(),
               role: "assistant",
@@ -718,170 +725,173 @@ const fe = ne(null), Fe = () => {
           ]);
           return;
         }
-      N && Z({ conversation_uuid: N, content: g });
+      E && R({ conversation_uuid: E, content: p });
     },
-    [u, h, H, Z]
-  ), J = b(() => {
-    u && M(u), v(null), d(C()), w(""), c([]);
-  }, [u, M, C]), K = b(
-    async (g) => {
-      if (u !== g) {
-        u && M(u), v(g), H(g), w(""), c([]), d([]), L(!0);
+    [C, c, S, R]
+  ), X = m(() => {
+    C && D(C), v(null), d(g()), w(""), u([]);
+  }, [C, D, g]), J = m(
+    async (p) => {
+      if (C !== p) {
+        C && D(C), v(p), S(p), w(""), u([]), d([]), L(!0);
         try {
-          const I = await h.getConversation(g), N = ae(I);
-          d(N.length > 0 ? N : C());
+          const T = await c.getConversation(p), E = ae(T);
+          d(E.length > 0 ? E : g());
         } catch {
-          d(C());
+          d(g());
         } finally {
           L(!1);
         }
       }
     },
-    [u, M, H, C, h]
+    [C, D, S, g, c]
   );
   return {
-    messages: m,
-    inputText: A,
+    messages: b,
+    inputText: N,
     setInputText: w,
     files: x,
-    setFiles: c,
-    history: E,
-    currentConversationId: u ?? "",
-    isLoading: S,
-    handleNewChat: J,
-    handleSelectConversation: K,
-    handleSend: X
+    setFiles: u,
+    history: I,
+    currentConversationId: C ?? "",
+    isLoading: M,
+    handleNewChat: X,
+    handleSelectConversation: J,
+    handleSend: W
   };
 }, $e = (e) => {
-  const { api: a, title: n, welcomeMessage: o, placeholder: i } = e, [s, r] = y(null), [h, l] = y([]), [C, m] = y(null), [d, A] = y(!0);
-  return F(() => {
+  const { api: a, title: s, welcomeMessage: o, placeholder: r } = e, [n, i] = y(null), [c, l] = y([]), [g, b] = y(null), [d, N] = y(!0);
+  return V(() => {
     let w = !1;
-    const x = a.getConfig().then((u) => {
-      w || r(u);
+    const x = a.getConfig().then((C) => {
+      w || i(C);
     }).catch(() => {
-    }), c = a.getConversations().then(async (u) => {
+    }), u = a.getConversations().then(async (C) => {
       if (w) return;
-      const v = u.items || [];
+      const v = C.items || [];
       if (l(v), v.length > 0)
         try {
-          const E = await a.getConversation(v[0].uuid);
-          w || m(E);
+          const I = await a.getConversation(v[0].uuid);
+          w || b(I);
         } catch {
         }
     }).catch(() => {
     });
-    return Promise.all([x, c]).finally(() => {
-      w || A(!1);
+    return Promise.all([x, u]).finally(() => {
+      w || N(!1);
     }), () => {
       w = !0;
     };
   }, [a]), {
-    title: (s == null ? void 0 : s.title) || n,
-    welcomeMessage: (s == null ? void 0 : s.welcomeMessage) || o,
-    placeholder: (s == null ? void 0 : s.placeholder) || i,
-    supportProjectId: (s == null ? void 0 : s.support_project_id) ?? null,
-    history: h,
-    lastConversation: C,
+    title: (n == null ? void 0 : n.title) || s,
+    welcomeMessage: (n == null ? void 0 : n.welcomeMessage) || o,
+    placeholder: (n == null ? void 0 : n.placeholder) || r,
+    supportProjectId: (n == null ? void 0 : n.support_project_id) ?? null,
+    user: (n == null ? void 0 : n.user) || { id: 0, name: "Guest", avatar: "" },
+    history: c,
+    lastConversation: g,
     isLoading: d
   };
 }, je = "Hi! Need help? Ask me!", Ke = 12e3, We = 12e3, Ge = (e) => {
-  const a = D(null), n = D(null), [o, i] = y(!1), s = b(() => {
-    i(!1), a.current && (clearTimeout(a.current), a.current = null), n.current && (clearTimeout(n.current), n.current = null);
-  }, []), r = b(() => {
-    e || (i(!0), De(), a.current = setTimeout(s, Ke));
-  }, [e, s]);
-  return F(() => (n.current = setTimeout(() => {
-    r();
+  const a = P(null), s = P(null), [o, r] = y(!1), n = m(() => {
+    r(!1), a.current && (clearTimeout(a.current), a.current = null), s.current && (clearTimeout(s.current), s.current = null);
+  }, []), i = m(() => {
+    e || (r(!0), De(), a.current = setTimeout(n, Ke));
+  }, [e, n]);
+  return V(() => (s.current = setTimeout(() => {
+    i();
   }, We), () => {
-    a.current && clearTimeout(a.current), n.current && clearTimeout(n.current);
-  }), []), F(() => {
-    e && s();
-  }, [e, s]), { showPopup: o, displayPopup: r, hidePopup: s, popupText: je };
+    a.current && clearTimeout(a.current), s.current && clearTimeout(s.current);
+  }), []), V(() => {
+    e && n();
+  }, [e, n]), { showPopup: o, displayPopup: i, hidePopup: n, popupText: je };
 }, ke = k((e) => {
   const {
-    title: a,
-    placeholder: n,
-    welcomeMessage: o,
-    supportProjectId: i,
-    initialHistory: s,
-    lastConversation: r,
-    isInitLoading: h,
-    onClose: l,
-    onExpand: C,
-    expanded: m
+    avatar: a,
+    title: s,
+    placeholder: o,
+    welcomeMessage: r,
+    supportProjectId: n,
+    initialHistory: i,
+    lastConversation: c,
+    isInitLoading: l,
+    onClose: g,
+    onExpand: b,
+    expanded: d
   } = e, {
-    messages: d,
-    inputText: A,
-    setInputText: w,
-    files: x,
-    setFiles: c,
-    history: u,
-    currentConversationId: v,
-    isLoading: E,
-    handleNewChat: B,
-    handleSelectConversation: p,
-    handleSend: L
+    messages: N,
+    inputText: w,
+    setInputText: x,
+    files: u,
+    setFiles: C,
+    history: v,
+    currentConversationId: I,
+    isLoading: A,
+    handleNewChat: h,
+    handleSelectConversation: L,
+    handleSend: M
   } = Ze({
-    welcomeMessage: o,
-    supportProjectId: i,
-    initialHistory: s,
-    initialConversation: r,
-    isInitLoading: h
-  }), S = /* @__PURE__ */ f("div", { className: `elitea-assistant-window${m ? " elitea-assistant-window--expanded" : ""}`, children: [
+    welcomeMessage: r,
+    supportProjectId: n,
+    initialHistory: i,
+    initialConversation: c,
+    isInitLoading: l
+  }), S = /* @__PURE__ */ f("div", { className: `elitea-assistant-window${d ? " elitea-assistant-window--expanded" : ""}`, children: [
     /* @__PURE__ */ t(
       be,
       {
-        title: a,
-        expanded: m,
-        history: u,
-        currentConversationId: v,
-        disabled: E,
-        onClose: l,
-        onExpand: C,
-        onNewChat: B,
-        onSelectConversation: p
+        title: s,
+        expanded: d,
+        history: v,
+        currentConversationId: I,
+        disabled: A,
+        onClose: g,
+        onExpand: b,
+        onNewChat: h,
+        onSelectConversation: L
       }
     ),
     /* @__PURE__ */ t(
       ve,
       {
-        messages: d,
-        isLoading: E
+        avatar: a,
+        messages: N,
+        isLoading: A
       }
     ),
     /* @__PURE__ */ t(
       we,
       {
-        placeholder: n,
-        text: A,
-        onTextChange: w,
-        files: x,
-        onFilesChange: c,
-        onSend: L,
-        expanded: m,
-        disabled: E
+        placeholder: o,
+        text: w,
+        onTextChange: x,
+        files: u,
+        onFilesChange: C,
+        onSend: M,
+        expanded: d,
+        disabled: A
       }
     )
   ] });
-  return m ? /* @__PURE__ */ t(
+  return d ? /* @__PURE__ */ t(
     "div",
     {
       className: "elitea-assistant-overlay",
-      onClick: C,
-      children: /* @__PURE__ */ t("div", { onClick: (H) => H.stopPropagation(), children: S })
+      onClick: b,
+      children: /* @__PURE__ */ t("div", { onClick: (D) => D.stopPropagation(), children: S })
     }
   ) : S;
 });
 ke.displayName = "ChatWindow";
 const Ne = k((e) => {
-  const { message: a, onClose: n } = e;
+  const { message: a, onClose: s } = e;
   return /* @__PURE__ */ f("div", { className: "elitea-assistant-popup", children: [
     /* @__PURE__ */ t("span", { className: "elitea-assistant-popup-text", children: a }),
     /* @__PURE__ */ t(
       "button",
       {
         className: "elitea-assistant-popup-close",
-        onClick: n,
+        onClick: s,
         "aria-label": "Close popup",
         type: "button",
         children: /* @__PURE__ */ t(ee, {})
@@ -1030,101 +1040,103 @@ const qe = {
   "--elitea-assistant-history-dropdown-hover-bg": e.historyDropdownHoverBackground
 }), Qe = xe((e, a) => {
   const {
-    apiUrl: n,
+    apiUrl: s,
     token: o,
-    withCredentials: i = !1,
-    socketPath: s = "/socket.io/",
-    apiAdapter: r,
-    title: h = "Elitea Assistant",
+    withCredentials: r = !1,
+    socketPath: n = "/socket.io/",
+    apiAdapter: i,
+    title: c = "Elitea Assistant",
     placeholder: l = "Type a message...",
-    welcomeMessage: C = `Hi! I'm your ELITEA Support Assistant.
+    welcomeMessage: g = `Hi! I'm your ELITEA Support Assistant.
 Ask me anything about ELITEA or report any issues you're experiencing. I have context about your current screen and settings.`,
-    position: m = "bottom-right",
+    position: b = "bottom-right",
     theme: d = "light",
-    colors: A
-  } = e, w = Q(() => Ye(Je(d, A)), [d, A]), x = Q(() => {
-    if (r) return r;
-    if (n && (o || i)) return Se(n, { token: o, withCredentials: i });
+    colors: N
+  } = e, w = Q(() => Ye(Je(d, N)), [d, N]), x = Q(() => {
+    if (i) return i;
+    if (s && (o || r)) return Se(s, { token: o, withCredentials: r });
     throw new Error(
       "EliteaAssistant: provide either apiAdapter, or apiUrl with token, or apiUrl with withCredentials"
     );
-  }, [r, n, o, i]), c = Q(
+  }, [i, s, o, r]), u = Q(
     () => ({
-      url: n ? Re(n) : "",
-      path: s,
+      url: s ? Re(s) : "",
+      path: n,
       token: o,
-      withCredentials: i
+      withCredentials: r
     }),
-    [n, s, o, i]
-  ), u = Ue(c), {
+    [s, n, o, r]
+  ), C = Ue(u), {
     title: v,
-    welcomeMessage: E,
-    placeholder: B,
-    supportProjectId: p,
-    history: L,
+    welcomeMessage: I,
+    placeholder: A,
+    supportProjectId: h,
+    user: L,
+    history: M,
     lastConversation: S,
-    isLoading: H
+    isLoading: D
   } = $e({
     api: x,
-    title: h,
-    welcomeMessage: C,
+    title: c,
+    welcomeMessage: g,
     placeholder: l
-  }), { isOpen: M, isExpanded: Z, open: $, close: V, toggle: O, expandFullscreen: X, collapseFullscreen: J, toggleFullscreen: K } = Ve(), { showPopup: g, displayPopup: I, hidePopup: N, popupText: T } = Ge(M);
+  }), { isOpen: R, isExpanded: O, open: j, close: U, toggle: W, expandFullscreen: X, collapseFullscreen: J, toggleFullscreen: p } = Ve(), { showPopup: T, displayPopup: E, hidePopup: B, popupText: Z } = Ge(R);
   return Ie(
     a,
     () => ({
-      open: $,
-      close: V,
-      toggle: O,
+      open: j,
+      close: U,
+      toggle: W,
       expandFullscreen: X,
       collapseFullscreen: J,
-      toggleFullscreen: K,
-      showPopup: I,
-      hidePopup: N,
-      isOpen: () => M,
-      isExpanded: () => Z
+      toggleFullscreen: p,
+      showPopup: E,
+      hidePopup: B,
+      isOpen: () => R,
+      isExpanded: () => O
     }),
     [
-      M,
-      Z,
-      $,
-      V,
+      R,
       O,
+      j,
+      U,
+      W,
       X,
       J,
-      K,
-      I,
-      N
+      p,
+      E,
+      B
     ]
-  ), /* @__PURE__ */ t(fe.Provider, { value: x, children: /* @__PURE__ */ t(ye.Provider, { value: u, children: /* @__PURE__ */ f(
+  ), /* @__PURE__ */ t(fe.Provider, { value: x, children: /* @__PURE__ */ t(ye.Provider, { value: C, children: /* @__PURE__ */ f(
     "div",
     {
-      className: `elitea-assistant-container elitea-assistant-container--${m}`,
+      className: `elitea-assistant-container elitea-assistant-container--${b}`,
       style: w,
       children: [
-        M && /* @__PURE__ */ t(
+        R && /* @__PURE__ */ t(
           ke,
           {
             title: v,
-            placeholder: B,
-            welcomeMessage: E,
-            supportProjectId: p,
-            initialHistory: L,
+            placeholder: A,
+            welcomeMessage: I,
+            avatar: L.avatar,
+            supportProjectId: h,
+            initialHistory: M,
             lastConversation: S,
-            isInitLoading: H,
-            onClose: V,
-            expanded: Z,
-            onExpand: K
+            isInitLoading: D,
+            onClose: U,
+            expanded: O,
+            onExpand: p
           }
         ),
-        g && !M && /* @__PURE__ */ t(
+        T && !R && /* @__PURE__ */ t(
           Ne,
           {
-            message: T,
-            onClose: N
+            message: Z,
+            onClose: B
           }
         ),
-        /* @__PURE__ */ t(ge, { onClick: O })
+        /* @__PURE__ */ t(ge, { onClick: W })
       ]
     }
   ) }) });

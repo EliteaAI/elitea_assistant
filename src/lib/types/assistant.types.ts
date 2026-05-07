@@ -7,6 +7,11 @@ export type TAssistantConfig = {
   welcomeMessage: string;
   placeholder: string;
   support_project_id: number;
+  user: {
+    id: number;
+    name: string;
+    avatar: string;
+  };
 };
 
 export type TEliteaAssistantPosition = 'bottom-right' | 'bottom-left';
