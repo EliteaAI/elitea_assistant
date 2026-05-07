@@ -6,12 +6,13 @@ import type { TMessage } from '@/lib/types';
 import { formatTime } from '@/lib/utils';
 
 type TMessageListProps = {
+  avatar: string;
   messages: TMessage[];
   isLoading?: boolean;
 };
 
 const MessageList: React.FC<TMessageListProps> = memo(props => {
-  const { messages, isLoading } = props;
+  const { avatar, messages, isLoading } = props;
   const bottomRef = useRef<HTMLDivElement>(null);
   const hasScrolledRef = useRef(false);
 
@@ -66,7 +67,15 @@ const MessageList: React.FC<TMessageListProps> = memo(props => {
             <span className="elitea-assistant-message-time">{formatTime(msg.timestamp)}</span>
             {msg.role === 'user' && (
               <span className="elitea-assistant-message-avatar elitea-assistant-message-avatar--user">
-                <UserIcon />
+                {avatar ? (
+                  <img
+                    src={avatar}
+                    alt="User avatar"
+                    className="elitea-assistant-avatar-img"
+                  />
+                ) : (
+                  <UserIcon />
+                )}
               </span>
             )}
           </div>

@@ -15,6 +15,11 @@ export declare type TAssistantConfig = {
     welcomeMessage: string;
     placeholder: string;
     support_project_id: number;
+    user: {
+        id: number;
+        name: string;
+        avatar: string;
+    };
 };
 
 export declare type TChatAPI = {

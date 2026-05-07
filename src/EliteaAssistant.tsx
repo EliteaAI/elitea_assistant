@@ -59,6 +59,7 @@ const EliteaAssistant = forwardRef<TEliteaAssistantRef, TEliteaAssistantProps>((
     welcomeMessage,
     placeholder,
     supportProjectId,
+    user,
     history: initialHistory,
     lastConversation,
     isLoading: isInitLoading,
@@ -114,6 +115,7 @@ const EliteaAssistant = forwardRef<TEliteaAssistantRef, TEliteaAssistantProps>((
               title={title}
               placeholder={placeholder}
               welcomeMessage={welcomeMessage}
+              avatar={user.avatar}
               supportProjectId={supportProjectId}
               initialHistory={initialHistory}
               lastConversation={lastConversation}
