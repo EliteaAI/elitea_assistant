@@ -92,6 +92,19 @@
   background: var(--elitea-assistant-bot-msg-bg);
   color: var(--elitea-assistant-bot-msg-text);
   border-radius: 0 1rem 1rem 1rem;
+  position: relative;
+}
+
+.elitea-assistant-message--assistant > .elitea-assistant-tooltip-trigger {
+  position: absolute;
+  bottom: 0.375rem;
+  right: 0.375rem;
+  opacity: 0;
+  transition: opacity 0.15s ease;
+}
+
+.elitea-assistant-message--assistant:hover > .elitea-assistant-tooltip-trigger {
+  opacity: 1;
 }
 
 .elitea-assistant-message--error {
