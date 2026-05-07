@@ -1,0 +1,130 @@
+/* ── Markdown content inside assistant messages ── */
+
+.elitea-assistant-markdown {
+  overflow-wrap: break-word;
+}
+
+.elitea-assistant-markdown > :first-child {
+  margin-top: 0;
+}
+
+.elitea-assistant-markdown > :last-child {
+  margin-bottom: 0;
+}
+
+.elitea-assistant-markdown p {
+  margin: 0.5em 0;
+}
+
+.elitea-assistant-markdown h1,
+.elitea-assistant-markdown h2,
+.elitea-assistant-markdown h3,
+.elitea-assistant-markdown h4,
+.elitea-assistant-markdown h5,
+.elitea-assistant-markdown h6 {
+  margin: 0.75em 0 0.375em;
+  font-weight: 600;
+  line-height: 1.3;
+}
+
+.elitea-assistant-markdown h1 {
+  font-size: 1.25em;
+}
+.elitea-assistant-markdown h2 {
+  font-size: 1.125em;
+}
+.elitea-assistant-markdown h3 {
+  font-size: 1em;
+}
+
+.elitea-assistant-markdown ul,
+.elitea-assistant-markdown ol {
+  margin: 0.5em 0;
+  padding-left: 1.5em;
+}
+
+.elitea-assistant-markdown li {
+  margin: 0.25em 0;
+}
+
+.elitea-assistant-markdown li > ul,
+.elitea-assistant-markdown li > ol {
+  margin: 0.125em 0;
+}
+
+.elitea-assistant-markdown code {
+  background: rgba(0, 0, 0, 0.06);
+  padding: 0.125em 0.3em;
+  border-radius: 0.25em;
+  font-size: 0.85em;
+  font-family: ui-monospace, SFMono-Regular, 'SF Mono', Menlo, Consolas, monospace;
+}
+
+.elitea-assistant-markdown pre {
+  margin: 0.5em 0;
+  padding: 0.625em 0.75em;
+  background: rgba(0, 0, 0, 0.06);
+  border-radius: 0.375em;
+  overflow-x: auto;
+}
+
+.elitea-assistant-markdown pre code {
+  background: none;
+  padding: 0;
+  font-size: 0.8125em;
+  white-space: pre;
+}
+
+.elitea-assistant-markdown blockquote {
+  margin: 0.5em 0;
+  padding: 0.25em 0.75em;
+  border-left: 3px solid rgba(0, 0, 0, 0.15);
+  opacity: 0.85;
+}
+
+.elitea-assistant-markdown blockquote > :first-child {
+  margin-top: 0;
+}
+
+.elitea-assistant-markdown blockquote > :last-child {
+  margin-bottom: 0;
+}
+
+.elitea-assistant-markdown hr {
+  border: none;
+  border-top: 1px solid rgba(0, 0, 0, 0.1);
+  margin: 0.75em 0;
+}
+
+.elitea-assistant-markdown table {
+  border-collapse: collapse;
+  margin: 0.5em 0;
+  font-size: 0.85em;
+  width: 100%;
+}
+
+.elitea-assistant-markdown th,
+.elitea-assistant-markdown td {
+  border: 1px solid rgba(0, 0, 0, 0.1);
+  padding: 0.375em 0.625em;
+  text-align: left;
+}
+
+.elitea-assistant-markdown th {
+  font-weight: 600;
+  background: rgba(0, 0, 0, 0.03);
+}
+
+.elitea-assistant-markdown a {
+  color: var(--elitea-assistant-button-bg);
+  text-decoration: underline;
+}
+
+.elitea-assistant-markdown strong {
+  font-weight: 600;
+}
+
+.elitea-assistant-markdown img {
+  max-width: 100%;
+  border-radius: 0.375em;
+}

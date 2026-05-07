@@ -1,5 +1,6 @@
 import React, { memo, useEffect, useRef } from 'react';
 
+import MarkdownContent from '@/components/chat/MarkdownContent';
 import { AssistantIcon, UserIcon } from '@/components/icons';
 import { CopyButton } from '@/components/shared';
 import type { TMessage } from '@/lib/types';
@@ -82,16 +83,21 @@ const MessageList: React.FC<TMessageListProps> = memo(props => {
           <div
             className={`elitea-assistant-message elitea-assistant-message--${msg.role}${msg.isError ? ' elitea-assistant-message--error' : ''}`}
           >
-            {msg.content ||
-              (msg.isStreaming ? (
-                <span className="elitea-assistant-typing-indicator">
-                  <span className="elitea-assistant-typing-dot" />
-                  <span className="elitea-assistant-typing-dot" />
-                  <span className="elitea-assistant-typing-dot" />
-                </span>
+            {msg.content ? (
+              msg.role === 'assistant' ? (
+                <MarkdownContent content={msg.content} />
               ) : (
-                ''
-              ))}
+                msg.content
+              )
+            ) : msg.isStreaming ? (
+              <span className="elitea-assistant-typing-indicator">
+                <span className="elitea-assistant-typing-dot" />
+                <span className="elitea-assistant-typing-dot" />
+                <span className="elitea-assistant-typing-dot" />
+              </span>
+            ) : (
+              ''
+            )}
             {msg.role === 'assistant' && msg.content && !msg.isStreaming && <CopyButton text={msg.content} />}
           </div>
         </div>
