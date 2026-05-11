@@ -67,4 +67,41 @@ export const createDefaultAdapter = (baseURL: string, options: TAdapterOptions =
     })
       .then(assertOk)
       .then(() => undefined),
+
+  uploadFile: (conversationId, formData, onProgress) =>
+    new Promise((resolve, reject) => {
+      const xhr = new XMLHttpRequest();
+
+      if (onProgress)
+        xhr.upload.addEventListener('progress', event => {
+          if (event.lengthComputable) onProgress(event.loaded, event.total);
+        });
+
+      xhr.addEventListener('load', () => {
+        if (xhr.status >= 200 && xhr.status < 300) {
+          try {
+            resolve(JSON.parse(xhr.responseText));
+          } catch {
+            reject(new Error('Failed to parse upload response'));
+          }
+        } else {
+          try {
+            const body = JSON.parse(xhr.responseText);
+            reject(new Error(body.error || `Upload failed with status: ${xhr.status}`));
+          } catch {
+            reject(new Error(`Upload failed with status: ${xhr.status}`));
+          }
+        }
+      });
+
+      xhr.addEventListener('error', () => reject(new Error('Upload failed due to network error')));
+      xhr.addEventListener('abort', () => reject(new Error('Upload was aborted')));
+
+      xhr.open('POST', `${baseURL}/attachments/${conversationId}`);
+
+      if (options.token) xhr.setRequestHeader('Authorization', `Bearer ${options.token}`);
+      if (options.withCredentials) xhr.withCredentials = true;
+
+      xhr.send(formData);
+    }),
 });

@@ -4,6 +4,7 @@ export { default as ChatIcon } from './ChatIcon';
 export { default as CheckIcon } from './CheckIcon';
 export { default as CloseIcon } from './CloseIcon';
 export { default as CopyIcon } from './CopyIcon';
+export { default as ErrorIcon } from './ErrorIcon';
 export { default as ExpandIcon } from './ExpandIcon';
 export { default as FileIcon } from './FileIcon';
 export { default as HistoryIcon } from './HistoryIcon';

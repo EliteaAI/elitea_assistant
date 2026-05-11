@@ -1,11 +1,15 @@
 import { useCallback, useEffect, useMemo, useRef, useState } from 'react';
 
-import type { TConversationListItem, TMessage, TRawConversation, TSocketMessage } from '@/lib/types';
-import { parseConversationMessages } from '@/lib/utils';
-
-import { MESSAGE_TYPES, SOCKET_EVENTS } from '../constants/chat.constants';
-import { useApi } from './api.hook';
-import { useSocketContext } from './socket.hook';
+import { MESSAGE_TYPES, SOCKET_EVENTS, UploadStatus } from '@/lib/constants';
+import { useApi, useAttachmentUpload, useSocketContext } from '@/lib/hooks';
+import type {
+  TAttachment,
+  TConversationListItem,
+  TMessage,
+  TRawConversation,
+  TSocketMessage,
+} from '@/lib/types';
+import { buildValidatedAttachments, generateUUID, parseConversationMessages } from '@/lib/utils';
 
 type TUseChatProps = {
   welcomeMessage: string;
@@ -23,6 +27,8 @@ export const useChat = (props: TUseChatProps) => {
   const api = useApi();
   const socket = useSocketContext();
 
+  const { uploadAttachments, isUploading } = useAttachmentUpload();
+
   const createWelcomeMessages = useCallback(
     (): TMessage[] =>
       welcomeMessage
@@ -33,7 +39,7 @@ export const useChat = (props: TUseChatProps) => {
 
   const [messages, setMessages] = useState<TMessage[]>([]);
   const [inputText, setInputText] = useState('');
-  const [files, setFiles] = useState<File[]>([]);
+  const [attachments, setAttachments] = useState<TAttachment[]>([]);
   const [currentConversationId, setCurrentConversationId] = useState<string | null>(null);
   const [history, setHistory] = useState<TConversationListItem[]>([]);
   const [isSwitchingConversation, setIsSwitchingConversation] = useState(false);
@@ -64,7 +70,7 @@ export const useChat = (props: TUseChatProps) => {
   );
 
   const emitPredict = useCallback(
-    (params: { conversation_uuid: string; content: string; attachments?: unknown[] }) => {
+    (params: { conversation_uuid: string; content: string; attachments?: string[] }) => {
       socket?.emit(SOCKET_EVENTS.PREDICT, params);
     },
     [socket],
@@ -132,7 +138,7 @@ export const useChat = (props: TUseChatProps) => {
     setMessages(prev => [
       ...prev,
       {
-        id: crypto.randomUUID(),
+        id: generateUUID(),
         role: 'assistant' as const,
         content: data.error || 'An error occurred',
         timestamp: Date.now(),
@@ -177,18 +183,71 @@ export const useChat = (props: TUseChatProps) => {
     };
   }, [socket, handlePredict, handleError, handleConversationNameUpdated]);
 
+  const addFiles = useCallback((files: File[]) => {
+    setAttachments(prev => buildValidatedAttachments(files, prev));
+  }, []);
+
+  const removeAttachment = useCallback((attachmentId: string) => {
+    setAttachments(prev => prev.filter(a => a.id !== attachmentId));
+  }, []);
+
+  const updateAttachmentProgress = useCallback((attachmentId: string, progress: number) => {
+    setAttachments(prev =>
+      prev.map(a => (a.id === attachmentId ? { ...a, status: UploadStatus.UPLOADING, progress } : a)),
+    );
+  }, []);
+
+  const markAttachmentCompleted = useCallback((attachmentId: string, filepath: string) => {
+    setAttachments(prev =>
+      prev.map(a =>
+        a.id === attachmentId ? { ...a, status: UploadStatus.COMPLETED, progress: 100, filepath } : a,
+      ),
+    );
+  }, []);
+
+  const markAttachmentError = useCallback((attachmentId: string, error: string) => {
+    setAttachments(prev =>
+      prev.map(a => (a.id === attachmentId ? { ...a, status: UploadStatus.ERROR, error } : a)),
+    );
+  }, []);
+
+  const clearAttachments = useCallback(() => {
+    setAttachments([]);
+  }, []);
+
+  const startUpload = useCallback(
+    async (conversationUuid: string): Promise<string[]> => {
+      const pendingAttachments = attachments.filter(a => a.status === UploadStatus.PENDING);
+
+      if (pendingAttachments.length === 0) return [];
+
+      setAttachments(prev =>
+        prev.map(a => (a.status === UploadStatus.PENDING ? { ...a, status: UploadStatus.UPLOADING } : a)),
+      );
+
+      const uploadedFilepaths: string[] = [];
+
+      await uploadAttachments({
+        conversationId: conversationUuid,
+        attachments: pendingAttachments,
+        onProgress: updateAttachmentProgress,
+        onComplete: (attachmentId, filepath) => {
+          markAttachmentCompleted(attachmentId, filepath);
+          uploadedFilepaths.push(filepath);
+        },
+        onError: markAttachmentError,
+      });
+
+      return uploadedFilepaths;
+    },
+    [attachments, uploadAttachments, updateAttachmentProgress, markAttachmentCompleted, markAttachmentError],
+  );
+
   const handleSend = useCallback(
     async (text: string) => {
-      const userMessage: TMessage = {
-        id: crypto.randomUUID(),
-        role: 'user',
-        content: text,
-        timestamp: Date.now(),
-      };
-      setMessages(prev => [...prev, userMessage]);
-
       let activeConversationId = currentConversationId;
 
+      // Create conversation if needed
       if (!activeConversationId) {
         try {
           const created = await api.createConversation();
@@ -200,7 +259,7 @@ export const useChat = (props: TUseChatProps) => {
           setMessages(prev => [
             ...prev,
             {
-              id: crypto.randomUUID(),
+              id: generateUUID(),
               role: 'assistant',
               content: 'Failed to create conversation. Please try again.',
               timestamp: Date.now(),
@@ -211,11 +270,33 @@ export const useChat = (props: TUseChatProps) => {
         }
       }
 
-      if (activeConversationId) {
-        emitPredict({ conversation_uuid: activeConversationId, content: text });
-      }
+      const pendingAttachments = attachments.filter(a => a.status === UploadStatus.PENDING);
+      const alreadyCompletedFilepaths = attachments
+        .filter(a => a.status === UploadStatus.COMPLETED && a.filepath)
+        .map(a => a.filepath as string);
+
+      const uploadedFilepaths =
+        pendingAttachments.length > 0 && activeConversationId ? await startUpload(activeConversationId) : [];
+
+      if (pendingAttachments.length > 0 && uploadedFilepaths.length < pendingAttachments.length) return;
+
+      setMessages(prev => [
+        ...prev,
+        { id: generateUUID(), role: 'user', content: text, timestamp: Date.now() },
+      ]);
+
+      const allFilepaths = [...alreadyCompletedFilepaths, ...uploadedFilepaths];
+
+      if (activeConversationId)
+        emitPredict({
+          conversation_uuid: activeConversationId,
+          content: text,
+          attachments: allFilepaths.length > 0 ? allFilepaths : undefined,
+        });
+
+      clearAttachments();
     },
-    [currentConversationId, api, enterRoom, emitPredict],
+    [currentConversationId, api, enterRoom, emitPredict, attachments, startUpload, clearAttachments],
   );
 
   const handleNewChat = useCallback(() => {
@@ -224,8 +305,8 @@ export const useChat = (props: TUseChatProps) => {
     setCurrentConversationId(null);
     setMessages(createWelcomeMessages());
     setInputText('');
-    setFiles([]);
-  }, [currentConversationId, leaveRoom, createWelcomeMessages]);
+    clearAttachments();
+  }, [currentConversationId, leaveRoom, createWelcomeMessages, clearAttachments]);
 
   const handleSelectConversation = useCallback(
     async (conversationId: string) => {
@@ -235,7 +316,7 @@ export const useChat = (props: TUseChatProps) => {
       setCurrentConversationId(conversationId);
       enterRoom(conversationId);
       setInputText('');
-      setFiles([]);
+      clearAttachments();
       setMessages([]);
       setIsSwitchingConversation(true);
 
@@ -249,18 +330,20 @@ export const useChat = (props: TUseChatProps) => {
         setIsSwitchingConversation(false);
       }
     },
-    [currentConversationId, leaveRoom, enterRoom, createWelcomeMessages, api],
+    [currentConversationId, leaveRoom, enterRoom, createWelcomeMessages, api, clearAttachments],
   );
 
   return {
     messages,
     inputText,
     setInputText,
-    files,
-    setFiles,
+    attachments,
+    addFiles,
+    removeAttachment,
     history,
     currentConversationId: currentConversationId ?? '',
     isLoading,
+    isUploading,
     handleNewChat,
     handleSelectConversation,
     handleSend,

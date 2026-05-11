@@ -7,6 +7,24 @@
   background: var(--elitea-assistant-input-bg);
   flex-shrink: 0;
   border-top: 0.0625rem solid var(--elitea-assistant-window-border);
+  position: relative;
+}
+
+.elitea-assistant-input-area--drag-over > *:not(.elitea-assistant-drop-overlay) {
+  visibility: hidden;
+}
+
+.elitea-assistant-drop-overlay {
+  position: absolute;
+  inset: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border: 2px dashed var(--elitea-assistant-send-btn-bg);
+  border-radius: 0 0 1rem 1rem;
+  color: var(--elitea-assistant-input-text);
+  font-size: 0.875rem;
+  z-index: 10;
 }
 
 .elitea-assistant-input-row {
@@ -164,4 +182,54 @@
   color: var(--elitea-assistant-input-text);
   max-width: none;
   gap: 0;
+}
+
+/* ── Attachment Upload States ── */
+
+.elitea-assistant-file-chip--error {
+  border: 1px solid var(--elitea-assistant-error-color, #ef4444);
+  background: var(--elitea-assistant-error-bg, rgba(239, 68, 68, 0.1));
+}
+
+.elitea-assistant-file-chip--completed .elitea-assistant-file-chip-icon {
+  color: var(--elitea-assistant-success-color, #22c55e);
+}
+
+.elitea-assistant-file-chip-progress-text {
+  width: 1.5625rem;
+  font-size: 0.625rem;
+  color: var(--elitea-assistant-input-text);
+  flex-shrink: 0;
+  text-align: right;
+}
+
+.elitea-assistant-file-chip-error-icon {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+  color: var(--elitea-assistant-error-color, #ef4444);
+}
+
+.elitea-assistant-file-chip-error-icon svg {
+  width: 0.875rem;
+  height: 0.875rem;
+  fill: currentColor;
+}
+
+.elitea-assistant-file-chip-icon .elitea-assistant-file-chip-spinner {
+  width: 1.25rem;
+  height: 1.25rem;
+  flex-shrink: 0;
+  color: var(--elitea-assistant-send-btn-bg);
+}
+
+.elitea-assistant-file-chip-spinner-progress {
+  transition: stroke-dashoffset 0.15s ease;
+}
+
+/* Disabled state for attach button during upload */
+.elitea-assistant-attach-button:disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
 }

@@ -28,6 +28,7 @@ export declare type TChatAPI = {
     getConversation: (conversationId: string) => Promise<TRawConversation>;
     createConversation: () => Promise<TConversationListItem>;
     deleteConversation: (conversationId: string) => Promise<void>;
+    uploadFile: (conversationId: string, formData: FormData, onProgress?: TUploadProgressCallback) => Promise<unknown>;
 };
 
 export declare type TConversationListItem = {
@@ -176,5 +177,7 @@ declare type TRawMessageItem = {
     };
     content?: string;
 };
+
+declare type TUploadProgressCallback = (loaded: number, total: number) => void;
 
 export { }

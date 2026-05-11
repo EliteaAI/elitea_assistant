@@ -1,34 +1,75 @@
-import React, { memo, useRef, useState } from 'react';
+import React, { memo, useMemo, useRef, useState } from 'react';
 
-import { AttachmentIcon, CloseIcon, FileIcon, SendIcon } from '@/components/icons';
-import { Tooltip } from '@/components/shared';
+import { AttachmentIcon, SendIcon } from '@/components/icons';
+import { ACCEPTED_FILE_EXTENSIONS, UploadStatus } from '@/lib/constants/attachment.constants';
+import type { TAttachment } from '@/lib/types';
+
+import { AttachmentChip } from './attachments';
 
 type TMessageInputProps = {
   placeholder: string;
   text: string;
   onTextChange: (text: string) => void;
-  files: File[];
-  onFilesChange: (files: File[]) => void;
-  onSend: (text: string, files?: File[]) => void;
+  attachments: TAttachment[];
+  onAddFiles: (files: File[]) => void;
+  onRemoveAttachment: (attachmentId: string) => void;
+  onSend: (text: string) => void;
   expanded?: boolean;
   disabled?: boolean;
+  isUploading?: boolean;
 };
 
 const MessageInput: React.FC<TMessageInputProps> = memo(props => {
-  const { placeholder, text, onTextChange, files, onFilesChange, onSend, expanded, disabled } = props;
+  const {
+    placeholder,
+    text,
+    onTextChange,
+    attachments,
+    onAddFiles,
+    onRemoveAttachment,
+    onSend,
+    expanded,
+    disabled,
+    isUploading,
+  } = props;
 
   const fileInputRef = useRef<HTMLInputElement>(null);
-
   const [fileInputKey, setFileInputKey] = useState(0);
+  const [isDragOver, setIsDragOver] = useState(false);
+  const dragCounterRef = useRef(0);
+
+  const { visibleAttachments, remainingAttachmentsCount } = useMemo(() => {
+    const max = expanded ? 3 : 2;
+
+    return {
+      visibleAttachments: attachments.slice(0, max),
+      remainingAttachmentsCount: attachments.length - max,
+    };
+  }, [attachments, expanded]);
+
+  const attachmentsValid = useMemo(
+    () =>
+      !attachments?.length
+        ? true
+        : attachments.every(a => a.status === UploadStatus.PENDING || a.status === UploadStatus.COMPLETED),
+    [attachments],
+  );
+
+  const isSendDisabled = useMemo(
+    () => Boolean(disabled || isUploading || !attachmentsValid || !text.trim()),
+    [disabled, isUploading, text, attachmentsValid],
+  );
 
   const handleSend = () => {
     const trimmed = text.trim();
 
-    if (!trimmed && files.length === 0) return;
+    const completedAttachments = attachments.filter(a => a.status === UploadStatus.COMPLETED && a.filepath);
+    if (!trimmed && completedAttachments.length === 0) return;
 
-    onSend(trimmed, files.length > 0 ? files : undefined);
+    if (isUploading) return;
+
+    onSend(trimmed);
     onTextChange('');
-    onFilesChange([]);
   };
 
   const handleKeyDown = (e: React.KeyboardEvent<HTMLTextAreaElement>) => {
@@ -45,48 +86,78 @@ const MessageInput: React.FC<TMessageInputProps> = memo(props => {
   const handleFileChange = (e: React.ChangeEvent<HTMLInputElement>) => {
     const selectedFiles = e.target.files;
 
-    if (selectedFiles) onFilesChange([...files, ...Array.from(selectedFiles)]);
+    if (selectedFiles) onAddFiles(Array.from(selectedFiles));
 
     // Force a fresh input element so the next click always works
     setFileInputKey(prev => prev + 1);
   };
 
-  const handleRemoveFile = (index: number) => {
-    onFilesChange(files.filter((_, i) => i !== index));
+  const handleDragEnter = (e: React.DragEvent) => {
+    e.preventDefault();
+    dragCounterRef.current += 1;
+    if (e.dataTransfer.types.includes('Files')) setIsDragOver(true);
   };
 
-  const maxVisible = expanded ? 3 : 2;
-  const visibleFiles = files.slice(0, maxVisible);
-  const remainingCount = files.length - maxVisible;
+  const handleDragLeave = (e: React.DragEvent) => {
+    e.preventDefault();
+    dragCounterRef.current -= 1;
+    if (dragCounterRef.current === 0) setIsDragOver(false);
+  };
+
+  const handleDragOver = (e: React.DragEvent) => {
+    e.preventDefault();
+  };
+
+  const handleDrop = (e: React.DragEvent) => {
+    e.preventDefault();
+    dragCounterRef.current = 0;
+    setIsDragOver(false);
+
+    const files = Array.from(e.dataTransfer.files);
+    if (files.length > 0) onAddFiles(files);
+  };
+
+  const handlePaste = (e: React.ClipboardEvent<HTMLTextAreaElement>) => {
+    const files = Array.from(e.clipboardData.items)
+      .filter(item => item.kind === 'file')
+      .map(item => item.getAsFile())
+      .filter((file): file is File => file !== null)
+      .map(file => {
+        const isGenericName = /^image\.\w+$/.test(file.name);
+        if (!isGenericName) return file;
+
+        const ext = file.name.split('.').pop() || 'png';
+        const timestamp = new Date().toISOString().replace(/[:.]/g, '-');
+        return new File([file], `screenshot-${timestamp}.${ext}`, { type: file.type });
+      });
+
+    if (files.length === 0) return;
+
+    e.preventDefault();
+    onAddFiles(files);
+  };
 
   return (
-    <div className="elitea-assistant-input-area">
-      {files.length > 0 && (
+    <div
+      className={`elitea-assistant-input-area${isDragOver ? ' elitea-assistant-input-area--drag-over' : ''}`}
+      onDragEnter={handleDragEnter}
+      onDragLeave={handleDragLeave}
+      onDragOver={handleDragOver}
+      onDrop={handleDrop}
+    >
+      {isDragOver && <div className="elitea-assistant-drop-overlay">Drop files here</div>}
+      {attachments.length > 0 && (
         <div className="elitea-assistant-file-list">
-          {visibleFiles.map((file, index) => (
-            <Tooltip
-              key={index}
-              content={file.name}
-            >
-              <div className="elitea-assistant-file-chip">
-                <span className="elitea-assistant-file-chip-icon">
-                  <FileIcon />
-                </span>
-                <span className="elitea-assistant-file-chip-name">{file.name}</span>
-                <button
-                  className="elitea-assistant-file-chip-remove"
-                  onClick={() => handleRemoveFile(index)}
-                  aria-label={`Remove ${file.name}`}
-                  type="button"
-                >
-                  <CloseIcon />
-                </button>
-              </div>
-            </Tooltip>
+          {visibleAttachments.map(attachment => (
+            <AttachmentChip
+              key={attachment.id}
+              attachment={attachment}
+              onRemove={onRemoveAttachment}
+            />
           ))}
-          {remainingCount > 0 && (
+          {remainingAttachmentsCount > 0 && (
             <div className="elitea-assistant-file-chip elitea-assistant-file-chip--count">
-              +{remainingCount}
+              +{remainingAttachmentsCount}
             </div>
           )}
         </div>
@@ -97,6 +168,7 @@ const MessageInput: React.FC<TMessageInputProps> = memo(props => {
           ref={fileInputRef}
           type="file"
           multiple
+          accept={ACCEPTED_FILE_EXTENSIONS}
           onChange={handleFileChange}
           style={{ display: 'none' }}
         />
@@ -105,7 +177,7 @@ const MessageInput: React.FC<TMessageInputProps> = memo(props => {
           onClick={handleAttachClick}
           aria-label="Attach file"
           type="button"
-          disabled={disabled}
+          disabled={disabled || isUploading}
         >
           <AttachmentIcon />
         </button>
@@ -115,6 +187,7 @@ const MessageInput: React.FC<TMessageInputProps> = memo(props => {
           value={text}
           onChange={e => onTextChange(e.target.value)}
           onKeyDown={handleKeyDown}
+          onPaste={handlePaste}
           placeholder={placeholder}
           rows={1}
           autoFocus
@@ -123,7 +196,7 @@ const MessageInput: React.FC<TMessageInputProps> = memo(props => {
         <button
           className="elitea-assistant-send-button"
           onClick={handleSend}
-          disabled={disabled || (!text.trim() && files.length === 0)}
+          disabled={isSendDisabled}
           aria-label="Send message"
           type="button"
         >
