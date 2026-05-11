@@ -1,4 +1,10 @@
-export { parseConversationMessages } from './conversation.utils';
-export { formatTime } from './format.utils';
+export {
+  buildValidatedAttachments,
+  getFileExtension,
+  isAllowedFileType,
+  isImageFile,
+} from './attachment.utils';
+export { parseConversationMessages, generateUUID } from './conversation.utils';
+export { formatFileSize, formatTime } from './format.utils';
 export { playPopupSound } from './sound.utils';
 export { deriveSocketUrl } from './socket.utils';

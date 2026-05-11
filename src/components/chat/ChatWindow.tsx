@@ -38,11 +38,13 @@ const ChatWindow: React.FC<TChatWindowProps> = memo(props => {
     messages,
     inputText,
     setInputText,
-    files,
-    setFiles,
+    attachments,
+    addFiles,
+    removeAttachment,
     history,
     currentConversationId,
     isLoading,
+    isUploading,
     handleNewChat,
     handleSelectConversation,
     handleSend,
@@ -76,11 +78,13 @@ const ChatWindow: React.FC<TChatWindowProps> = memo(props => {
         placeholder={placeholder}
         text={inputText}
         onTextChange={setInputText}
-        files={files}
-        onFilesChange={setFiles}
+        attachments={attachments}
+        onAddFiles={addFiles}
+        onRemoveAttachment={removeAttachment}
         onSend={handleSend}
         expanded={expanded}
         disabled={isLoading}
+        isUploading={isUploading}
       />
     </div>
   );
