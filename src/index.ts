@@ -9,4 +9,5 @@ export type {
   TEliteaAssistantPosition,
   TEliteaAssistantRef,
   TMessage,
+  TSupportAssistantContext,
 } from '@/lib/types';
