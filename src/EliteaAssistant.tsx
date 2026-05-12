@@ -1,13 +1,16 @@
-import React, { forwardRef, useImperativeHandle, useMemo } from 'react';
+import React, { forwardRef, useCallback, useImperativeHandle, useMemo } from 'react';
 
 import { createDefaultAdapter } from '@/api';
 import { ChatButton, ChatWindow, PopupMessage } from '@/components/chat';
 import {
   ApiContext,
+  ScreenshotContext,
   SocketContext,
+  SupportAssistantContextValue,
   useAssistantState,
   useInitAssistant,
   usePopup,
+  useScreenshot,
   useSocketConnection,
 } from '@/lib/hooks';
 import type { TChatAPI, TEliteaAssistantProps, TEliteaAssistantRef } from '@/lib/types';
@@ -29,6 +32,7 @@ const EliteaAssistant = forwardRef<TEliteaAssistantRef, TEliteaAssistantProps>((
     position = 'bottom-right',
     theme = 'light',
     colors,
+    supportAssistantContext,
   } = props;
 
   const cssVars = useMemo(() => colorsToCSSProperties(resolveColors(theme, colors)), [theme, colors]);
@@ -73,7 +77,19 @@ const EliteaAssistant = forwardRef<TEliteaAssistantRef, TEliteaAssistantProps>((
   const { isOpen, isExpanded, open, close, toggle, expandFullscreen, collapseFullscreen, toggleFullscreen } =
     useAssistantState();
 
-  const { popupVissible, showPopup, hidePopup, popupText } = usePopup(isOpen);
+  const screenshotState = useScreenshot();
+
+  const { popupVissible, showPopup: showPopupBase, hidePopup: hidePopupBase, popupText } = usePopup(isOpen);
+
+  const showPopupWithScreenshot = useCallback(() => {
+    screenshotState.captureScreenshot();
+    showPopupBase();
+  }, [screenshotState, showPopupBase]);
+
+  const hidePopupWithClear = useCallback(() => {
+    screenshotState.clearScreenshot();
+    hidePopupBase();
+  }, [screenshotState, hidePopupBase]);
 
   useImperativeHandle(
     ref,
@@ -84,8 +100,8 @@ const EliteaAssistant = forwardRef<TEliteaAssistantRef, TEliteaAssistantProps>((
       expandFullscreen,
       collapseFullscreen,
       toggleFullscreen,
-      showPopup,
-      hidePopup,
+      showPopup: showPopupWithScreenshot,
+      hidePopup: hidePopupWithClear,
       isOpen: () => isOpen,
       isExpanded: () => isExpanded,
     }),
@@ -98,41 +114,45 @@ const EliteaAssistant = forwardRef<TEliteaAssistantRef, TEliteaAssistantProps>((
       expandFullscreen,
       collapseFullscreen,
       toggleFullscreen,
-      showPopup,
-      hidePopup,
+      showPopupWithScreenshot,
+      hidePopupWithClear,
     ],
   );
 
   return (
     <ApiContext.Provider value={api}>
       <SocketContext.Provider value={socket}>
-        <div
-          className={`elitea-assistant-container elitea-assistant-container--${position}`}
-          style={cssVars as React.CSSProperties}
-        >
-          {isOpen && (
-            <ChatWindow
-              title={title}
-              placeholder={placeholder}
-              welcomeMessage={welcomeMessage}
-              avatar={user.avatar}
-              supportProjectId={supportProjectId}
-              initialHistory={initialHistory}
-              lastConversation={lastConversation}
-              isInitLoading={isInitLoading}
-              onClose={close}
-              expanded={isExpanded}
-              onExpand={toggleFullscreen}
-            />
-          )}
-          {popupVissible && !isOpen && (
-            <PopupMessage
-              message={popupText}
-              onClose={hidePopup}
-            />
-          )}
-          <ChatButton onClick={toggle} />
-        </div>
+        <SupportAssistantContextValue.Provider value={supportAssistantContext ?? null}>
+          <ScreenshotContext.Provider value={screenshotState}>
+            <div
+              className={`elitea-assistant-container elitea-assistant-container--${position}`}
+              style={cssVars as React.CSSProperties}
+            >
+              {isOpen && (
+                <ChatWindow
+                  title={title}
+                  placeholder={placeholder}
+                  welcomeMessage={welcomeMessage}
+                  avatar={user.avatar}
+                  supportProjectId={supportProjectId}
+                  initialHistory={initialHistory}
+                  lastConversation={lastConversation}
+                  isInitLoading={isInitLoading}
+                  onClose={close}
+                  expanded={isExpanded}
+                  onExpand={toggleFullscreen}
+                />
+              )}
+              {popupVissible && !isOpen && (
+                <PopupMessage
+                  message={popupText}
+                  onClose={hidePopupWithClear}
+                />
+              )}
+              <ChatButton onClick={toggle} />
+            </div>
+          </ScreenshotContext.Provider>
+        </SupportAssistantContextValue.Provider>
       </SocketContext.Provider>
     </ApiContext.Provider>
   );

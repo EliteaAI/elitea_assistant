@@ -1,13 +1,20 @@
 import { useCallback, useEffect, useMemo, useRef, useState } from 'react';
 
 import { MESSAGE_TYPES, SOCKET_EVENTS, UploadStatus } from '@/lib/constants';
-import { useApi, useAttachmentUpload, useSocketContext } from '@/lib/hooks';
+import {
+  useApi,
+  useAttachmentUpload,
+  useScreenshotContext,
+  useSocketContext,
+  useSupportAssistantContext,
+} from '@/lib/hooks';
 import type {
   TAttachment,
   TConversationListItem,
   TMessage,
   TRawConversation,
   TSocketMessage,
+  TSupportAssistantContext,
 } from '@/lib/types';
 import { buildValidatedAttachments, generateUUID, parseConversationMessages } from '@/lib/utils';
 
@@ -26,6 +33,8 @@ export const useChat = (props: TUseChatProps) => {
 
   const api = useApi();
   const socket = useSocketContext();
+  const supportAssistantContext = useSupportAssistantContext();
+  const screenshotContext = useScreenshotContext();
 
   const { uploadAttachments, isUploading } = useAttachmentUpload();
 
@@ -70,7 +79,12 @@ export const useChat = (props: TUseChatProps) => {
   );
 
   const emitPredict = useCallback(
-    (params: { conversation_uuid: string; content: string; attachments?: string[] }) => {
+    (params: {
+      conversation_uuid: string;
+      content: string;
+      attachments?: string[];
+      support_assistant_context?: TSupportAssistantContext;
+    }) => {
       socket?.emit(SOCKET_EVENTS.PREDICT, params);
     },
     [socket],
@@ -287,16 +301,49 @@ export const useChat = (props: TUseChatProps) => {
 
       const allFilepaths = [...alreadyCompletedFilepaths, ...uploadedFilepaths];
 
+      const validScreenshot = screenshotContext?.getValidScreenshot();
+
+      if (activeConversationId && validScreenshot) {
+        try {
+          const file = new File([validScreenshot], `screenshot-${Date.now()}.png`, {
+            type: 'image/png',
+          });
+          const formData = new FormData();
+
+          formData.append('file', file);
+          formData.append('overwrite', '1');
+
+          const response = await api.uploadFile(activeConversationId, formData);
+          const result = (response as { filepath: string }[])[0];
+
+          if (result?.filepath) allFilepaths.push(result.filepath);
+        } catch {
+          // screenshot upload is best-effort
+        }
+        screenshotContext?.clearScreenshot();
+      }
+
       if (activeConversationId)
         emitPredict({
           conversation_uuid: activeConversationId,
           content: text,
           attachments: allFilepaths.length > 0 ? allFilepaths : undefined,
+          support_assistant_context: supportAssistantContext ?? undefined,
         });
 
       clearAttachments();
     },
-    [currentConversationId, api, enterRoom, emitPredict, attachments, startUpload, clearAttachments],
+    [
+      currentConversationId,
+      api,
+      enterRoom,
+      emitPredict,
+      attachments,
+      startUpload,
+      clearAttachments,
+      supportAssistantContext,
+      screenshotContext,
+    ],
   );
 
   const handleNewChat = useCallback(() => {

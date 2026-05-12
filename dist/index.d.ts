@@ -129,6 +129,7 @@ export declare type TEliteaAssistantProps = {
     position?: TEliteaAssistantPosition;
     theme?: 'light' | 'dark';
     colors?: TEliteaAssistantColors;
+    supportAssistantContext?: TSupportAssistantContext;
 };
 
 export declare type TEliteaAssistantRef = {
@@ -176,6 +177,20 @@ declare type TRawMessageItem = {
         content?: string;
     };
     content?: string;
+};
+
+export declare type TSupportAssistantContext = {
+    assistant_name?: string;
+    assistant_version?: string;
+    project_id?: number;
+    project_name?: string;
+    current_page?: string;
+    current_entity_type?: string;
+    current_entity_id?: number;
+    current_entity_name?: string;
+    selected_provider?: string;
+    selected_model?: string;
+    meta?: Record<string, unknown>;
 };
 
 declare type TUploadProgressCallback = (loaded: number, total: number) => void;

@@ -4,8 +4,14 @@ export type {
   TEliteaAssistantPosition,
   TEliteaAssistantProps,
   TEliteaAssistantRef,
+  TSupportAssistantContext,
 } from './assistant.types';
-export type { TAttachment, TChunkUploadResponse, TUploadResponse } from './attachment.types';
+export type {
+  TAttachment,
+  TChunkUploadResponse,
+  TScreenshotContext,
+  TUploadResponse,
+} from './attachment.types';
 export type {
   TConversationListItem,
   TConversationsResponse,

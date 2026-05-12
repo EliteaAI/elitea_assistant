@@ -1,6 +1,20 @@
 import type { TChatAPI } from './api.types';
 import type { TEliteaAssistantColors } from './theme.types';
 
+export type TSupportAssistantContext = {
+  assistant_name?: string;
+  assistant_version?: string;
+  project_id?: number;
+  project_name?: string;
+  current_page?: string;
+  current_entity_type?: string;
+  current_entity_id?: number;
+  current_entity_name?: string;
+  selected_provider?: string;
+  selected_model?: string;
+  meta?: Record<string, unknown>;
+};
+
 export type TAssistantConfig = {
   enabled: boolean;
   title: string;
@@ -28,6 +42,7 @@ export type TEliteaAssistantProps = {
   position?: TEliteaAssistantPosition;
   theme?: 'light' | 'dark';
   colors?: TEliteaAssistantColors;
+  supportAssistantContext?: TSupportAssistantContext;
 };
 
 export type TEliteaAssistantRef = {

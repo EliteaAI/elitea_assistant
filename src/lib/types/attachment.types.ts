@@ -17,6 +17,14 @@ export type TUploadResponse = {
   file_size: number;
 };
 
+export type TScreenshotContext = {
+  screenshot: Blob | null;
+  capturedAt: number | null;
+  captureScreenshot: () => void;
+  clearScreenshot: () => void;
+  getValidScreenshot: () => Blob | null;
+};
+
 export type TChunkUploadResponse = {
   status?: string;
   file_id?: string;
