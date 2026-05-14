@@ -1,6 +1,6 @@
 import React, { memo, useCallback, useEffect, useRef, useState } from 'react';
 
-import { CloseIcon, ExpandIcon, HistoryIcon, PlusIcon } from '@/components/icons';
+import { CloseIcon, CollapseIcon, ExpandIcon, HistoryIcon, PlusIcon } from '@/components/icons';
 import { Tooltip } from '@/components/shared';
 import type { TConversationListItem } from '@/lib/types';
 
@@ -122,7 +122,7 @@ const ChatHeader: React.FC<TChatHeaderProps> = memo(props => {
             aria-label="Expand chat"
             type="button"
           >
-            <ExpandIcon />
+            {expanded ? <CollapseIcon /> : <ExpandIcon />}
           </button>
         </Tooltip>
       </div>

@@ -109,8 +109,7 @@ export const useChat = (props: TUseChatProps) => {
 
       case MESSAGE_TYPES.CHUNK:
       case MESSAGE_TYPES.AI_MESSAGE_CHUNK:
-      case MESSAGE_TYPES.AGENT_LLM_CHUNK:
-      case MESSAGE_TYPES.AGENT_RESPONSE: {
+      case MESSAGE_TYPES.AGENT_LLM_CHUNK: {
         const chunk = typeof content === 'string' ? content : JSON.stringify(content);
         const finished = !!response_metadata?.finish_reason;
 
@@ -120,6 +119,14 @@ export const useChat = (props: TUseChatProps) => {
               ? { ...m, content: m.content + chunk, ...(finished && { isStreaming: false }) }
               : m,
           ),
+        );
+        break;
+      }
+
+      case MESSAGE_TYPES.AGENT_RESPONSE: {
+        const responseContent = typeof content === 'string' ? content : JSON.stringify(content);
+        setMessages(prev =>
+          prev.map(m => (m.id === message_id ? { ...m, content: responseContent, isStreaming: false } : m)),
         );
         break;
       }
