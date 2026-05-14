@@ -3,6 +3,7 @@ export { default as AttachmentIcon } from './AttachmentIcon';
 export { default as ChatIcon } from './ChatIcon';
 export { default as CheckIcon } from './CheckIcon';
 export { default as CloseIcon } from './CloseIcon';
+export { default as CollapseIcon } from './CollapseIcon';
 export { default as CopyIcon } from './CopyIcon';
 export { default as ErrorIcon } from './ErrorIcon';
 export { default as ExpandIcon } from './ExpandIcon';
