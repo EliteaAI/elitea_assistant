@@ -58,6 +58,8 @@ export const useChat = (props: TUseChatProps) => {
     [isInitLoading, isSwitchingConversation],
   );
 
+  const isStreaming = useMemo(() => messages.some(m => m.isStreaming), [messages]);
+
   const enterRoom = useCallback(
     (conversationId: string) => {
       socket?.emit(SOCKET_EVENTS.ENTER_ROOM, {
@@ -397,6 +399,7 @@ export const useChat = (props: TUseChatProps) => {
     history,
     currentConversationId: currentConversationId ?? '',
     isLoading,
+    isStreaming,
     isUploading,
     handleNewChat,
     handleSelectConversation,

@@ -44,6 +44,7 @@ const ChatWindow: React.FC<TChatWindowProps> = memo(props => {
     history,
     currentConversationId,
     isLoading,
+    isStreaming,
     isUploading,
     handleNewChat,
     handleSelectConversation,
@@ -83,7 +84,7 @@ const ChatWindow: React.FC<TChatWindowProps> = memo(props => {
         onRemoveAttachment={removeAttachment}
         onSend={handleSend}
         expanded={expanded}
-        disabled={isLoading}
+        disabled={isLoading || isStreaming}
         isUploading={isUploading}
       />
     </div>
