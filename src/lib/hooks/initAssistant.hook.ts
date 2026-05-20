@@ -72,7 +72,7 @@ export const useInitAssistant = (props: TInitAssistantProps): TInitAssistantResu
 
   return {
     title: config?.title || title,
-    welcomeMessage: config?.welcomeMessage || welcomeMessage,
+    welcomeMessage: config?.welcome_message || welcomeMessage,
     placeholder: config?.placeholder || placeholder,
     supportProjectId: config?.support_project_id ?? null,
     user: config?.user || { id: 0, name: 'Guest', avatar: '' },

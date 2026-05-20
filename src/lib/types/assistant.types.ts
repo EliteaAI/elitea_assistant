@@ -18,7 +18,7 @@ export type TSupportAssistantContext = {
 export type TAssistantConfig = {
   enabled: boolean;
   title: string;
-  welcomeMessage: string;
+  welcome_message: string;
   placeholder: string;
   support_project_id: number;
   user: {

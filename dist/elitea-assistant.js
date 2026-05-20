@@ -9852,7 +9852,7 @@ const Ml = Nt(null), Nl = () => {
     };
   }, [t]), {
     title: (a == null ? void 0 : a.title) || n,
-    welcomeMessage: (a == null ? void 0 : a.welcomeMessage) || r,
+    welcomeMessage: (a == null ? void 0 : a.welcome_message) || r,
     placeholder: (a == null ? void 0 : a.placeholder) || i,
     supportProjectId: (a == null ? void 0 : a.support_project_id) ?? null,
     user: (a == null ? void 0 : a.user) || { id: 0, name: "Guest", avatar: "" },
