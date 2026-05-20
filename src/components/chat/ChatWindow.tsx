@@ -14,6 +14,7 @@ type TChatWindowProps = {
   initialHistory: TConversationListItem[];
   lastConversation: TRawConversation | null;
   isInitLoading: boolean;
+  isOpen: boolean;
   onClose: () => void;
   onExpand?: () => void;
   expanded?: boolean;
@@ -29,6 +30,7 @@ const ChatWindow: React.FC<TChatWindowProps> = memo(props => {
     initialHistory,
     lastConversation,
     isInitLoading,
+    isOpen,
     onClose,
     onExpand,
     expanded,
@@ -56,6 +58,8 @@ const ChatWindow: React.FC<TChatWindowProps> = memo(props => {
     initialConversation: lastConversation,
     isInitLoading,
   });
+
+  if (!isOpen) return null;
 
   const window = (
     <div className={`elitea-assistant-window${expanded ? ' elitea-assistant-window--expanded' : ''}`}>

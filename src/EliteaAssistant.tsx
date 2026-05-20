@@ -128,21 +128,20 @@ const EliteaAssistant = forwardRef<TEliteaAssistantRef, TEliteaAssistantProps>((
               className={`elitea-assistant-container elitea-assistant-container--${position}`}
               style={cssVars as React.CSSProperties}
             >
-              {isOpen && (
-                <ChatWindow
-                  title={title}
-                  placeholder={placeholder}
-                  welcomeMessage={welcomeMessage}
-                  avatar={user.avatar}
-                  supportProjectId={supportProjectId}
-                  initialHistory={initialHistory}
-                  lastConversation={lastConversation}
-                  isInitLoading={isInitLoading}
-                  onClose={close}
-                  expanded={isExpanded}
-                  onExpand={toggleFullscreen}
-                />
-              )}
+              <ChatWindow
+                title={title}
+                placeholder={placeholder}
+                welcomeMessage={welcomeMessage}
+                avatar={user.avatar}
+                supportProjectId={supportProjectId}
+                initialHistory={initialHistory}
+                lastConversation={lastConversation}
+                isInitLoading={isInitLoading}
+                isOpen={isOpen}
+                onClose={close}
+                expanded={isExpanded}
+                onExpand={toggleFullscreen}
+              />
               {popupVissible && !isOpen && (
                 <PopupMessage
                   message={popupText}

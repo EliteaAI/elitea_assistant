@@ -2702,18 +2702,18 @@ function Wo(e, t, n) {
     let V = 0;
     return x;
     function x(_) {
-      return w.enter("lineEnding"), w.consume(_), w.exit("lineEnding"), L;
+      return w.enter("lineEnding"), w.consume(_), w.exit("lineEnding"), P;
     }
-    function L(_) {
+    function P(_) {
       return w.enter("codeFencedFence"), U(_) ? G(w, T, "linePrefix", r.parser.constructs.disable.null.includes("codeIndented") ? void 0 : 4)(_) : T(_);
     }
     function T(_) {
       return _ === o ? (w.enter("codeFencedFenceSequence"), j(_)) : q(_);
     }
     function j(_) {
-      return _ === o ? (V++, w.consume(_), j) : V >= l ? (w.exit("codeFencedFenceSequence"), U(_) ? G(w, P, "whitespace")(_) : P(_)) : q(_);
+      return _ === o ? (V++, w.consume(_), j) : V >= l ? (w.exit("codeFencedFenceSequence"), U(_) ? G(w, L, "whitespace")(_) : L(_)) : q(_);
     }
-    function P(_) {
+    function L(_) {
       return _ === null || R(_) ? (w.exit("codeFencedFence"), N(_)) : q(_);
     }
   }
@@ -3416,18 +3416,18 @@ function Cs(e, t, n) {
     return m === 47 || m === 62 || U(m) ? S(m) : n(m);
   }
   function x(m) {
-    return m === 62 ? (e.consume(m), L) : n(m);
+    return m === 62 ? (e.consume(m), P) : n(m);
   }
-  function L(m) {
-    return m === null || R(m) ? T(m) : U(m) ? (e.consume(m), L) : n(m);
+  function P(m) {
+    return m === null || R(m) ? T(m) : U(m) ? (e.consume(m), P) : n(m);
   }
   function T(m) {
     return m === 45 && i === 2 ? (e.consume(m), H) : m === 60 && i === 1 ? (e.consume(m), Q) : m === 62 && i === 4 ? (e.consume(m), ue) : m === 63 && i === 3 ? (e.consume(m), g) : m === 93 && i === 5 ? (e.consume(m), pe) : R(m) && (i === 6 || i === 7) ? (e.exit("htmlFlowData"), e.check(xs, ye, j)(m)) : m === null || R(m) ? (e.exit("htmlFlowData"), j(m)) : (e.consume(m), T);
   }
   function j(m) {
-    return e.check(bs, P, ye)(m);
+    return e.check(bs, L, ye)(m);
   }
-  function P(m) {
+  function L(m) {
     return e.enter("lineEnding"), e.consume(m), e.exit("lineEnding"), _;
   }
   function _(m) {
@@ -3542,19 +3542,19 @@ function As(e, t, n) {
     return g === 47 ? (e.consume(g), H) : g === 58 || g === 95 || ge(g) ? (e.consume(g), x) : R(g) ? (l = V, Q(g)) : U(g) ? (e.consume(g), V) : H(g);
   }
   function x(g) {
-    return g === 45 || g === 46 || g === 58 || g === 95 || he(g) ? (e.consume(g), x) : L(g);
+    return g === 45 || g === 46 || g === 58 || g === 95 || he(g) ? (e.consume(g), x) : P(g);
   }
-  function L(g) {
-    return g === 61 ? (e.consume(g), T) : R(g) ? (l = L, Q(g)) : U(g) ? (e.consume(g), L) : V(g);
+  function P(g) {
+    return g === 61 ? (e.consume(g), T) : R(g) ? (l = P, Q(g)) : U(g) ? (e.consume(g), P) : V(g);
   }
   function T(g) {
-    return g === null || g === 60 || g === 61 || g === 62 || g === 96 ? n(g) : g === 34 || g === 39 ? (e.consume(g), i = g, j) : R(g) ? (l = T, Q(g)) : U(g) ? (e.consume(g), T) : (e.consume(g), P);
+    return g === null || g === 60 || g === 61 || g === 62 || g === 96 ? n(g) : g === 34 || g === 39 ? (e.consume(g), i = g, j) : R(g) ? (l = T, Q(g)) : U(g) ? (e.consume(g), T) : (e.consume(g), L);
   }
   function j(g) {
     return g === i ? (e.consume(g), i = void 0, _) : g === null ? n(g) : R(g) ? (l = j, Q(g)) : (e.consume(g), j);
   }
-  function P(g) {
-    return g === null || g === 34 || g === 39 || g === 60 || g === 61 || g === 96 ? n(g) : g === 47 || g === 62 || Y(g) ? V(g) : (e.consume(g), P);
+  function L(g) {
+    return g === null || g === 34 || g === 39 || g === 60 || g === 61 || g === 96 ? n(g) : g === 47 || g === 62 || Y(g) ? V(g) : (e.consume(g), L);
   }
   function _(g) {
     return g === 47 || g === 62 || Y(g) ? V(g) : n(g);
@@ -4125,82 +4125,82 @@ function pu(e, t, n) {
   };
   let h = t.tokenize.call(u, s);
   return t.resolveAll && a.push(t), u;
-  function c(L) {
-    return l = Ae(l, L), b(), l[l.length - 1] !== null ? [] : (q(t, 0), u.events = Vt(a, u.events, u), u.events);
+  function c(P) {
+    return l = Ae(l, P), b(), l[l.length - 1] !== null ? [] : (q(t, 0), u.events = Vt(a, u.events, u), u.events);
   }
-  function p(L, T) {
-    return mu(f(L), T);
+  function p(P, T) {
+    return mu(f(P), T);
   }
-  function f(L) {
-    return du(l, L);
+  function f(P) {
+    return du(l, P);
   }
   function d() {
     const {
-      _bufferIndex: L,
+      _bufferIndex: P,
       _index: T,
       line: j,
-      column: P,
+      column: L,
       offset: _
     } = r;
     return {
-      _bufferIndex: L,
+      _bufferIndex: P,
       _index: T,
       line: j,
-      column: P,
+      column: L,
       offset: _
     };
   }
-  function y(L) {
-    i[L.line] = L.column, x();
+  function y(P) {
+    i[P.line] = P.column, x();
   }
   function b() {
-    let L;
+    let P;
     for (; r._index < l.length; ) {
       const T = l[r._index];
       if (typeof T == "string")
-        for (L = r._index, r._bufferIndex < 0 && (r._bufferIndex = 0); r._index === L && r._bufferIndex < T.length; )
+        for (P = r._index, r._bufferIndex < 0 && (r._bufferIndex = 0); r._index === P && r._bufferIndex < T.length; )
           k(T.charCodeAt(r._bufferIndex));
       else
         k(T);
     }
   }
-  function k(L) {
-    h = h(L);
+  function k(P) {
+    h = h(P);
   }
-  function v(L) {
-    R(L) ? (r.line++, r.column = 1, r.offset += L === -3 ? 2 : 1, x()) : L !== -1 && (r.column++, r.offset++), r._bufferIndex < 0 ? r._index++ : (r._bufferIndex++, r._bufferIndex === // Points w/ non-negative `_bufferIndex` reference
+  function v(P) {
+    R(P) ? (r.line++, r.column = 1, r.offset += P === -3 ? 2 : 1, x()) : P !== -1 && (r.column++, r.offset++), r._bufferIndex < 0 ? r._index++ : (r._bufferIndex++, r._bufferIndex === // Points w/ non-negative `_bufferIndex` reference
     // strings.
     /** @type {string} */
-    l[r._index].length && (r._bufferIndex = -1, r._index++)), u.previous = L;
+    l[r._index].length && (r._bufferIndex = -1, r._index++)), u.previous = P;
   }
-  function S(L, T) {
+  function S(P, T) {
     const j = T || {};
-    return j.type = L, j.start = d(), u.events.push(["enter", j, u]), o.push(j), j;
+    return j.type = P, j.start = d(), u.events.push(["enter", j, u]), o.push(j), j;
   }
-  function D(L) {
+  function D(P) {
     const T = o.pop();
     return T.end = d(), u.events.push(["exit", T, u]), T;
   }
-  function F(L, T) {
-    q(L, T.from);
+  function F(P, T) {
+    q(P, T.from);
   }
-  function w(L, T) {
+  function w(P, T) {
     T.restore();
   }
-  function N(L, T) {
+  function N(P, T) {
     return j;
-    function j(P, _, H) {
+    function j(L, _, H) {
       let Q, ie, pe, g;
-      return Array.isArray(P) ? (
+      return Array.isArray(L) ? (
         /* c8 ignore next 1 */
-        ye(P)
-      ) : "tokenize" in P ? (
+        ye(L)
+      ) : "tokenize" in L ? (
         // Looks like a construct.
         ye([
           /** @type {Construct} */
-          P
+          L
         ])
-      ) : ue(P);
+      ) : ue(L);
       function ue(ae) {
         return je;
         function je(M) {
@@ -4231,24 +4231,24 @@ function pu(e, t, n) {
         }
       }
       function oe(ae) {
-        return L(pe, g), _;
+        return P(pe, g), _;
       }
       function Fe(ae) {
         return g.restore(), ++ie < Q.length ? m(Q[ie]) : H;
       }
     }
   }
-  function q(L, T) {
-    L.resolveAll && !a.includes(L) && a.push(L), L.resolve && ve(u.events, T, u.events.length - T, L.resolve(u.events.slice(T), u)), L.resolveTo && (u.events = L.resolveTo(u.events, u));
+  function q(P, T) {
+    P.resolveAll && !a.includes(P) && a.push(P), P.resolve && ve(u.events, T, u.events.length - T, P.resolve(u.events.slice(T), u)), P.resolveTo && (u.events = P.resolveTo(u.events, u));
   }
   function V() {
-    const L = d(), T = u.previous, j = u.currentConstruct, P = u.events.length, _ = Array.from(o);
+    const P = d(), T = u.previous, j = u.currentConstruct, L = u.events.length, _ = Array.from(o);
     return {
-      from: P,
+      from: L,
       restore: H
     };
     function H() {
-      r = L, u.previous = T, u.currentConstruct = j, u.events.length = P, o = _, x();
+      r = P, u.previous = T, u.currentConstruct = j, u.events.length = L, o = _, x();
     }
   }
   function x() {
@@ -4466,12 +4466,12 @@ function Su(e) {
       hardBreakTrailing: s(T),
       htmlFlow: s(j),
       htmlFlowData: x,
-      htmlText: s(P),
+      htmlText: s(L),
       htmlTextData: x,
       image: s(Q),
       label: pe,
       labelText: ie,
-      lineEnding: L,
+      lineEnding: P,
       link: s(H),
       listItem: s(),
       listOrdered: s(),
@@ -4698,7 +4698,7 @@ function Su(e) {
     const I = this.stack.pop();
     I.value += this.sliceSerialize(C), I.position.end = ze(C.end);
   }
-  function L(C) {
+  function P(C) {
     const I = this.stack[this.stack.length - 1];
     if (this.data.atHardBreak) {
       const z = I.children[I.children.length - 1];
@@ -4714,7 +4714,7 @@ function Su(e) {
     const C = this.resume(), I = this.stack[this.stack.length - 1];
     I.value = C;
   }
-  function P() {
+  function L() {
     const C = this.resume(), I = this.stack[this.stack.length - 1];
     I.value = C;
   }
@@ -8854,14 +8854,14 @@ function Kf(e, t, n) {
   let i = 0, a = 0, l;
   return o;
   function o(x) {
-    let L = r.events.length - 1;
-    for (; L > -1; ) {
-      const P = r.events[L][1].type;
-      if (P === "lineEnding" || // Note: markdown-rs uses `whitespace` instead of `linePrefix`
-      P === "linePrefix") L--;
+    let P = r.events.length - 1;
+    for (; P > -1; ) {
+      const L = r.events[P][1].type;
+      if (L === "lineEnding" || // Note: markdown-rs uses `whitespace` instead of `linePrefix`
+      L === "linePrefix") P--;
       else break;
     }
-    const T = L > -1 ? r.events[L][1].type : null, j = T === "tableHead" || T === "tableRow" ? w : s;
+    const T = P > -1 ? r.events[P][1].type : null, j = T === "tableHead" || T === "tableRow" ? w : s;
     return j === w && r.parser.lazy[r.now().line] ? n(x) : j(x);
   }
   function s(x) {
@@ -9352,45 +9352,45 @@ const Ml = ee((e) => {
     disabled: u,
     isUploading: h
   } = e, c = Le(null), [p, f] = ne(0), [d, y] = ne(!1), b = Le(0), { visibleAttachments: k, remainingAttachmentsCount: v } = Be(() => {
-    const P = s ? 3 : 2;
+    const L = s ? 3 : 2;
     return {
-      visibleAttachments: i.slice(0, P),
-      remainingAttachmentsCount: i.length - P
+      visibleAttachments: i.slice(0, L),
+      remainingAttachmentsCount: i.length - L
     };
   }, [i, s]), S = Be(
-    () => i != null && i.length ? i.every((P) => P.status === se.PENDING || P.status === se.COMPLETED) : !0,
+    () => i != null && i.length ? i.every((L) => L.status === se.PENDING || L.status === se.COMPLETED) : !0,
     [i]
   ), D = Be(
     () => !!(u || h || !S || !n.trim()),
     [u, h, n, S]
   ), F = () => {
-    const P = n.trim(), _ = i.filter((H) => H.status === se.COMPLETED && H.filepath);
-    !P && _.length === 0 || h || (o(P), r(""));
-  }, w = (P) => {
-    P.key === "Enter" && !P.shiftKey && (P.preventDefault(), F());
+    const L = n.trim(), _ = i.filter((H) => H.status === se.COMPLETED && H.filepath);
+    !L && _.length === 0 || h || (o(L), r(""));
+  }, w = (L) => {
+    L.key === "Enter" && !L.shiftKey && (L.preventDefault(), F());
   }, N = () => {
-    var P;
-    (P = c.current) == null || P.click();
-  }, q = (P) => {
-    const _ = P.target.files;
+    var L;
+    (L = c.current) == null || L.click();
+  }, q = (L) => {
+    const _ = L.target.files;
     _ && a(Array.from(_)), f((H) => H + 1);
-  }, V = (P) => {
-    P.preventDefault(), b.current += 1, P.dataTransfer.types.includes("Files") && y(!0);
-  }, x = (P) => {
-    P.preventDefault(), b.current -= 1, b.current === 0 && y(!1);
-  }, L = (P) => {
-    P.preventDefault();
-  }, T = (P) => {
-    P.preventDefault(), b.current = 0, y(!1);
-    const _ = Array.from(P.dataTransfer.files);
+  }, V = (L) => {
+    L.preventDefault(), b.current += 1, L.dataTransfer.types.includes("Files") && y(!0);
+  }, x = (L) => {
+    L.preventDefault(), b.current -= 1, b.current === 0 && y(!1);
+  }, P = (L) => {
+    L.preventDefault();
+  }, T = (L) => {
+    L.preventDefault(), b.current = 0, y(!1);
+    const _ = Array.from(L.dataTransfer.files);
     _.length > 0 && a(_);
-  }, j = (P) => {
-    const _ = Array.from(P.clipboardData.items).filter((H) => H.kind === "file").map((H) => H.getAsFile()).filter((H) => H !== null).map((H) => {
+  }, j = (L) => {
+    const _ = Array.from(L.clipboardData.items).filter((H) => H.kind === "file").map((H) => H.getAsFile()).filter((H) => H !== null).map((H) => {
       if (!/^image\.\w+$/.test(H.name)) return H;
       const ie = H.name.split(".").pop() || "png", pe = (/* @__PURE__ */ new Date()).toISOString().replace(/[:.]/g, "-");
       return new File([H], `screenshot-${pe}.${ie}`, { type: H.type });
     });
-    _.length !== 0 && (P.preventDefault(), a(_));
+    _.length !== 0 && (L.preventDefault(), a(_));
   };
   return /* @__PURE__ */ re(
     "div",
@@ -9398,18 +9398,18 @@ const Ml = ee((e) => {
       className: `elitea-assistant-input-area${d ? " elitea-assistant-input-area--drag-over" : ""}`,
       onDragEnter: V,
       onDragLeave: x,
-      onDragOver: L,
+      onDragOver: P,
       onDrop: T,
       children: [
         d && /* @__PURE__ */ E("div", { className: "elitea-assistant-drop-overlay", children: "Drop files here" }),
         i.length > 0 && /* @__PURE__ */ re("div", { className: "elitea-assistant-file-list", children: [
-          k.map((P) => /* @__PURE__ */ E(
+          k.map((L) => /* @__PURE__ */ E(
             _l,
             {
-              attachment: P,
+              attachment: L,
               onRemove: l
             },
-            P.id
+            L.id
           )),
           v > 0 && /* @__PURE__ */ re("div", { className: "elitea-assistant-file-chip elitea-assistant-file-chip--count", children: [
             "+",
@@ -9446,7 +9446,7 @@ const Ml = ee((e) => {
               id: "elitea-assistant-message-input",
               className: "elitea-assistant-input",
               value: n,
-              onChange: (P) => r(P.target.value),
+              onChange: (L) => r(L.target.value),
               onKeyDown: w,
               onPaste: j,
               placeholder: t,
@@ -9596,7 +9596,7 @@ const Nl = zt(null), zl = () => {
   ), [d, y] = ne([]), [b, k] = ne(""), [v, S] = ne([]), [D, F] = ne(null), [w, N] = ne([]), [q, V] = ne(!1), x = Be(
     () => a || q,
     [a, q]
-  ), L = Be(() => d.some((M) => M.isStreaming), [d]), T = $(
+  ), P = Be(() => d.some((M) => M.isStreaming), [d]), T = $(
     (M) => {
       s == null || s.emit(Me.ENTER_ROOM, {
         project_id: n,
@@ -9612,7 +9612,7 @@ const Nl = zt(null), zl = () => {
       });
     },
     [s, n]
-  ), P = $(
+  ), L = $(
     (M) => {
       s == null || s.emit(Me.PREDICT, M);
     },
@@ -9776,7 +9776,7 @@ const Nl = zt(null), zl = () => {
         }
         h == null || h.clearScreenshot();
       }
-      O && P({
+      O && L({
         conversation_uuid: O,
         content: M,
         attachments: me.length > 0 ? me : void 0,
@@ -9787,7 +9787,7 @@ const Nl = zt(null), zl = () => {
       D,
       o,
       T,
-      P,
+      L,
       v,
       oe,
       m,
@@ -9822,7 +9822,7 @@ const Nl = zt(null), zl = () => {
     history: w,
     currentConversationId: D ?? "",
     isLoading: x,
-    isStreaming: L,
+    isStreaming: P,
     isUploading: p,
     handleNewChat: ae,
     handleSelectConversation: je,
@@ -10410,77 +10410,80 @@ const m1 = 3 * 60 * 1e3, Gl = zt(null), g1 = () => Ot(Gl), y1 = () => {
     initialHistory: l,
     lastConversation: o,
     isInitLoading: s,
-    onClose: u,
-    onExpand: h,
-    expanded: c
+    isOpen: u,
+    onClose: h,
+    onExpand: c,
+    expanded: p
   } = e, {
-    messages: p,
-    inputText: f,
-    setInputText: d,
-    attachments: y,
-    addFiles: b,
-    removeAttachment: k,
-    history: v,
-    currentConversationId: S,
-    isLoading: D,
-    isStreaming: F,
-    isUploading: w,
-    handleNewChat: N,
-    handleSelectConversation: q,
-    handleSend: V
+    messages: f,
+    inputText: d,
+    setInputText: y,
+    attachments: b,
+    addFiles: k,
+    removeAttachment: v,
+    history: S,
+    currentConversationId: D,
+    isLoading: F,
+    isStreaming: w,
+    isUploading: N,
+    handleNewChat: q,
+    handleSelectConversation: V,
+    handleSend: x
   } = kp({
     welcomeMessage: i,
     supportProjectId: a,
     initialHistory: l,
     initialConversation: o,
     isInitLoading: s
-  }), x = /* @__PURE__ */ re("div", { className: `elitea-assistant-window${c ? " elitea-assistant-window--expanded" : ""}`, children: [
+  });
+  if (!u) return null;
+  const P = /* @__PURE__ */ re("div", { className: `elitea-assistant-window${p ? " elitea-assistant-window--expanded" : ""}`, children: [
     /* @__PURE__ */ E(
       wi,
       {
         title: n,
-        expanded: c,
-        history: v,
-        currentConversationId: S,
-        disabled: D,
-        onClose: u,
-        onExpand: h,
-        onNewChat: N,
-        onSelectConversation: q
+        expanded: p,
+        history: S,
+        currentConversationId: D,
+        disabled: F,
+        onClose: h,
+        onExpand: c,
+        onNewChat: q,
+        onSelectConversation: V
       }
     ),
     /* @__PURE__ */ E(
       Dl,
       {
         avatar: t,
-        messages: p,
-        isLoading: D
+        messages: f,
+        isLoading: F
       }
     ),
     /* @__PURE__ */ E(
       Ml,
       {
         placeholder: r,
-        text: f,
-        onTextChange: d,
-        attachments: y,
-        onAddFiles: b,
-        onRemoveAttachment: k,
-        onSend: V,
-        expanded: c,
-        disabled: D || F,
-        isUploading: w
+        text: d,
+        onTextChange: y,
+        attachments: b,
+        onAddFiles: k,
+        onRemoveAttachment: v,
+        onSend: x,
+        expanded: p,
+        disabled: F || w,
+        isUploading: N
       }
     )
   ] });
-  return c ? /* @__PURE__ */ E(
+  return p ? /* @__PURE__ */ E(
     "div",
     {
       className: "elitea-assistant-overlay",
-      onClick: h,
-      children: /* @__PURE__ */ E("div", { onClick: (L) => L.stopPropagation(), children: x })
+      onClick: c,
+      children: /* @__PURE__ */ E("div", { onClick: (T) => T.stopPropagation(), children: P })
     }
-  ) : x;
+  ) : P;
 });
 Kl.displayName = "ChatWindow";
 const Yl = ee((e) => {
@@ -10681,7 +10684,7 @@ Ask me anything about ELITEA or report any issues you're experiencing. I have co
     title: o,
     welcomeMessage: u,
     placeholder: s
-  }), { isOpen: x, isExpanded: L, open: T, close: j, toggle: P, expandFullscreen: _, collapseFullscreen: H, toggleFullscreen: Q } = gp(), ie = y1(), { popupVissible: pe, showPopup: g, hidePopup: ue, popupText: ye } = bp(x), m = $(() => {
+  }), { isOpen: x, isExpanded: P, open: T, close: j, toggle: L, expandFullscreen: _, collapseFullscreen: H, toggleFullscreen: Q } = gp(), ie = y1(), { popupVissible: pe, showPopup: g, hidePopup: ue, popupText: ye } = bp(x), m = $(() => {
     ie.captureScreenshot(), g();
   }, [ie, g]), oe = $(() => {
     ie.clearScreenshot(), ue();
@@ -10691,21 +10694,21 @@ Ask me anything about ELITEA or report any issues you're experiencing. I have co
     () => ({
       open: T,
       close: j,
-      toggle: P,
+      toggle: L,
       expandFullscreen: _,
       collapseFullscreen: H,
       toggleFullscreen: Q,
       showPopup: m,
       hidePopup: oe,
       isOpen: () => x,
-      isExpanded: () => L
+      isExpanded: () => P
     }),
     [
       x,
-      L,
+      P,
       T,
       j,
-      P,
+      L,
       _,
       H,
       Q,
@@ -10718,7 +10721,7 @@ Ask me anything about ELITEA or report any issues you're experiencing. I have co
       className: `elitea-assistant-container elitea-assistant-container--${h}`,
       style: d,
       children: [
-        x && /* @__PURE__ */ E(
+        /* @__PURE__ */ E(
           Kl,
           {
             title: v,
@@ -10729,8 +10732,9 @@ Ask me anything about ELITEA or report any issues you're experiencing. I have co
             initialHistory: N,
             lastConversation: q,
             isInitLoading: V,
+            isOpen: x,
             onClose: j,
-            expanded: L,
+            expanded: P,
             onExpand: Q
           }
         ),
@@ -10741,7 +10745,7 @@ Ask me anything about ELITEA or report any issues you're experiencing. I have co
             onClose: oe
           }
         ),
-        /* @__PURE__ */ E(xi, { onClick: P })
+        /* @__PURE__ */ E(xi, { onClick: L })
       ]
     }
   ) }) }) }) });
