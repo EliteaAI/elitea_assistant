@@ -151,7 +151,9 @@ export declare type TMessage = {
     content: string;
     timestamp: number;
     isStreaming?: boolean;
+    isAnimating?: boolean;
     isError?: boolean;
+    statusChips?: TStatusChip[];
 };
 
 declare type TRawConversation = {
@@ -177,6 +179,12 @@ declare type TRawMessageItem = {
         content?: string;
     };
     content?: string;
+};
+
+declare type TStatusChip = {
+    id: string;
+    label: string;
+    status: 'active' | 'done';
 };
 
 export declare type TSupportAssistantContext = {

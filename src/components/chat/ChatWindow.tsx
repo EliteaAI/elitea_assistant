@@ -1,9 +1,8 @@
 import React, { memo } from 'react';
 
+import { ChatHeader, MessageInput, MessageList } from '@/components/chat';
 import { useChat } from '@/lib/hooks';
 import type { TConversationListItem, TRawConversation } from '@/lib/types';
-
-import { ChatHeader, MessageInput, MessageList } from './';
 
 type TChatWindowProps = {
   avatar: string;
@@ -51,6 +50,7 @@ const ChatWindow: React.FC<TChatWindowProps> = memo(props => {
     handleNewChat,
     handleSelectConversation,
     handleSend,
+    handleAnimationComplete,
   } = useChat({
     welcomeMessage,
     supportProjectId,
@@ -78,6 +78,7 @@ const ChatWindow: React.FC<TChatWindowProps> = memo(props => {
         avatar={avatar}
         messages={messages}
         isLoading={isLoading}
+        onAnimationComplete={handleAnimationComplete}
       />
       <MessageInput
         placeholder={placeholder}

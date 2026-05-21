@@ -7,3 +7,4 @@ export { usePopup } from './popup.hook';
 export { ScreenshotContext, useScreenshot, useScreenshotContext } from './screenshot.hook';
 export { SocketContext, useSocketConnection, useSocketContext } from './socket.hook';
 export { SupportAssistantContextValue, useSupportAssistantContext } from './supportContext.hook';
+export { useTypewriter } from './typewriter.hook';

@@ -1,19 +1,17 @@
 import React, { memo, useEffect, useRef } from 'react';
 
-import MarkdownContent from '@/components/chat/MarkdownContent';
-import { AssistantIcon, UserIcon } from '@/components/icons';
-import { CopyButton } from '@/components/shared';
+import { MessageItem, MessageListSkeleton } from '@/components/chat';
 import type { TMessage } from '@/lib/types';
-import { formatTime } from '@/lib/utils';
 
 type TMessageListProps = {
   avatar: string;
   messages: TMessage[];
   isLoading?: boolean;
+  onAnimationComplete?: (messageId: string) => void;
 };
 
 const MessageList: React.FC<TMessageListProps> = memo(props => {
-  const { avatar, messages, isLoading } = props;
+  const { avatar, messages, isLoading, onAnimationComplete } = props;
   const bottomRef = useRef<HTMLDivElement>(null);
   const hasScrolledRef = useRef(false);
 
@@ -30,22 +28,7 @@ const MessageList: React.FC<TMessageListProps> = memo(props => {
   }, [messages]);
 
   if (isLoading) {
-    return (
-      <div className="elitea-assistant-messages">
-        {Array.from({ length: 3 }).map((_, i) => (
-          <div
-            key={i}
-            className={`elitea-assistant-skeleton-row ${i % 2 === 0 ? 'elitea-assistant-skeleton-row--left' : 'elitea-assistant-skeleton-row--right'}`}
-          >
-            <div className="elitea-assistant-skeleton-meta">
-              <div className="elitea-assistant-skeleton elitea-assistant-skeleton--avatar" />
-              <div className="elitea-assistant-skeleton elitea-assistant-skeleton--time" />
-            </div>
-            <div className="elitea-assistant-skeleton elitea-assistant-skeleton--bubble" />
-          </div>
-        ))}
-      </div>
-    );
+    return <MessageListSkeleton />;
   }
 
   if (messages.length === 0)
@@ -54,52 +37,12 @@ const MessageList: React.FC<TMessageListProps> = memo(props => {
   return (
     <div className="elitea-assistant-messages">
       {messages.map(msg => (
-        <div
+        <MessageItem
           key={msg.id}
-          className={`elitea-assistant-message-wrapper elitea-assistant-message-wrapper--${msg.role}`}
-        >
-          <div className={`elitea-assistant-message-meta elitea-assistant-message-meta--${msg.role}`}>
-            {msg.role === 'assistant' && (
-              <span className="elitea-assistant-message-avatar elitea-assistant-message-avatar--assistant">
-                <AssistantIcon />
-              </span>
-            )}
-            <span className="elitea-assistant-message-time">{formatTime(msg.timestamp)}</span>
-            {msg.role === 'user' && (
-              <span className="elitea-assistant-message-avatar elitea-assistant-message-avatar--user">
-                {avatar ? (
-                  <img
-                    src={avatar}
-                    alt="User avatar"
-                    className="elitea-assistant-avatar-img"
-                  />
-                ) : (
-                  <UserIcon />
-                )}
-              </span>
-            )}
-          </div>
-          <div
-            className={`elitea-assistant-message elitea-assistant-message--${msg.role}${msg.isError ? ' elitea-assistant-message--error' : ''}`}
-          >
-            {msg.content ? (
-              msg.role === 'assistant' ? (
-                <MarkdownContent content={msg.content} />
-              ) : (
-                msg.content
-              )
-            ) : msg.isStreaming ? (
-              <span className="elitea-assistant-typing-indicator">
-                <span className="elitea-assistant-typing-dot" />
-                <span className="elitea-assistant-typing-dot" />
-                <span className="elitea-assistant-typing-dot" />
-              </span>
-            ) : (
-              ''
-            )}
-            {msg.role === 'assistant' && msg.content && !msg.isStreaming && <CopyButton text={msg.content} />}
-          </div>
-        </div>
+          message={msg}
+          avatar={avatar}
+          onAnimationComplete={onAnimationComplete}
+        />
       ))}
       <div ref={bottomRef} />
     </div>
