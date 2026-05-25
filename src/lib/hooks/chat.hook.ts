@@ -16,7 +16,12 @@ import type {
   TSocketMessage,
   TSupportAssistantContext,
 } from '@/lib/types';
-import { buildValidatedAttachments, generateUUID, parseConversationMessages } from '@/lib/utils';
+import {
+  buildValidatedAttachments,
+  generateUUID,
+  parseConversationMessages,
+  revalidateAttachments,
+} from '@/lib/utils';
 
 type TUseChatProps = {
   welcomeMessage: string;
@@ -297,7 +302,7 @@ export const useChat = (props: TUseChatProps) => {
   }, []);
 
   const removeAttachment = useCallback((attachmentId: string) => {
-    setAttachments(prev => prev.filter(a => a.id !== attachmentId));
+    setAttachments(prev => revalidateAttachments(prev.filter(a => a.id !== attachmentId)));
   }, []);
 
   const updateAttachmentProgress = useCallback((attachmentId: string, progress: number) => {

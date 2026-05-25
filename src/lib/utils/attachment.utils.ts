@@ -13,6 +13,8 @@ import type { TAttachment } from '@/lib/types';
 import { generateUUID } from './conversation.utils';
 import { formatFileSize } from './format.utils';
 
+type LimitCounters = { totalCount: number; imageCount: number; totalSize: number };
+
 export const getFileExtension = (filename: string): string => (filename.split('.').pop() || '').toLowerCase();
 
 export const isImageFile = (filename: string): boolean => IMAGE_EXTENSIONS.has(getFileExtension(filename));
@@ -31,6 +33,22 @@ const validateFile = (file: File): string | null => {
   return null;
 };
 
+const checkLimits = (filename: string, fileSize: number, counters: LimitCounters): string | null => {
+  if (counters.totalCount > MAX_ATTACHMENT_COUNT) return `Max ${MAX_ATTACHMENT_COUNT} attachments allowed`;
+
+  const isImage = isImageFile(filename);
+  if (isImage) counters.imageCount += 1;
+  counters.totalSize += fileSize;
+
+  if (isImage && counters.imageCount > MAX_IMAGE_ATTACHMENT_COUNT)
+    return `Max ${MAX_IMAGE_ATTACHMENT_COUNT} images allowed`;
+
+  if (counters.totalSize > MAX_TOTAL_UPLOAD_SIZE)
+    return `Total upload size exceeds ${formatFileSize(MAX_TOTAL_UPLOAD_SIZE)}`;
+
+  return null;
+};
+
 const createErrorAttachment = (file: File, id: string, error: string): TAttachment => ({
   id,
   file,
@@ -42,37 +60,47 @@ const createErrorAttachment = (file: File, id: string, error: string): TAttachme
   error,
 });
 
+const markAllOverLimit = (attachments: TAttachment[]): TAttachment[] => {
+  const error = `Max ${MAX_ATTACHMENT_COUNT} attachments allowed`;
+
+  return attachments.map(a =>
+    a.status === UploadStatus.UPLOADING || a.status === UploadStatus.COMPLETED
+      ? a
+      : { ...a, status: UploadStatus.ERROR, error },
+  );
+};
+
 export const buildValidatedAttachments = (files: File[], existing: TAttachment[]): TAttachment[] => {
   const newNames = new Set(files.map(f => f.name));
   const kept = existing.filter(a => !newNames.has(a.name));
-
-  let imageCount = kept.filter(a => isImageFile(a.name)).length;
-  let totalSize = kept.reduce((sum, a) => sum + a.size, 0);
   const totalCount = kept.length + files.length;
+
+  if (totalCount > MAX_ATTACHMENT_COUNT) {
+    const newAttachments: TAttachment[] = files.map(file => {
+      const id = generateUUID();
+
+      return createErrorAttachment(file, id, `Max ${MAX_ATTACHMENT_COUNT} attachments allowed`);
+    });
+
+    return markAllOverLimit([...kept, ...newAttachments]);
+  }
+
+  const counters: LimitCounters = {
+    totalCount,
+    imageCount: kept.filter(a => isImageFile(a.name)).length,
+    totalSize: kept.reduce((sum, a) => sum + a.size, 0),
+  };
 
   const validated: TAttachment[] = files.map(file => {
     const id = generateUUID();
 
     const fileError = validateFile(file);
+
     if (fileError) return createErrorAttachment(file, id, fileError);
 
-    if (totalCount > MAX_ATTACHMENT_COUNT)
-      return createErrorAttachment(file, id, `Max ${MAX_ATTACHMENT_COUNT} attachments allowed`);
+    const limitError = checkLimits(file.name, file.size, counters);
 
-    const isImage = isImageFile(file.name);
-
-    if (isImage) imageCount += 1;
-    totalSize += file.size;
-
-    if (isImage && imageCount > MAX_IMAGE_ATTACHMENT_COUNT)
-      return createErrorAttachment(file, id, `Max ${MAX_IMAGE_ATTACHMENT_COUNT} images allowed`);
-
-    if (totalSize > MAX_TOTAL_UPLOAD_SIZE)
-      return createErrorAttachment(
-        file,
-        id,
-        `Total upload size exceeds ${formatFileSize(MAX_TOTAL_UPLOAD_SIZE)}`,
-      );
+    if (limitError) return createErrorAttachment(file, id, limitError);
 
     return {
       id,
@@ -86,4 +114,33 @@ export const buildValidatedAttachments = (files: File[], existing: TAttachment[]
   });
 
   return [...kept, ...validated];
+};
+
+export const revalidateAttachments = (attachments: TAttachment[]): TAttachment[] => {
+  if (attachments.length > MAX_ATTACHMENT_COUNT) return markAllOverLimit(attachments);
+
+  const counters: LimitCounters = {
+    totalCount: attachments.length,
+    imageCount: 0,
+    totalSize: 0,
+  };
+
+  return attachments.map(attachment => {
+    if (attachment.status !== UploadStatus.ERROR) {
+      if (isImageFile(attachment.name)) counters.imageCount += 1;
+
+      counters.totalSize += attachment.size;
+      return attachment;
+    }
+
+    const fileError = attachment.file ? validateFile(attachment.file) : null;
+
+    if (fileError) return { ...attachment, error: fileError };
+
+    const limitError = checkLimits(attachment.name, attachment.size, counters);
+
+    if (limitError) return attachment;
+
+    return { ...attachment, status: UploadStatus.PENDING, error: undefined };
+  });
 };
