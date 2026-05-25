@@ -3,7 +3,7 @@ import { useCallback, useState } from 'react';
 import { CHUNK_SIZE, MAX_FILE_SIZE } from '@/lib/constants';
 import { useApi } from '@/lib/hooks';
 import type { TAttachment, TChunkUploadResponse, TUploadResponse } from '@/lib/types';
-import { generateUUID } from '@/lib/utils';
+import { generateUUID, normalizeFileExtension } from '@/lib/utils';
 
 type TUploadParams = {
   conversationId: string;
@@ -24,8 +24,11 @@ export const useAttachmentUpload = () => {
       conversationId: string,
       onProgress: (loaded: number, total: number) => void,
     ): Promise<TUploadResponse> => {
+      const normalizedName = normalizeFileExtension(file.name);
+      const renamedFile = new File([file], normalizedName, { type: file.type });
+
       const formData = new FormData();
-      formData.append('file', file);
+      formData.append('file', renamedFile);
       formData.append('overwrite', '1');
 
       const response = await api.uploadFile(conversationId, formData, onProgress);
@@ -52,7 +55,7 @@ export const useAttachmentUpload = () => {
       formData.append('chunk_index', String(chunkIndex));
       formData.append('total_chunks', String(totalChunks));
       formData.append('file_id', fileId);
-      formData.append('file_name', fileName);
+      formData.append('file_name', normalizeFileExtension(fileName));
       formData.append('overwrite', '1');
 
       const response = await api.uploadFile(conversationId, formData, onProgress);

@@ -15,6 +15,13 @@ import { formatFileSize } from './format.utils';
 
 type LimitCounters = { totalCount: number; imageCount: number; totalSize: number };
 
+export const normalizeFileExtension = (name: string): string => {
+  const dotIndex = name.lastIndexOf('.');
+  if (dotIndex === -1) return name;
+
+  return name.substring(0, dotIndex) + name.substring(dotIndex).toLowerCase();
+};
+
 export const getFileExtension = (filename: string): string => (filename.split('.').pop() || '').toLowerCase();
 
 export const isImageFile = (filename: string): boolean => IMAGE_EXTENSIONS.has(getFileExtension(filename));
