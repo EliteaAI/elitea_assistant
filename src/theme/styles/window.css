@@ -56,17 +56,20 @@
   }
 }
 
-.elitea-assistant-window--expanded {
-  position: static;
+.elitea-assistant-window.elitea-assistant-window--expanded {
+  position: fixed;
+  inset: 0;
+  margin: auto;
   width: 45rem;
   height: 42.375rem;
   max-width: calc(100vw - 2rem);
   max-height: calc(100vh - 2rem);
+  z-index: 99999999999;
   animation: elitea-assistant-scale-in 0.2s ease-out;
 }
 
 @media (max-width: 48rem) {
-  .elitea-assistant-window--expanded {
+  .elitea-assistant-window.elitea-assistant-window--expanded {
     width: calc(100vw - 2rem);
     height: calc(100vh - 2rem);
     border-radius: 0.75rem;

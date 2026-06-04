@@ -95,18 +95,17 @@ const ChatWindow: React.FC<TChatWindowProps> = memo(props => {
     </div>
   );
 
-  if (expanded) {
-    return (
-      <div
-        className="elitea-assistant-overlay"
-        onClick={onExpand}
-      >
-        <div onClick={e => e.stopPropagation()}>{window}</div>
-      </div>
-    );
-  }
-
-  return window;
+  return (
+    <>
+      {expanded && (
+        <div
+          className="elitea-assistant-overlay"
+          onClick={onExpand}
+        />
+      )}
+      {window}
+    </>
+  );
 });
 
 ChatWindow.displayName = 'ChatWindow';
