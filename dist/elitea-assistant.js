@@ -845,17 +845,19 @@ const Di = Ht(null), Ri = () => {
 }, ur = (e, t) => {
   const { frequency: n, start: r, peak: i, end: l } = t, a = e.createOscillator(), o = e.createGain();
   return a.connect(o), o.connect(e.destination), a.type = "sine", a.frequency.value = n, o.gain.setValueAtTime(0, r), o.gain.linearRampToValueAtTime(0.12, i), o.gain.exponentialRampToValueAtTime(0.01, l), a.start(r), a.stop(l), a;
-}, La = async () => {
+}, La = () => {
   try {
-    const e = new AudioContext();
-    if (e.state === "suspended" && await e.resume(), e.state !== "running") {
-      e.close();
-      return;
-    }
-    const t = e.currentTime;
-    ur(e, { frequency: 784, start: t, peak: t + 0.02, end: t + 0.2 });
-    const n = ur(e, { frequency: 1047, start: t + 0.12, peak: t + 0.14, end: t + 0.37 });
-    n.onended = () => e.close();
+    const e = new AudioContext(), t = () => {
+      if (e.state !== "running") {
+        e.close();
+        return;
+      }
+      const n = e.currentTime;
+      ur(e, { frequency: 784, start: n, peak: n + 0.02, end: n + 0.2 });
+      const r = ur(e, { frequency: 1047, start: n + 0.12, peak: n + 0.14, end: n + 0.37 });
+      r.onended = () => e.close();
+    };
+    e.state === "suspended" ? e.resume().then(t) : t();
   } catch {
   }
 }, Da = (e) => {

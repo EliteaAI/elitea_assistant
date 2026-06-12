@@ -23,21 +23,25 @@ const playNote = (
   return oscillator;
 };
 
-export const playPopupSound = async () => {
+export const playPopupSound = () => {
   try {
     const ctx = new AudioContext();
-    if (ctx.state === 'suspended') await ctx.resume();
-    if (ctx.state !== 'running') {
-      ctx.close();
-      return;
-    }
+    const play = () => {
+      if (ctx.state !== 'running') {
+        ctx.close();
+        return;
+      }
 
-    const t = ctx.currentTime;
+      const t = ctx.currentTime;
 
-    playNote(ctx, { frequency: 784, start: t, peak: t + 0.02, end: t + 0.2 });
-    const last = playNote(ctx, { frequency: 1047, start: t + 0.12, peak: t + 0.14, end: t + 0.37 });
+      playNote(ctx, { frequency: 784, start: t, peak: t + 0.02, end: t + 0.2 });
+      const last = playNote(ctx, { frequency: 1047, start: t + 0.12, peak: t + 0.14, end: t + 0.37 });
 
-    last.onended = () => ctx.close();
+      last.onended = () => ctx.close();
+    };
+
+    if (ctx.state === 'suspended') ctx.resume().then(play);
+    else play();
   } catch {
     // Audio not supported — silent fallback
   }
