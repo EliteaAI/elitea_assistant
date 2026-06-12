@@ -20,22 +20,27 @@ export const useScreenshot = (): TScreenshotContext => {
 
     capturingRef.current = true;
 
-    const node = document.documentElement;
+    const capture = () => {
+      const node = document.documentElement;
 
-    toBlob(node, {
-      filter: (el: Element) => !el.classList?.contains('elitea-assistant-container'),
-    })
-      .then(blob => {
-        setScreenshot(blob);
-        setCapturedAt(Date.now());
+      toBlob(node, {
+        filter: (el: Element) => !el.classList?.contains('elitea-assistant-container'),
       })
-      .catch(() => {
-        setScreenshot(null);
-        setCapturedAt(null);
-      })
-      .finally(() => {
-        capturingRef.current = false;
-      });
+        .then(blob => {
+          setScreenshot(blob);
+          setCapturedAt(Date.now());
+        })
+        .catch(() => {
+          setScreenshot(null);
+          setCapturedAt(null);
+        })
+        .finally(() => {
+          capturingRef.current = false;
+        });
+    };
+
+    if (window.requestIdleCallback) window.requestIdleCallback(capture, { timeout: 3000 });
+    else setTimeout(capture, 0);
   }, []);
 
   const clearScreenshot = useCallback(() => {
