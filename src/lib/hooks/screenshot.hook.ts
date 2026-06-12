@@ -20,7 +20,11 @@ export const useScreenshot = (): TScreenshotContext => {
 
     capturingRef.current = true;
 
-    const capture = () => {
+    // Delay screenshot capture to avoid blocking ongoing UI interactions
+    // (e.g. sidebar expand animations, state updates).
+    // html-to-image's toBlob performs heavy synchronous DOM cloning,
+    // so we must ensure all pending renders/paints complete first.
+    setTimeout(() => {
       const node = document.documentElement;
 
       toBlob(node, {
@@ -37,10 +41,7 @@ export const useScreenshot = (): TScreenshotContext => {
         .finally(() => {
           capturingRef.current = false;
         });
-    };
-
-    if (window.requestIdleCallback) window.requestIdleCallback(capture, { timeout: 3000 });
-    else setTimeout(capture, 0);
+    }, 1000);
   }, []);
 
   const clearScreenshot = useCallback(() => {

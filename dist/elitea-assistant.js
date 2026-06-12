@@ -1787,24 +1787,21 @@ async function Lo(e, t = {}) {
 }
 const Do = 3 * 60 * 1e3, qi = Ht(null), Ro = () => $t(qi), Fo = () => {
   const [e, t] = le(null), [n, r] = le(null), i = Ae(!1), l = H(() => {
-    if (i.current) return;
-    i.current = !0;
-    const s = () => {
-      const u = document.documentElement;
-      Lo(u, {
-        filter: (h) => {
-          var c;
-          return !((c = h.classList) != null && c.contains("elitea-assistant-container"));
+    i.current || (i.current = !0, setTimeout(() => {
+      const s = document.documentElement;
+      Lo(s, {
+        filter: (u) => {
+          var h;
+          return !((h = u.classList) != null && h.contains("elitea-assistant-container"));
         }
-      }).then((h) => {
-        t(h), r(Date.now());
+      }).then((u) => {
+        t(u), r(Date.now());
       }).catch(() => {
         t(null), r(null);
       }).finally(() => {
         i.current = !1;
       });
-    };
-    window.requestIdleCallback ? window.requestIdleCallback(s, { timeout: 3e3 }) : setTimeout(s, 0);
+    }, 1e3));
   }, []), a = H(() => {
     t(null), r(null);
   }, []), o = H(() => !e || !n || Date.now() - n > Do ? null : e, [e, n]);
