@@ -1,11 +1,13 @@
-import React, { memo, useEffect, useId, useState } from 'react';
+import React, { memo, useEffect, useRef, useState } from 'react';
+
+import DOMPurify from 'dompurify';
 
 import { useTheme } from '@/lib/hooks';
 
 type TProps = { code: string };
 
 const MermaidBlock: React.FC<TProps> = memo(({ code }) => {
-  const rawId = useId().replace(/:/g, '');
+  const idRef = useRef(`mermaid-${Math.random().toString(36).slice(2)}`);
   const theme = useTheme();
   const [svg, setSvg] = useState<string | null>(null);
   const [error, setError] = useState<string | null>(null);
@@ -16,10 +18,16 @@ const MermaidBlock: React.FC<TProps> = memo(({ code }) => {
     import('mermaid')
       .then(({ default: mermaid }) => {
         mermaid.initialize({ startOnLoad: false, theme: theme === 'dark' ? 'dark' : 'default' });
-        return mermaid.render(`mermaid-${rawId}`, code);
+        return mermaid.render(idRef.current, code);
       })
       .then(({ svg: rendered }) => {
-        if (!cancelled) setSvg(rendered);
+        if (!cancelled) {
+          const sanitized = DOMPurify.sanitize(rendered, {
+            ADD_TAGS: ['foreignObject'],
+            HTML_INTEGRATION_POINTS: { foreignobject: true },
+          });
+          setSvg(sanitized);
+        }
       })
       .catch(err => {
         if (!cancelled) setError(String(err));
@@ -28,7 +36,7 @@ const MermaidBlock: React.FC<TProps> = memo(({ code }) => {
     return () => {
       cancelled = true;
     };
-  }, [code, rawId, theme]);
+  }, [code, theme]);
 
   if (error) {
     return (
