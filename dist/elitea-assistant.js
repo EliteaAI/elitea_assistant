@@ -11530,7 +11530,7 @@ const rs = ue(({ code: e }) => {
         i(u);
       }
     }).catch((s) => {
-      l || a(String(s));
+      l || (console.warn("Mermaid rendering failed:", s), a("Unable to render this diagram. Please check the syntax."));
     }), () => {
       l = !0;
     };

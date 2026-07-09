@@ -30,7 +30,11 @@ const MermaidBlock: React.FC<TProps> = memo(({ code }) => {
         }
       })
       .catch(err => {
-        if (!cancelled) setError(String(err));
+        if (!cancelled) {
+          // eslint-disable-next-line no-console
+          console.warn('Mermaid rendering failed:', err);
+          setError('Unable to render this diagram. Please check the syntax.');
+        }
       });
 
     return () => {
