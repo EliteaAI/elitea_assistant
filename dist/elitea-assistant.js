@@ -1954,7 +1954,13 @@ const Qi = Z((e) => {
     {
       onClick: i,
       style: { cursor: t.isAnimating ? "pointer" : void 0 },
-      children: /* @__PURE__ */ w(ir, { content: r, isAnimating: !0 })
+      children: /* @__PURE__ */ w(
+        ir,
+        {
+          content: r,
+          isAnimating: !0
+        }
+      )
     }
   );
 });
