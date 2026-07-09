@@ -19,7 +19,10 @@ const AnimatedMessage: React.FC<TAnimatedMessageProps> = memo(props => {
       onClick={skipAnimation}
       style={{ cursor: message.isAnimating ? 'pointer' : undefined }}
     >
-      <MarkdownContent content={displayedText} />
+      <MarkdownContent
+        content={displayedText}
+        isAnimating={true}
+      />
     </div>
   );
 });

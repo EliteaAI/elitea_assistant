@@ -42,7 +42,7 @@ export default defineConfig({
       fileName: 'elitea-assistant',
     },
     rollupOptions: {
-      external: ['react', 'react-dom', 'react/jsx-runtime', 'socket.io-client'],
+      external: ['react', 'react-dom', 'react/jsx-runtime', 'socket.io-client', 'mermaid', 'rehype-raw'],
       output: {
         globals: {
           react: 'React',
