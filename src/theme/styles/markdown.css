@@ -129,13 +129,30 @@
   border-radius: 0.375em;
 }
 
-.elitea-assistant-markdown-img-clickable {
+/* ── Clickable image button wrapper ── */
+
+.elitea-assistant-img-btn {
+  display: inline-block;
+  padding: 0;
+  margin: 0;
+  background: none;
+  border: none;
   cursor: zoom-in;
+  border-radius: 0.375em;
   transition: opacity 0.15s ease;
 }
 
-.elitea-assistant-markdown-img-clickable:hover {
+.elitea-assistant-img-btn:hover {
   opacity: 0.88;
+}
+
+.elitea-assistant-img-btn:focus-visible {
+  outline: 2px solid var(--elitea-assistant-button-bg, #6366f1);
+  outline-offset: 2px;
+}
+
+.elitea-assistant-img-btn img {
+  display: block;
 }
 
 /* ── Image lightbox overlay ── */
@@ -191,4 +208,9 @@
 
 .elitea-assistant-lightbox-close:hover {
   background: rgba(255, 255, 255, 0.28);
+}
+
+.elitea-assistant-lightbox-close:focus-visible {
+  outline: 2px solid #fff;
+  outline-offset: 2px;
 }

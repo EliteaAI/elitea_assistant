@@ -1,6 +1,6 @@
-(function(){"use strict";try{if(typeof document<"u"){var e=document.createElement("style");e.appendChild(document.createTextNode('@import"https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700&display=swap";.elitea-assistant-container{position:fixed;z-index:2147483647;font-family:Montserrat,sans-serif;font-size:.875rem;line-height:1.5;box-sizing:border-box}.elitea-assistant-container *,.elitea-assistant-container *:before,.elitea-assistant-container *:after{box-sizing:border-box}.elitea-assistant-container--bottom-right{bottom:.75rem;right:1.09375rem}.elitea-assistant-container--bottom-left{bottom:.75rem;left:1.09375rem}.elitea-assistant-button{width:1.75rem;height:1.75rem;border-radius:50%;border:none;cursor:pointer;display:flex;align-items:center;justify-content:center;background:var(--elitea-assistant-button-bg);color:var(--elitea-assistant-button-icon);box-shadow:0 .25rem .75rem #00000026;transition:transform .2s ease,box-shadow .2s ease;padding:0}.elitea-assistant-button:hover{transform:scale(1.08);box-shadow:0 .375rem 1.25rem #0003}.elitea-assistant-button svg{width:1.75rem;height:1.75rem;fill:currentColor}.elitea-assistant-window{position:absolute;bottom:0rem;width:28.75rem;height:30rem;border-radius:1rem;overflow:hidden;display:flex;flex-direction:column;box-shadow:var(--elitea-assistant-window-shadow);background:var(--elitea-assistant-chat-bg);border:.0625rem solid var(--elitea-assistant-window-border);animation:elitea-assistant-slide-up .25s ease-out}.elitea-assistant-container--bottom-right .elitea-assistant-window{right:2.875rem}.elitea-assistant-container--bottom-left .elitea-assistant-window{left:2.875rem}@keyframes elitea-assistant-slide-up{0%{opacity:0;transform:translateY(.75rem)}to{opacity:1;transform:translateY(0)}}.elitea-assistant-overlay{position:fixed;top:0;right:0;bottom:0;left:0;z-index:2147483646;background:#00000080;display:flex;align-items:center;justify-content:center;animation:elitea-assistant-fade-in .2s ease-out}@keyframes elitea-assistant-fade-in{0%{opacity:0}to{opacity:1}}.elitea-assistant-window.elitea-assistant-window--expanded{position:fixed;top:0;right:0;bottom:0;left:0;margin:auto;width:45rem;height:42.375rem;max-width:calc(100vw - 2rem);max-height:calc(100vh - 2rem);z-index:99999999999;animation:elitea-assistant-scale-in .2s ease-out}@media (max-width: 48rem){.elitea-assistant-window.elitea-assistant-window--expanded{width:calc(100vw - 2rem);height:calc(100vh - 2rem);border-radius:.75rem}}@keyframes elitea-assistant-scale-in{0%{opacity:0;transform:scale(.95)}to{opacity:1;transform:scale(1)}}.elitea-assistant-header{display:flex;align-items:center;justify-content:space-between;height:3.25rem;padding:0 1rem;background:var(--elitea-assistant-header-bg);color:var(--elitea-assistant-header-text);flex-shrink:0;border-bottom:.0625rem solid var(--elitea-assistant-window-border)}.elitea-assistant-header-left,.elitea-assistant-header-right{display:flex;align-items:center;gap:.5rem}.elitea-assistant-header-title{font-size:.9375rem;font-weight:600;margin:0;white-space:nowrap}.elitea-assistant-header-action{border:.0625rem solid transparent;color:var(--elitea-assistant-header-text);cursor:pointer;padding:0;display:flex;align-items:center;justify-content:center;border-radius:50%;width:1.75rem;height:1.75rem;min-width:auto;box-shadow:none;background:var(--elitea-assistant-header-action-bg);transition:background .15s ease,color .15s ease,border-color .15s ease}.elitea-assistant-header-close-action{border:none;color:var(--elitea-assistant-header-close-icon);cursor:pointer;padding:0;display:flex;align-items:center;justify-content:center;border-radius:50%;width:1.75rem;height:1.75rem;min-width:auto;background:var(--elitea-assistant-header-close-bg);transition:background .15s ease,color .15s ease}.elitea-assistant-header-close-action:hover{background:var(--elitea-assistant-header-close-hover-bg);color:var(--elitea-assistant-header-close-hover-color)}.elitea-assistant-header-close-action:active{background:var(--elitea-assistant-header-close-active-bg);color:var(--elitea-assistant-header-close-active-color)}.elitea-assistant-header-close-action:disabled{background:var(--elitea-assistant-header-close-disabled-bg);color:var(--elitea-assistant-header-close-disabled-color);cursor:not-allowed}.elitea-assistant-header-action:hover{background:var(--elitea-assistant-header-action-hover-bg)}.elitea-assistant-header-action:active{background:var(--elitea-assistant-header-action-active-bg);color:var(--elitea-assistant-header-action-active-color);border-color:var(--elitea-assistant-header-action-active-border)}.elitea-assistant-header-action svg{width:1rem;height:1rem;fill:currentColor}.elitea-assistant-header-close-action svg{width:1.3rem;height:1.3rem;fill:currentColor}.elitea-assistant-history-wrapper{position:relative}.elitea-assistant-header-action:disabled{background:var(--elitea-assistant-header-action-disabled-bg);color:var(--elitea-assistant-header-action-disabled-color);cursor:not-allowed}.elitea-assistant-header-action:disabled:hover{background:var(--elitea-assistant-header-action-disabled-bg)}.elitea-assistant-history-dropdown{position:absolute;top:calc(100% + .55rem);right:-2.65rem;width:19.125rem;max-height:21.875rem;background:var(--elitea-assistant-chat-bg);border:.0625rem solid var(--elitea-assistant-history-dropdown-border);border-radius:.5rem;box-shadow:var(--elitea-assistant-history-dropdown-shadow);z-index:100;padding:.5rem 0}.elitea-assistant-history-dropdown-scroll{max-height:20.875rem;overflow-y:auto}.elitea-assistant-history-item{display:block;width:100%;padding:.5rem .75rem;border:none;background:none;cursor:pointer;text-align:left;color:var(--elitea-assistant-header-text);font-size:.875rem;font-weight:400;line-height:1.5rem;overflow:hidden;text-overflow:ellipsis;white-space:nowrap;transition:background .15s ease}.elitea-assistant-history-item:hover{background:var(--elitea-assistant-history-dropdown-hover-bg)}.elitea-assistant-history-item:disabled{opacity:.45;cursor:default;background:none}.elitea-assistant-messages{flex:1;overflow-y:auto;padding:1rem;display:flex;flex-direction:column;gap:.625rem}.elitea-assistant-message-wrapper{display:flex;flex-direction:column;max-width:80%}.elitea-assistant-message-wrapper--user{align-self:flex-end}.elitea-assistant-message-wrapper--assistant{align-self:flex-start}.elitea-assistant-message-meta{display:flex;align-items:center;gap:.375rem;margin-bottom:.375rem}.elitea-assistant-message-meta--assistant{justify-content:flex-start}.elitea-assistant-message-meta--user{justify-content:flex-end}.elitea-assistant-message-avatar{width:1.5rem;height:1.5rem;border-radius:50%;display:flex;align-items:center;justify-content:center;flex-shrink:0}.elitea-assistant-message-avatar--assistant{background:var(--elitea-assistant-button-bg);color:var(--elitea-assistant-button-icon)}.elitea-assistant-message-avatar--user{background:var(--elitea-assistant-user-avatar-bg);color:var(--elitea-assistant-user-avatar-icon)}.elitea-assistant-message-avatar svg{width:1.25rem;height:1.25rem;fill:currentColor}.elitea-assistant-message-avatar img{width:100%;height:100%;border-radius:50%;object-fit:cover}.elitea-assistant-message-time{font-size:.75rem;opacity:.6;color:var(--elitea-assistant-bot-msg-text)}.elitea-assistant-message{padding:.625rem .875rem;border-radius:.75rem;word-wrap:break-word;font-weight:400;font-style:Regular;font-size:.875rem;line-height:1.5rem;letter-spacing:0%}.elitea-assistant-message--user{white-space:pre-wrap;background:var(--elitea-assistant-user-msg-bg);color:var(--elitea-assistant-user-msg-text);border-radius:1rem 0rem 1rem 1rem}.elitea-assistant-message--assistant{background:var(--elitea-assistant-bot-msg-bg);color:var(--elitea-assistant-bot-msg-text);border-radius:0 1rem 1rem;position:relative;padding-bottom:1.5rem}.elitea-assistant-message--assistant>.elitea-assistant-tooltip-trigger{position:absolute;bottom:.375rem;right:.375rem;opacity:0;transition:opacity .15s ease}.elitea-assistant-message--assistant:hover>.elitea-assistant-tooltip-trigger{opacity:1}.elitea-assistant-message--error{border:1px solid #e53e3e;opacity:.9}@keyframes elitea-assistant-typing-bounce{0%,60%,to{transform:translateY(0);opacity:.25}30%{transform:translateY(-.25rem);opacity:.5}}.elitea-assistant-typing-indicator{display:inline-flex;align-items:center;gap:.1875rem;padding:.125rem 0}.elitea-assistant-typing-dot{width:.25rem;height:.25rem;border-radius:50%;background:var(--elitea-assistant-bot-msg-text);opacity:.25;animation:elitea-assistant-typing-bounce 1.2s ease-in-out infinite}.elitea-assistant-typing-dot:nth-child(2){animation-delay:.15s}.elitea-assistant-typing-dot:nth-child(3){animation-delay:.3s}@keyframes elitea-assistant-shimmer{0%{opacity:.4}50%{opacity:.7}to{opacity:.4}}.elitea-assistant-skeleton-row{display:flex;flex-direction:column;gap:.375rem;max-width:70%}.elitea-assistant-skeleton-row--left{align-self:flex-start}.elitea-assistant-skeleton-row--right{align-self:flex-end}.elitea-assistant-skeleton-meta{display:flex;align-items:center;gap:.375rem}.elitea-assistant-skeleton-row--right .elitea-assistant-skeleton-meta{justify-content:flex-end}.elitea-assistant-skeleton{background:var(--elitea-assistant-bot-msg-bg);border-radius:.5rem;animation:elitea-assistant-shimmer 1.4s ease-in-out infinite}.elitea-assistant-skeleton--avatar{width:1.5rem;height:1.5rem;border-radius:50%;flex-shrink:0}.elitea-assistant-skeleton--time{width:2.5rem;height:.75rem;border-radius:.25rem}.elitea-assistant-skeleton--bubble{width:10rem;height:2.5rem;border-radius:.75rem}.elitea-assistant-skeleton-row--right .elitea-assistant-skeleton--bubble{width:8rem}.elitea-assistant-empty{flex:1;display:flex;align-items:center;justify-content:center;color:var(--elitea-assistant-bot-msg-text);opacity:.5;font-size:.8125rem;text-align:center;padding:1.25rem}.elitea-assistant-status-chips{display:flex;flex-wrap:wrap;gap:.375rem;margin-bottom:.375rem}.elitea-assistant-status-chip{display:inline-flex;align-items:center;gap:.25rem;padding:.1875rem .5rem;border-radius:1rem;font-size:.6875rem;font-weight:500;background:var(--elitea-assistant-bot-msg-bg);border:1px solid var(--elitea-assistant-border);color:var(--elitea-assistant-bot-msg-text);opacity:.85;transition:opacity .2s ease}.elitea-assistant-status-chip--done{opacity:.55}.elitea-assistant-chip-spinner{width:.5rem;height:.5rem;border:1.5px solid currentColor;border-top-color:transparent;border-radius:50%;animation:elitea-assistant-chip-spin .6s linear infinite}@keyframes elitea-assistant-chip-spin{to{transform:rotate(360deg)}}.elitea-assistant-chip-check{font-size:.625rem;line-height:1}.elitea-assistant-markdown{overflow-wrap:break-word}.elitea-assistant-markdown>:first-child{margin-top:0}.elitea-assistant-markdown>:last-child{margin-bottom:0}.elitea-assistant-markdown p{margin:.5em 0}.elitea-assistant-markdown h1,.elitea-assistant-markdown h2,.elitea-assistant-markdown h3,.elitea-assistant-markdown h4,.elitea-assistant-markdown h5,.elitea-assistant-markdown h6{margin:.75em 0 .375em;font-weight:600;line-height:1.3}.elitea-assistant-markdown h1{font-size:1.25em}.elitea-assistant-markdown h2{font-size:1.125em}.elitea-assistant-markdown h3{font-size:1em}.elitea-assistant-markdown ul,.elitea-assistant-markdown ol{margin:.5em 0;padding-left:1.5em}.elitea-assistant-markdown li{margin:.25em 0}.elitea-assistant-markdown li>ul,.elitea-assistant-markdown li>ol{margin:.125em 0}.elitea-assistant-markdown code{background:#0000000f;padding:.125em .3em;border-radius:.25em;font-size:.85em;font-family:ui-monospace,SFMono-Regular,SF Mono,Menlo,Consolas,monospace}.elitea-assistant-markdown pre{margin:.5em 0;padding:.625em .75em;background:#0000000f;border-radius:.375em;overflow-x:auto}.elitea-assistant-markdown pre code{background:none;padding:0;font-size:.8125em;white-space:pre}.elitea-assistant-markdown blockquote{margin:.5em 0;padding:.25em .75em;border-left:3px solid rgba(0,0,0,.15);opacity:.85}.elitea-assistant-markdown blockquote>:first-child{margin-top:0}.elitea-assistant-markdown blockquote>:last-child{margin-bottom:0}.elitea-assistant-markdown hr{border:none;border-top:1px solid rgba(0,0,0,.1);margin:.75em 0}.elitea-assistant-markdown table{border-collapse:collapse;margin:.5em 0;font-size:.85em;width:100%}.elitea-assistant-markdown th,.elitea-assistant-markdown td{border:1px solid rgba(0,0,0,.1);padding:.375em .625em;text-align:left}.elitea-assistant-markdown th{font-weight:600;background:#00000008}.elitea-assistant-markdown a{color:var(--elitea-assistant-button-bg);text-decoration:underline}.elitea-assistant-markdown strong{font-weight:600}.elitea-assistant-markdown img{max-width:100%;border-radius:.375em}.elitea-assistant-markdown-img-clickable{cursor:zoom-in;transition:opacity .15s ease}.elitea-assistant-markdown-img-clickable:hover{opacity:.88}.elitea-assistant-lightbox-overlay{position:fixed;top:0;right:0;bottom:0;left:0;z-index:2147483647;background:#000000d1;display:flex;align-items:center;justify-content:center;cursor:zoom-out;animation:elitea-lightbox-fade-in .15s ease}@keyframes elitea-lightbox-fade-in{0%{opacity:0}to{opacity:1}}.elitea-assistant-lightbox-img{max-width:90vw;max-height:90vh;border-radius:.5em;box-shadow:0 8px 40px #0009;cursor:default;object-fit:contain}.elitea-assistant-lightbox-close{position:fixed;top:1rem;right:1.25rem;background:#ffffff26;border:none;border-radius:50%;width:2rem;height:2rem;color:#fff;font-size:.875rem;line-height:1;cursor:pointer;display:flex;align-items:center;justify-content:center;transition:background .15s ease}.elitea-assistant-lightbox-close:hover{background:#ffffff47}.elitea-assistant-input-area{display:flex;flex-direction:column;padding:.75rem;background:var(--elitea-assistant-input-bg);flex-shrink:0;border-top:.0625rem solid var(--elitea-assistant-window-border);position:relative}.elitea-assistant-input-area--drag-over>*:not(.elitea-assistant-drop-overlay){visibility:hidden}.elitea-assistant-drop-overlay{position:absolute;top:0;right:0;bottom:0;left:0;display:flex;align-items:center;justify-content:center;border:2px dashed var(--elitea-assistant-send-btn-bg);border-radius:0 0 1rem 1rem;color:var(--elitea-assistant-input-text);font-size:.875rem;z-index:10}.elitea-assistant-input-row{display:flex;align-items:center;gap:.5rem;width:100%}.elitea-assistant-input{flex:1;padding:.5rem .25rem;border:none;border-radius:0;background:transparent;color:var(--elitea-assistant-input-text);font-size:.875rem;font-family:inherit;outline:none;resize:none}.elitea-assistant-input::placeholder{color:var(--elitea-assistant-input-placeholder);opacity:1}.elitea-assistant-attach-button{width:1.75rem;height:1.75rem;border-radius:50%;border:none;cursor:pointer;display:flex;align-items:center;justify-content:center;background:var(--elitea-assistant-header-action-bg);color:var(--elitea-assistant-header-text);flex-shrink:0;transition:opacity .15s ease;padding:0;opacity:.8}.elitea-assistant-attach-button:hover{opacity:1}.elitea-assistant-attach-button svg{width:.875rem;height:.875rem;fill:currentColor}.elitea-assistant-send-button{width:1.75rem;height:1.75rem;border-radius:50%;border:none;cursor:pointer;display:flex;align-items:center;justify-content:center;background:var(--elitea-assistant-send-btn-bg);color:var(--elitea-assistant-send-btn-icon);flex-shrink:0;transition:background .15s ease;padding:0}.elitea-assistant-send-button:disabled{background:var(--elitea-assistant-send-btn-disabled-bg);cursor:default}.elitea-assistant-send-button svg{width:.875rem;height:.875rem;fill:currentColor}.elitea-assistant-file-list{display:flex;align-items:center;gap:.5rem;padding-bottom:.5rem}.elitea-assistant-file-chip{display:flex;align-items:center;gap:.75rem;max-width:11.25rem;height:2.25rem;padding:.375rem .75rem;border-radius:.5rem;background:var(--elitea-assistant-header-action-bg);flex-shrink:0}.elitea-assistant-file-chip-icon{display:flex;align-items:center;justify-content:center;flex-shrink:0;color:var(--elitea-assistant-header-close-icon)}.elitea-assistant-file-chip-icon svg{width:.75rem;height:.875rem}.elitea-assistant-file-chip-name{flex:1;min-width:0;font-size:.75rem;color:var(--elitea-assistant-input-text);white-space:nowrap;overflow:hidden;text-overflow:ellipsis}.elitea-assistant-file-chip-remove{display:flex;align-items:center;justify-content:center;width:1rem;height:1rem;padding:0;border:none;background:none;cursor:pointer;color:var(--elitea-assistant-header-close-icon);flex-shrink:0;opacity:.7;transition:opacity .15s ease}.elitea-assistant-file-chip-remove:hover{opacity:1}.elitea-assistant-file-chip-remove svg{width:2rem;height:2rem;fill:currentColor}.elitea-assistant-file-chip--count{font-size:.75rem;font-weight:400;color:var(--elitea-assistant-input-text);max-width:none;gap:0}.elitea-assistant-file-chip--error{border:1px solid var(--elitea-assistant-error-color, #ef4444);background:var(--elitea-assistant-error-bg, rgba(239, 68, 68, .1))}.elitea-assistant-file-chip--completed .elitea-assistant-file-chip-icon{color:var(--elitea-assistant-success-color, #22c55e)}.elitea-assistant-file-chip-progress-text{width:1.5625rem;font-size:.625rem;color:var(--elitea-assistant-input-text);flex-shrink:0;text-align:right}.elitea-assistant-file-chip-error-icon{display:flex;align-items:center;justify-content:center;flex-shrink:0;color:var(--elitea-assistant-error-color, #ef4444)}.elitea-assistant-file-chip-error-icon svg{width:.875rem;height:.875rem;fill:currentColor}.elitea-assistant-file-chip-icon .elitea-assistant-file-chip-spinner{width:1.25rem;height:1.25rem;flex-shrink:0;color:var(--elitea-assistant-send-btn-bg)}.elitea-assistant-file-chip-spinner-progress{transition:stroke-dashoffset .15s ease}.elitea-assistant-attach-button:disabled{opacity:.5;cursor:not-allowed}.elitea-assistant-tooltip-trigger{display:inline-flex}.elitea-assistant-tooltip{position:fixed;z-index:2147483647;padding:.25rem .5rem;border-radius:.25rem;background:#e9ebf0;color:#0e131d;font-size:.6875rem;line-height:1.3;font-weight:500;font-family:Montserrat,sans-serif;max-width:20rem;word-wrap:break-word;pointer-events:none;box-shadow:0 0 0 .0625rem #00000014,0 .125rem .5rem #0000001f;transition:opacity .15s ease}@keyframes elitea-tooltip-in{0%{opacity:0;transform:translateY(4px)}to{opacity:1;transform:translateY(0)}}.elitea-assistant-popup{position:absolute;bottom:.25rem;display:flex;align-items:center;gap:1rem;padding:.75rem .75rem .75rem 1.25rem;border-radius:1.5rem 1.5rem 1.5rem 0;background:var(--elitea-assistant-popup-bg);color:var(--elitea-assistant-popup-text);font-size:.875rem;font-weight:500;line-height:1.5rem;white-space:nowrap;box-shadow:0 .25rem 1rem #0003;animation:elitea-assistant-popup-in .3s ease-out}.elitea-assistant-popup:before{content:"";position:absolute;top:-.0625rem;right:-.0625rem;bottom:-.0625rem;left:-.0625rem;border-radius:inherit;padding:.0625rem;background:var(--elitea-assistant-popup-border);-webkit-mask:linear-gradient(#fff 0 0) content-box,linear-gradient(#fff 0 0);-webkit-mask-composite:xor;mask:linear-gradient(#fff 0 0) content-box,linear-gradient(#fff 0 0);mask-composite:exclude;pointer-events:none}.elitea-assistant-container--bottom-right .elitea-assistant-popup{right:2.5rem;flex-direction:row-reverse;padding:.75rem 1.25rem .75rem .75rem;border-radius:1.5rem 1.5rem 0}.elitea-assistant-container--bottom-left .elitea-assistant-popup{left:2.5rem}.elitea-assistant-popup-text{-webkit-user-select:none;user-select:none}.elitea-assistant-popup-close{display:flex;align-items:center;justify-content:center;width:1.75rem;height:1.75rem;flex-shrink:0;border:none;border-radius:50%;background:var(--elitea-assistant-popup-close-bg);color:var(--elitea-assistant-popup-text);cursor:pointer;padding:0;transition:background .15s ease}.elitea-assistant-popup-close:hover{background:var(--elitea-assistant-popup-close-hover-bg)}.elitea-assistant-popup-close svg{width:1rem;height:1rem;fill:currentColor}@keyframes elitea-assistant-popup-in{0%{opacity:0;transform:translateY(.5rem)}to{opacity:1;transform:translateY(0)}}')),document.head.appendChild(e)}}catch(t){console.error("vite-plugin-css-injected-by-js",t)}})();
+(function(){"use strict";try{if(typeof document<"u"){var e=document.createElement("style");e.appendChild(document.createTextNode('@import"https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700&display=swap";.elitea-assistant-container{position:fixed;z-index:2147483647;font-family:Montserrat,sans-serif;font-size:.875rem;line-height:1.5;box-sizing:border-box}.elitea-assistant-container *,.elitea-assistant-container *:before,.elitea-assistant-container *:after{box-sizing:border-box}.elitea-assistant-container--bottom-right{bottom:.75rem;right:1.09375rem}.elitea-assistant-container--bottom-left{bottom:.75rem;left:1.09375rem}.elitea-assistant-button{width:1.75rem;height:1.75rem;border-radius:50%;border:none;cursor:pointer;display:flex;align-items:center;justify-content:center;background:var(--elitea-assistant-button-bg);color:var(--elitea-assistant-button-icon);box-shadow:0 .25rem .75rem #00000026;transition:transform .2s ease,box-shadow .2s ease;padding:0}.elitea-assistant-button:hover{transform:scale(1.08);box-shadow:0 .375rem 1.25rem #0003}.elitea-assistant-button svg{width:1.75rem;height:1.75rem;fill:currentColor}.elitea-assistant-window{position:absolute;bottom:0rem;width:28.75rem;height:30rem;border-radius:1rem;overflow:hidden;display:flex;flex-direction:column;box-shadow:var(--elitea-assistant-window-shadow);background:var(--elitea-assistant-chat-bg);border:.0625rem solid var(--elitea-assistant-window-border);animation:elitea-assistant-slide-up .25s ease-out}.elitea-assistant-container--bottom-right .elitea-assistant-window{right:2.875rem}.elitea-assistant-container--bottom-left .elitea-assistant-window{left:2.875rem}@keyframes elitea-assistant-slide-up{0%{opacity:0;transform:translateY(.75rem)}to{opacity:1;transform:translateY(0)}}.elitea-assistant-overlay{position:fixed;top:0;right:0;bottom:0;left:0;z-index:2147483646;background:#00000080;display:flex;align-items:center;justify-content:center;animation:elitea-assistant-fade-in .2s ease-out}@keyframes elitea-assistant-fade-in{0%{opacity:0}to{opacity:1}}.elitea-assistant-window.elitea-assistant-window--expanded{position:fixed;top:0;right:0;bottom:0;left:0;margin:auto;width:45rem;height:42.375rem;max-width:calc(100vw - 2rem);max-height:calc(100vh - 2rem);z-index:99999999999;animation:elitea-assistant-scale-in .2s ease-out}@media (max-width: 48rem){.elitea-assistant-window.elitea-assistant-window--expanded{width:calc(100vw - 2rem);height:calc(100vh - 2rem);border-radius:.75rem}}@keyframes elitea-assistant-scale-in{0%{opacity:0;transform:scale(.95)}to{opacity:1;transform:scale(1)}}.elitea-assistant-header{display:flex;align-items:center;justify-content:space-between;height:3.25rem;padding:0 1rem;background:var(--elitea-assistant-header-bg);color:var(--elitea-assistant-header-text);flex-shrink:0;border-bottom:.0625rem solid var(--elitea-assistant-window-border)}.elitea-assistant-header-left,.elitea-assistant-header-right{display:flex;align-items:center;gap:.5rem}.elitea-assistant-header-title{font-size:.9375rem;font-weight:600;margin:0;white-space:nowrap}.elitea-assistant-header-action{border:.0625rem solid transparent;color:var(--elitea-assistant-header-text);cursor:pointer;padding:0;display:flex;align-items:center;justify-content:center;border-radius:50%;width:1.75rem;height:1.75rem;min-width:auto;box-shadow:none;background:var(--elitea-assistant-header-action-bg);transition:background .15s ease,color .15s ease,border-color .15s ease}.elitea-assistant-header-close-action{border:none;color:var(--elitea-assistant-header-close-icon);cursor:pointer;padding:0;display:flex;align-items:center;justify-content:center;border-radius:50%;width:1.75rem;height:1.75rem;min-width:auto;background:var(--elitea-assistant-header-close-bg);transition:background .15s ease,color .15s ease}.elitea-assistant-header-close-action:hover{background:var(--elitea-assistant-header-close-hover-bg);color:var(--elitea-assistant-header-close-hover-color)}.elitea-assistant-header-close-action:active{background:var(--elitea-assistant-header-close-active-bg);color:var(--elitea-assistant-header-close-active-color)}.elitea-assistant-header-close-action:disabled{background:var(--elitea-assistant-header-close-disabled-bg);color:var(--elitea-assistant-header-close-disabled-color);cursor:not-allowed}.elitea-assistant-header-action:hover{background:var(--elitea-assistant-header-action-hover-bg)}.elitea-assistant-header-action:active{background:var(--elitea-assistant-header-action-active-bg);color:var(--elitea-assistant-header-action-active-color);border-color:var(--elitea-assistant-header-action-active-border)}.elitea-assistant-header-action svg{width:1rem;height:1rem;fill:currentColor}.elitea-assistant-header-close-action svg{width:1.3rem;height:1.3rem;fill:currentColor}.elitea-assistant-history-wrapper{position:relative}.elitea-assistant-header-action:disabled{background:var(--elitea-assistant-header-action-disabled-bg);color:var(--elitea-assistant-header-action-disabled-color);cursor:not-allowed}.elitea-assistant-header-action:disabled:hover{background:var(--elitea-assistant-header-action-disabled-bg)}.elitea-assistant-history-dropdown{position:absolute;top:calc(100% + .55rem);right:-2.65rem;width:19.125rem;max-height:21.875rem;background:var(--elitea-assistant-chat-bg);border:.0625rem solid var(--elitea-assistant-history-dropdown-border);border-radius:.5rem;box-shadow:var(--elitea-assistant-history-dropdown-shadow);z-index:100;padding:.5rem 0}.elitea-assistant-history-dropdown-scroll{max-height:20.875rem;overflow-y:auto}.elitea-assistant-history-item{display:block;width:100%;padding:.5rem .75rem;border:none;background:none;cursor:pointer;text-align:left;color:var(--elitea-assistant-header-text);font-size:.875rem;font-weight:400;line-height:1.5rem;overflow:hidden;text-overflow:ellipsis;white-space:nowrap;transition:background .15s ease}.elitea-assistant-history-item:hover{background:var(--elitea-assistant-history-dropdown-hover-bg)}.elitea-assistant-history-item:disabled{opacity:.45;cursor:default;background:none}.elitea-assistant-messages{flex:1;overflow-y:auto;padding:1rem;display:flex;flex-direction:column;gap:.625rem}.elitea-assistant-message-wrapper{display:flex;flex-direction:column;max-width:80%}.elitea-assistant-message-wrapper--user{align-self:flex-end}.elitea-assistant-message-wrapper--assistant{align-self:flex-start}.elitea-assistant-message-meta{display:flex;align-items:center;gap:.375rem;margin-bottom:.375rem}.elitea-assistant-message-meta--assistant{justify-content:flex-start}.elitea-assistant-message-meta--user{justify-content:flex-end}.elitea-assistant-message-avatar{width:1.5rem;height:1.5rem;border-radius:50%;display:flex;align-items:center;justify-content:center;flex-shrink:0}.elitea-assistant-message-avatar--assistant{background:var(--elitea-assistant-button-bg);color:var(--elitea-assistant-button-icon)}.elitea-assistant-message-avatar--user{background:var(--elitea-assistant-user-avatar-bg);color:var(--elitea-assistant-user-avatar-icon)}.elitea-assistant-message-avatar svg{width:1.25rem;height:1.25rem;fill:currentColor}.elitea-assistant-message-avatar img{width:100%;height:100%;border-radius:50%;object-fit:cover}.elitea-assistant-message-time{font-size:.75rem;opacity:.6;color:var(--elitea-assistant-bot-msg-text)}.elitea-assistant-message{padding:.625rem .875rem;border-radius:.75rem;word-wrap:break-word;font-weight:400;font-style:Regular;font-size:.875rem;line-height:1.5rem;letter-spacing:0%}.elitea-assistant-message--user{white-space:pre-wrap;background:var(--elitea-assistant-user-msg-bg);color:var(--elitea-assistant-user-msg-text);border-radius:1rem 0rem 1rem 1rem}.elitea-assistant-message--assistant{background:var(--elitea-assistant-bot-msg-bg);color:var(--elitea-assistant-bot-msg-text);border-radius:0 1rem 1rem;position:relative;padding-bottom:1.5rem}.elitea-assistant-message--assistant>.elitea-assistant-tooltip-trigger{position:absolute;bottom:.375rem;right:.375rem;opacity:0;transition:opacity .15s ease}.elitea-assistant-message--assistant:hover>.elitea-assistant-tooltip-trigger{opacity:1}.elitea-assistant-message--error{border:1px solid #e53e3e;opacity:.9}@keyframes elitea-assistant-typing-bounce{0%,60%,to{transform:translateY(0);opacity:.25}30%{transform:translateY(-.25rem);opacity:.5}}.elitea-assistant-typing-indicator{display:inline-flex;align-items:center;gap:.1875rem;padding:.125rem 0}.elitea-assistant-typing-dot{width:.25rem;height:.25rem;border-radius:50%;background:var(--elitea-assistant-bot-msg-text);opacity:.25;animation:elitea-assistant-typing-bounce 1.2s ease-in-out infinite}.elitea-assistant-typing-dot:nth-child(2){animation-delay:.15s}.elitea-assistant-typing-dot:nth-child(3){animation-delay:.3s}@keyframes elitea-assistant-shimmer{0%{opacity:.4}50%{opacity:.7}to{opacity:.4}}.elitea-assistant-skeleton-row{display:flex;flex-direction:column;gap:.375rem;max-width:70%}.elitea-assistant-skeleton-row--left{align-self:flex-start}.elitea-assistant-skeleton-row--right{align-self:flex-end}.elitea-assistant-skeleton-meta{display:flex;align-items:center;gap:.375rem}.elitea-assistant-skeleton-row--right .elitea-assistant-skeleton-meta{justify-content:flex-end}.elitea-assistant-skeleton{background:var(--elitea-assistant-bot-msg-bg);border-radius:.5rem;animation:elitea-assistant-shimmer 1.4s ease-in-out infinite}.elitea-assistant-skeleton--avatar{width:1.5rem;height:1.5rem;border-radius:50%;flex-shrink:0}.elitea-assistant-skeleton--time{width:2.5rem;height:.75rem;border-radius:.25rem}.elitea-assistant-skeleton--bubble{width:10rem;height:2.5rem;border-radius:.75rem}.elitea-assistant-skeleton-row--right .elitea-assistant-skeleton--bubble{width:8rem}.elitea-assistant-empty{flex:1;display:flex;align-items:center;justify-content:center;color:var(--elitea-assistant-bot-msg-text);opacity:.5;font-size:.8125rem;text-align:center;padding:1.25rem}.elitea-assistant-status-chips{display:flex;flex-wrap:wrap;gap:.375rem;margin-bottom:.375rem}.elitea-assistant-status-chip{display:inline-flex;align-items:center;gap:.25rem;padding:.1875rem .5rem;border-radius:1rem;font-size:.6875rem;font-weight:500;background:var(--elitea-assistant-bot-msg-bg);border:1px solid var(--elitea-assistant-border);color:var(--elitea-assistant-bot-msg-text);opacity:.85;transition:opacity .2s ease}.elitea-assistant-status-chip--done{opacity:.55}.elitea-assistant-chip-spinner{width:.5rem;height:.5rem;border:1.5px solid currentColor;border-top-color:transparent;border-radius:50%;animation:elitea-assistant-chip-spin .6s linear infinite}@keyframes elitea-assistant-chip-spin{to{transform:rotate(360deg)}}.elitea-assistant-chip-check{font-size:.625rem;line-height:1}.elitea-assistant-markdown{overflow-wrap:break-word}.elitea-assistant-markdown>:first-child{margin-top:0}.elitea-assistant-markdown>:last-child{margin-bottom:0}.elitea-assistant-markdown p{margin:.5em 0}.elitea-assistant-markdown h1,.elitea-assistant-markdown h2,.elitea-assistant-markdown h3,.elitea-assistant-markdown h4,.elitea-assistant-markdown h5,.elitea-assistant-markdown h6{margin:.75em 0 .375em;font-weight:600;line-height:1.3}.elitea-assistant-markdown h1{font-size:1.25em}.elitea-assistant-markdown h2{font-size:1.125em}.elitea-assistant-markdown h3{font-size:1em}.elitea-assistant-markdown ul,.elitea-assistant-markdown ol{margin:.5em 0;padding-left:1.5em}.elitea-assistant-markdown li{margin:.25em 0}.elitea-assistant-markdown li>ul,.elitea-assistant-markdown li>ol{margin:.125em 0}.elitea-assistant-markdown code{background:#0000000f;padding:.125em .3em;border-radius:.25em;font-size:.85em;font-family:ui-monospace,SFMono-Regular,SF Mono,Menlo,Consolas,monospace}.elitea-assistant-markdown pre{margin:.5em 0;padding:.625em .75em;background:#0000000f;border-radius:.375em;overflow-x:auto}.elitea-assistant-markdown pre code{background:none;padding:0;font-size:.8125em;white-space:pre}.elitea-assistant-markdown blockquote{margin:.5em 0;padding:.25em .75em;border-left:3px solid rgba(0,0,0,.15);opacity:.85}.elitea-assistant-markdown blockquote>:first-child{margin-top:0}.elitea-assistant-markdown blockquote>:last-child{margin-bottom:0}.elitea-assistant-markdown hr{border:none;border-top:1px solid rgba(0,0,0,.1);margin:.75em 0}.elitea-assistant-markdown table{border-collapse:collapse;margin:.5em 0;font-size:.85em;width:100%}.elitea-assistant-markdown th,.elitea-assistant-markdown td{border:1px solid rgba(0,0,0,.1);padding:.375em .625em;text-align:left}.elitea-assistant-markdown th{font-weight:600;background:#00000008}.elitea-assistant-markdown a{color:var(--elitea-assistant-button-bg);text-decoration:underline}.elitea-assistant-markdown strong{font-weight:600}.elitea-assistant-markdown img{max-width:100%;border-radius:.375em}.elitea-assistant-img-btn{display:inline-block;padding:0;margin:0;background:none;border:none;cursor:zoom-in;border-radius:.375em;transition:opacity .15s ease}.elitea-assistant-img-btn:hover{opacity:.88}.elitea-assistant-img-btn:focus-visible{outline:2px solid var(--elitea-assistant-button-bg, #6366f1);outline-offset:2px}.elitea-assistant-img-btn img{display:block}.elitea-assistant-lightbox-overlay{position:fixed;top:0;right:0;bottom:0;left:0;z-index:2147483647;background:#000000d1;display:flex;align-items:center;justify-content:center;cursor:zoom-out;animation:elitea-lightbox-fade-in .15s ease}@keyframes elitea-lightbox-fade-in{0%{opacity:0}to{opacity:1}}.elitea-assistant-lightbox-img{max-width:90vw;max-height:90vh;border-radius:.5em;box-shadow:0 8px 40px #0009;cursor:default;object-fit:contain}.elitea-assistant-lightbox-close{position:fixed;top:1rem;right:1.25rem;background:#ffffff26;border:none;border-radius:50%;width:2rem;height:2rem;color:#fff;font-size:.875rem;line-height:1;cursor:pointer;display:flex;align-items:center;justify-content:center;transition:background .15s ease}.elitea-assistant-lightbox-close:hover{background:#ffffff47}.elitea-assistant-lightbox-close:focus-visible{outline:2px solid #fff;outline-offset:2px}.elitea-assistant-input-area{display:flex;flex-direction:column;padding:.75rem;background:var(--elitea-assistant-input-bg);flex-shrink:0;border-top:.0625rem solid var(--elitea-assistant-window-border);position:relative}.elitea-assistant-input-area--drag-over>*:not(.elitea-assistant-drop-overlay){visibility:hidden}.elitea-assistant-drop-overlay{position:absolute;top:0;right:0;bottom:0;left:0;display:flex;align-items:center;justify-content:center;border:2px dashed var(--elitea-assistant-send-btn-bg);border-radius:0 0 1rem 1rem;color:var(--elitea-assistant-input-text);font-size:.875rem;z-index:10}.elitea-assistant-input-row{display:flex;align-items:center;gap:.5rem;width:100%}.elitea-assistant-input{flex:1;padding:.5rem .25rem;border:none;border-radius:0;background:transparent;color:var(--elitea-assistant-input-text);font-size:.875rem;font-family:inherit;outline:none;resize:none}.elitea-assistant-input::placeholder{color:var(--elitea-assistant-input-placeholder);opacity:1}.elitea-assistant-attach-button{width:1.75rem;height:1.75rem;border-radius:50%;border:none;cursor:pointer;display:flex;align-items:center;justify-content:center;background:var(--elitea-assistant-header-action-bg);color:var(--elitea-assistant-header-text);flex-shrink:0;transition:opacity .15s ease;padding:0;opacity:.8}.elitea-assistant-attach-button:hover{opacity:1}.elitea-assistant-attach-button svg{width:.875rem;height:.875rem;fill:currentColor}.elitea-assistant-send-button{width:1.75rem;height:1.75rem;border-radius:50%;border:none;cursor:pointer;display:flex;align-items:center;justify-content:center;background:var(--elitea-assistant-send-btn-bg);color:var(--elitea-assistant-send-btn-icon);flex-shrink:0;transition:background .15s ease;padding:0}.elitea-assistant-send-button:disabled{background:var(--elitea-assistant-send-btn-disabled-bg);cursor:default}.elitea-assistant-send-button svg{width:.875rem;height:.875rem;fill:currentColor}.elitea-assistant-file-list{display:flex;align-items:center;gap:.5rem;padding-bottom:.5rem}.elitea-assistant-file-chip{display:flex;align-items:center;gap:.75rem;max-width:11.25rem;height:2.25rem;padding:.375rem .75rem;border-radius:.5rem;background:var(--elitea-assistant-header-action-bg);flex-shrink:0}.elitea-assistant-file-chip-icon{display:flex;align-items:center;justify-content:center;flex-shrink:0;color:var(--elitea-assistant-header-close-icon)}.elitea-assistant-file-chip-icon svg{width:.75rem;height:.875rem}.elitea-assistant-file-chip-name{flex:1;min-width:0;font-size:.75rem;color:var(--elitea-assistant-input-text);white-space:nowrap;overflow:hidden;text-overflow:ellipsis}.elitea-assistant-file-chip-remove{display:flex;align-items:center;justify-content:center;width:1rem;height:1rem;padding:0;border:none;background:none;cursor:pointer;color:var(--elitea-assistant-header-close-icon);flex-shrink:0;opacity:.7;transition:opacity .15s ease}.elitea-assistant-file-chip-remove:hover{opacity:1}.elitea-assistant-file-chip-remove svg{width:2rem;height:2rem;fill:currentColor}.elitea-assistant-file-chip--count{font-size:.75rem;font-weight:400;color:var(--elitea-assistant-input-text);max-width:none;gap:0}.elitea-assistant-file-chip--error{border:1px solid var(--elitea-assistant-error-color, #ef4444);background:var(--elitea-assistant-error-bg, rgba(239, 68, 68, .1))}.elitea-assistant-file-chip--completed .elitea-assistant-file-chip-icon{color:var(--elitea-assistant-success-color, #22c55e)}.elitea-assistant-file-chip-progress-text{width:1.5625rem;font-size:.625rem;color:var(--elitea-assistant-input-text);flex-shrink:0;text-align:right}.elitea-assistant-file-chip-error-icon{display:flex;align-items:center;justify-content:center;flex-shrink:0;color:var(--elitea-assistant-error-color, #ef4444)}.elitea-assistant-file-chip-error-icon svg{width:.875rem;height:.875rem;fill:currentColor}.elitea-assistant-file-chip-icon .elitea-assistant-file-chip-spinner{width:1.25rem;height:1.25rem;flex-shrink:0;color:var(--elitea-assistant-send-btn-bg)}.elitea-assistant-file-chip-spinner-progress{transition:stroke-dashoffset .15s ease}.elitea-assistant-attach-button:disabled{opacity:.5;cursor:not-allowed}.elitea-assistant-tooltip-trigger{display:inline-flex}.elitea-assistant-tooltip{position:fixed;z-index:2147483647;padding:.25rem .5rem;border-radius:.25rem;background:#e9ebf0;color:#0e131d;font-size:.6875rem;line-height:1.3;font-weight:500;font-family:Montserrat,sans-serif;max-width:20rem;word-wrap:break-word;pointer-events:none;box-shadow:0 0 0 .0625rem #00000014,0 .125rem .5rem #0000001f;transition:opacity .15s ease}@keyframes elitea-tooltip-in{0%{opacity:0;transform:translateY(4px)}to{opacity:1;transform:translateY(0)}}.elitea-assistant-popup{position:absolute;bottom:.25rem;display:flex;align-items:center;gap:1rem;padding:.75rem .75rem .75rem 1.25rem;border-radius:1.5rem 1.5rem 1.5rem 0;background:var(--elitea-assistant-popup-bg);color:var(--elitea-assistant-popup-text);font-size:.875rem;font-weight:500;line-height:1.5rem;white-space:nowrap;box-shadow:0 .25rem 1rem #0003;animation:elitea-assistant-popup-in .3s ease-out}.elitea-assistant-popup:before{content:"";position:absolute;top:-.0625rem;right:-.0625rem;bottom:-.0625rem;left:-.0625rem;border-radius:inherit;padding:.0625rem;background:var(--elitea-assistant-popup-border);-webkit-mask:linear-gradient(#fff 0 0) content-box,linear-gradient(#fff 0 0);-webkit-mask-composite:xor;mask:linear-gradient(#fff 0 0) content-box,linear-gradient(#fff 0 0);mask-composite:exclude;pointer-events:none}.elitea-assistant-container--bottom-right .elitea-assistant-popup{right:2.5rem;flex-direction:row-reverse;padding:.75rem 1.25rem .75rem .75rem;border-radius:1.5rem 1.5rem 0}.elitea-assistant-container--bottom-left .elitea-assistant-popup{left:2.5rem}.elitea-assistant-popup-text{-webkit-user-select:none;user-select:none}.elitea-assistant-popup-close{display:flex;align-items:center;justify-content:center;width:1.75rem;height:1.75rem;flex-shrink:0;border:none;border-radius:50%;background:var(--elitea-assistant-popup-close-bg);color:var(--elitea-assistant-popup-text);cursor:pointer;padding:0;transition:background .15s ease}.elitea-assistant-popup-close:hover{background:var(--elitea-assistant-popup-close-hover-bg)}.elitea-assistant-popup-close svg{width:1rem;height:1rem;fill:currentColor}@keyframes elitea-assistant-popup-in{0%{opacity:0;transform:translateY(.5rem)}to{opacity:1;transform:translateY(0)}}')),document.head.appendChild(e)}}catch(t){console.error("vite-plugin-css-injected-by-js",t)}})();
 import { jsx as E, jsxs as he, Fragment as $n } from "react/jsx-runtime";
-import { memo as ue, useState as pe, useCallback as Y, useRef as Ve, useLayoutEffect as ws, useEffect as nt, useMemo as Tt, createContext as dn, useContext as mn, forwardRef as Cs, useImperativeHandle as Ss } from "react";
+import { memo as ue, useState as pe, useCallback as Y, useRef as Re, useLayoutEffect as ws, useEffect as nt, useMemo as Tt, createContext as dn, useContext as mn, forwardRef as Cs, useImperativeHandle as Ss } from "react";
 import { createPortal as ia } from "react-dom";
 import { io as Es } from "socket.io-client";
 const Jt = (e, t = !1) => ({
@@ -239,7 +239,7 @@ const ma = ue((e) => {
 });
 ma.displayName = "CopyButton";
 const Vt = ue((e) => {
-  const { content: t, children: n, placement: r = "top" } = e, i = Ve(null), o = Ve(null), [a, l] = pe(!1), [s, u] = pe(!1), [f, c] = pe({ top: 0, left: 0 }), h = Y(() => {
+  const { content: t, children: n, placement: r = "top" } = e, i = Re(null), o = Re(null), [a, l] = pe(!1), [s, u] = pe(!1), [f, c] = pe({ top: 0, left: 0 }), h = Y(() => {
     const p = i.current, m = o.current;
     if (!p || !m) return;
     const b = p.getBoundingClientRect(), S = m.getBoundingClientRect();
@@ -293,7 +293,7 @@ const ga = ue((e) => {
     onExpand: l,
     onNewChat: s,
     onSelectConversation: u
-  } = e, f = Ve(null), [c, h] = pe(!1);
+  } = e, f = Re(null), [c, h] = pe(!1);
   nt(() => {
     if (!c) return;
     const b = (S) => {
@@ -381,7 +381,7 @@ const ga = ue((e) => {
 });
 ga.displayName = "ChatHeader";
 const ya = ue((e) => {
-  const { avatar: t, messages: n, isLoading: r, onAnimationComplete: i } = e, o = Ve(null), a = Ve(null), l = Ve(!1);
+  const { avatar: t, messages: n, isLoading: r, onAnimationComplete: i } = e, o = Re(null), a = Re(null), l = Re(!1);
   return nt(() => {
     var b;
     const s = a.current;
@@ -592,7 +592,7 @@ const Sa = ue((e) => {
     expanded: s,
     disabled: u,
     isUploading: f
-  } = e, c = Ve(null), [h, p] = pe(0), [m, b] = pe(!1), S = Ve(0), { visibleAttachments: k, remainingAttachmentsCount: I } = Tt(() => {
+  } = e, c = Re(null), [h, p] = pe(0), [m, b] = pe(!1), S = Re(0), { visibleAttachments: k, remainingAttachmentsCount: I } = Tt(() => {
     const P = s ? 3 : 2;
     return {
       visibleAttachments: i.slice(0, P),
@@ -953,7 +953,7 @@ const Ea = dn(null), Ta = () => {
     chunkSize: sr
   };
 }, Us = (e) => {
-  const { welcomeMessage: t, supportProjectId: n, initialHistory: r, initialConversation: i, isInitLoading: o } = e, a = Ve(!1), l = Ta(), s = Uu(), u = ju(), f = Bu(), { uploadAttachments: c, isUploading: h } = Hs(), p = Y(
+  const { welcomeMessage: t, supportProjectId: n, initialHistory: r, initialConversation: i, isInitLoading: o } = e, a = Re(!1), l = Ta(), s = Uu(), u = ju(), f = Bu(), { uploadAttachments: c, isUploading: h } = Hs(), p = Y(
     () => t ? [{ id: "welcome", role: "assistant", content: t, timestamp: Date.now() }] : [],
     [t]
   ), [m, b] = pe([]), [S, k] = pe(""), [I, A] = pe([]), [R, M] = pe(null), [C, B] = pe([]), [Q, K] = pe(!1), w = Tt(
@@ -1004,13 +1004,13 @@ const Ea = dn(null), Ta = () => {
           (ee) => ee.map((fe) => {
             if (fe.id !== $) return fe;
             const Te = fe.statusChips || [];
-            if (Te.some((Ne) => Ne.id === W)) return fe;
-            const $e = Te.map(
-              (Ne) => Ne.status === "active" ? { ...Ne, status: "done" } : Ne
+            if (Te.some((Oe) => Oe.id === W)) return fe;
+            const je = Te.map(
+              (Oe) => Oe.status === "active" ? { ...Oe, status: "done" } : Oe
             );
             return {
               ...fe,
-              statusChips: [...$e, { id: W, label: be, status: "active" }]
+              statusChips: [...je, { id: W, label: be, status: "active" }]
             };
           })
         );
@@ -1021,12 +1021,12 @@ const Ea = dn(null), Ta = () => {
         b(
           (ee) => ee.map((fe) => {
             if (fe.id !== $) return fe;
-            const $e = (fe.statusChips || []).map(
-              (Ne) => Ne.status === "active" ? { ...Ne, status: "done" } : Ne
+            const je = (fe.statusChips || []).map(
+              (Oe) => Oe.status === "active" ? { ...Oe, status: "done" } : Oe
             );
             return {
               ...fe,
-              statusChips: [...$e, { id: W, label: be, status: "active" }]
+              statusChips: [...je, { id: W, label: be, status: "active" }]
             };
           })
         );
@@ -1127,7 +1127,7 @@ const Ea = dn(null), Ta = () => {
     A(
       (H) => H.map((re) => re.id === V ? { ...re, status: ke.UPLOADING, progress: $ } : re)
     );
-  }, []), Pe = Y((V, $) => {
+  }, []), Ne = Y((V, $) => {
     A(
       (H) => H.map(
         (re) => re.id === V ? { ...re, status: ke.COMPLETED, progress: 100, filepath: $ } : re
@@ -1152,12 +1152,12 @@ const Ea = dn(null), Ta = () => {
         attachments: $,
         onProgress: J,
         onComplete: (re, U) => {
-          Pe(re, U), H.push(U);
+          Ne(re, U), H.push(U);
         },
         onError: y
       }), H;
     },
-    [I, c, J, Pe, y]
+    [I, c, J, Ne, y]
   ), we = Y(
     async (V) => {
       let $ = R;
@@ -1191,8 +1191,8 @@ const Ea = dn(null), Ta = () => {
             type: "image/png"
           }), fe = new FormData();
           fe.append("file", ee), fe.append("overwrite", "1");
-          const $e = (await l.uploadFile($, fe))[0];
-          $e != null && $e.filepath && be.push($e.filepath);
+          const je = (await l.uploadFile($, fe))[0];
+          je != null && je.filepath && be.push(je.filepath);
         } catch {
         }
         f == null || f.clearScreenshot();
@@ -1284,7 +1284,7 @@ const Ea = dn(null), Ta = () => {
     isLoading: c
   };
 }, js = (e) => {
-  const t = Ve(null), [n, r] = pe(!1), i = Y(() => {
+  const t = Re(null), [n, r] = pe(!1), i = Y(() => {
     r(!1), t.current && (clearTimeout(t.current), t.current = null);
   }, []), o = Y(() => {
     e || (r(!0), zs(), t.current = setTimeout(i, 12e3));
@@ -1786,7 +1786,7 @@ async function Fu(e, t = {}) {
   return await Ks(n);
 }
 const zu = 3 * 60 * 1e3, za = dn(null), Bu = () => mn(za), Hu = () => {
-  const [e, t] = pe(null), [n, r] = pe(null), i = Ve(!1), o = Y(() => {
+  const [e, t] = pe(null), [n, r] = pe(null), i = Re(!1), o = Y(() => {
     i.current || (i.current = !0, setTimeout(() => {
       const s = document.documentElement;
       Fu(s, {
@@ -1823,7 +1823,7 @@ const zu = 3 * 60 * 1e3, za = dn(null), Bu = () => mn(za), Hu = () => {
     };
   }, [e.url, e.path, e.token, e.withCredentials]), t;
 }, Ha = dn(null), ju = () => mn(Ha), Vu = 3, Wu = 16, Gu = (e, t, n) => {
-  const r = Ve(null), i = Ve(n), [o, a] = pe(0);
+  const r = Re(null), i = Re(n), [o, a] = pe(0);
   i.current = n, nt(() => {
     if (!t || !e) {
       a(e.length);
@@ -3380,7 +3380,7 @@ function ro(e) {
 function io(e) {
   return e && typeof e == "number" ? e : 1;
 }
-class ze extends Error {
+class Be extends Error {
   /**
    * Create a message for `reason`.
    *
@@ -3454,19 +3454,19 @@ class ze extends Error {
     this.ancestors = o.ancestors || void 0, this.cause = o.cause || void 0, this.column = l ? l.column : void 0, this.fatal = void 0, this.file = "", this.message = i, this.line = l ? l.line : void 0, this.name = un(o.place) || "1:1", this.place = o.place || void 0, this.reason = this.message, this.ruleId = o.ruleId || void 0, this.source = o.source || void 0, this.stack = a && o.cause && typeof o.cause.stack == "string" ? o.cause.stack : "", this.actual = void 0, this.expected = void 0, this.note = void 0, this.url = void 0;
   }
 }
-ze.prototype.file = "";
-ze.prototype.name = "";
-ze.prototype.reason = "";
-ze.prototype.message = "";
-ze.prototype.stack = "";
-ze.prototype.column = void 0;
-ze.prototype.line = void 0;
-ze.prototype.ancestors = void 0;
-ze.prototype.cause = void 0;
-ze.prototype.fatal = void 0;
-ze.prototype.place = void 0;
-ze.prototype.ruleId = void 0;
-ze.prototype.source = void 0;
+Be.prototype.file = "";
+Be.prototype.name = "";
+Be.prototype.reason = "";
+Be.prototype.message = "";
+Be.prototype.stack = "";
+Be.prototype.column = void 0;
+Be.prototype.line = void 0;
+Be.prototype.ancestors = void 0;
+Be.prototype.cause = void 0;
+Be.prototype.fatal = void 0;
+Be.prototype.place = void 0;
+Be.prototype.ruleId = void 0;
+Be.prototype.source = void 0;
 const ii = {}.hasOwnProperty, Hc = /* @__PURE__ */ new Map(), Uc = /[A-Z]/g, $c = /* @__PURE__ */ new Set(["table", "tbody", "thead", "tfoot", "tr"]), jc = /* @__PURE__ */ new Set(["td", "th"]), ol = "https://github.com/syntax-tree/hast-util-to-jsx-runtime";
 function Vc(e, t) {
   if (!t || t.Fragment === void 0)
@@ -3689,7 +3689,7 @@ function nf(e, t) {
     const r = (
       /** @type {Error} */
       n
-    ), i = new ze("Cannot parse `style` attribute", {
+    ), i = new Be("Cannot parse `style` attribute", {
       ancestors: e.ancestors,
       cause: r,
       ruleId: "style",
@@ -3730,7 +3730,7 @@ function sl(e, t, n) {
   pn(e);
 }
 function pn(e, t) {
-  const n = new ze(
+  const n = new Be(
     "Cannot handle MDX estrees without `createEvaluater`",
     {
       ancestors: e.ancestors,
@@ -3870,7 +3870,7 @@ function fl(e, t) {
 function ot(e) {
   return e.replace(/[\t\n\r ]+/g, " ").replace(/^ | $/g, "").toLowerCase().toUpperCase();
 }
-const Ue = It(/[A-Za-z]/), Fe = It(/[\dA-Za-z]/), ff = It(/[#-'*+\--9=?A-Z^-~]/);
+const $e = It(/[A-Za-z]/), ze = It(/[\dA-Za-z]/), ff = It(/[#-'*+\--9=?A-Z^-~]/);
 function zn(e) {
   return (
     // Special whitespace codes (which have negative values), C0 and Control
@@ -3901,7 +3901,7 @@ function Kt(e) {
   for (; ++n < e.length; ) {
     const o = e.charCodeAt(n);
     let a = "";
-    if (o === 37 && Fe(e.charCodeAt(n + 1)) && Fe(e.charCodeAt(n + 2)))
+    if (o === 37 && ze(e.charCodeAt(n + 1)) && ze(e.charCodeAt(n + 2)))
       i = 2;
     else if (o < 128)
       /[!#$&-;=?-Z_a-z~]/.test(String.fromCharCode(o)) || (a = String.fromCharCode(o));
@@ -4180,13 +4180,13 @@ function Cf(e, t, n) {
     return e.enter("autolink"), e.enter("autolinkMarker"), e.consume(p), e.exit("autolinkMarker"), e.enter("autolinkProtocol"), o;
   }
   function o(p) {
-    return Ue(p) ? (e.consume(p), a) : p === 64 ? n(p) : u(p);
+    return $e(p) ? (e.consume(p), a) : p === 64 ? n(p) : u(p);
   }
   function a(p) {
-    return p === 43 || p === 45 || p === 46 || Fe(p) ? (r = 1, l(p)) : u(p);
+    return p === 43 || p === 45 || p === 46 || ze(p) ? (r = 1, l(p)) : u(p);
   }
   function l(p) {
-    return p === 58 ? (e.consume(p), r = 0, s) : (p === 43 || p === 45 || p === 46 || Fe(p)) && r++ < 32 ? (e.consume(p), l) : (r = 0, u(p));
+    return p === 58 ? (e.consume(p), r = 0, s) : (p === 43 || p === 45 || p === 46 || ze(p)) && r++ < 32 ? (e.consume(p), l) : (r = 0, u(p));
   }
   function s(p) {
     return p === 62 ? (e.exit("autolinkProtocol"), e.enter("autolinkMarker"), e.consume(p), e.exit("autolinkMarker"), e.exit("autolink"), t) : p === null || p === 32 || p === 60 || zn(p) ? n(p) : (e.consume(p), s);
@@ -4195,13 +4195,13 @@ function Cf(e, t, n) {
     return p === 64 ? (e.consume(p), f) : ff(p) ? (e.consume(p), u) : n(p);
   }
   function f(p) {
-    return Fe(p) ? c(p) : n(p);
+    return ze(p) ? c(p) : n(p);
   }
   function c(p) {
     return p === 46 ? (e.consume(p), r = 0, f) : p === 62 ? (e.exit("autolinkProtocol").type = "autolinkEmail", e.enter("autolinkMarker"), e.consume(p), e.exit("autolinkMarker"), e.exit("autolink"), t) : h(p);
   }
   function h(p) {
-    if ((p === 45 || Fe(p)) && r++ < 63) {
+    if ((p === 45 || ze(p)) && r++ < 63) {
       const m = p === 45 ? h : c;
       return e.consume(p), m;
     }
@@ -4283,7 +4283,7 @@ function _f(e, t, n) {
     return e.enter("characterReference"), e.enter("characterReferenceMarker"), e.consume(c), e.exit("characterReferenceMarker"), s;
   }
   function s(c) {
-    return c === 35 ? (e.enter("characterReferenceMarkerNumeric"), e.consume(c), e.exit("characterReferenceMarkerNumeric"), u) : (e.enter("characterReferenceValue"), o = 31, a = Fe, f(c));
+    return c === 35 ? (e.enter("characterReferenceMarkerNumeric"), e.consume(c), e.exit("characterReferenceMarkerNumeric"), u) : (e.enter("characterReferenceValue"), o = 31, a = ze, f(c));
   }
   function u(c) {
     return c === 88 || c === 120 ? (e.enter("characterReferenceMarkerHexadecimal"), e.consume(c), e.exit("characterReferenceMarkerHexadecimal"), e.enter("characterReferenceValue"), o = 6, a = pf, f) : (e.enter("characterReferenceValue"), o = 7, a = Hr, f(c));
@@ -4291,7 +4291,7 @@ function _f(e, t, n) {
   function f(c) {
     if (c === 59 && i) {
       const h = e.exit("characterReferenceValue");
-      return a === Fe && !si(r.sliceSerialize(h)) ? n(c) : (e.enter("characterReferenceMarker"), e.consume(c), e.exit("characterReferenceMarker"), e.exit("characterReference"), t);
+      return a === ze && !si(r.sliceSerialize(h)) ? n(c) : (e.enter("characterReferenceMarker"), e.consume(c), e.exit("characterReferenceMarker"), e.exit("characterReference"), t);
     }
     return a(c) && i++ < o ? (e.consume(c), f) : n(c);
   }
@@ -5023,10 +5023,10 @@ function op(e, t, n) {
     return e.enter("htmlFlow"), e.enter("htmlFlowData"), e.consume(y), c;
   }
   function c(y) {
-    return y === 33 ? (e.consume(y), h) : y === 47 ? (e.consume(y), o = !0, b) : y === 63 ? (e.consume(y), i = 3, r.interrupt ? t : g) : Ue(y) ? (e.consume(y), a = String.fromCharCode(y), S) : n(y);
+    return y === 33 ? (e.consume(y), h) : y === 47 ? (e.consume(y), o = !0, b) : y === 63 ? (e.consume(y), i = 3, r.interrupt ? t : g) : $e(y) ? (e.consume(y), a = String.fromCharCode(y), S) : n(y);
   }
   function h(y) {
-    return y === 45 ? (e.consume(y), i = 2, p) : y === 91 ? (e.consume(y), i = 5, l = 0, m) : Ue(y) ? (e.consume(y), i = 4, r.interrupt ? t : g) : n(y);
+    return y === 45 ? (e.consume(y), i = 2, p) : y === 91 ? (e.consume(y), i = 5, l = 0, m) : $e(y) ? (e.consume(y), i = 4, r.interrupt ? t : g) : n(y);
   }
   function p(y) {
     return y === 45 ? (e.consume(y), r.interrupt ? t : g) : n(y);
@@ -5036,14 +5036,14 @@ function op(e, t, n) {
     return y === ye.charCodeAt(l++) ? (e.consume(y), l === ye.length ? r.interrupt ? t : N : m) : n(y);
   }
   function b(y) {
-    return Ue(y) ? (e.consume(y), a = String.fromCharCode(y), S) : n(y);
+    return $e(y) ? (e.consume(y), a = String.fromCharCode(y), S) : n(y);
   }
   function S(y) {
     if (y === null || y === 47 || y === 62 || de(y)) {
       const ye = y === 47, Ze = a.toLowerCase();
       return !ye && !o && po.includes(Ze) ? (i = 1, r.interrupt ? t(y) : N(y)) : ep.includes(a.toLowerCase()) ? (i = 6, ye ? (e.consume(y), k) : r.interrupt ? t(y) : N(y)) : (i = 7, r.interrupt && !r.parser.lazy[r.now().line] ? n(y) : o ? I(y) : A(y));
     }
-    return y === 45 || Fe(y) ? (e.consume(y), a += String.fromCharCode(y), S) : n(y);
+    return y === 45 || ze(y) ? (e.consume(y), a += String.fromCharCode(y), S) : n(y);
   }
   function k(y) {
     return y === 62 ? (e.consume(y), r.interrupt ? t : N) : n(y);
@@ -5052,10 +5052,10 @@ function op(e, t, n) {
     return ie(y) ? (e.consume(y), I) : w(y);
   }
   function A(y) {
-    return y === 47 ? (e.consume(y), w) : y === 58 || y === 95 || Ue(y) ? (e.consume(y), R) : ie(y) ? (e.consume(y), A) : w(y);
+    return y === 47 ? (e.consume(y), w) : y === 58 || y === 95 || $e(y) ? (e.consume(y), R) : ie(y) ? (e.consume(y), A) : w(y);
   }
   function R(y) {
-    return y === 45 || y === 46 || y === 58 || y === 95 || Fe(y) ? (e.consume(y), R) : M(y);
+    return y === 45 || y === 46 || y === 58 || y === 95 || ze(y) ? (e.consume(y), R) : M(y);
   }
   function M(y) {
     return y === 61 ? (e.consume(y), C) : ie(y) ? (e.consume(y), M) : A(y);
@@ -5079,10 +5079,10 @@ function op(e, t, n) {
     return y === null || j(y) ? N(y) : ie(y) ? (e.consume(y), O) : n(y);
   }
   function N(y) {
-    return y === 45 && i === 2 ? (e.consume(y), q) : y === 60 && i === 1 ? (e.consume(y), ce) : y === 62 && i === 4 ? (e.consume(y), J) : y === 63 && i === 3 ? (e.consume(y), g) : y === 93 && i === 5 ? (e.consume(y), _e) : j(y) && (i === 6 || i === 7) ? (e.exit("htmlFlowData"), e.check(np, Pe, X)(y)) : y === null || j(y) ? (e.exit("htmlFlowData"), X(y)) : (e.consume(y), N);
+    return y === 45 && i === 2 ? (e.consume(y), q) : y === 60 && i === 1 ? (e.consume(y), ce) : y === 62 && i === 4 ? (e.consume(y), J) : y === 63 && i === 3 ? (e.consume(y), g) : y === 93 && i === 5 ? (e.consume(y), _e) : j(y) && (i === 6 || i === 7) ? (e.exit("htmlFlowData"), e.check(np, Ne, X)(y)) : y === null || j(y) ? (e.exit("htmlFlowData"), X(y)) : (e.consume(y), N);
   }
   function X(y) {
-    return e.check(rp, P, Pe)(y);
+    return e.check(rp, P, Ne)(y);
   }
   function P(y) {
     return e.enter("lineEnding"), e.consume(y), e.exit("lineEnding"), z;
@@ -5101,7 +5101,7 @@ function op(e, t, n) {
       const ye = a.toLowerCase();
       return po.includes(ye) ? (e.consume(y), J) : N(y);
     }
-    return Ue(y) && a.length < 8 ? (e.consume(y), a += String.fromCharCode(y), ge) : N(y);
+    return $e(y) && a.length < 8 ? (e.consume(y), a += String.fromCharCode(y), ge) : N(y);
   }
   function _e(y) {
     return y === 93 ? (e.consume(y), g) : N(y);
@@ -5110,9 +5110,9 @@ function op(e, t, n) {
     return y === 62 ? (e.consume(y), J) : y === 45 && i === 2 ? (e.consume(y), g) : N(y);
   }
   function J(y) {
-    return y === null || j(y) ? (e.exit("htmlFlowData"), Pe(y)) : (e.consume(y), J);
+    return y === null || j(y) ? (e.exit("htmlFlowData"), Ne(y)) : (e.consume(y), J);
   }
-  function Pe(y) {
+  function Ne(y) {
     return e.exit("htmlFlow"), t(y);
   }
 }
@@ -5144,10 +5144,10 @@ function up(e, t, n) {
     return e.enter("htmlText"), e.enter("htmlTextData"), e.consume(g), s;
   }
   function s(g) {
-    return g === 33 ? (e.consume(g), u) : g === 47 ? (e.consume(g), M) : g === 63 ? (e.consume(g), A) : Ue(g) ? (e.consume(g), Q) : n(g);
+    return g === 33 ? (e.consume(g), u) : g === 47 ? (e.consume(g), M) : g === 63 ? (e.consume(g), A) : $e(g) ? (e.consume(g), Q) : n(g);
   }
   function u(g) {
-    return g === 45 ? (e.consume(g), f) : g === 91 ? (e.consume(g), o = 0, m) : Ue(g) ? (e.consume(g), I) : n(g);
+    return g === 45 ? (e.consume(g), f) : g === 91 ? (e.consume(g), o = 0, m) : $e(g) ? (e.consume(g), I) : n(g);
   }
   function f(g) {
     return g === 45 ? (e.consume(g), p) : n(g);
@@ -5184,22 +5184,22 @@ function up(e, t, n) {
     return g === 62 ? q(g) : A(g);
   }
   function M(g) {
-    return Ue(g) ? (e.consume(g), C) : n(g);
+    return $e(g) ? (e.consume(g), C) : n(g);
   }
   function C(g) {
-    return g === 45 || Fe(g) ? (e.consume(g), C) : B(g);
+    return g === 45 || ze(g) ? (e.consume(g), C) : B(g);
   }
   function B(g) {
     return j(g) ? (a = B, ce(g)) : ie(g) ? (e.consume(g), B) : q(g);
   }
   function Q(g) {
-    return g === 45 || Fe(g) ? (e.consume(g), Q) : g === 47 || g === 62 || de(g) ? K(g) : n(g);
+    return g === 45 || ze(g) ? (e.consume(g), Q) : g === 47 || g === 62 || de(g) ? K(g) : n(g);
   }
   function K(g) {
-    return g === 47 ? (e.consume(g), q) : g === 58 || g === 95 || Ue(g) ? (e.consume(g), w) : j(g) ? (a = K, ce(g)) : ie(g) ? (e.consume(g), K) : q(g);
+    return g === 47 ? (e.consume(g), q) : g === 58 || g === 95 || $e(g) ? (e.consume(g), w) : j(g) ? (a = K, ce(g)) : ie(g) ? (e.consume(g), K) : q(g);
   }
   function w(g) {
-    return g === 45 || g === 46 || g === 58 || g === 95 || Fe(g) ? (e.consume(g), w) : O(g);
+    return g === 45 || g === 46 || g === 58 || g === 95 || ze(g) ? (e.consume(g), w) : O(g);
   }
   function O(g) {
     return g === 61 ? (e.consume(g), N) : j(g) ? (a = O, ce(g)) : ie(g) ? (e.consume(g), O) : K(g);
@@ -5433,7 +5433,7 @@ function Ep(e, t, n) {
     return u === i ? (e.consume(u), r++, s) : (e.exit("thematicBreakSequence"), ie(u) ? le(e, l, "whitespace")(u) : l(u));
   }
 }
-const je = {
+const Ve = {
   continuation: {
     tokenize: _p
   },
@@ -5494,7 +5494,7 @@ function _p(e, t, n) {
     return r.containerState.furtherBlankLines || !ie(l) ? (r.containerState.furtherBlankLines = void 0, r.containerState.initialBlankLine = void 0, a(l)) : (r.containerState.furtherBlankLines = void 0, r.containerState.initialBlankLine = void 0, e.attempt(Ap, t, a)(l));
   }
   function a(l) {
-    return r.containerState._closeFlow = !0, r.interrupt = void 0, le(e, e.attempt(je, t, n), "linePrefix", r.parser.constructs.disable.null.includes("codeIndented") ? void 0 : 4)(l);
+    return r.containerState._closeFlow = !0, r.interrupt = void 0, le(e, e.attempt(Ve, t, n), "linePrefix", r.parser.constructs.disable.null.includes("codeIndented") ? void 0 : 4)(l);
   }
 }
 function vp(e, t, n) {
@@ -5686,19 +5686,19 @@ function Bp(e, t) {
   return e;
 }
 const Hp = {
-  42: je,
-  43: je,
-  45: je,
-  48: je,
-  49: je,
-  50: je,
-  51: je,
-  52: je,
-  53: je,
-  54: je,
-  55: je,
-  56: je,
-  57: je,
+  42: Ve,
+  43: Ve,
+  45: Ve,
+  48: Ve,
+  49: Ve,
+  50: Ve,
+  51: Ve,
+  52: Ve,
+  53: Ve,
+  54: Ve,
+  55: Ve,
+  56: Ve,
+  57: Ve,
   62: pl
 }, Up = {
   91: Wf
@@ -5850,10 +5850,10 @@ function Kp(e, t, n) {
       let ce, ge, _e, g;
       return Array.isArray(P) ? (
         /* c8 ignore next 1 */
-        Pe(P)
+        Ne(P)
       ) : "tokenize" in P ? (
         // Looks like a construct.
-        Pe([
+        Ne([
           /** @type {Construct} */
           P
         ])
@@ -5867,10 +5867,10 @@ function Kp(e, t, n) {
             ...Array.isArray(V) ? V : V ? [V] : [],
             ...Array.isArray($) ? $ : $ ? [$] : []
           ];
-          return Pe(H)(qe);
+          return Ne(H)(qe);
         }
       }
-      function Pe(we) {
+      function Ne(we) {
         return ce = we, ge = 0, we.length === 0 ? q : y(we[ge]);
       }
       function y(we) {
@@ -6051,7 +6051,7 @@ function ah(e) {
     transforms: [],
     canContainEols: ["emphasis", "fragment", "heading", "paragraph", "strong"],
     enter: {
-      autolink: o($e),
+      autolink: o(je),
       autolinkProtocol: K,
       autolinkEmail: K,
       atxHeading: o(W),
@@ -6079,11 +6079,11 @@ function ah(e) {
       htmlTextData: K,
       image: o(Te),
       label: a,
-      link: o($e),
+      link: o(je),
       listItem: o(kn),
       listItemValue: h,
-      listOrdered: o(Ne, c),
-      listUnordered: o(Ne),
+      listOrdered: o(Oe, c),
+      listUnordered: o(Oe),
       paragraph: o(xn),
       reference: y,
       referenceString: a,
@@ -6137,7 +6137,7 @@ function ah(e) {
       referenceString: ye,
       resourceDestinationString: g,
       resourceTitleString: J,
-      resource: Pe,
+      resource: Ne,
       setextHeading: s(Q),
       setextHeadingLineSequence: B,
       setextHeadingText: C,
@@ -6169,18 +6169,18 @@ function ah(e) {
         if (T[oe][0] === "enter")
           te.push(oe);
         else {
-          const Oe = te.pop();
-          oe = i(T, Oe, oe);
+          const Me = te.pop();
+          oe = i(T, Me, oe);
         }
     for (oe = -1; ++oe < T.length; ) {
-      const Oe = t[T[oe][0]];
-      wl.call(Oe, T[oe][1].type) && Oe[T[oe][1].type].call(Object.assign({
+      const Me = t[T[oe][0]];
+      wl.call(Me, T[oe][1].type) && Me[T[oe][1].type].call(Object.assign({
         sliceSerialize: T[oe][2].sliceSerialize
       }, G), T[oe][1]);
     }
     if (G.tokenStack.length > 0) {
-      const Oe = G.tokenStack[G.tokenStack.length - 1];
-      (Oe[1] || go).call(G, void 0, Oe[0]);
+      const Me = G.tokenStack[G.tokenStack.length - 1];
+      (Me[1] || go).call(G, void 0, Me[0]);
     }
     for (v.position = {
       start: Ct(T.length > 0 ? T[0][1].start : {
@@ -6198,7 +6198,7 @@ function ah(e) {
     return v;
   }
   function i(T, v, G) {
-    let te = v - 1, oe = -1, Oe = !1, Qe, Je, kt, xt;
+    let te = v - 1, oe = -1, Me = !1, Qe, Je, kt, xt;
     for (; ++te <= G; ) {
       const ve = T[te];
       switch (ve[1].type) {
@@ -6225,11 +6225,11 @@ function ah(e) {
         if (Qe) {
           let lt = te;
           for (Je = void 0; lt--; ) {
-            const Me = T[lt];
-            if (Me[1].type === "lineEnding" || Me[1].type === "lineEndingBlank") {
-              if (Me[0] === "exit") continue;
-              Je && (T[Je][1].type = "lineEndingBlank", Oe = !0), Me[1].type = "lineEnding", Je = lt;
-            } else if (!(Me[1].type === "linePrefix" || Me[1].type === "blockQuotePrefix" || Me[1].type === "blockQuotePrefixWhitespace" || Me[1].type === "blockQuoteMarker" || Me[1].type === "listItemIndent")) break;
+            const Fe = T[lt];
+            if (Fe[1].type === "lineEnding" || Fe[1].type === "lineEndingBlank") {
+              if (Fe[0] === "exit") continue;
+              Je && (T[Je][1].type = "lineEndingBlank", Me = !0), Fe[1].type = "lineEnding", Je = lt;
+            } else if (!(Fe[1].type === "linePrefix" || Fe[1].type === "blockQuotePrefix" || Fe[1].type === "blockQuotePrefixWhitespace" || Fe[1].type === "blockQuoteMarker" || Fe[1].type === "listItemIndent")) break;
           }
           kt && (!Je || kt < Je) && (Qe._spread = !0), Qe.end = Object.assign({}, Je ? T[Je][1].start : ve[1].end), T.splice(Je || te, 0, ["exit", Qe, ve[2]]), te++, G++;
         }
@@ -6245,7 +6245,7 @@ function ah(e) {
         }
       }
     }
-    return T[v][1]._spread = Oe, G;
+    return T[v][1]._spread = Me, G;
   }
   function o(T, v) {
     return G;
@@ -6417,7 +6417,7 @@ function ah(e) {
     const T = this.resume(), v = this.stack[this.stack.length - 1];
     v.title = T;
   }
-  function Pe() {
+  function Ne() {
     this.data.inReference = void 0;
   }
   function y() {
@@ -6513,7 +6513,7 @@ function ah(e) {
       alt: null
     };
   }
-  function $e() {
+  function je() {
     return {
       type: "link",
       title: null,
@@ -6521,7 +6521,7 @@ function ah(e) {
       children: []
     };
   }
-  function Ne(T) {
+  function Oe(T) {
     return {
       type: "list",
       ordered: T.type === "listOrdered",
@@ -8101,7 +8101,7 @@ class Dl {
    *   Message.
    */
   message(t, n, r) {
-    const i = new ze(
+    const i = new Be(
       // @ts-expect-error: the overloads are fine.
       t,
       n,
@@ -10027,13 +10027,13 @@ function c1(e, t, n) {
     return Gr(c) ? (e.consume(c), l) : c === 64 ? (e.consume(c), s) : n(c);
   }
   function s(c) {
-    return c === 46 ? e.check(s1, f, u)(c) : c === 45 || c === 95 || Fe(c) ? (o = !0, e.consume(c), s) : f(c);
+    return c === 46 ? e.check(s1, f, u)(c) : c === 45 || c === 95 || ze(c) ? (o = !0, e.consume(c), s) : f(c);
   }
   function u(c) {
     return e.consume(c), i = !0, s;
   }
   function f(c) {
-    return o && i && Ue(r.previous) ? (e.exit("literalAutolinkEmail"), e.exit("literalAutolink"), t(c)) : n(c);
+    return o && i && $e(r.previous) ? (e.exit("literalAutolinkEmail"), e.exit("literalAutolink"), t(c)) : n(c);
   }
 }
 function f1(e, t, n) {
@@ -10054,7 +10054,7 @@ function p1(e, t, n) {
     return (c === 72 || c === 104) && Jl.call(r, r.previous) && !bi(r.events) ? (e.enter("literalAutolink"), e.enter("literalAutolinkHttp"), i += String.fromCodePoint(c), e.consume(c), l) : n(c);
   }
   function l(c) {
-    if (Ue(c) && i.length < 5)
+    if ($e(c) && i.length < 5)
       return i += String.fromCodePoint(c), e.consume(c), l;
     if (c === 58) {
       const h = i.toLowerCase();
@@ -10119,10 +10119,10 @@ function g1(e, t, n) {
     return l === null || l === 40 || l === 91 || de(l) || Pt(l) ? t(l) : r(l);
   }
   function o(l) {
-    return Ue(l) ? a(l) : n(l);
+    return $e(l) ? a(l) : n(l);
   }
   function a(l) {
-    return l === 59 ? (e.consume(l), r) : Ue(l) ? (e.consume(l), a) : n(l);
+    return l === 59 ? (e.consume(l), r) : $e(l) ? (e.consume(l), a) : n(l);
   }
 }
 function y1(e, t, n) {
@@ -10131,20 +10131,20 @@ function y1(e, t, n) {
     return e.consume(o), i;
   }
   function i(o) {
-    return Fe(o) ? n(o) : t(o);
+    return ze(o) ? n(o) : t(o);
   }
 }
 function Ql(e) {
   return e === null || e === 40 || e === 42 || e === 95 || e === 91 || e === 93 || e === 126 || de(e);
 }
 function Jl(e) {
-  return !Ue(e);
+  return !$e(e);
 }
 function es(e) {
   return !(e === 47 || Gr(e));
 }
 function Gr(e) {
-  return e === 43 || e === 45 || e === 46 || e === 95 || Fe(e);
+  return e === 43 || e === 45 || e === 46 || e === 95 || ze(e);
 }
 function bi(e) {
   let t = e.length, n = !1;
@@ -10690,25 +10690,45 @@ function H1(e) {
   ), n = e || B1, r = t.data(), i = r.micromarkExtensions || (r.micromarkExtensions = []), o = r.fromMarkdownExtensions || (r.fromMarkdownExtensions = []), a = r.toMarkdownExtensions || (r.toMarkdownExtensions = []);
   i.push(z1(n)), o.push(o1()), a.push(a1(n));
 }
-const U1 = ({ src: e, alt: t, onClose: n }) => {
-  const r = Y(
-    (i) => {
-      i.key === "Escape" && n();
-    },
-    [n]
-  );
-  return nt(() => (document.addEventListener("keydown", r), () => document.removeEventListener("keydown", r)), [r]), /* @__PURE__ */ he(
+const U1 = 'a[href],button:not([disabled]),input,select,textarea,[tabindex]:not([tabindex="-1"])', $1 = ({ src: e, alt: t, onClose: n }) => {
+  const r = Re(null), i = Re(null), o = Re(null);
+  nt(() => {
+    var l;
+    return o.current = document.activeElement, (l = r.current) == null || l.focus(), () => {
+      var s;
+      (s = o.current) == null || s.focus();
+    };
+  }, []);
+  const a = Y((l) => {
+    if (l.key === "Escape") {
+      n();
+      return;
+    }
+    if (l.key !== "Tab") return;
+    const s = i.current;
+    if (!s) return;
+    const u = Array.from(s.querySelectorAll(U1)).filter(
+      (h) => !h.closest("[inert]")
+    );
+    if (u.length === 0) return;
+    const f = u[0], c = u[u.length - 1];
+    l.shiftKey ? document.activeElement === f && (l.preventDefault(), c.focus()) : document.activeElement === c && (l.preventDefault(), f.focus());
+  }, [n]);
+  return /* @__PURE__ */ he(
     "div",
     {
+      ref: i,
       className: "elitea-assistant-lightbox-overlay",
-      onClick: n,
       role: "dialog",
       "aria-modal": "true",
       "aria-label": t || "Image preview",
+      onClick: n,
+      onKeyDown: a,
       children: [
         /* @__PURE__ */ E(
           "button",
           {
+            ref: r,
             className: "elitea-assistant-lightbox-close",
             onClick: n,
             "aria-label": "Close image preview",
@@ -10721,7 +10741,7 @@ const U1 = ({ src: e, alt: t, onClose: n }) => {
             className: "elitea-assistant-lightbox-img",
             src: e,
             alt: t,
-            onClick: (i) => i.stopPropagation()
+            onClick: (l) => l.stopPropagation()
           }
         )
       ]
@@ -10734,10 +10754,10 @@ function Vo(e, t) {
   for (var n = 0, r = Array(t); n < t; n++) r[n] = e[n];
   return r;
 }
-function $1(e) {
+function j1(e) {
   if (Array.isArray(e)) return e;
 }
-function j1(e, t) {
+function V1(e, t) {
   var n = e == null ? null : typeof Symbol < "u" && e[Symbol.iterator] || e["@@iterator"];
   if (n != null) {
     var r, i, o, a, l = [], s = !0, u = !1;
@@ -10755,26 +10775,26 @@ function j1(e, t) {
     return l;
   }
 }
-function V1() {
+function W1() {
   throw new TypeError(`Invalid attempt to destructure non-iterable instance.
 In order to be iterable, non-array objects must have a [Symbol.iterator]() method.`);
 }
-function W1(e, t) {
-  return $1(e) || j1(e, t) || G1(e, t) || V1();
-}
 function G1(e, t) {
+  return j1(e) || V1(e, t) || q1(e, t) || W1();
+}
+function q1(e, t) {
   if (e) {
     if (typeof e == "string") return Vo(e, t);
     var n = {}.toString.call(e).slice(8, -1);
     return n === "Object" && e.constructor && (n = e.constructor.name), n === "Map" || n === "Set" ? Array.from(e) : n === "Arguments" || /^(?:Ui|I)nt(?:8|16|32)(?:Clamped)?Array$/.test(n) ? Vo(e, t) : void 0;
   }
 }
-const ts = Object.entries, Wo = Object.setPrototypeOf, q1 = Object.isFrozen, Y1 = Object.getPrototypeOf, X1 = Object.getOwnPropertyDescriptor;
-let De = Object.freeze, Re = Object.seal, jt = Object.create, ns = typeof Reflect < "u" && Reflect, qr = ns.apply, Yr = ns.construct;
+const ts = Object.entries, Wo = Object.setPrototypeOf, Y1 = Object.isFrozen, X1 = Object.getPrototypeOf, K1 = Object.getOwnPropertyDescriptor;
+let De = Object.freeze, Pe = Object.seal, jt = Object.create, ns = typeof Reflect < "u" && Reflect, qr = ns.apply, Yr = ns.construct;
 De || (De = function(t) {
   return t;
 });
-Re || (Re = function(t) {
+Pe || (Pe = function(t) {
   return t;
 });
 qr || (qr = function(t, n) {
@@ -10787,7 +10807,7 @@ Yr || (Yr = function(t) {
     r[i - 1] = arguments[i];
   return new t(...r);
 });
-const on = Ee(Array.prototype.forEach), K1 = Ee(Array.prototype.lastIndexOf), Go = Ee(Array.prototype.pop), Ut = Ee(Array.prototype.push), Z1 = Ee(Array.prototype.splice), Et = Array.isArray, sn = Ee(String.prototype.toLowerCase), Ir = Ee(String.prototype.toString), qo = Ee(String.prototype.match), an = Ee(String.prototype.replace), Yo = Ee(String.prototype.indexOf), Q1 = Ee(String.prototype.trim), J1 = Ee(Number.prototype.toString), eg = Ee(Boolean.prototype.toString), Xo = typeof BigInt > "u" ? null : Ee(BigInt.prototype.toString), Ko = typeof Symbol > "u" ? null : Ee(Symbol.prototype.toString), Ie = Ee(Object.prototype.hasOwnProperty), ln = Ee(Object.prototype.toString), Le = Ee(RegExp.prototype.test), Dt = tg(TypeError);
+const on = Ee(Array.prototype.forEach), Z1 = Ee(Array.prototype.lastIndexOf), Go = Ee(Array.prototype.pop), Ut = Ee(Array.prototype.push), Q1 = Ee(Array.prototype.splice), Et = Array.isArray, sn = Ee(String.prototype.toLowerCase), Ir = Ee(String.prototype.toString), qo = Ee(String.prototype.match), an = Ee(String.prototype.replace), Yo = Ee(String.prototype.indexOf), J1 = Ee(String.prototype.trim), eg = Ee(Number.prototype.toString), tg = Ee(Boolean.prototype.toString), Xo = typeof BigInt > "u" ? null : Ee(BigInt.prototype.toString), Ko = typeof Symbol > "u" ? null : Ee(Symbol.prototype.toString), Ie = Ee(Object.prototype.hasOwnProperty), ln = Ee(Object.prototype.toString), Le = Ee(RegExp.prototype.test), Dt = ng(TypeError);
 function Ee(e) {
   return function(t) {
     t instanceof RegExp && (t.lastIndex = 0);
@@ -10796,7 +10816,7 @@ function Ee(e) {
     return qr(e, t, r);
   };
 }
-function tg(e) {
+function ng(e) {
   return function() {
     for (var t = arguments.length, n = new Array(t), r = 0; r < t; r++)
       n[r] = arguments[r];
@@ -10812,34 +10832,34 @@ function ae(e, t) {
     let i = t[r];
     if (typeof i == "string") {
       const o = n(i);
-      o !== i && (q1(t) || (t[r] = o), i = o);
+      o !== i && (Y1(t) || (t[r] = o), i = o);
     }
     e[i] = !0;
   }
   return e;
 }
-function ng(e) {
+function rg(e) {
   for (let t = 0; t < e.length; t++)
     Ie(e, t) || (e[t] = null);
   return e;
 }
-function He(e) {
+function Ue(e) {
   const t = jt(null);
   for (const r of ts(e)) {
-    var n = W1(r, 2);
+    var n = G1(r, 2);
     const i = n[0], o = n[1];
-    Ie(e, i) && (Et(o) ? t[i] = ng(o) : o && typeof o == "object" && o.constructor === Object ? t[i] = He(o) : t[i] = o);
+    Ie(e, i) && (Et(o) ? t[i] = rg(o) : o && typeof o == "object" && o.constructor === Object ? t[i] = Ue(o) : t[i] = o);
   }
   return t;
 }
-function rg(e) {
+function ig(e) {
   switch (typeof e) {
     case "string":
       return e;
     case "number":
-      return J1(e);
-    case "boolean":
       return eg(e);
+    case "boolean":
+      return tg(e);
     case "bigint":
       return Xo ? Xo(e) : "0";
     case "symbol":
@@ -10863,34 +10883,34 @@ function rg(e) {
 }
 function ft(e, t) {
   for (; e !== null; ) {
-    const r = X1(e, t);
+    const r = K1(e, t);
     if (r) {
       if (r.get)
         return Ee(r.get);
       if (typeof r.value == "function")
         return Ee(r.value);
     }
-    e = Y1(e);
+    e = X1(e);
   }
   function n() {
     return null;
   }
   return n;
 }
-function ig(e) {
+function og(e) {
   try {
     return Le(e, ""), !0;
   } catch {
     return !1;
   }
 }
-const Zo = De(["a", "abbr", "acronym", "address", "area", "article", "aside", "audio", "b", "bdi", "bdo", "big", "blink", "blockquote", "body", "br", "button", "canvas", "caption", "center", "cite", "code", "col", "colgroup", "content", "data", "datalist", "dd", "decorator", "del", "details", "dfn", "dialog", "dir", "div", "dl", "dt", "element", "em", "fieldset", "figcaption", "figure", "font", "footer", "form", "h1", "h2", "h3", "h4", "h5", "h6", "head", "header", "hgroup", "hr", "html", "i", "img", "input", "ins", "kbd", "label", "legend", "li", "main", "map", "mark", "marquee", "menu", "menuitem", "meter", "nav", "nobr", "ol", "optgroup", "option", "output", "p", "picture", "pre", "progress", "q", "rp", "rt", "ruby", "s", "samp", "search", "section", "select", "shadow", "slot", "small", "source", "spacer", "span", "strike", "strong", "style", "sub", "summary", "sup", "table", "tbody", "td", "template", "textarea", "tfoot", "th", "thead", "time", "tr", "track", "tt", "u", "ul", "var", "video", "wbr"]), _r = De(["svg", "a", "altglyph", "altglyphdef", "altglyphitem", "animatecolor", "animatemotion", "animatetransform", "circle", "clippath", "defs", "desc", "ellipse", "enterkeyhint", "exportparts", "filter", "font", "g", "glyph", "glyphref", "hkern", "image", "inputmode", "line", "lineargradient", "marker", "mask", "metadata", "mpath", "part", "path", "pattern", "polygon", "polyline", "radialgradient", "rect", "stop", "style", "switch", "symbol", "text", "textpath", "title", "tref", "tspan", "view", "vkern"]), vr = De(["feBlend", "feColorMatrix", "feComponentTransfer", "feComposite", "feConvolveMatrix", "feDiffuseLighting", "feDisplacementMap", "feDistantLight", "feDropShadow", "feFlood", "feFuncA", "feFuncB", "feFuncG", "feFuncR", "feGaussianBlur", "feImage", "feMerge", "feMergeNode", "feMorphology", "feOffset", "fePointLight", "feSpecularLighting", "feSpotLight", "feTile", "feTurbulence"]), og = De(["animate", "color-profile", "cursor", "discard", "font-face", "font-face-format", "font-face-name", "font-face-src", "font-face-uri", "foreignobject", "hatch", "hatchpath", "mesh", "meshgradient", "meshpatch", "meshrow", "missing-glyph", "script", "set", "solidcolor", "unknown", "use"]), Lr = De(["math", "menclose", "merror", "mfenced", "mfrac", "mglyph", "mi", "mlabeledtr", "mmultiscripts", "mn", "mo", "mover", "mpadded", "mphantom", "mroot", "mrow", "ms", "mspace", "msqrt", "mstyle", "msub", "msup", "msubsup", "mtable", "mtd", "mtext", "mtr", "munder", "munderover", "mprescripts"]), ag = De(["maction", "maligngroup", "malignmark", "mlongdiv", "mscarries", "mscarry", "msgroup", "mstack", "msline", "msrow", "semantics", "annotation", "annotation-xml", "mprescripts", "none"]), Qo = De(["#text"]), Jo = De(["accept", "action", "align", "alt", "autocapitalize", "autocomplete", "autopictureinpicture", "autoplay", "background", "bgcolor", "border", "capture", "cellpadding", "cellspacing", "checked", "cite", "class", "clear", "color", "cols", "colspan", "command", "commandfor", "controls", "controlslist", "coords", "crossorigin", "datetime", "decoding", "default", "dir", "disabled", "disablepictureinpicture", "disableremoteplayback", "download", "draggable", "enctype", "enterkeyhint", "exportparts", "face", "for", "headers", "height", "hidden", "high", "href", "hreflang", "id", "inert", "inputmode", "integrity", "ismap", "kind", "label", "lang", "list", "loading", "loop", "low", "max", "maxlength", "media", "method", "min", "minlength", "multiple", "muted", "name", "nonce", "noshade", "novalidate", "nowrap", "open", "optimum", "part", "pattern", "placeholder", "playsinline", "popover", "popovertarget", "popovertargetaction", "poster", "preload", "pubdate", "radiogroup", "readonly", "rel", "required", "rev", "reversed", "role", "rows", "rowspan", "spellcheck", "scope", "selected", "shape", "size", "sizes", "slot", "span", "srclang", "start", "src", "srcset", "step", "style", "summary", "tabindex", "title", "translate", "type", "usemap", "valign", "value", "width", "wrap", "xmlns"]), Dr = De(["accent-height", "accumulate", "additive", "alignment-baseline", "amplitude", "ascent", "attributename", "attributetype", "azimuth", "basefrequency", "baseline-shift", "begin", "bias", "by", "class", "clip", "clippathunits", "clip-path", "clip-rule", "color", "color-interpolation", "color-interpolation-filters", "color-profile", "color-rendering", "cx", "cy", "d", "dx", "dy", "diffuseconstant", "direction", "display", "divisor", "dur", "edgemode", "elevation", "end", "exponent", "fill", "fill-opacity", "fill-rule", "filter", "filterunits", "flood-color", "flood-opacity", "font-family", "font-size", "font-size-adjust", "font-stretch", "font-style", "font-variant", "font-weight", "fx", "fy", "g1", "g2", "glyph-name", "glyphref", "gradientunits", "gradienttransform", "height", "href", "id", "image-rendering", "in", "in2", "intercept", "k", "k1", "k2", "k3", "k4", "kerning", "keypoints", "keysplines", "keytimes", "lang", "lengthadjust", "letter-spacing", "kernelmatrix", "kernelunitlength", "lighting-color", "local", "marker-end", "marker-mid", "marker-start", "markerheight", "markerunits", "markerwidth", "maskcontentunits", "maskunits", "max", "mask", "mask-type", "media", "method", "mode", "min", "name", "numoctaves", "offset", "operator", "opacity", "order", "orient", "orientation", "origin", "overflow", "paint-order", "path", "pathlength", "patterncontentunits", "patterntransform", "patternunits", "points", "preservealpha", "preserveaspectratio", "primitiveunits", "r", "rx", "ry", "radius", "refx", "refy", "repeatcount", "repeatdur", "restart", "result", "rotate", "scale", "seed", "shape-rendering", "slope", "specularconstant", "specularexponent", "spreadmethod", "startoffset", "stddeviation", "stitchtiles", "stop-color", "stop-opacity", "stroke-dasharray", "stroke-dashoffset", "stroke-linecap", "stroke-linejoin", "stroke-miterlimit", "stroke-opacity", "stroke", "stroke-width", "style", "surfacescale", "systemlanguage", "tabindex", "tablevalues", "targetx", "targety", "transform", "transform-origin", "text-anchor", "text-decoration", "text-rendering", "textlength", "type", "u1", "u2", "unicode", "values", "viewbox", "visibility", "version", "vert-adv-y", "vert-origin-x", "vert-origin-y", "width", "word-spacing", "wrap", "writing-mode", "xchannelselector", "ychannelselector", "x", "x1", "x2", "xmlns", "y", "y1", "y2", "z", "zoomandpan"]), ea = De(["accent", "accentunder", "align", "bevelled", "close", "columnalign", "columnlines", "columnspacing", "columnspan", "denomalign", "depth", "dir", "display", "displaystyle", "encoding", "fence", "frame", "height", "href", "id", "largeop", "length", "linethickness", "lquote", "lspace", "mathbackground", "mathcolor", "mathsize", "mathvariant", "maxsize", "minsize", "movablelimits", "notation", "numalign", "open", "rowalign", "rowlines", "rowspacing", "rowspan", "rspace", "rquote", "scriptlevel", "scriptminsize", "scriptsizemultiplier", "selection", "separator", "separators", "stretchy", "subscriptshift", "supscriptshift", "symmetric", "voffset", "width", "xmlns"]), Ln = De(["xlink:href", "xml:id", "xlink:title", "xml:space", "xmlns:xlink"]), lg = Re(/{{[\w\W]*|^[\w\W]*}}/g), sg = Re(/<%[\w\W]*|^[\w\W]*%>/g), ug = Re(/\${[\w\W]*/g), cg = Re(/^data-[\-\w.\u00B7-\uFFFF]+$/), fg = Re(/^aria-[\-\w]+$/), ta = Re(
+const Zo = De(["a", "abbr", "acronym", "address", "area", "article", "aside", "audio", "b", "bdi", "bdo", "big", "blink", "blockquote", "body", "br", "button", "canvas", "caption", "center", "cite", "code", "col", "colgroup", "content", "data", "datalist", "dd", "decorator", "del", "details", "dfn", "dialog", "dir", "div", "dl", "dt", "element", "em", "fieldset", "figcaption", "figure", "font", "footer", "form", "h1", "h2", "h3", "h4", "h5", "h6", "head", "header", "hgroup", "hr", "html", "i", "img", "input", "ins", "kbd", "label", "legend", "li", "main", "map", "mark", "marquee", "menu", "menuitem", "meter", "nav", "nobr", "ol", "optgroup", "option", "output", "p", "picture", "pre", "progress", "q", "rp", "rt", "ruby", "s", "samp", "search", "section", "select", "shadow", "slot", "small", "source", "spacer", "span", "strike", "strong", "style", "sub", "summary", "sup", "table", "tbody", "td", "template", "textarea", "tfoot", "th", "thead", "time", "tr", "track", "tt", "u", "ul", "var", "video", "wbr"]), _r = De(["svg", "a", "altglyph", "altglyphdef", "altglyphitem", "animatecolor", "animatemotion", "animatetransform", "circle", "clippath", "defs", "desc", "ellipse", "enterkeyhint", "exportparts", "filter", "font", "g", "glyph", "glyphref", "hkern", "image", "inputmode", "line", "lineargradient", "marker", "mask", "metadata", "mpath", "part", "path", "pattern", "polygon", "polyline", "radialgradient", "rect", "stop", "style", "switch", "symbol", "text", "textpath", "title", "tref", "tspan", "view", "vkern"]), vr = De(["feBlend", "feColorMatrix", "feComponentTransfer", "feComposite", "feConvolveMatrix", "feDiffuseLighting", "feDisplacementMap", "feDistantLight", "feDropShadow", "feFlood", "feFuncA", "feFuncB", "feFuncG", "feFuncR", "feGaussianBlur", "feImage", "feMerge", "feMergeNode", "feMorphology", "feOffset", "fePointLight", "feSpecularLighting", "feSpotLight", "feTile", "feTurbulence"]), ag = De(["animate", "color-profile", "cursor", "discard", "font-face", "font-face-format", "font-face-name", "font-face-src", "font-face-uri", "foreignobject", "hatch", "hatchpath", "mesh", "meshgradient", "meshpatch", "meshrow", "missing-glyph", "script", "set", "solidcolor", "unknown", "use"]), Lr = De(["math", "menclose", "merror", "mfenced", "mfrac", "mglyph", "mi", "mlabeledtr", "mmultiscripts", "mn", "mo", "mover", "mpadded", "mphantom", "mroot", "mrow", "ms", "mspace", "msqrt", "mstyle", "msub", "msup", "msubsup", "mtable", "mtd", "mtext", "mtr", "munder", "munderover", "mprescripts"]), lg = De(["maction", "maligngroup", "malignmark", "mlongdiv", "mscarries", "mscarry", "msgroup", "mstack", "msline", "msrow", "semantics", "annotation", "annotation-xml", "mprescripts", "none"]), Qo = De(["#text"]), Jo = De(["accept", "action", "align", "alt", "autocapitalize", "autocomplete", "autopictureinpicture", "autoplay", "background", "bgcolor", "border", "capture", "cellpadding", "cellspacing", "checked", "cite", "class", "clear", "color", "cols", "colspan", "command", "commandfor", "controls", "controlslist", "coords", "crossorigin", "datetime", "decoding", "default", "dir", "disabled", "disablepictureinpicture", "disableremoteplayback", "download", "draggable", "enctype", "enterkeyhint", "exportparts", "face", "for", "headers", "height", "hidden", "high", "href", "hreflang", "id", "inert", "inputmode", "integrity", "ismap", "kind", "label", "lang", "list", "loading", "loop", "low", "max", "maxlength", "media", "method", "min", "minlength", "multiple", "muted", "name", "nonce", "noshade", "novalidate", "nowrap", "open", "optimum", "part", "pattern", "placeholder", "playsinline", "popover", "popovertarget", "popovertargetaction", "poster", "preload", "pubdate", "radiogroup", "readonly", "rel", "required", "rev", "reversed", "role", "rows", "rowspan", "spellcheck", "scope", "selected", "shape", "size", "sizes", "slot", "span", "srclang", "start", "src", "srcset", "step", "style", "summary", "tabindex", "title", "translate", "type", "usemap", "valign", "value", "width", "wrap", "xmlns"]), Dr = De(["accent-height", "accumulate", "additive", "alignment-baseline", "amplitude", "ascent", "attributename", "attributetype", "azimuth", "basefrequency", "baseline-shift", "begin", "bias", "by", "class", "clip", "clippathunits", "clip-path", "clip-rule", "color", "color-interpolation", "color-interpolation-filters", "color-profile", "color-rendering", "cx", "cy", "d", "dx", "dy", "diffuseconstant", "direction", "display", "divisor", "dur", "edgemode", "elevation", "end", "exponent", "fill", "fill-opacity", "fill-rule", "filter", "filterunits", "flood-color", "flood-opacity", "font-family", "font-size", "font-size-adjust", "font-stretch", "font-style", "font-variant", "font-weight", "fx", "fy", "g1", "g2", "glyph-name", "glyphref", "gradientunits", "gradienttransform", "height", "href", "id", "image-rendering", "in", "in2", "intercept", "k", "k1", "k2", "k3", "k4", "kerning", "keypoints", "keysplines", "keytimes", "lang", "lengthadjust", "letter-spacing", "kernelmatrix", "kernelunitlength", "lighting-color", "local", "marker-end", "marker-mid", "marker-start", "markerheight", "markerunits", "markerwidth", "maskcontentunits", "maskunits", "max", "mask", "mask-type", "media", "method", "mode", "min", "name", "numoctaves", "offset", "operator", "opacity", "order", "orient", "orientation", "origin", "overflow", "paint-order", "path", "pathlength", "patterncontentunits", "patterntransform", "patternunits", "points", "preservealpha", "preserveaspectratio", "primitiveunits", "r", "rx", "ry", "radius", "refx", "refy", "repeatcount", "repeatdur", "restart", "result", "rotate", "scale", "seed", "shape-rendering", "slope", "specularconstant", "specularexponent", "spreadmethod", "startoffset", "stddeviation", "stitchtiles", "stop-color", "stop-opacity", "stroke-dasharray", "stroke-dashoffset", "stroke-linecap", "stroke-linejoin", "stroke-miterlimit", "stroke-opacity", "stroke", "stroke-width", "style", "surfacescale", "systemlanguage", "tabindex", "tablevalues", "targetx", "targety", "transform", "transform-origin", "text-anchor", "text-decoration", "text-rendering", "textlength", "type", "u1", "u2", "unicode", "values", "viewbox", "visibility", "version", "vert-adv-y", "vert-origin-x", "vert-origin-y", "width", "word-spacing", "wrap", "writing-mode", "xchannelselector", "ychannelselector", "x", "x1", "x2", "xmlns", "y", "y1", "y2", "z", "zoomandpan"]), ea = De(["accent", "accentunder", "align", "bevelled", "close", "columnalign", "columnlines", "columnspacing", "columnspan", "denomalign", "depth", "dir", "display", "displaystyle", "encoding", "fence", "frame", "height", "href", "id", "largeop", "length", "linethickness", "lquote", "lspace", "mathbackground", "mathcolor", "mathsize", "mathvariant", "maxsize", "minsize", "movablelimits", "notation", "numalign", "open", "rowalign", "rowlines", "rowspacing", "rowspan", "rspace", "rquote", "scriptlevel", "scriptminsize", "scriptsizemultiplier", "selection", "separator", "separators", "stretchy", "subscriptshift", "supscriptshift", "symmetric", "voffset", "width", "xmlns"]), Ln = De(["xlink:href", "xml:id", "xlink:title", "xml:space", "xmlns:xlink"]), sg = Pe(/{{[\w\W]*|^[\w\W]*}}/g), ug = Pe(/<%[\w\W]*|^[\w\W]*%>/g), cg = Pe(/\${[\w\W]*/g), fg = Pe(/^data-[\-\w.\u00B7-\uFFFF]+$/), pg = Pe(/^aria-[\-\w]+$/), ta = Pe(
   /^(?:(?:(?:f|ht)tps?|mailto|tel|callto|sms|cid|xmpp|matrix):|[^a-z]|[a-z+.\-]+(?:[^a-z+.\-:]|$))/i
   // eslint-disable-line no-useless-escape
-), pg = Re(/^(?:\w+script|data):/i), hg = Re(
+), hg = Pe(/^(?:\w+script|data):/i), dg = Pe(
   /[\u0000-\u0020\u00A0\u1680\u180E\u2000-\u2029\u205F\u3000]/g
   // eslint-disable-line no-control-regex
-), dg = Re(/^html$/i), mg = Re(/^[a-z][.\w]*(-[.\w]+)+$/i), na = Re(/<[/\w!]/g), gg = Re(/<[/\w]/g), yg = Re(/<\/no(script|embed|frames)/i), bg = Re(/\/>/i), ct = {
+), mg = Pe(/^html$/i), gg = Pe(/^[a-z][.\w]*(-[.\w]+)+$/i), na = Pe(/<[/\w!]/g), yg = Pe(/<[/\w]/g), bg = Pe(/<\/no(script|embed|frames)/i), kg = Pe(/\/>/i), ct = {
   element: 1,
   attribute: 2,
   text: 3,
@@ -10906,9 +10926,9 @@ const Zo = De(["a", "abbr", "acronym", "address", "area", "article", "aside", "a
   documentFragment: 11,
   notation: 12
   // Deprecated
-}, kg = function() {
+}, xg = function() {
   return typeof window > "u" ? null : window;
-}, xg = function(t, n) {
+}, wg = function(t, n) {
   if (typeof t != "object" || typeof t.createPolicy != "function")
     return null;
   let r = null;
@@ -10940,10 +10960,10 @@ const Zo = De(["a", "abbr", "acronym", "address", "area", "article", "aside", "a
     uponSanitizeShadowNode: []
   };
 }, St = function(t, n, r, i) {
-  return Ie(t, n) && Et(t[n]) ? ae(i.base ? He(i.base) : {}, t[n], i.transform) : r;
+  return Ie(t, n) && Et(t[n]) ? ae(i.base ? Ue(i.base) : {}, t[n], i.transform) : r;
 };
 function rs() {
-  let e = arguments.length > 0 && arguments[0] !== void 0 ? arguments[0] : kg();
+  let e = arguments.length > 0 && arguments[0] !== void 0 ? arguments[0] : xg();
   const t = (D) => rs(D);
   if (t.version = "3.4.11", t.removed = [], !e || !e.document || e.document.nodeType !== ct.document || !e.Element)
     return t.isSupported = !1, t;
@@ -10976,11 +10996,11 @@ function rs() {
       w--;
     }
   }, P = function() {
-    return K || (Q = xg(c, i), K = !0), Q;
+    return K || (Q = wg(c, i), K = !0), Q;
   }, z = n, q = z.implementation, ce = z.createNodeIterator, ge = z.createDocumentFragment, _e = z.getElementsByTagName, g = r.importNode;
   let J = ra();
   t.isSupported = typeof ts == "function" && typeof k == "function" && q && q.createHTMLDocument !== void 0;
-  const Pe = lg, y = sg, ye = ug, Ze = cg, we = fg, dt = pg, qe = hg, V = mg;
+  const Ne = sg, y = ug, ye = cg, Ze = fg, we = pg, dt = hg, qe = dg, V = gg;
   let $ = ta, H = null;
   const re = ae({}, [...Zo, ..._r, ...vr, ...Lr, ...Qo]);
   let U = null;
@@ -11019,9 +11039,9 @@ function rs() {
       value: null
     }
   }));
-  let $e = !0, Ne = !0, kn = !1, xn = !0, at = !1, _t = !0, mt = !1, T = !1, v = null, G = null, te = !1, oe = !1, Oe = !1, Qe = !1, Je = !0, kt = !1;
+  let je = !0, Oe = !0, kn = !1, xn = !0, at = !1, _t = !0, mt = !1, T = !1, v = null, G = null, te = !1, oe = !1, Me = !1, Qe = !1, Je = !0, kt = !1;
   const xt = "user-content-";
-  let ve = !0, lt = !1, Me = {}, st = null;
+  let ve = !0, lt = !1, Fe = {}, st = null;
   const Qn = ae({}, [
     "annotation-xml",
     "audio",
@@ -11078,7 +11098,7 @@ function rs() {
     let d = arguments.length > 0 && arguments[0] !== void 0 ? arguments[0] : {};
     if (Mt && Mt === d)
       return;
-    (!d || typeof d != "object") && (d = {}), d = He(d), Zt = // eslint-disable-next-line unicorn/prefer-includes
+    (!d || typeof d != "object") && (d = {}), d = Ue(d), Zt = // eslint-disable-next-line unicorn/prefer-includes
     ls.indexOf(d.PARSER_MEDIA_TYPE) === -1 ? ss : d.PARSER_MEDIA_TYPE, xe = Zt === "application/xhtml+xml" ? Ir : sn, H = St(d, "ALLOWED_TAGS", re, {
       transform: xe
     }), U = St(d, "ALLOWED_ATTR", be, {
@@ -11093,13 +11113,13 @@ function rs() {
       base: wi
     }), st = St(d, "FORBID_CONTENTS", Qn, {
       transform: xe
-    }), ee = St(d, "FORBID_TAGS", He({}), {
+    }), ee = St(d, "FORBID_TAGS", Ue({}), {
       transform: xe
-    }), fe = St(d, "FORBID_ATTR", He({}), {
+    }), fe = St(d, "FORBID_ATTR", Ue({}), {
       transform: xe
-    }), Me = Ie(d, "USE_PROFILES") ? d.USE_PROFILES && typeof d.USE_PROFILES == "object" ? He(d.USE_PROFILES) : d.USE_PROFILES : !1, $e = d.ALLOW_ARIA_ATTR !== !1, Ne = d.ALLOW_DATA_ATTR !== !1, kn = d.ALLOW_UNKNOWN_PROTOCOLS || !1, xn = d.ALLOW_SELF_CLOSE_IN_ATTR !== !1, at = d.SAFE_FOR_TEMPLATES || !1, _t = d.SAFE_FOR_XML !== !1, mt = d.WHOLE_DOCUMENT || !1, oe = d.RETURN_DOM || !1, Oe = d.RETURN_DOM_FRAGMENT || !1, Qe = d.RETURN_TRUSTED_TYPE || !1, te = d.FORCE_BODY || !1, Je = d.SANITIZE_DOM !== !1, kt = d.SANITIZE_NAMED_PROPS || !1, ve = d.KEEP_CONTENT !== !1, lt = d.IN_PLACE || !1, $ = ig(d.ALLOWED_URI_REGEXP) ? d.ALLOWED_URI_REGEXP : ta, Ot = typeof d.NAMESPACE == "string" ? d.NAMESPACE : ut, nr = Ie(d, "MATHML_TEXT_INTEGRATION_POINTS") && d.MATHML_TEXT_INTEGRATION_POINTS && typeof d.MATHML_TEXT_INTEGRATION_POINTS == "object" ? He(d.MATHML_TEXT_INTEGRATION_POINTS) : ae({}, Si), rr = Ie(d, "HTML_INTEGRATION_POINTS") && d.HTML_INTEGRATION_POINTS && typeof d.HTML_INTEGRATION_POINTS == "object" ? He(d.HTML_INTEGRATION_POINTS) : ae({}, Ei);
-    const x = Ie(d, "CUSTOM_ELEMENT_HANDLING") && d.CUSTOM_ELEMENT_HANDLING && typeof d.CUSTOM_ELEMENT_HANDLING == "object" ? He(d.CUSTOM_ELEMENT_HANDLING) : jt(null);
-    if (W = jt(null), Ie(x, "tagNameCheck") && Ti(x.tagNameCheck) && (W.tagNameCheck = x.tagNameCheck), Ie(x, "attributeNameCheck") && Ti(x.attributeNameCheck) && (W.attributeNameCheck = x.attributeNameCheck), Ie(x, "allowCustomizedBuiltInElements") && typeof x.allowCustomizedBuiltInElements == "boolean" && (W.allowCustomizedBuiltInElements = x.allowCustomizedBuiltInElements), Re(W), at && (Ne = !1), Oe && (oe = !0), Me && (H = ae({}, Qo), U = jt(null), Me.html === !0 && (ae(H, Zo), ae(U, Jo)), Me.svg === !0 && (ae(H, _r), ae(U, Dr), ae(U, Ln)), Me.svgFilters === !0 && (ae(H, vr), ae(U, Dr), ae(U, Ln)), Me.mathMl === !0 && (ae(H, Lr), ae(U, ea), ae(U, Ln))), Te.tagCheck = null, Te.attributeCheck = null, Ie(d, "ADD_TAGS") && (typeof d.ADD_TAGS == "function" ? Te.tagCheck = d.ADD_TAGS : Et(d.ADD_TAGS) && (H === re && (H = He(H)), ae(H, d.ADD_TAGS, xe))), Ie(d, "ADD_ATTR") && (typeof d.ADD_ATTR == "function" ? Te.attributeCheck = d.ADD_ATTR : Et(d.ADD_ATTR) && (U === be && (U = He(U)), ae(U, d.ADD_ATTR, xe))), Ie(d, "ADD_URI_SAFE_ATTR") && Et(d.ADD_URI_SAFE_ATTR) && ae(Jn, d.ADD_URI_SAFE_ATTR, xe), Ie(d, "FORBID_CONTENTS") && Et(d.FORBID_CONTENTS) && (st === Qn && (st = He(st)), ae(st, d.FORBID_CONTENTS, xe)), Ie(d, "ADD_FORBID_CONTENTS") && Et(d.ADD_FORBID_CONTENTS) && (st === Qn && (st = He(st)), ae(st, d.ADD_FORBID_CONTENTS, xe)), ve && (H["#text"] = !0), mt && ae(H, ["html", "head", "body"]), H.table && (ae(H, ["tbody"]), delete ee.tbody), d.TRUSTED_TYPES_POLICY) {
+    }), Fe = Ie(d, "USE_PROFILES") ? d.USE_PROFILES && typeof d.USE_PROFILES == "object" ? Ue(d.USE_PROFILES) : d.USE_PROFILES : !1, je = d.ALLOW_ARIA_ATTR !== !1, Oe = d.ALLOW_DATA_ATTR !== !1, kn = d.ALLOW_UNKNOWN_PROTOCOLS || !1, xn = d.ALLOW_SELF_CLOSE_IN_ATTR !== !1, at = d.SAFE_FOR_TEMPLATES || !1, _t = d.SAFE_FOR_XML !== !1, mt = d.WHOLE_DOCUMENT || !1, oe = d.RETURN_DOM || !1, Me = d.RETURN_DOM_FRAGMENT || !1, Qe = d.RETURN_TRUSTED_TYPE || !1, te = d.FORCE_BODY || !1, Je = d.SANITIZE_DOM !== !1, kt = d.SANITIZE_NAMED_PROPS || !1, ve = d.KEEP_CONTENT !== !1, lt = d.IN_PLACE || !1, $ = og(d.ALLOWED_URI_REGEXP) ? d.ALLOWED_URI_REGEXP : ta, Ot = typeof d.NAMESPACE == "string" ? d.NAMESPACE : ut, nr = Ie(d, "MATHML_TEXT_INTEGRATION_POINTS") && d.MATHML_TEXT_INTEGRATION_POINTS && typeof d.MATHML_TEXT_INTEGRATION_POINTS == "object" ? Ue(d.MATHML_TEXT_INTEGRATION_POINTS) : ae({}, Si), rr = Ie(d, "HTML_INTEGRATION_POINTS") && d.HTML_INTEGRATION_POINTS && typeof d.HTML_INTEGRATION_POINTS == "object" ? Ue(d.HTML_INTEGRATION_POINTS) : ae({}, Ei);
+    const x = Ie(d, "CUSTOM_ELEMENT_HANDLING") && d.CUSTOM_ELEMENT_HANDLING && typeof d.CUSTOM_ELEMENT_HANDLING == "object" ? Ue(d.CUSTOM_ELEMENT_HANDLING) : jt(null);
+    if (W = jt(null), Ie(x, "tagNameCheck") && Ti(x.tagNameCheck) && (W.tagNameCheck = x.tagNameCheck), Ie(x, "attributeNameCheck") && Ti(x.attributeNameCheck) && (W.attributeNameCheck = x.attributeNameCheck), Ie(x, "allowCustomizedBuiltInElements") && typeof x.allowCustomizedBuiltInElements == "boolean" && (W.allowCustomizedBuiltInElements = x.allowCustomizedBuiltInElements), Pe(W), at && (Oe = !1), Me && (oe = !0), Fe && (H = ae({}, Qo), U = jt(null), Fe.html === !0 && (ae(H, Zo), ae(U, Jo)), Fe.svg === !0 && (ae(H, _r), ae(U, Dr), ae(U, Ln)), Fe.svgFilters === !0 && (ae(H, vr), ae(U, Dr), ae(U, Ln)), Fe.mathMl === !0 && (ae(H, Lr), ae(U, ea), ae(U, Ln))), Te.tagCheck = null, Te.attributeCheck = null, Ie(d, "ADD_TAGS") && (typeof d.ADD_TAGS == "function" ? Te.tagCheck = d.ADD_TAGS : Et(d.ADD_TAGS) && (H === re && (H = Ue(H)), ae(H, d.ADD_TAGS, xe))), Ie(d, "ADD_ATTR") && (typeof d.ADD_ATTR == "function" ? Te.attributeCheck = d.ADD_ATTR : Et(d.ADD_ATTR) && (U === be && (U = Ue(U)), ae(U, d.ADD_ATTR, xe))), Ie(d, "ADD_URI_SAFE_ATTR") && Et(d.ADD_URI_SAFE_ATTR) && ae(Jn, d.ADD_URI_SAFE_ATTR, xe), Ie(d, "FORBID_CONTENTS") && Et(d.FORBID_CONTENTS) && (st === Qn && (st = Ue(st)), ae(st, d.FORBID_CONTENTS, xe)), Ie(d, "ADD_FORBID_CONTENTS") && Et(d.ADD_FORBID_CONTENTS) && (st === Qn && (st = Ue(st)), ae(st, d.ADD_FORBID_CONTENTS, xe)), ve && (H["#text"] = !0), mt && ae(H, ["html", "head", "body"]), H.table && (ae(H, ["tbody"]), delete ee.tbody), d.TRUSTED_TYPES_POLICY) {
       if (typeof d.TRUSTED_TYPES_POLICY.createHTML != "function")
         throw Dt('TRUSTED_TYPES_POLICY configuration option must provide a "createHTML" hook.');
       if (typeof d.TRUSTED_TYPES_POLICY.createScriptURL != "function")
@@ -11113,7 +11133,7 @@ function rs() {
       }
     } else d.TRUSTED_TYPES_POLICY === null ? (C = void 0, B = "") : (C === void 0 && (C = P()), C && typeof B == "string" && (B = N("")));
     De && De(d), Mt = d;
-  }, Ai = ae({}, [..._r, ...vr, ...og]), Ii = ae({}, [...Lr, ...ag]), cs = function(d, x, L) {
+  }, Ai = ae({}, [..._r, ...vr, ...ag]), Ii = ae({}, [...Lr, ...lg]), cs = function(d, x, L) {
     return x.namespaceURI === ut ? d === "svg" : x.namespaceURI === wn ? d === "svg" && (L === "annotation-xml" || nr[L]) : !!Ai[d];
   }, fs = function(d, x, L) {
     return x.namespaceURI === ut ? d === "math" : x.namespaceURI === Cn ? d === "math" && rr[L] : !!Ii[d];
@@ -11173,7 +11193,7 @@ function rs() {
       });
     }
     if (x.removeAttribute(d), d === "is")
-      if (oe || Oe)
+      if (oe || Me)
         try {
           wt(x);
         } catch {
@@ -11237,7 +11257,7 @@ function rs() {
       null
     );
   }, Sn = function(d) {
-    return d = an(d, Pe, " "), d = an(d, y, " "), d = an(d, ye, " "), d;
+    return d = an(d, Ne, " "), d = an(d, y, " "), d = an(d, ye, " "), d;
   }, or = function(d) {
     var x;
     d.normalize();
@@ -11304,7 +11324,7 @@ function rs() {
     });
   }
   const gs = function(d, x) {
-    return !!(_t && d.hasChildNodes() && !Qt(d.firstElementChild) && Le(na, d.textContent) && Le(na, d.innerHTML) || _t && d.namespaceURI === ut && x === "style" && Qt(d.firstElementChild) || d.nodeType === ct.processingInstruction || _t && d.nodeType === ct.comment && Le(gg, d.data));
+    return !!(_t && d.hasChildNodes() && !Qt(d.firstElementChild) && Le(na, d.textContent) && Le(na, d.innerHTML) || _t && d.namespaceURI === ut && x === "style" && Qt(d.firstElementChild) || d.nodeType === ct.processingInstruction || _t && d.nodeType === ct.comment && Le(yg, d.data));
   }, ys = function(d, x) {
     if (!ee[x] && Pi(x) && (W.tagNameCheck instanceof RegExp && Le(W.tagNameCheck, x) || W.tagNameCheck instanceof Function && W.tagNameCheck(x)))
       return !1;
@@ -11330,7 +11350,7 @@ function rs() {
       return wt(d), !0;
     if (ee[x] || !(Te.tagCheck instanceof Function && Te.tagCheck(x)) && !H[x])
       return ys(d, x);
-    if ((R ? R(d) : d.nodeType) === ct.element && !hs(d) || (x === "noscript" || x === "noembed" || x === "noframes") && Le(yg, d.innerHTML))
+    if ((R ? R(d) : d.nodeType) === ct.element && !hs(d) || (x === "noscript" || x === "noembed" || x === "noframes") && Le(bg, d.innerHTML))
       return wt(d), !0;
     if (at && d.nodeType === ct.text) {
       const F = Sn(d.textContent);
@@ -11343,8 +11363,8 @@ function rs() {
     if (fe[x] || Je && (x === "id" || x === "name") && (L in n || L in us))
       return !1;
     const F = U[x] || Te.attributeCheck instanceof Function && Te.attributeCheck(x, d);
-    if (!(Ne && Le(Ze, x))) {
-      if (!($e && Le(we, x))) {
+    if (!(Oe && Le(Ze, x))) {
+      if (!(je && Le(we, x))) {
         if (F) {
           if (!Jn[x]) {
             if (!Le($, an(L, qe, ""))) {
@@ -11400,12 +11420,12 @@ function rs() {
     const ne = xe(d.nodeName);
     for (; F--; ) {
       const se = x[F], Ae = se.name, Ce = se.namespaceURI, et = se.value, rt = xe(Ae), lr = et;
-      let Be = Ae === "value" ? lr : Q1(lr);
-      if (L.attrName = rt, L.attrValue = Be, L.keepAttr = !0, L.forceKeepAttr = void 0, gt(J.uponSanitizeAttribute, d, L), Be = L.attrValue, kt && (rt === "id" || rt === "name") && Yo(Be, xt) !== 0 && (vt(Ae, d), Be = xt + Be), _t && Le(/((--!?|])>)|<\/(style|script|title|xmp|textarea|noscript|iframe|noembed|noframes)/i, Be)) {
+      let He = Ae === "value" ? lr : J1(lr);
+      if (L.attrName = rt, L.attrValue = He, L.keepAttr = !0, L.forceKeepAttr = void 0, gt(J.uponSanitizeAttribute, d, L), He = L.attrValue, kt && (rt === "id" || rt === "name") && Yo(He, xt) !== 0 && (vt(Ae, d), He = xt + He), _t && Le(/((--!?|])>)|<\/(style|script|title|xmp|textarea|noscript|iframe|noembed|noframes)/i, He)) {
         vt(Ae, d);
         continue;
       }
-      if (rt === "attributename" && qo(Be, "href")) {
+      if (rt === "attributename" && qo(He, "href")) {
         vt(Ae, d);
         continue;
       }
@@ -11414,15 +11434,15 @@ function rs() {
           vt(Ae, d);
           continue;
         }
-        if (!xn && Le(bg, Be)) {
+        if (!xn && Le(kg, He)) {
           vt(Ae, d);
           continue;
         }
-        if (at && (Be = Sn(Be)), !Ri(ne, rt, Be)) {
+        if (at && (He = Sn(He)), !Ri(ne, rt, He)) {
           vt(Ae, d);
           continue;
         }
-        Be = ks(ne, rt, Ce, Be), Be !== lr && xs(d, Ae, Ce, Be);
+        He = ks(ne, rt, Ce, He), He !== lr && xs(d, Ae, Ce, He);
       }
     }
     gt(J.afterSanitizeAttributes, d, null);
@@ -11477,11 +11497,11 @@ function rs() {
   };
   return t.sanitize = function(D) {
     let d = arguments.length > 1 && arguments[1] !== void 0 ? arguments[1] : {}, x = null, L = null, F = null, ne = null;
-    if (er = !D, er && (D = "<!-->"), typeof D != "string" && !Qt(D) && (D = rg(D), typeof D != "string"))
+    if (er = !D, er && (D = "<!-->"), typeof D != "string" && !Qt(D) && (D = ig(D), typeof D != "string"))
       throw Dt("dirty is not a string, aborting");
     if (!t.isSupported)
       return D;
-    T ? (H = v, U = G) : ir(d), (J.uponSanitizeElement.length > 0 || J.uponSanitizeAttribute.length > 0) && (H = He(H)), J.uponSanitizeAttribute.length > 0 && (U = He(U)), t.removed = [];
+    T ? (H = v, U = G) : ir(d), (J.uponSanitizeElement.length > 0 || J.uponSanitizeAttribute.length > 0) && (H = Ue(H)), J.uponSanitizeAttribute.length > 0 && (U = Ue(U)), t.removed = [];
     const se = lt && typeof D != "string" && Qt(D);
     if (se) {
       const et = M ? M(D) : D.nodeName;
@@ -11519,7 +11539,7 @@ function rs() {
         et.element && ms(et.element);
       }), at && or(D), D;
     if (oe) {
-      if (at && or(x), Oe)
+      if (at && or(x), Me)
         for (ne = ge.call(x.ownerDocument); x.firstChild; )
           ne.appendChild(x.firstChild);
       else
@@ -11527,7 +11547,7 @@ function rs() {
       return (U.shadowroot || U.shadowrootmode) && (ne = g.call(r, ne, !0)), ne;
     }
     let Ce = mt ? x.outerHTML : x.innerHTML;
-    return mt && H["!doctype"] && x.ownerDocument && x.ownerDocument.doctype && x.ownerDocument.doctype.name && Le(dg, x.ownerDocument.doctype.name) && (Ce = "<!DOCTYPE " + x.ownerDocument.doctype.name + `>
+    return mt && H["!doctype"] && x.ownerDocument && x.ownerDocument.doctype && x.ownerDocument.doctype.name && Le(mg, x.ownerDocument.doctype.name) && (Ce = "<!DOCTYPE " + x.ownerDocument.doctype.name + `>
 ` + Ce), at && (Ce = Sn(Ce)), C && Qe ? N(Ce) : Ce;
   }, t.setConfig = function() {
     let D = arguments.length > 0 && arguments[0] !== void 0 ? arguments[0] : {};
@@ -11543,8 +11563,8 @@ function rs() {
   }, t.removeHook = function(D, d) {
     if (Ie(J, D)) {
       if (d !== void 0) {
-        const x = K1(J[D], d);
-        return x === -1 ? void 0 : Z1(J[D], x, 1)[0];
+        const x = Z1(J[D], d);
+        return x === -1 ? void 0 : Q1(J[D], x, 1)[0];
       }
       return Go(J[D]);
     }
@@ -11554,14 +11574,14 @@ function rs() {
     J = ra();
   }, t;
 }
-var wg = rs();
+var Cg = rs();
 const is = ue(({ code: e }) => {
-  const t = Ve(`mermaid-${Math.random().toString(36).slice(2)}`), n = qu(), [r, i] = pe(null), [o, a] = pe(null);
+  const t = Re(`mermaid-${Math.random().toString(36).slice(2)}`), n = qu(), [r, i] = pe(null), [o, a] = pe(null);
   return nt(() => {
     let l = !1;
     return import("mermaid").then(({ default: s }) => (s.initialize({ startOnLoad: !1, theme: n === "dark" ? "dark" : "default" }), s.render(t.current, e))).then(({ svg: s }) => {
       if (!l) {
-        const u = wg.sanitize(s, {
+        const u = Cg.sanitize(s, {
           ADD_TAGS: ["foreignObject"],
           HTML_INTEGRATION_POINTS: { foreignobject: !0 }
         });
@@ -11582,14 +11602,14 @@ const is = ue(({ code: e }) => {
 });
 is.displayName = "MermaidBlock";
 let Pn = null;
-const Cg = import("rehype-raw").then(({ default: e }) => (Pn = e, e)), ki = ue(({ content: e, isAnimating: t = !1 }) => {
+const Sg = import("rehype-raw").then(({ default: e }) => (Pn = e, e)), ki = ue(({ content: e, isAnimating: t = !1 }) => {
   const [n, r] = pe(() => Pn), [i, o] = pe(null);
   nt(() => {
     if (Pn) {
       r(() => Pn);
       return;
     }
-    Cg.then((s) => r(() => s));
+    Sg.then((s) => r(() => s));
   }, []);
   const a = Y(() => o(null), []);
   return /* @__PURE__ */ he($n, { children: [
@@ -11606,13 +11626,13 @@ const Cg = import("rehype-raw").then(({ default: e }) => (Pn = e, e)), ki = ue((
           },
           img({ src: s, alt: u }) {
             return /* @__PURE__ */ E(
-              "img",
+              "button",
               {
-                className: "elitea-assistant-markdown-img-clickable",
-                src: s,
-                alt: u ?? "",
-                title: "Click to expand",
-                onClick: () => s && o({ src: s, alt: u ?? "" })
+                type: "button",
+                className: "elitea-assistant-img-btn",
+                onClick: () => s && o({ src: s, alt: u ?? "" }),
+                "aria-label": `${u || "Image"} — click to expand`,
+                children: /* @__PURE__ */ E("img", { src: s, alt: u ?? "" })
               }
             );
           }
@@ -11621,13 +11641,13 @@ const Cg = import("rehype-raw").then(({ default: e }) => (Pn = e, e)), ki = ue((
       }
     ) }),
     i && ia(
-      /* @__PURE__ */ E(U1, { src: i.src, alt: i.alt, onClose: a }),
+      /* @__PURE__ */ E($1, { src: i.src, alt: i.alt, onClose: a }),
       document.body
     )
   ] });
 });
 ki.displayName = "MarkdownContent";
-const Sg = {
+const Eg = {
   buttonBackground: "linear-gradient(50.4deg, #435CFF 0%, #B3BEFF 100%)",
   buttonIcon: "#FFFFFF",
   headerBackground: "rgba(40, 69, 255, 0.25)",
@@ -11671,7 +11691,7 @@ const Sg = {
   historyDropdownBorder: "rgba(203, 206, 213, 1)",
   historyDropdownShadow: "0 0.25rem 0.75rem rgba(0, 0, 0, 0.08)",
   historyDropdownHoverBackground: "rgba(61, 68, 86, 0.06)"
-}, Eg = {
+}, Tg = {
   buttonBackground: "linear-gradient(50.4deg, #C428DD 0%, #8A1B9E 100%)",
   buttonIcon: "#FFFFFF",
   headerBackground: "rgba(245, 81, 249, 0.3)",
@@ -11715,13 +11735,13 @@ const Sg = {
   historyDropdownBorder: "rgba(59, 62, 70, 1)",
   historyDropdownShadow: "0 0.5rem 0.75rem rgba(0, 0, 0, 0.3)",
   historyDropdownHoverBackground: "rgba(255, 255, 255, 0.06)"
-}, Tg = {
-  light: Sg,
-  dark: Eg
-}, Ag = (e, t) => ({
-  ...Tg[e],
+}, Ag = {
+  light: Eg,
+  dark: Tg
+}, Ig = (e, t) => ({
+  ...Ag[e],
   ...t
-}), Ig = (e) => ({
+}), _g = (e) => ({
   "--elitea-assistant-button-bg": e.buttonBackground,
   "--elitea-assistant-button-icon": e.buttonIcon,
   "--elitea-assistant-header-bg": e.headerBackground,
@@ -11765,7 +11785,7 @@ const Sg = {
   "--elitea-assistant-history-dropdown-border": e.historyDropdownBorder,
   "--elitea-assistant-history-dropdown-shadow": e.historyDropdownShadow,
   "--elitea-assistant-history-dropdown-hover-bg": e.historyDropdownHoverBackground
-}), _g = Cs((e, t) => {
+}), vg = Cs((e, t) => {
   const {
     apiUrl: n,
     token: r,
@@ -11780,7 +11800,7 @@ Ask me anything about ELITEA or report any issues you're experiencing. I have co
     theme: c = "light",
     colors: h,
     supportAssistantContext: p
-  } = e, m = Tt(() => Ig(Ag(c, h)), [c, h]), b = Tt(() => {
+  } = e, m = Tt(() => _g(Ig(c, h)), [c, h]), b = Tt(() => {
     if (a) return a;
     if (n && (r || i)) return Ts(n, { token: r, withCredentials: i });
     throw new Error(
@@ -11808,7 +11828,7 @@ Ask me anything about ELITEA or report any issues you're experiencing. I have co
     title: l,
     welcomeMessage: u,
     placeholder: s
-  }), { isOpen: w, isExpanded: O, open: N, close: X, toggle: P, expandFullscreen: z, collapseFullscreen: q, toggleFullscreen: ce } = Ds(), ge = Hu(), { popupVissible: _e, showPopup: g, hidePopup: J, popupText: Pe } = js(w), y = Y(() => {
+  }), { isOpen: w, isExpanded: O, open: N, close: X, toggle: P, expandFullscreen: z, collapseFullscreen: q, toggleFullscreen: ce } = Ds(), ge = Hu(), { popupVissible: _e, showPopup: g, hidePopup: J, popupText: Ne } = js(w), y = Y(() => {
     ge.captureScreenshot(), g();
   }, [ge, g]), ye = Y(() => {
     ge.clearScreenshot(), J();
@@ -11865,7 +11885,7 @@ Ask me anything about ELITEA or report any issues you're experiencing. I have co
         _e && !w && /* @__PURE__ */ E(
           ja,
           {
-            message: Pe,
+            message: Ne,
             onClose: ye
           }
         ),
@@ -11874,9 +11894,9 @@ Ask me anything about ELITEA or report any issues you're experiencing. I have co
     }
   ) }) }) }) }) });
 });
-_g.displayName = "EliteaAssistant";
+vg.displayName = "EliteaAssistant";
 export {
-  _g as EliteaAssistant,
+  vg as EliteaAssistant,
   Ts as createDefaultAdapter
 };
 //# sourceMappingURL=elitea-assistant.js.map

@@ -46,14 +46,19 @@ const MarkdownContent: React.FC<TMarkdownContentProps> = memo(({ content, isAnim
       return <code className={className}>{children}</code>;
     },
     img({ src, alt }: { src?: string; alt?: string }) {
+      const label = alt || 'Image';
       return (
-        <img
-          className="elitea-assistant-markdown-img-clickable"
-          src={src}
-          alt={alt ?? ''}
-          title="Click to expand"
+        <button
+          type="button"
+          className="elitea-assistant-img-btn"
           onClick={() => src && setLightboxImage({ src, alt: alt ?? '' })}
-        />
+          aria-label={`${label} — click to expand`}
+        >
+          <img
+            src={src}
+            alt={alt ?? ''}
+          />
+        </button>
       );
     },
   };
