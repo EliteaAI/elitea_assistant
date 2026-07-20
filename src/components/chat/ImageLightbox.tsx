@@ -1,4 +1,6 @@
-import React, { useCallback, useEffect, useRef } from 'react';
+import React, { FC, useCallback, useEffect, useRef } from 'react';
+
+const FOCUSABLE = 'a[href],button:not([disabled]),input,select,textarea,[tabindex]:not([tabindex="-1"])';
 
 type TImageLightboxProps = {
   src: string;
@@ -6,9 +8,9 @@ type TImageLightboxProps = {
   onClose: () => void;
 };
 
-const FOCUSABLE = 'a[href],button:not([disabled]),input,select,textarea,[tabindex]:not([tabindex="-1"])';
+const ImageLightbox: FC<TImageLightboxProps> = props => {
+  const { src, alt, onClose } = props;
 
-const ImageLightbox: React.FC<TImageLightboxProps> = ({ src, alt, onClose }) => {
   const closeBtnRef = useRef<HTMLButtonElement>(null);
   const dialogRef = useRef<HTMLDivElement>(null);
   const returnFocusRef = useRef<Element | null>(null);
@@ -25,19 +27,17 @@ const ImageLightbox: React.FC<TImageLightboxProps> = ({ src, alt, onClose }) => 
 
   const trapFocus = useCallback(
     (e: React.KeyboardEvent<HTMLDivElement>) => {
-      if (e.key === 'Escape') {
-        onClose();
-        return;
-      }
-
+      if (e.key === 'Escape') return onClose();
       if (e.key !== 'Tab') return;
 
       const dialog = dialogRef.current;
+
       if (!dialog) return;
 
       const focusable = Array.from(dialog.querySelectorAll<HTMLElement>(FOCUSABLE)).filter(
         el => !el.closest('[inert]'),
       );
+
       if (focusable.length === 0) return;
 
       const first = focusable[0];

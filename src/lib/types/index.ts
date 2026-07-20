@@ -19,6 +19,6 @@ export type {
   TRawConversation,
   TRawMessageGroup,
   TSocketMessage,
-  TStatusChip,
 } from './chat.types';
+export type { TRehypePlugin } from './rehype.types';
 export type { TEliteaAssistantColors } from './theme.types';

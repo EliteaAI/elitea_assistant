@@ -1,8 +1,10 @@
-import React, { memo, useCallback, useEffect, useState } from 'react';
+import React, { memo, useCallback, useState } from 'react';
 
 import { createPortal } from 'react-dom';
 import Markdown from 'react-markdown';
 import remarkGfm from 'remark-gfm';
+
+import { useRehypeRaw } from '@/lib/hooks';
 
 import ImageLightbox from './ImageLightbox';
 import MermaidBlock from './MermaidBlock';
@@ -12,41 +14,35 @@ type TMarkdownContentProps = {
   isAnimating?: boolean;
 };
 
-type TPlugin = (typeof import('rehype-raw'))['default'];
+type TCodeProps = { className?: string; children?: React.ReactNode };
+type TImgProps = { src?: string; alt?: string };
 
-let cachedRehypeRaw: TPlugin | null = null;
+const MarkdownContent: React.FC<TMarkdownContentProps> = memo(props => {
+  const { content, isAnimating = false } = props;
 
-// Kick off the load immediately when this module is first imported so the
-// plugin is ready before any message component mounts, eliminating the flash
-// of raw HTML on the first render.
-const rehypeRawReady = import('rehype-raw').then(({ default: plugin }) => {
-  cachedRehypeRaw = plugin;
-  return plugin;
-});
+  const rehypeRaw = useRehypeRaw();
 
-const MarkdownContent: React.FC<TMarkdownContentProps> = memo(({ content, isAnimating = false }) => {
-  const [rehypeRaw, setRehypeRaw] = useState<TPlugin | null>(() => cachedRehypeRaw);
   const [lightboxImage, setLightboxImage] = useState<{ src: string; alt: string } | null>(null);
-
-  useEffect(() => {
-    if (cachedRehypeRaw) {
-      setRehypeRaw(() => cachedRehypeRaw);
-      return;
-    }
-    rehypeRawReady.then(plugin => setRehypeRaw(() => plugin));
-  }, []);
 
   const closeLightbox = useCallback(() => setLightboxImage(null), []);
 
   const components = {
-    code({ className, children }: { className?: string; children?: React.ReactNode }) {
+    code(codeProps: TCodeProps) {
+      const { className, children } = codeProps;
+
       const lang = /language-(\w+)/.exec(className ?? '')?.[1];
       const code = String(children ?? '').replace(/\n$/, '');
+
       if (lang === 'mermaid' && !isAnimating) return <MermaidBlock code={code} />;
+
       return <code className={className}>{children}</code>;
     },
-    img({ src, alt }: { src?: string; alt?: string }) {
+
+    img(imgProps: TImgProps) {
+      const { src, alt } = imgProps;
+
       const label = alt || 'Image';
+
       return (
         <button
           type="button"
