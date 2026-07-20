@@ -241,50 +241,28 @@
   padding: 1.25rem;
 }
 
-/* ── Status Chips ── */
+/* ── Status Message (Wave Animation) ── */
 
-.elitea-assistant-status-chips {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 0.375rem;
-  margin-bottom: 0.375rem;
-}
-
-.elitea-assistant-status-chip {
-  display: inline-flex;
-  align-items: center;
-  gap: 0.25rem;
-  padding: 0.1875rem 0.5rem;
-  border-radius: 1rem;
-  font-size: 0.6875rem;
-  font-weight: 500;
-  background: var(--elitea-assistant-bot-msg-bg);
-  border: 1px solid var(--elitea-assistant-border);
-  color: var(--elitea-assistant-bot-msg-text);
-  opacity: 0.85;
-  transition: opacity 0.2s ease;
-}
-
-.elitea-assistant-status-chip--done {
-  opacity: 0.55;
-}
-
-.elitea-assistant-chip-spinner {
-  width: 0.5rem;
-  height: 0.5rem;
-  border: 1.5px solid currentColor;
-  border-top-color: transparent;
-  border-radius: 50%;
-  animation: elitea-assistant-chip-spin 0.6s linear infinite;
-}
-
-@keyframes elitea-assistant-chip-spin {
-  to {
-    transform: rotate(360deg);
+@keyframes elitea-assistant-wave {
+  0%,
+  100% {
+    opacity: 1;
+  }
+  50% {
+    opacity: 0.3;
   }
 }
 
-.elitea-assistant-chip-check {
-  font-size: 0.625rem;
-  line-height: 1;
+.elitea-assistant-status-message {
+  margin-bottom: 0.375rem;
+  font-weight: 400;
+  font-size: 0.875rem;
+  line-height: 1.25rem;
+  color: var(--elitea-assistant-bot-msg-text);
+  opacity: 0.7;
+}
+
+.elitea-assistant-status-message-char {
+  display: inline-block;
+  animation: elitea-assistant-wave 2s ease-in-out infinite;
 }

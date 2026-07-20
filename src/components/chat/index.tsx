@@ -7,6 +7,6 @@ export { default as PopupMessage } from './PopupMessage';
 export { default as AnimatedMessage } from './AnimatedMessage';
 export { default as MessageItem } from './MessageItem';
 export { default as MessageListSkeleton } from './MessageListSkeleton';
-export { default as StatusChips } from './StatusChips';
+export { default as StatusMessage } from './StatusMessage';
 export { default as TypingIndicator } from './TypingIndicator';
 export { default as MarkdownContent } from './MarkdownContent';

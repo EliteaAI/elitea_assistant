@@ -104,6 +104,15 @@ export const useChat = (props: TUseChatProps) => {
   const handlePredict = useCallback((message: TSocketMessage) => {
     const { message_id, type, content, response_metadata } = message;
 
+    const mapStepToStatusMessage = (stepType: string): string => {
+      if (stepType === MESSAGE_TYPES.START_TASK || stepType === MESSAGE_TYPES.AGENT_START)
+        return 'Starting up...';
+      if (stepType === MESSAGE_TYPES.AGENT_LLM_START) return 'Looking things up...';
+      if (stepType === MESSAGE_TYPES.AGENT_TOOL_START) return 'Consulting knowledge base...';
+      if (stepType === MESSAGE_TYPES.AGENT_LLM_CHUNK) return 'Writing response...';
+      return '';
+    };
+
     switch (type) {
       case MESSAGE_TYPES.START_TASK:
         setMessages(prev => [
@@ -114,76 +123,29 @@ export const useChat = (props: TUseChatProps) => {
             content: '',
             timestamp: Date.now(),
             isStreaming: true,
-            statusChips: [{ id: 'initializing', label: 'initializing', status: 'active' as const }],
+            statusMessage: mapStepToStatusMessage(type),
           },
         ]);
         break;
 
-      case MESSAGE_TYPES.AGENT_LLM_START: {
-        const toolName = (response_metadata?.tool_name as string) || 'thinking';
-        const chipId = (response_metadata?.tool_run_id as string) || message_id;
-
+      case MESSAGE_TYPES.AGENT_START:
         setMessages(prev =>
-          prev.map(m => {
-            if (m.id !== message_id) return m;
-
-            const chips = m.statusChips || [];
-
-            if (chips.some(c => c.id === chipId)) return m;
-
-            const updatedChips = chips.map(c =>
-              c.status === 'active' ? { ...c, status: 'done' as const } : c,
-            );
-
-            return {
-              ...m,
-              statusChips: [...updatedChips, { id: chipId, label: toolName, status: 'active' as const }],
-            };
-          }),
+          prev.map(m => (m.id === message_id ? { ...m, statusMessage: mapStepToStatusMessage(type) } : m)),
         );
         break;
-      }
 
-      case MESSAGE_TYPES.AGENT_TOOL_START: {
-        const toolName = (response_metadata?.tool_name as string) || 'Tool';
-        const chipId = (response_metadata?.tool_run_id as string) || message_id;
-
+      case MESSAGE_TYPES.AGENT_LLM_START:
+      case MESSAGE_TYPES.AGENT_TOOL_START:
         setMessages(prev =>
-          prev.map(m => {
-            if (m.id !== message_id) return m;
-
-            const chips = m.statusChips || [];
-
-            // Mark previous active chips as done, add new tool chip
-            const updatedChips = chips.map(c =>
-              c.status === 'active' ? { ...c, status: 'done' as const } : c,
-            );
-
-            return {
-              ...m,
-              statusChips: [...updatedChips, { id: chipId, label: toolName, status: 'active' as const }],
-            };
-          }),
+          prev.map(m => (m.id === message_id ? { ...m, statusMessage: mapStepToStatusMessage(type) } : m)),
         );
         break;
-      }
 
-      case MESSAGE_TYPES.AGENT_TOOL_END: {
-        const chipId = (response_metadata?.tool_run_id as string) || '';
-
-        setMessages(prev =>
-          prev.map(m => {
-            if (m.id !== message_id) return m;
-
-            const chips = (m.statusChips || []).map(c =>
-              c.id === chipId ? { ...c, status: 'done' as const } : c,
-            );
-
-            return { ...m, statusChips: chips };
-          }),
-        );
+      case MESSAGE_TYPES.AGENT_TOOL_END:
+      case MESSAGE_TYPES.AGENT_LLM_END:
+      case MESSAGE_TYPES.AGENT_ON_TRANSITIONAL_EDGE:
+      case MESSAGE_TYPES.AGENT_ON_FUNCTION_TOOL_NODE:
         break;
-      }
 
       case MESSAGE_TYPES.CHUNK:
       case MESSAGE_TYPES.AI_MESSAGE_CHUNK: {
@@ -193,7 +155,12 @@ export const useChat = (props: TUseChatProps) => {
         setMessages(prev =>
           prev.map(m =>
             m.id === message_id
-              ? { ...m, content: m.content + chunk, ...(finished && { isStreaming: false }) }
+              ? {
+                  ...m,
+                  content: m.content + chunk,
+                  statusMessage: undefined,
+                  ...(finished && { isStreaming: false }),
+                }
               : m,
           ),
         );
@@ -201,8 +168,13 @@ export const useChat = (props: TUseChatProps) => {
       }
 
       case MESSAGE_TYPES.AGENT_LLM_CHUNK:
-        // Ignore intermediate agent LLM chunks (tool arguments, sub-agent thinking)
-        // Final content arrives via AGENT_RESPONSE
+        setMessages(prev =>
+          prev.map(m =>
+            m.id === message_id && m.statusMessage !== mapStepToStatusMessage(type)
+              ? { ...m, statusMessage: mapStepToStatusMessage(type) }
+              : m,
+          ),
+        );
         break;
 
       case MESSAGE_TYPES.AGENT_RESPONSE: {
@@ -216,7 +188,7 @@ export const useChat = (props: TUseChatProps) => {
               content: responseContent,
               isStreaming: false,
               isAnimating: true,
-              statusChips: [],
+              statusMessage: undefined,
             };
           }),
         );
@@ -225,7 +197,9 @@ export const useChat = (props: TUseChatProps) => {
 
       case MESSAGE_TYPES.PIPELINE_FINISH:
         setMessages(prev =>
-          prev.map(m => (m.id === message_id && m.isStreaming ? { ...m, isStreaming: false } : m)),
+          prev.map(m =>
+            m.id === message_id && m.isStreaming ? { ...m, isStreaming: false, statusMessage: undefined } : m,
+          ),
         );
         break;
 
@@ -240,7 +214,7 @@ export const useChat = (props: TUseChatProps) => {
                   isStreaming: false,
                   isAnimating: false,
                   isError: true,
-                  statusChips: [],
+                  statusMessage: undefined,
                 }
               : m,
           ),

@@ -1,9 +1,3 @@
-export type TStatusChip = {
-  id: string;
-  label: string;
-  status: 'active' | 'done';
-};
-
 export type TMessage = {
   id: string;
   role: 'user' | 'assistant';
@@ -12,7 +6,7 @@ export type TMessage = {
   isStreaming?: boolean;
   isAnimating?: boolean;
   isError?: boolean;
-  statusChips?: TStatusChip[];
+  statusMessage?: string;
 };
 
 export type TConversationListItem = {

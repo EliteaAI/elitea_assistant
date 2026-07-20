@@ -1,6 +1,6 @@
 import React, { memo } from 'react';
 
-import { AnimatedMessage, MarkdownContent, StatusChips, TypingIndicator } from '@/components/chat';
+import { AnimatedMessage, MarkdownContent, StatusMessage, TypingIndicator } from '@/components/chat';
 import { AssistantIcon, UserIcon } from '@/components/icons';
 import { CopyButton } from '@/components/shared';
 import type { TMessage } from '@/lib/types';
@@ -15,8 +15,8 @@ type TMessageItemProps = {
 const MessageItem: React.FC<TMessageItemProps> = memo(props => {
   const { message, avatar, onAnimationComplete } = props;
 
-  const hasChips = message.role === 'assistant' && message.statusChips && message.statusChips.length > 0;
-  const showBubble = message.role === 'user' || message.content || (!hasChips && message.isStreaming);
+  const hasStatusMessage = message.role === 'assistant' && !!message.statusMessage;
+  const showBubble = message.role === 'user' || message.content || (!hasStatusMessage && message.isStreaming);
 
   return (
     <div className={`elitea-assistant-message-wrapper elitea-assistant-message-wrapper--${message.role}`}>
@@ -41,7 +41,7 @@ const MessageItem: React.FC<TMessageItemProps> = memo(props => {
           </span>
         )}
       </div>
-      {hasChips && <StatusChips chips={message.statusChips!} />}
+      {hasStatusMessage && <StatusMessage message={message.statusMessage!} />}
       {showBubble && (
         <div
           className={`elitea-assistant-message elitea-assistant-message--${message.role}${message.isError ? ' elitea-assistant-message--error' : ''}`}
