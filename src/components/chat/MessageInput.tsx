@@ -1,4 +1,4 @@
-import React, { memo, useMemo, useRef, useState } from 'react';
+import React, { memo, useCallback, useEffect, useMemo, useRef, useState } from 'react';
 
 import { AttachmentIcon, SendIcon } from '@/components/icons';
 import { ACCEPTED_FILE_EXTENSIONS, UploadStatus } from '@/lib/constants/attachment.constants';
@@ -34,9 +34,22 @@ const MessageInput: React.FC<TMessageInputProps> = memo(props => {
   } = props;
 
   const fileInputRef = useRef<HTMLInputElement>(null);
+  const textareaRef = useRef<HTMLTextAreaElement>(null);
   const [fileInputKey, setFileInputKey] = useState(0);
   const [isDragOver, setIsDragOver] = useState(false);
   const dragCounterRef = useRef(0);
+
+  const adjustTextareaHeight = useCallback(() => {
+    const textarea = textareaRef.current;
+    if (!textarea) return;
+
+    textarea.style.height = 'auto';
+    textarea.style.height = `${textarea.scrollHeight}px`;
+  }, []);
+
+  useEffect(() => {
+    adjustTextareaHeight();
+  }, [text, adjustTextareaHeight]);
 
   const { visibleAttachments, remainingAttachmentsCount } = useMemo(() => {
     const max = expanded ? 3 : 2;
@@ -182,6 +195,7 @@ const MessageInput: React.FC<TMessageInputProps> = memo(props => {
           <AttachmentIcon />
         </button>
         <textarea
+          ref={textareaRef}
           id="elitea-assistant-message-input"
           className="elitea-assistant-input"
           value={text}

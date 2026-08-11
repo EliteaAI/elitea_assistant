@@ -45,6 +45,8 @@
   font-family: inherit;
   outline: none;
   resize: none;
+  overflow-y: auto;
+  max-height: 8rem;
 }
 
 .elitea-assistant-input::placeholder {
