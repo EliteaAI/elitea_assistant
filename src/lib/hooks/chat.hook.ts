@@ -1,6 +1,6 @@
 import { useCallback, useEffect, useMemo, useRef, useState } from 'react';
 
-import { MESSAGE_TYPES, SOCKET_EVENTS, UploadStatus } from '@/lib/constants';
+import { MAX_ATTACHMENT_COUNT, MESSAGE_TYPES, SOCKET_EVENTS, UploadStatus } from '@/lib/constants';
 import {
   useApi,
   useAttachmentUpload,
@@ -29,10 +29,12 @@ type TUseChatProps = {
   initialHistory: TConversationListItem[];
   initialConversation: TRawConversation | null;
   isInitLoading: boolean;
+  showToast: (message: string) => void;
 };
 
 export const useChat = (props: TUseChatProps) => {
-  const { welcomeMessage, supportProjectId, initialHistory, initialConversation, isInitLoading } = props;
+  const { welcomeMessage, supportProjectId, initialHistory, initialConversation, isInitLoading, showToast } =
+    props;
 
   const hasInitializedRef = useRef(false);
 
@@ -271,9 +273,30 @@ export const useChat = (props: TUseChatProps) => {
     };
   }, [socket, handlePredict, handleError, handleConversationNameUpdated]);
 
-  const addFiles = useCallback((files: File[]) => {
-    setAttachments(prev => buildValidatedAttachments(files, prev));
-  }, []);
+  const addFiles = useCallback(
+    (files: File[]) => {
+      const currentValidCount = attachments.filter(a => a.status !== UploadStatus.ERROR).length;
+      const remaining = MAX_ATTACHMENT_COUNT - currentValidCount;
+
+      if (remaining <= 0) {
+        showToast(
+          `You've reached the ${MAX_ATTACHMENT_COUNT}-file limit. Only the first ${MAX_ATTACHMENT_COUNT} will be processed.`,
+        );
+        return;
+      }
+
+      if (files.length > remaining) {
+        showToast(
+          `You've reached the ${MAX_ATTACHMENT_COUNT}-file limit. Only the first ${MAX_ATTACHMENT_COUNT} will be processed.`,
+        );
+        setAttachments(prev => buildValidatedAttachments(files.slice(0, remaining), prev));
+        return;
+      }
+
+      setAttachments(prev => buildValidatedAttachments(files, prev));
+    },
+    [attachments, showToast],
+  );
 
   const removeAttachment = useCallback((attachmentId: string) => {
     setAttachments(prev => revalidateAttachments(prev.filter(a => a.id !== attachmentId)));

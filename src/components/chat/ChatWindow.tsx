@@ -1,7 +1,8 @@
 import React, { memo } from 'react';
 
 import { ChatHeader, MessageInput, MessageList } from '@/components/chat';
-import { useChat } from '@/lib/hooks';
+import { Toast } from '@/components/shared';
+import { useChat, useToast } from '@/lib/hooks';
 import type { TConversationListItem, TRawConversation } from '@/lib/types';
 
 type TChatWindowProps = {
@@ -35,6 +36,8 @@ const ChatWindow: React.FC<TChatWindowProps> = memo(props => {
     expanded,
   } = props;
 
+  const { toastMessage, showToast, dismissToast } = useToast();
+
   const {
     messages,
     inputText,
@@ -57,12 +60,19 @@ const ChatWindow: React.FC<TChatWindowProps> = memo(props => {
     initialHistory,
     initialConversation: lastConversation,
     isInitLoading,
+    showToast,
   });
 
   if (!isOpen) return null;
 
   const window = (
     <div className={`elitea-assistant-window${expanded ? ' elitea-assistant-window--expanded' : ''}`}>
+      {toastMessage && (
+        <Toast
+          message={toastMessage}
+          onDismiss={dismissToast}
+        />
+      )}
       <ChatHeader
         title={title}
         expanded={expanded}

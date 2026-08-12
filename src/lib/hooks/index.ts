@@ -7,6 +7,7 @@ export { usePopup } from './popup.hook';
 export { ScreenshotContext, useScreenshot, useScreenshotContext } from './screenshot.hook';
 export { SocketContext, useSocketConnection, useSocketContext } from './socket.hook';
 export { SupportAssistantContextValue, useSupportAssistantContext } from './supportContext.hook';
+export { useToast } from './toast.hook';
 export { useTypewriter } from './typewriter.hook';
 export { useMermaid } from './mermaid.hook';
 export { useRehypeRaw } from './rehype.hook';
