@@ -1,7 +1,7 @@
 import React, { memo } from 'react';
 
 import { ChatHeader, MessageInput, MessageList } from '@/components/chat';
-import Toast from '@/components/chat/Toast';
+import { Toast } from '@/components/shared';
 import { useChat, useToast } from '@/lib/hooks';
 import type { TConversationListItem, TRawConversation } from '@/lib/types';
 

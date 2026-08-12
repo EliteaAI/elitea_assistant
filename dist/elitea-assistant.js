@@ -247,6 +247,31 @@ const ya = le((e) => {
   ) });
 });
 ya.displayName = "CopyButton";
+const ba = le((e) => {
+  const { message: t, onDismiss: n } = e;
+  return /* @__PURE__ */ de(
+    "div",
+    {
+      className: "elitea-assistant-toast",
+      role: "alert",
+      children: [
+        /* @__PURE__ */ S("span", { className: "elitea-assistant-toast-icon", children: /* @__PURE__ */ S(ma, {}) }),
+        /* @__PURE__ */ S("span", { className: "elitea-assistant-toast-text", children: t }),
+        /* @__PURE__ */ S(
+          "button",
+          {
+            className: "elitea-assistant-toast-close",
+            onClick: n,
+            "aria-label": "Dismiss",
+            type: "button",
+            children: /* @__PURE__ */ S(gn, {})
+          }
+        )
+      ]
+    }
+  );
+});
+ba.displayName = "Toast";
 const Gt = le((e) => {
   const { content: t, children: n, placement: r = "top" } = e, i = Ae(null), o = Ae(null), [a, l] = fe(!1), [s, u] = fe(!1), [f, c] = fe({ top: 0, left: 0 }), h = W(() => {
     const p = i.current, m = o.current;
@@ -291,7 +316,7 @@ const Gt = le((e) => {
   ] });
 });
 Gt.displayName = "Tooltip";
-const ba = le((e) => {
+const ka = le((e) => {
   const {
     title: t,
     expanded: n,
@@ -388,8 +413,8 @@ const ba = le((e) => {
     ] })
   ] });
 });
-ba.displayName = "ChatHeader";
-const ka = le((e) => {
+ka.displayName = "ChatHeader";
+const xa = le((e) => {
   const { avatar: t, messages: n, isLoading: r, onAnimationComplete: i } = e, o = Ae(null), a = Ae(null), l = Ae(!1);
   return Ge(() => {
     var b;
@@ -435,9 +460,9 @@ const ka = le((e) => {
     }
   );
 });
-ka.displayName = "MessageList";
+xa.displayName = "MessageList";
 var ye = /* @__PURE__ */ ((e) => (e.PENDING = "pending", e.UPLOADING = "uploading", e.COMPLETED = "completed", e.ERROR = "error", e))(ye || {});
-const Nn = 150 * 1024 * 1024, Ni = 3 * 1024 * 1024, Oi = 150 * 1024 * 1024, tt = 10, Mi = 10, lr = 5 * 1024 * 1024, xa = /* @__PURE__ */ new Set(["png", "jpg", "jpeg", "gif", "webp", "bmp", "svg"]), Rs = /* @__PURE__ */ new Set([
+const Nn = 150 * 1024 * 1024, Ni = 3 * 1024 * 1024, Oi = 150 * 1024 * 1024, tt = 10, Mi = 10, lr = 5 * 1024 * 1024, wa = /* @__PURE__ */ new Set(["png", "jpg", "jpeg", "gif", "webp", "bmp", "svg"]), Rs = /* @__PURE__ */ new Set([
   "txt",
   "md",
   "pdf",
@@ -496,7 +521,7 @@ const Nn = 150 * 1024 * 1024, Ni = 3 * 1024 * 1024, Oi = 150 * 1024 * 1024, tt =
   "cfg",
   "conf",
   "env"
-]), wa = /* @__PURE__ */ new Set([...xa, ...Rs, ...Ps]), Ns = [...wa].map((e) => `.${e}`).join(","), Dr = 7, sr = 2 * Math.PI * Dr, Ca = le((e) => {
+]), Ca = /* @__PURE__ */ new Set([...wa, ...Rs, ...Ps]), Ns = [...Ca].map((e) => `.${e}`).join(","), Dr = 7, sr = 2 * Math.PI * Dr, Ea = le((e) => {
   const { status: t, progress: n = 0 } = e;
   if (t === ye.UPLOADING) {
     const r = sr - n / 100 * sr;
@@ -540,16 +565,16 @@ const Nn = 150 * 1024 * 1024, Ni = 3 * 1024 * 1024, Oi = 150 * 1024 * 1024, tt =
   }
   return t === ye.COMPLETED ? /* @__PURE__ */ S(Xr, {}) : /* @__PURE__ */ S(ca, {});
 });
-Ca.displayName = "AttachmentIcon";
-const Ea = le((e) => {
+Ea.displayName = "AttachmentIcon";
+const Sa = le((e) => {
   const { status: t, progress: n } = e;
   return t === ye.UPLOADING ? /* @__PURE__ */ de("span", { className: "elitea-assistant-file-chip-progress-text", children: [
     n,
     "%"
   ] }) : null;
 });
-Ea.displayName = "AttachmentProgress";
-const Sa = le((e) => {
+Sa.displayName = "AttachmentProgress";
+const Ta = le((e) => {
   const { attachment: t, onRemove: n } = e, r = (i) => {
     const o = "elitea-assistant-file-chip";
     return {
@@ -561,7 +586,7 @@ const Sa = le((e) => {
   };
   return /* @__PURE__ */ S(Gt, { content: t.error ?? t.name, children: /* @__PURE__ */ de("div", { className: r(t.status), children: [
     /* @__PURE__ */ S("span", { className: "elitea-assistant-file-chip-icon", children: /* @__PURE__ */ S(
-      Ca,
+      Ea,
       {
         status: t.status,
         progress: t.progress
@@ -569,7 +594,7 @@ const Sa = le((e) => {
     ) }),
     /* @__PURE__ */ S("span", { className: "elitea-assistant-file-chip-name", children: t.name }),
     /* @__PURE__ */ S(
-      Ea,
+      Sa,
       {
         status: t.status,
         progress: t.progress
@@ -588,8 +613,8 @@ const Sa = le((e) => {
     )
   ] }) });
 });
-Sa.displayName = "AttachmentChip";
-const Ta = le((e) => {
+Ta.displayName = "AttachmentChip";
+const Aa = le((e) => {
   const {
     placeholder: t,
     text: n,
@@ -667,7 +692,7 @@ const Ta = le((e) => {
         b && /* @__PURE__ */ S("div", { className: "elitea-assistant-drop-overlay", children: "Drop files here" }),
         i.length > 0 && /* @__PURE__ */ de("div", { className: "elitea-assistant-file-list", children: [
           A.map((F) => /* @__PURE__ */ S(
-            Sa,
+            Ta,
             {
               attachment: F,
               onRemove: a
@@ -735,32 +760,7 @@ const Ta = le((e) => {
     }
   );
 });
-Ta.displayName = "MessageInput";
-const Aa = le((e) => {
-  const { message: t, onDismiss: n } = e;
-  return /* @__PURE__ */ de(
-    "div",
-    {
-      className: "elitea-assistant-toast",
-      role: "alert",
-      children: [
-        /* @__PURE__ */ S("span", { className: "elitea-assistant-toast-icon", children: /* @__PURE__ */ S(ma, {}) }),
-        /* @__PURE__ */ S("span", { className: "elitea-assistant-toast-text", children: t }),
-        /* @__PURE__ */ S(
-          "button",
-          {
-            className: "elitea-assistant-toast-close",
-            onClick: n,
-            "aria-label": "Dismiss",
-            type: "button",
-            children: /* @__PURE__ */ S(gn, {})
-          }
-        )
-      ]
-    }
-  );
-});
-Aa.displayName = "Toast";
+Aa.displayName = "MessageInput";
 const _a = dn(null), Ia = () => {
   const e = mn(_a);
   if (!e) throw new Error("useApi must be used within EliteaAssistant");
@@ -835,7 +835,7 @@ const _a = dn(null), Ia = () => {
 }, zi = (e) => {
   const t = e.lastIndexOf(".");
   return t === -1 ? e : e.substring(0, t) + e.substring(t).toLowerCase();
-}, Kr = (e) => (e.split(".").pop() || "").toLowerCase(), jn = (e) => xa.has(Kr(e)), Bs = (e) => wa.has(Kr(e)), va = (e) => Bs(e.name) ? jn(e.name) && e.size > Ni ? `Image exceeds ${Rr(Ni)} limit` : e.size > Nn ? `File exceeds ${Rr(Nn)} limit` : null : `Unsupported file type: .${Kr(e.name)}`, La = (e, t, n) => {
+}, Kr = (e) => (e.split(".").pop() || "").toLowerCase(), jn = (e) => wa.has(Kr(e)), Bs = (e) => Ca.has(Kr(e)), va = (e) => Bs(e.name) ? jn(e.name) && e.size > Ni ? `Image exceeds ${Rr(Ni)} limit` : e.size > Nn ? `File exceeds ${Rr(Nn)} limit` : null : `Unsupported file type: .${Kr(e.name)}`, La = (e, t, n) => {
   if (n.totalCount > tt) return `Max ${tt} attachments allowed`;
   const r = jn(e);
   return r && (n.imageCount += 1), n.totalSize += t, r && n.imageCount > Mi ? `Max ${Mi} images allowed` : n.totalSize > Oi ? `Total upload size exceeds ${Rr(Oi)}` : null;
@@ -2809,14 +2809,14 @@ const Pc = (e) => {
     ),
     /* @__PURE__ */ de("div", { className: `elitea-assistant-window${h ? " elitea-assistant-window--expanded" : ""}`, children: [
       p && /* @__PURE__ */ S(
-        Aa,
+        ba,
         {
           message: p,
           onDismiss: b
         }
       ),
       /* @__PURE__ */ S(
-        ba,
+        ka,
         {
           title: n,
           expanded: h,
@@ -2830,7 +2830,7 @@ const Pc = (e) => {
         }
       ),
       /* @__PURE__ */ S(
-        ka,
+        xa,
         {
           avatar: t,
           messages: w,
@@ -2839,7 +2839,7 @@ const Pc = (e) => {
         }
       ),
       /* @__PURE__ */ S(
-        Ta,
+        Aa,
         {
           placeholder: r,
           text: k,
