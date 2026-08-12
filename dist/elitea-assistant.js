@@ -1155,7 +1155,11 @@ const js = import("rehype-raw").then(({ default: e }) => (Ra = e, e)), Ui = () =
     (H) => {
       R((N) => {
         const te = N.filter((Ce) => Ce.status !== ye.ERROR).length, z = tt - te;
-        return z <= 0 ? (a(`You've reached the ${tt}-file limit. Only the first ${tt} will be processed.`), N) : H.length > z ? (a(`You've reached the ${tt}-file limit. Only the first ${tt} will be processed.`), Bi(H.slice(0, z), N)) : Bi(H, N);
+        return z <= 0 ? (a(
+          `You've reached the ${tt}-file limit. Only the first ${tt} will be processed.`
+        ), N) : H.length > z ? (a(
+          `You've reached the ${tt}-file limit. Only the first ${tt} will be processed.`
+        ), Bi(H.slice(0, z), N)) : Bi(H, N);
       });
     },
     [a]
