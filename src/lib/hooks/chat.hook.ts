@@ -275,28 +275,27 @@ export const useChat = (props: TUseChatProps) => {
 
   const addFiles = useCallback(
     (files: File[]) => {
-      setAttachments(prev => {
-        const currentValidCount = prev.filter(a => a.status !== UploadStatus.ERROR).length;
-        const remaining = MAX_ATTACHMENT_COUNT - currentValidCount;
+      const currentValidCount = attachments.filter(a => a.status !== UploadStatus.ERROR).length;
+      const remaining = MAX_ATTACHMENT_COUNT - currentValidCount;
 
-        if (remaining <= 0) {
-          showToast(
-            `You've reached the ${MAX_ATTACHMENT_COUNT}-file limit. Only the first ${MAX_ATTACHMENT_COUNT} will be processed.`,
-          );
-          return prev;
-        }
+      if (remaining <= 0) {
+        showToast(
+          `You've reached the ${MAX_ATTACHMENT_COUNT}-file limit. Only the first ${MAX_ATTACHMENT_COUNT} will be processed.`,
+        );
+        return;
+      }
 
-        if (files.length > remaining) {
-          showToast(
-            `You've reached the ${MAX_ATTACHMENT_COUNT}-file limit. Only the first ${MAX_ATTACHMENT_COUNT} will be processed.`,
-          );
-          return buildValidatedAttachments(files.slice(0, remaining), prev);
-        }
+      if (files.length > remaining) {
+        showToast(
+          `You've reached the ${MAX_ATTACHMENT_COUNT}-file limit. Only the first ${MAX_ATTACHMENT_COUNT} will be processed.`,
+        );
+        setAttachments(prev => buildValidatedAttachments(files.slice(0, remaining), prev));
+        return;
+      }
 
-        return buildValidatedAttachments(files, prev);
-      });
+      setAttachments(prev => buildValidatedAttachments(files, prev));
     },
-    [showToast],
+    [attachments, showToast],
   );
 
   const removeAttachment = useCallback((attachmentId: string) => {

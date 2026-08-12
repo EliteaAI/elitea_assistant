@@ -77,6 +77,11 @@ const MessageInput: React.FC<TMessageInputProps> = memo(props => {
     [attachments],
   );
 
+  const isAttachButtonDisabled = useMemo(
+    () => Boolean(disabled || isUploading || isAtMaxCapacity),
+    [disabled, isUploading, isAtMaxCapacity],
+  );
+
   const isSendDisabled = useMemo(
     () => Boolean(disabled || isUploading || !attachmentsValid || !text.trim()),
     [disabled, isUploading, text, attachmentsValid],
@@ -199,7 +204,7 @@ const MessageInput: React.FC<TMessageInputProps> = memo(props => {
           onClick={handleAttachClick}
           aria-label="Attach file"
           type="button"
-          disabled={disabled || isUploading || isAtMaxCapacity}
+          disabled={isAttachButtonDisabled}
         >
           <AttachmentIcon />
         </button>
