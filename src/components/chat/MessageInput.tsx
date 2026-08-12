@@ -1,7 +1,11 @@
 import React, { memo, useCallback, useEffect, useMemo, useRef, useState } from 'react';
 
 import { AttachmentIcon, SendIcon } from '@/components/icons';
-import { ACCEPTED_FILE_EXTENSIONS, UploadStatus } from '@/lib/constants/attachment.constants';
+import {
+  ACCEPTED_FILE_EXTENSIONS,
+  MAX_ATTACHMENT_COUNT,
+  UploadStatus,
+} from '@/lib/constants/attachment.constants';
 import type { TAttachment } from '@/lib/types';
 
 import { AttachmentChip } from './attachments';
@@ -65,6 +69,11 @@ const MessageInput: React.FC<TMessageInputProps> = memo(props => {
       !attachments?.length
         ? true
         : attachments.every(a => a.status === UploadStatus.PENDING || a.status === UploadStatus.COMPLETED),
+    [attachments],
+  );
+
+  const isAtMaxCapacity = useMemo(
+    () => attachments.filter(a => a.status !== UploadStatus.ERROR).length >= MAX_ATTACHMENT_COUNT,
     [attachments],
   );
 
@@ -190,7 +199,7 @@ const MessageInput: React.FC<TMessageInputProps> = memo(props => {
           onClick={handleAttachClick}
           aria-label="Attach file"
           type="button"
-          disabled={disabled || isUploading}
+          disabled={disabled || isUploading || isAtMaxCapacity}
         >
           <AttachmentIcon />
         </button>

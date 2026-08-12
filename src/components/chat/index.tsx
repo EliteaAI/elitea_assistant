@@ -4,6 +4,7 @@ export { default as MessageList } from './MessageList';
 export { default as MessageInput } from './MessageInput';
 export { default as ChatWindow } from './ChatWindow';
 export { default as PopupMessage } from './PopupMessage';
+export { default as Toast } from './Toast';
 export { default as AnimatedMessage } from './AnimatedMessage';
 export { default as MessageItem } from './MessageItem';
 export { default as MessageListSkeleton } from './MessageListSkeleton';
