@@ -218,16 +218,23 @@ const MessageInput: React.FC<TMessageInputProps> = memo(props => {
                 +{remainingAttachmentsCount}
               </button>
               {showOverflow && (
-                <div className="elitea-assistant-overflow-dropdown">
+                <div
+                  className="elitea-assistant-dropdown elitea-assistant-overflow-dropdown"
+                  role="menu"
+                >
                   {hiddenAttachments.map(attachment => (
                     <div
                       key={attachment.id}
                       className="elitea-assistant-overflow-item"
+                      role="menuitem"
                     >
                       <span className="elitea-assistant-overflow-item-name">{attachment.name}</span>
                       <button
                         className="elitea-assistant-file-chip-remove"
-                        onClick={() => onRemoveAttachment(attachment.id)}
+                        onClick={() => {
+                          if (hiddenAttachments.length === 1) setShowOverflow(false);
+                          onRemoveAttachment(attachment.id);
+                        }}
                         aria-label={`Remove ${attachment.name}`}
                         type="button"
                         disabled={attachment.status === UploadStatus.UPLOADING}

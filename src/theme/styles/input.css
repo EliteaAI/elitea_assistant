@@ -200,20 +200,23 @@
   position: relative;
 }
 
-.elitea-assistant-overflow-dropdown {
+.elitea-assistant-dropdown {
   position: absolute;
-  bottom: calc(100% + 0.375rem);
-  right: 0;
-  min-width: 13.75rem;
-  max-width: 18.75rem;
-  max-height: 25rem;
-  overflow-y: auto;
   background: var(--elitea-assistant-chat-bg);
   border: 0.0625rem solid var(--elitea-assistant-history-dropdown-border);
   border-radius: 0.5rem;
   box-shadow: var(--elitea-assistant-history-dropdown-shadow);
   z-index: 100;
   padding: 0.25rem 0;
+}
+
+.elitea-assistant-overflow-dropdown {
+  bottom: calc(100% + 0.375rem);
+  right: 0;
+  min-width: 13.75rem;
+  max-width: 18.75rem;
+  max-height: 25rem;
+  overflow-y: auto;
 }
 
 .elitea-assistant-overflow-item {
