@@ -71,6 +71,57 @@ export const useChat = (props: TUseChatProps) => {
     setMessages(prev => prev.map(m => (m.id === messageId ? { ...m, isAnimating: false } : m)));
   }, []);
 
+  const handleStop = useCallback(() => {
+    const streamingMessageIndex = messages.findIndex(m => m.isStreaming && m.taskId);
+    if (streamingMessageIndex === -1) return;
+
+    const streamingMessage = messages[streamingMessageIndex];
+
+    // Find the preceding user message (the interrupted question)
+    let userMessageIndex = -1;
+    let userMessageContent = '';
+    for (let i = streamingMessageIndex - 1; i >= 0; i--) {
+      if (messages[i].role === 'user') {
+        userMessageIndex = i;
+        userMessageContent = messages[i].content;
+        break;
+      }
+    }
+
+    // Use Socket.IO to stop the task - RPC handles all backend cleanup
+    socket?.emit(SOCKET_EVENTS.STOP, { message_id: streamingMessage.id });
+
+    // Update UI: remove empty assistant message and the user message, restore input
+    setTimeout(() => {
+      setMessages(prev => {
+        const idsToRemove = new Set<string>();
+
+        // Remove the streaming assistant message if it's empty or has no meaningful content
+        if (!streamingMessage.content?.trim()) {
+          idsToRemove.add(streamingMessage.id);
+        }
+
+        // Remove the user message that triggered this response
+        if (userMessageIndex !== -1) {
+          idsToRemove.add(messages[userMessageIndex].id);
+        }
+
+        return prev
+          .filter(m => !idsToRemove.has(m.id))
+          .map(m =>
+            m.id === streamingMessage.id
+              ? { ...m, isStreaming: false, taskId: undefined, statusMessage: undefined }
+              : m,
+          );
+      });
+
+      // Restore the interrupted question to the input field
+      if (userMessageContent) {
+        setInputText(userMessageContent);
+      }
+    }, 200);
+  }, [messages, socket]);
+
   const enterRoom = useCallback(
     (conversationId: string) => {
       socket?.emit(SOCKET_EVENTS.ENTER_ROOM, {
@@ -116,7 +167,8 @@ export const useChat = (props: TUseChatProps) => {
     };
 
     switch (type) {
-      case MESSAGE_TYPES.START_TASK:
+      case MESSAGE_TYPES.START_TASK: {
+        const taskId = (content as { task_id?: string })?.task_id;
         setMessages(prev => [
           ...prev,
           {
@@ -125,10 +177,12 @@ export const useChat = (props: TUseChatProps) => {
             content: '',
             timestamp: Date.now(),
             isStreaming: true,
+            taskId,
             statusMessage: mapStepToStatusMessage(type),
           },
         ]);
         break;
+      }
 
       case MESSAGE_TYPES.AGENT_START:
         setMessages(prev =>
@@ -492,6 +546,7 @@ export const useChat = (props: TUseChatProps) => {
     handleNewChat,
     handleSelectConversation,
     handleSend,
+    handleStop,
     handleAnimationComplete,
   };
 };
