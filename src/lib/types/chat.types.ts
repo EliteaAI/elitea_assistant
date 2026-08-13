@@ -7,6 +7,7 @@ export type TMessage = {
   isAnimating?: boolean;
   isError?: boolean;
   statusMessage?: string;
+  taskId?: string;
 };
 
 export type TConversationListItem = {

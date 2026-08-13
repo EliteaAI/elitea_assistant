@@ -154,6 +154,7 @@ export declare type TMessage = {
     isAnimating?: boolean;
     isError?: boolean;
     statusMessage?: string;
+    taskId?: string;
 };
 
 declare type TRawConversation = {

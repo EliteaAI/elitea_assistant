@@ -53,6 +53,7 @@ const ChatWindow: React.FC<TChatWindowProps> = memo(props => {
     handleNewChat,
     handleSelectConversation,
     handleSend,
+    handleStop,
     handleAnimationComplete,
   } = useChat({
     welcomeMessage,
@@ -98,9 +99,11 @@ const ChatWindow: React.FC<TChatWindowProps> = memo(props => {
         onAddFiles={addFiles}
         onRemoveAttachment={removeAttachment}
         onSend={handleSend}
+        onStop={handleStop}
         expanded={expanded}
-        disabled={isLoading || isStreaming}
+        disabled={isLoading}
         isUploading={isUploading}
+        isStreaming={isStreaming}
       />
     </div>
   );

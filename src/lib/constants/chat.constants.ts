@@ -5,6 +5,7 @@ export const SOCKET_EVENTS = {
   PREDICT_RESPONSE: 'chat_predict',
   CONVERSATION_NAME_UPDATED: 'chat_conversation_name_updated',
   ERROR: 'support_error',
+  STOP: 'support_stop',
 } as const;
 
 export const MESSAGE_TYPES = {

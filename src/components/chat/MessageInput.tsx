@@ -1,6 +1,6 @@
 import React, { memo, useCallback, useEffect, useMemo, useRef, useState } from 'react';
 
-import { AttachmentIcon, CloseIcon, SendIcon } from '@/components/icons';
+import { AttachmentIcon, CloseIcon, SendIcon, StopIcon } from '@/components/icons';
 import {
   ACCEPTED_FILE_EXTENSIONS,
   MAX_ATTACHMENT_COUNT,
@@ -18,9 +18,11 @@ type TMessageInputProps = {
   onAddFiles: (files: File[]) => void;
   onRemoveAttachment: (attachmentId: string) => void;
   onSend: (text: string) => void;
+  onStop?: () => void;
   expanded?: boolean;
   disabled?: boolean;
   isUploading?: boolean;
+  isStreaming?: boolean;
 };
 
 const MessageInput: React.FC<TMessageInputProps> = memo(props => {
@@ -32,9 +34,11 @@ const MessageInput: React.FC<TMessageInputProps> = memo(props => {
     onAddFiles,
     onRemoveAttachment,
     onSend,
+    onStop,
     expanded,
     disabled,
     isUploading,
+    isStreaming,
   } = props;
 
   const fileInputRef = useRef<HTMLInputElement>(null);
@@ -281,15 +285,26 @@ const MessageInput: React.FC<TMessageInputProps> = memo(props => {
           autoFocus
           disabled={disabled}
         />
-        <button
-          className="elitea-assistant-send-button"
-          onClick={handleSend}
-          disabled={isSendDisabled}
-          aria-label="Send message"
-          type="button"
-        >
-          <SendIcon />
-        </button>
+        {isStreaming ? (
+          <button
+            className="elitea-assistant-stop-button"
+            onClick={onStop}
+            aria-label="Stop generation"
+            type="button"
+          >
+            <StopIcon />
+          </button>
+        ) : (
+          <button
+            className="elitea-assistant-send-button"
+            onClick={handleSend}
+            disabled={isSendDisabled}
+            aria-label="Send message"
+            type="button"
+          >
+            <SendIcon />
+          </button>
+        )}
       </div>
     </div>
   );

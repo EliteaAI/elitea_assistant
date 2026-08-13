@@ -11,5 +11,6 @@ export { default as FileIcon } from './FileIcon';
 export { default as HistoryIcon } from './HistoryIcon';
 export { default as PlusIcon } from './PlusIcon';
 export { default as SendIcon } from './SendIcon';
+export { default as StopIcon } from './StopIcon';
 export { default as UserIcon } from './UserIcon';
 export { default as WarningIcon } from './WarningIcon';

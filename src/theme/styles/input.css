@@ -108,6 +108,32 @@
   fill: currentColor;
 }
 
+.elitea-assistant-stop-button {
+  width: 1.75rem;
+  height: 1.75rem;
+  border-radius: 50%;
+  border: none;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: var(--elitea-assistant-error-color, #ef4444);
+  color: var(--elitea-assistant-send-btn-icon, #ffffff);
+  flex-shrink: 0;
+  transition: background 0.15s ease;
+  padding: 0;
+}
+
+.elitea-assistant-stop-button:hover {
+  background: var(--elitea-assistant-error-hover, #dc2626);
+}
+
+.elitea-assistant-stop-button svg {
+  width: 1.125rem;
+  height: 1.125rem;
+  fill: currentColor;
+}
+
 /* ── File List ── */
 
 .elitea-assistant-file-list {
