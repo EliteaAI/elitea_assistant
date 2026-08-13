@@ -1,6 +1,6 @@
 import React, { memo, useCallback, useEffect, useMemo, useRef, useState } from 'react';
 
-import { AttachmentIcon, SendIcon } from '@/components/icons';
+import { AttachmentIcon, CloseIcon, SendIcon } from '@/components/icons';
 import {
   ACCEPTED_FILE_EXTENSIONS,
   MAX_ATTACHMENT_COUNT,
@@ -39,8 +39,10 @@ const MessageInput: React.FC<TMessageInputProps> = memo(props => {
 
   const fileInputRef = useRef<HTMLInputElement>(null);
   const textareaRef = useRef<HTMLTextAreaElement>(null);
+  const overflowWrapperRef = useRef<HTMLDivElement>(null);
   const [fileInputKey, setFileInputKey] = useState(0);
   const [isDragOver, setIsDragOver] = useState(false);
+  const [showOverflow, setShowOverflow] = useState(false);
   const dragCounterRef = useRef(0);
 
   const adjustTextareaHeight = useCallback(() => {
@@ -55,11 +57,25 @@ const MessageInput: React.FC<TMessageInputProps> = memo(props => {
     adjustTextareaHeight();
   }, [text, adjustTextareaHeight]);
 
-  const { visibleAttachments, remainingAttachmentsCount } = useMemo(() => {
+  useEffect(() => {
+    if (!showOverflow) return;
+
+    const handleClickOutside = (e: MouseEvent) => {
+      if (overflowWrapperRef.current && !overflowWrapperRef.current.contains(e.target as Node)) {
+        setShowOverflow(false);
+      }
+    };
+
+    document.addEventListener('mousedown', handleClickOutside);
+    return () => document.removeEventListener('mousedown', handleClickOutside);
+  }, [showOverflow]);
+
+  const { visibleAttachments, hiddenAttachments, remainingAttachmentsCount } = useMemo(() => {
     const max = expanded ? 3 : 2;
 
     return {
       visibleAttachments: attachments.slice(0, max),
+      hiddenAttachments: attachments.slice(max),
       remainingAttachmentsCount: attachments.length - max,
     };
   }, [attachments, expanded]);
@@ -86,6 +102,10 @@ const MessageInput: React.FC<TMessageInputProps> = memo(props => {
     () => Boolean(disabled || isUploading || !attachmentsValid || !text.trim()),
     [disabled, isUploading, text, attachmentsValid],
   );
+
+  const toggleOverflow = useCallback(() => {
+    setShowOverflow(prev => !prev);
+  }, []);
 
   const handleSend = () => {
     const trimmed = text.trim();
@@ -183,8 +203,41 @@ const MessageInput: React.FC<TMessageInputProps> = memo(props => {
             />
           ))}
           {remainingAttachmentsCount > 0 && (
-            <div className="elitea-assistant-file-chip elitea-assistant-file-chip--count">
-              +{remainingAttachmentsCount}
+            <div
+              ref={overflowWrapperRef}
+              className="elitea-assistant-overflow-wrapper"
+            >
+              <button
+                className="elitea-assistant-file-chip elitea-assistant-file-chip--count"
+                onClick={toggleOverflow}
+                aria-label={`Show ${remainingAttachmentsCount} more files`}
+                aria-haspopup="true"
+                aria-expanded={showOverflow}
+                type="button"
+              >
+                +{remainingAttachmentsCount}
+              </button>
+              {showOverflow && (
+                <div className="elitea-assistant-overflow-dropdown">
+                  {hiddenAttachments.map(attachment => (
+                    <div
+                      key={attachment.id}
+                      className="elitea-assistant-overflow-item"
+                    >
+                      <span className="elitea-assistant-overflow-item-name">{attachment.name}</span>
+                      <button
+                        className="elitea-assistant-file-chip-remove"
+                        onClick={() => onRemoveAttachment(attachment.id)}
+                        aria-label={`Remove ${attachment.name}`}
+                        type="button"
+                        disabled={attachment.status === UploadStatus.UPLOADING}
+                      >
+                        <CloseIcon />
+                      </button>
+                    </div>
+                  ))}
+                </div>
+              )}
             </div>
           )}
         </div>
