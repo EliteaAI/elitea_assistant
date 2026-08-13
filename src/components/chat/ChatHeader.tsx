@@ -97,7 +97,7 @@ const ChatHeader: React.FC<TChatHeaderProps> = memo(props => {
               <HistoryIcon />
             </button>
             {showHistory && history.length > 0 && (
-              <div className="elitea-assistant-history-dropdown">
+              <div className="elitea-assistant-dropdown elitea-assistant-history-dropdown">
                 <div className="elitea-assistant-history-dropdown-scroll">
                   {history.map(conversation => (
                     <button
