@@ -65,14 +65,14 @@ export const useChat = (props: TUseChatProps) => {
     [isInitLoading, isSwitchingConversation],
   );
 
-  const isStreaming = useMemo(() => messages.some(m => m.isStreaming || m.isAnimating), [messages]);
+  const isStreaming = useMemo(() => messages.some(m => m.isStreaming), [messages]);
 
   const handleAnimationComplete = useCallback((messageId: string) => {
     setMessages(prev => prev.map(m => (m.id === messageId ? { ...m, isAnimating: false } : m)));
   }, []);
 
   const handleStop = useCallback(() => {
-    const streamingMessageIndex = messages.findIndex(m => m.isStreaming && m.taskId);
+    const streamingMessageIndex = messages.findIndex(m => m.isStreaming);
     if (streamingMessageIndex === -1) return;
 
     const streamingMessage = messages[streamingMessageIndex];
@@ -166,6 +166,38 @@ export const useChat = (props: TUseChatProps) => {
       return '';
     };
 
+    if (
+      type === MESSAGE_TYPES.AGENT_START ||
+      type === MESSAGE_TYPES.AGENT_LLM_START ||
+      type === MESSAGE_TYPES.AGENT_TOOL_START ||
+      type === MESSAGE_TYPES.AGENT_LLM_CHUNK ||
+      type === MESSAGE_TYPES.CHUNK ||
+      type === MESSAGE_TYPES.AI_MESSAGE_CHUNK ||
+      type === MESSAGE_TYPES.AGENT_RESPONSE ||
+      type === MESSAGE_TYPES.ERROR ||
+      type === MESSAGE_TYPES.AGENT_EXCEPTION
+    ) {
+      setMessages(prev => {
+        const existing = prev.find(m => m.id === message_id);
+        if (!existing) {
+          return [
+            ...prev,
+            {
+              id: message_id,
+              role: 'assistant' as const,
+              content: '',
+              timestamp: Date.now(),
+              isStreaming: true,
+            },
+          ];
+        }
+        if (!existing.isStreaming) {
+          return prev.map(m => (m.id === message_id ? { ...m, isStreaming: true } : m));
+        }
+        return prev;
+      });
+    }
+
     switch (type) {
       case MESSAGE_TYPES.START_TASK: {
         const taskId = (content as { task_id?: string })?.task_id;
@@ -243,7 +275,6 @@ export const useChat = (props: TUseChatProps) => {
               ...m,
               content: responseContent,
               isStreaming: false,
-              isAnimating: true,
               statusMessage: undefined,
             };
           }),
@@ -326,6 +357,20 @@ export const useChat = (props: TUseChatProps) => {
       socket.off(SOCKET_EVENTS.CONVERSATION_NAME_UPDATED, handleConversationNameUpdated);
     };
   }, [socket, handlePredict, handleError, handleConversationNameUpdated]);
+
+  useEffect(() => {
+    if (!socket || !currentConversationId) return;
+
+    const handleReconnect = () => {
+      enterRoom(currentConversationId);
+    };
+
+    socket.io.on('reconnect', handleReconnect);
+
+    return () => {
+      socket.io.off('reconnect', handleReconnect);
+    };
+  }, [socket, currentConversationId, enterRoom]);
 
   const addFiles = useCallback(
     (files: File[]) => {
