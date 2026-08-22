@@ -68,7 +68,12 @@ const ChatHeader: React.FC<TChatHeaderProps> = memo(props => {
         >
           <CloseIcon />
         </button>
-        <h2 className="elitea-assistant-header-title">{title}</h2>
+        <h2
+          className="elitea-assistant-header-title"
+          data-testid="support-assistant-widget-title"
+        >
+          {title}
+        </h2>
       </div>
       <div className="elitea-assistant-header-right">
         <Tooltip content="New conversation">

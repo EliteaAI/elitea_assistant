@@ -19,7 +19,10 @@ const MessageItem: React.FC<TMessageItemProps> = memo(props => {
   const showBubble = message.role === 'user' || message.content || (!hasStatusMessage && message.isStreaming);
 
   return (
-    <div className={`elitea-assistant-message-wrapper elitea-assistant-message-wrapper--${message.role}`}>
+    <div
+      className={`elitea-assistant-message-wrapper elitea-assistant-message-wrapper--${message.role}`}
+      data-testid="support-assistant-message-item"
+    >
       <div className={`elitea-assistant-message-meta elitea-assistant-message-meta--${message.role}`}>
         {message.role === 'assistant' && (
           <span className="elitea-assistant-message-avatar elitea-assistant-message-avatar--assistant">

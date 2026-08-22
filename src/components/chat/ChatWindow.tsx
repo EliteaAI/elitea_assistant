@@ -67,7 +67,10 @@ const ChatWindow: React.FC<TChatWindowProps> = memo(props => {
   if (!isOpen) return null;
 
   const window = (
-    <div className={`elitea-assistant-window${expanded ? ' elitea-assistant-window--expanded' : ''}`}>
+    <div
+      className={`elitea-assistant-window${expanded ? ' elitea-assistant-window--expanded' : ''}`}
+      data-testid="support-assistant-widget"
+    >
       {toastMessage && (
         <Toast
           message={toastMessage}

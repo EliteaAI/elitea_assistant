@@ -276,6 +276,7 @@ const MessageInput: React.FC<TMessageInputProps> = memo(props => {
           ref={textareaRef}
           id="elitea-assistant-message-input"
           className="elitea-assistant-input"
+          data-testid="support-assistant-message-input"
           value={text}
           onChange={e => onTextChange(e.target.value)}
           onKeyDown={handleKeyDown}
@@ -297,6 +298,7 @@ const MessageInput: React.FC<TMessageInputProps> = memo(props => {
         ) : (
           <button
             className="elitea-assistant-send-button"
+            data-testid="support-assistant-send-button"
             onClick={handleSend}
             disabled={isSendDisabled}
             aria-label="Send message"
