@@ -30,7 +30,10 @@ const AttachmentChip: React.FC<TAttachmentChipProps> = memo(props => {
 
   return (
     <Tooltip content={attachment.error ?? attachment.name}>
-      <div className={getChipClassName(attachment.status)}>
+      <div
+        className={getChipClassName(attachment.status)}
+        data-testid="support-assistant-attachment-chip"
+      >
         <span className="elitea-assistant-file-chip-icon">
           <AttachmentIcon
             status={attachment.status}

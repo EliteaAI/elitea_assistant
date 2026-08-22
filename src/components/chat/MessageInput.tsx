@@ -265,6 +265,7 @@ const MessageInput: React.FC<TMessageInputProps> = memo(props => {
         />
         <button
           className="elitea-assistant-attach-button"
+          data-testid="support-assistant-attach-button"
           onClick={handleAttachClick}
           aria-label="Attach file"
           type="button"
