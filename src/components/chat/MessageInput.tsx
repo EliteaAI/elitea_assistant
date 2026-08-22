@@ -190,13 +190,21 @@ const MessageInput: React.FC<TMessageInputProps> = memo(props => {
 
   return (
     <div
+      data-testid="support-assistant-drop-zone"
       className={`elitea-assistant-input-area${isDragOver ? ' elitea-assistant-input-area--drag-over' : ''}`}
       onDragEnter={handleDragEnter}
       onDragLeave={handleDragLeave}
       onDragOver={handleDragOver}
       onDrop={handleDrop}
     >
-      {isDragOver && <div className="elitea-assistant-drop-overlay">Drop files here</div>}
+      {isDragOver && (
+        <div
+          data-testid="support-assistant-drop-overlay"
+          className="elitea-assistant-drop-overlay"
+        >
+          Drop files here
+        </div>
+      )}
       {attachments.length > 0 && (
         <div className="elitea-assistant-file-list">
           {visibleAttachments.map(attachment => (
