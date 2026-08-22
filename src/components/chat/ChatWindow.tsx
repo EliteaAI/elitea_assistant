@@ -70,6 +70,7 @@ const ChatWindow: React.FC<TChatWindowProps> = memo(props => {
     <div
       className={`elitea-assistant-window${expanded ? ' elitea-assistant-window--expanded' : ''}`}
       data-testid="support-assistant-widget"
+      data-expanded={String(expanded)}
     >
       {toastMessage && (
         <Toast

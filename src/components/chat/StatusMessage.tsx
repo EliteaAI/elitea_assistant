@@ -10,7 +10,10 @@ const StatusMessage: FC<TStatusMessageProps> = memo(props => {
   if (!message) return null;
 
   return (
-    <div className="elitea-assistant-status-message">
+    <div
+      className="elitea-assistant-status-message"
+      data-testid="support-assistant-status-message"
+    >
       {message.split('').map((char, index) => (
         <span
           key={`${message}-${index}`}

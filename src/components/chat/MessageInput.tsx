@@ -298,6 +298,7 @@ const MessageInput: React.FC<TMessageInputProps> = memo(props => {
         {isStreaming ? (
           <button
             className="elitea-assistant-stop-button"
+            data-testid="support-assistant-stop-button"
             onClick={onStop}
             aria-label="Stop generation"
             type="button"

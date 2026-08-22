@@ -129,6 +129,7 @@ const ChatHeader: React.FC<TChatHeaderProps> = memo(props => {
         <Tooltip content={expanded ? 'Collapse' : 'Expand'}>
           <button
             className="elitea-assistant-header-action"
+            data-testid="support-assistant-expand-button"
             onClick={onExpand}
             aria-label="Expand chat"
             type="button"
