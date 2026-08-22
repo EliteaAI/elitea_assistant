@@ -22,6 +22,7 @@ const MessageItem: React.FC<TMessageItemProps> = memo(props => {
     <div
       className={`elitea-assistant-message-wrapper elitea-assistant-message-wrapper--${message.role}`}
       data-testid="support-assistant-message-item"
+      data-role={message.role}
     >
       <div className={`elitea-assistant-message-meta elitea-assistant-message-meta--${message.role}`}>
         {message.role === 'assistant' && (
@@ -48,6 +49,7 @@ const MessageItem: React.FC<TMessageItemProps> = memo(props => {
       {showBubble && (
         <div
           className={`elitea-assistant-message elitea-assistant-message--${message.role}${message.isError ? ' elitea-assistant-message--error' : ''}`}
+          data-testid="support-assistant-message-bubble"
         >
           {message.content ? (
             message.role === 'assistant' ? (
@@ -70,7 +72,12 @@ const MessageItem: React.FC<TMessageItemProps> = memo(props => {
           {message.role === 'assistant' &&
             message.content &&
             !message.isStreaming &&
-            !message.isAnimating && <CopyButton text={message.content} />}
+            !message.isAnimating && (
+              <CopyButton
+                text={message.content}
+                testId="support-assistant-message-copy-button"
+              />
+            )}
         </div>
       )}
     </div>

@@ -3,8 +3,8 @@ import React, { memo, useCallback, useState } from 'react';
 import { CheckIcon, CopyIcon } from '@/components/icons';
 import { Tooltip } from '@/components/shared';
 
-const CopyButton: React.FC<{ text: string }> = memo(props => {
-  const { text } = props;
+const CopyButton: React.FC<{ text: string; testId?: string }> = memo(props => {
+  const { text, testId } = props;
 
   const [copied, setCopied] = useState(false);
 
@@ -21,6 +21,8 @@ const CopyButton: React.FC<{ text: string }> = memo(props => {
         onClick={handleCopy}
         aria-label="Copy to clipboard"
         type="button"
+        data-testid={testId}
+        data-copied={copied ? 'true' : 'false'}
       >
         {copied ? <CheckIcon /> : <CopyIcon />}
       </button>
