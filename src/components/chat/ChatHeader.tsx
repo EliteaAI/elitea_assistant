@@ -83,6 +83,7 @@ const ChatHeader: React.FC<TChatHeaderProps> = memo(props => {
             aria-label="New chat"
             type="button"
             disabled={disabled}
+            data-testid="support-assistant-new-chat-button"
           >
             <PlusIcon />
           </button>
