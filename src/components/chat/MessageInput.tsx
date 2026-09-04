@@ -41,25 +41,77 @@ const MessageInput: React.FC<TMessageInputProps> = memo(props => {
     isStreaming,
   } = props;
 
+  const MAX_HEIGHT_INLINE = 160;
+  const MAX_HEIGHT_EXPANDED = 256;
+
   const fileInputRef = useRef<HTMLInputElement>(null);
   const textareaRef = useRef<HTMLTextAreaElement>(null);
   const overflowWrapperRef = useRef<HTMLDivElement>(null);
+  const userHeightRef = useRef<number | null>(null);
+  const mouseMoveRef = useRef<((e: MouseEvent) => void) | null>(null);
+  const mouseUpRef = useRef<(() => void) | null>(null);
   const [fileInputKey, setFileInputKey] = useState(0);
   const [isDragOver, setIsDragOver] = useState(false);
   const [showOverflow, setShowOverflow] = useState(false);
+  const [isResizing, setIsResizing] = useState(false);
   const dragCounterRef = useRef(0);
 
   const adjustTextareaHeight = useCallback(() => {
     const textarea = textareaRef.current;
     if (!textarea) return;
+    if (userHeightRef.current !== null) return;
 
+    const maxHeight = expanded ? MAX_HEIGHT_EXPANDED : MAX_HEIGHT_INLINE;
     textarea.style.height = 'auto';
-    textarea.style.height = `${textarea.scrollHeight}px`;
-  }, []);
+    textarea.style.maxHeight = `${maxHeight}px`;
+    textarea.style.height = `${Math.min(textarea.scrollHeight, maxHeight)}px`;
+  }, [expanded]);
 
   useEffect(() => {
     adjustTextareaHeight();
   }, [text, adjustTextareaHeight]);
+
+  useEffect(() => {
+    return () => {
+      if (mouseMoveRef.current) document.removeEventListener('mousemove', mouseMoveRef.current);
+      if (mouseUpRef.current) document.removeEventListener('mouseup', mouseUpRef.current);
+    };
+  }, []);
+
+  const handleResizeMouseDown = useCallback(
+    (e: React.MouseEvent) => {
+      if (!textareaRef.current) return;
+      e.preventDefault();
+      const startY = e.clientY;
+      const startHeight = textareaRef.current.getBoundingClientRect().height;
+
+      setIsResizing(true);
+
+      const handleMouseMove = (moveEvent: MouseEvent) => {
+        if (!textareaRef.current) return;
+        const delta = startY - moveEvent.clientY;
+        const maxHeight = expanded ? MAX_HEIGHT_EXPANDED : MAX_HEIGHT_INLINE;
+        const newHeight = Math.min(maxHeight, Math.max(48, startHeight + delta));
+        userHeightRef.current = newHeight;
+        textareaRef.current.style.height = `${newHeight}px`;
+        textareaRef.current.style.maxHeight = `${newHeight}px`;
+      };
+
+      const handleMouseUp = () => {
+        setIsResizing(false);
+        document.removeEventListener('mousemove', handleMouseMove);
+        document.removeEventListener('mouseup', handleMouseUp);
+        mouseMoveRef.current = null;
+        mouseUpRef.current = null;
+      };
+
+      mouseMoveRef.current = handleMouseMove;
+      mouseUpRef.current = handleMouseUp;
+      document.addEventListener('mousemove', handleMouseMove);
+      document.addEventListener('mouseup', handleMouseUp);
+    },
+    [expanded],
+  );
 
   useEffect(() => {
     if (!showOverflow) return;
@@ -124,7 +176,7 @@ const MessageInput: React.FC<TMessageInputProps> = memo(props => {
   };
 
   const handleKeyDown = (e: React.KeyboardEvent<HTMLTextAreaElement>) => {
-    if (e.key === 'Enter' && !e.shiftKey) {
+    if (e.key === 'Enter' && !e.shiftKey && !e.ctrlKey && !e.metaKey) {
       e.preventDefault();
       handleSend();
     }
@@ -191,7 +243,14 @@ const MessageInput: React.FC<TMessageInputProps> = memo(props => {
   return (
     <div
       data-testid="support-assistant-drop-zone"
-      className={`elitea-assistant-input-area${isDragOver ? ' elitea-assistant-input-area--drag-over' : ''}`}
+      className={[
+        'elitea-assistant-input-area',
+        isDragOver ? 'elitea-assistant-input-area--drag-over' : '',
+        'elitea-assistant-input-area--resizable',
+        isResizing ? 'elitea-assistant-input-area--resizing' : '',
+      ]
+        .filter(Boolean)
+        .join(' ')}
       onDragEnter={handleDragEnter}
       onDragLeave={handleDragLeave}
       onDragOver={handleDragOver}
@@ -205,6 +264,11 @@ const MessageInput: React.FC<TMessageInputProps> = memo(props => {
           Drop files here
         </div>
       )}
+      <div
+        className="elitea-assistant-resize-handle"
+        onMouseDown={handleResizeMouseDown}
+        aria-hidden="true"
+      />
       {attachments.length > 0 && (
         <div className="elitea-assistant-file-list">
           {visibleAttachments.map(attachment => (
@@ -284,7 +348,7 @@ const MessageInput: React.FC<TMessageInputProps> = memo(props => {
         <textarea
           ref={textareaRef}
           id="elitea-assistant-message-input"
-          className="elitea-assistant-input"
+          className={`elitea-assistant-input${expanded ? ' elitea-assistant-input--expanded' : ''}`}
           data-testid="support-assistant-message-input"
           value={text}
           onChange={e => onTextChange(e.target.value)}
