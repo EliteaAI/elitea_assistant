@@ -41,10 +41,15 @@ const MessageInput: React.FC<TMessageInputProps> = memo(props => {
     isStreaming,
   } = props;
 
+  const MAX_HEIGHT_INLINE = 160;
+  const MAX_HEIGHT_EXPANDED = 256;
+
   const fileInputRef = useRef<HTMLInputElement>(null);
   const textareaRef = useRef<HTMLTextAreaElement>(null);
   const overflowWrapperRef = useRef<HTMLDivElement>(null);
   const userHeightRef = useRef<number | null>(null);
+  const mouseMoveRef = useRef<((e: MouseEvent) => void) | null>(null);
+  const mouseUpRef = useRef<(() => void) | null>(null);
   const [fileInputKey, setFileInputKey] = useState(0);
   const [isDragOver, setIsDragOver] = useState(false);
   const [showOverflow, setShowOverflow] = useState(false);
@@ -56,7 +61,7 @@ const MessageInput: React.FC<TMessageInputProps> = memo(props => {
     if (!textarea) return;
     if (userHeightRef.current !== null) return;
 
-    const maxHeight = expanded ? 256 : 160;
+    const maxHeight = expanded ? MAX_HEIGHT_EXPANDED : MAX_HEIGHT_INLINE;
     textarea.style.height = 'auto';
     textarea.style.maxHeight = `${maxHeight}px`;
     textarea.style.height = `${Math.min(textarea.scrollHeight, maxHeight)}px`;
@@ -65,6 +70,13 @@ const MessageInput: React.FC<TMessageInputProps> = memo(props => {
   useEffect(() => {
     adjustTextareaHeight();
   }, [text, adjustTextareaHeight]);
+
+  useEffect(() => {
+    return () => {
+      if (mouseMoveRef.current) document.removeEventListener('mousemove', mouseMoveRef.current);
+      if (mouseUpRef.current) document.removeEventListener('mouseup', mouseUpRef.current);
+    };
+  }, []);
 
   const handleResizeMouseDown = useCallback(
     (e: React.MouseEvent) => {
@@ -78,7 +90,7 @@ const MessageInput: React.FC<TMessageInputProps> = memo(props => {
       const handleMouseMove = (moveEvent: MouseEvent) => {
         if (!textareaRef.current) return;
         const delta = startY - moveEvent.clientY;
-        const maxHeight = expanded ? 240 : 180;
+        const maxHeight = expanded ? MAX_HEIGHT_EXPANDED : MAX_HEIGHT_INLINE;
         const newHeight = Math.min(maxHeight, Math.max(48, startHeight + delta));
         userHeightRef.current = newHeight;
         textareaRef.current.style.height = `${newHeight}px`;
@@ -89,8 +101,12 @@ const MessageInput: React.FC<TMessageInputProps> = memo(props => {
         setIsResizing(false);
         document.removeEventListener('mousemove', handleMouseMove);
         document.removeEventListener('mouseup', handleMouseUp);
+        mouseMoveRef.current = null;
+        mouseUpRef.current = null;
       };
 
+      mouseMoveRef.current = handleMouseMove;
+      mouseUpRef.current = handleMouseUp;
       document.addEventListener('mousemove', handleMouseMove);
       document.addEventListener('mouseup', handleMouseUp);
     },
