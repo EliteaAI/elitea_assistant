@@ -44,22 +44,58 @@ const MessageInput: React.FC<TMessageInputProps> = memo(props => {
   const fileInputRef = useRef<HTMLInputElement>(null);
   const textareaRef = useRef<HTMLTextAreaElement>(null);
   const overflowWrapperRef = useRef<HTMLDivElement>(null);
+  const userHeightRef = useRef<number | null>(null);
   const [fileInputKey, setFileInputKey] = useState(0);
   const [isDragOver, setIsDragOver] = useState(false);
   const [showOverflow, setShowOverflow] = useState(false);
+  const [isResizing, setIsResizing] = useState(false);
   const dragCounterRef = useRef(0);
 
   const adjustTextareaHeight = useCallback(() => {
     const textarea = textareaRef.current;
     if (!textarea) return;
+    if (userHeightRef.current !== null) return;
 
+    const maxHeight = expanded ? 256 : 160;
     textarea.style.height = 'auto';
-    textarea.style.height = `${textarea.scrollHeight}px`;
-  }, []);
+    textarea.style.maxHeight = `${maxHeight}px`;
+    textarea.style.height = `${Math.min(textarea.scrollHeight, maxHeight)}px`;
+  }, [expanded]);
 
   useEffect(() => {
     adjustTextareaHeight();
   }, [text, adjustTextareaHeight]);
+
+  const handleResizeMouseDown = useCallback(
+    (e: React.MouseEvent) => {
+      if (!textareaRef.current) return;
+      e.preventDefault();
+      const startY = e.clientY;
+      const startHeight = textareaRef.current.getBoundingClientRect().height;
+
+      setIsResizing(true);
+
+      const handleMouseMove = (moveEvent: MouseEvent) => {
+        if (!textareaRef.current) return;
+        const delta = startY - moveEvent.clientY;
+        const maxHeight = expanded ? 240 : 180;
+        const newHeight = Math.min(maxHeight, Math.max(48, startHeight + delta));
+        userHeightRef.current = newHeight;
+        textareaRef.current.style.height = `${newHeight}px`;
+        textareaRef.current.style.maxHeight = `${newHeight}px`;
+      };
+
+      const handleMouseUp = () => {
+        setIsResizing(false);
+        document.removeEventListener('mousemove', handleMouseMove);
+        document.removeEventListener('mouseup', handleMouseUp);
+      };
+
+      document.addEventListener('mousemove', handleMouseMove);
+      document.addEventListener('mouseup', handleMouseUp);
+    },
+    [expanded],
+  );
 
   useEffect(() => {
     if (!showOverflow) return;
@@ -124,7 +160,7 @@ const MessageInput: React.FC<TMessageInputProps> = memo(props => {
   };
 
   const handleKeyDown = (e: React.KeyboardEvent<HTMLTextAreaElement>) => {
-    if (e.key === 'Enter' && !e.shiftKey) {
+    if (e.key === 'Enter' && !e.shiftKey && !e.ctrlKey && !e.metaKey) {
       e.preventDefault();
       handleSend();
     }
@@ -190,13 +226,25 @@ const MessageInput: React.FC<TMessageInputProps> = memo(props => {
 
   return (
     <div
-      className={`elitea-assistant-input-area${isDragOver ? ' elitea-assistant-input-area--drag-over' : ''}`}
+      className={[
+        'elitea-assistant-input-area',
+        isDragOver ? 'elitea-assistant-input-area--drag-over' : '',
+        'elitea-assistant-input-area--resizable',
+        isResizing ? 'elitea-assistant-input-area--resizing' : '',
+      ]
+        .filter(Boolean)
+        .join(' ')}
       onDragEnter={handleDragEnter}
       onDragLeave={handleDragLeave}
       onDragOver={handleDragOver}
       onDrop={handleDrop}
     >
       {isDragOver && <div className="elitea-assistant-drop-overlay">Drop files here</div>}
+      <div
+        className="elitea-assistant-resize-handle"
+        onMouseDown={handleResizeMouseDown}
+        aria-hidden="true"
+      />
       {attachments.length > 0 && (
         <div className="elitea-assistant-file-list">
           {visibleAttachments.map(attachment => (
@@ -275,7 +323,7 @@ const MessageInput: React.FC<TMessageInputProps> = memo(props => {
         <textarea
           ref={textareaRef}
           id="elitea-assistant-message-input"
-          className="elitea-assistant-input"
+          className={`elitea-assistant-input${expanded ? ' elitea-assistant-input--expanded' : ''}`}
           value={text}
           onChange={e => onTextChange(e.target.value)}
           onKeyDown={handleKeyDown}

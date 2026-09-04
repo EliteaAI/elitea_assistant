@@ -46,7 +46,30 @@
   outline: none;
   resize: none;
   overflow-y: auto;
-  max-height: 8rem;
+  max-height: 10rem;
+}
+
+.elitea-assistant-input-area--resizable {
+  cursor: ns-resize;
+}
+
+.elitea-assistant-input-area--resizable:has(.elitea-assistant-resize-handle:hover),
+.elitea-assistant-input-area--resizing {
+  border-top-width: 0.125rem;
+}
+
+.elitea-assistant-resize-handle {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 0.375rem;
+  cursor: ns-resize;
+  z-index: 1;
+}
+
+.elitea-assistant-input--expanded {
+  max-height: 16rem;
 }
 
 .elitea-assistant-input::placeholder {
