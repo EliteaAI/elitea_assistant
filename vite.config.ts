@@ -7,15 +7,15 @@ import { resolve } from 'path';
 export default defineConfig({
   resolve: {
     alias: {
-      '@': resolve(__dirname, 'src'),
+      '@': resolve(import.meta.dirname, 'src'),
     },
   },
   plugins: [
     react(),
     dts({
       include: ['src'],
-      outDir: 'dist',
-      rollupTypes: true,
+      outDirs: 'dist',
+      bundleTypes: true,
     }),
     cssInjectedByJsPlugin(),
   ],
@@ -36,7 +36,7 @@ export default defineConfig({
   },
   build: {
     lib: {
-      entry: resolve(__dirname, 'src/index.ts'),
+      entry: resolve(import.meta.dirname, 'src/index.ts'),
       name: 'EliteaAssistant',
       formats: ['es', 'cjs'],
       fileName: 'elitea-assistant',
